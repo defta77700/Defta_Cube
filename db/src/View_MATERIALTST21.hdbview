@@ -1,0 +1,4 @@
+VIEW "View_MATERIALTST21" 
+AS 
+    SELECT * FROM logShema_Staging.MATERIALTST1
+    with grant SELECT

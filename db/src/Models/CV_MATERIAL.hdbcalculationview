@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_MATERIAL" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false" propagateInstantiation="true">
+<descriptions defaultDescription="CV_MATERIAL"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="MATERIALTST2">
+    <resourceUri>MATERIALTST2</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+
+<logicalModel ignoreMultipleOutputsForFilter="true" id="MATERIALTST2">
+  <attributes>
+    <attribute id="MATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MaterialNbr"/>
+      <keyMapping columnObjectName="MATERIALTST2" columnName="MATNR"/>
+    </attribute>
+    <attribute id="SOURCE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SOURCE"/>
+      <keyMapping columnObjectName="MATERIALTST2" columnName="SOURCE"/>
+    </attribute>
+    <attribute id="LVORM_MARA" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LVORM_MARA"/>
+      <keyMapping columnObjectName="MATERIALTST2" columnName="LVORM_MARA"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="100" y="105"/>
+    
+      <rectangleSize width="190"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>
