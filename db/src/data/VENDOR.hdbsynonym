@@ -1,0 +1,8 @@
+{
+  "VENDORS": {
+    "target": {
+      "object": "VENDOR",
+      "schema": "SUPPLANER"
+    }
+  }
+}

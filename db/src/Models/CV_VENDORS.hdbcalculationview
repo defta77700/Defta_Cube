@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="Cube_TST1" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
-<descriptions defaultDescription="Cube_TST1"/>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_VENDORS" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_VENDORS"/>
 <localVariables/>
 <variableMappings/>
 <dataSources>
@@ -70,7 +70,7 @@
 <logicalModel id="Projection_1">
   <attributes>
     <attribute id="LIFNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor"/>
+      <descriptions defaultDescription="LIFNR"/>
       <keyMapping columnObjectName="Projection_1" columnName="LIFNR"/>
     </attribute>
     <attribute id="KRAUS" order="3" displayAttribute="false" attributeHierarchyActive="false">
@@ -275,15 +275,10 @@
   </baseMeasures>
   <calculatedMeasures>
     <measure id="COUNT_1" order="1" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
-      <descriptions defaultDescription="Count_LIFNR"/>
       <exceptionAggregation>
         <attribute attributeName="LIFNR"/>
       </exceptionAggregation>
       <formula>1</formula>
-      
-      
-      
-      
       </measure>
   </calculatedMeasures>
   <restrictedMeasures/>
@@ -292,12 +287,12 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="92" y="105"/>
-    
-      <rectangleSize width="160"/>
+      <upperLeftCorner x="40" y="85"/>
     </shape>
+    
+  
     <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="86" y="209"/>
+      <upperLeftCorner x="100" y="203"/>
       <rectangleSize height="30" width="160"/>
     </shape>
   </shapes>

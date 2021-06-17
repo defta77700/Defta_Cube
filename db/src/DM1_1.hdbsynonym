@@ -1,0 +1,8 @@
+{
+  "MATERIAL": {
+    "target": {
+      "object": "MATERIAL",
+      "revalidate": true
+    }
+  }
+}

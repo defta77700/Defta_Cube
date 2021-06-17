@@ -1,7 +1,0 @@
-{
- "<logical schema>" : {
-   "target": { 
-     "schema" : "STAGING"
-   } 
- }
-}

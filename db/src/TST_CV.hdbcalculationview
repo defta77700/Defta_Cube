@@ -1,25 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="TST_CV" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="TST_CV" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
 <descriptions defaultDescription="TST_CV"/>
 <localVariables/>
 <variableMappings/>
-<dataSources/>
-<calculationViews/>
+<dataSources>
+  <DataSource id="V_MATERIAL">
+    <resourceUri>V_MATERIAL</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1" ignoreMultipleOutputsForFilter="false">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="LVORM_MARA"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="MAKTX"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="HERKL"/>
+      <viewAttribute id="HERKR"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="LVORM_MARC"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="V_MATERIAL">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL_F"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="HERKL" null="true"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="HERKR" null="true"/>
+    </input>
+  </calculationView>
+</calculationViews>
 
-<logicalModel>
-  <attributes/>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="MATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MATNR"/>
+    </attribute>
+    <attribute id="MATKL" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MATKL"/>
+    </attribute>
+    <attribute id="SOURCE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SOURCE"/>
+      <keyMapping columnObjectName="Projection_1" columnName="SOURCE"/>
+    </attribute>
+    <attribute id="MAKTX" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAKTX"/>
+      <keyMapping columnObjectName="Projection_1" columnName="MAKTX"/>
+    </attribute>
+    <attribute id="WERKS" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="Projection_1" columnName="WERKS"/>
+    </attribute>
+  </attributes>
   <calculatedAttributes/>
   <baseMeasures/>
-  <calculatedMeasures/>
+  <calculatedMeasures>
+    <measure id="COUNT_1" order="6" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
+      <descriptions defaultDescription="Material Counter"/>
+      <exceptionAggregation>
+        <attribute attributeName="MATNR"/>
+      </exceptionAggregation>
+      <formula>1</formula>
+      </measure>
+  </calculatedMeasures>
   <restrictedMeasures/>
   <localDimensions/>
 </logicalModel>
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="40" y="85"/>
+      <upperLeftCorner x="224" y="105"/>
+    
+      <rectangleSize width="160"/>
     </shape>
     
-  </shapes>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="224" y="232"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
 </layout>
 </Calculation:scenario>
