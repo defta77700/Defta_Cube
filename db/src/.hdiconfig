@@ -38,9 +38,8 @@
 			"plugin_name": "com.sap.hana.di.library"
 		},
 		"hdblogicalschema" : { 
-        "plugin_name" : "com.sap.hana.di.logicalschema", 
-        "plugin_version": "2.0.40.0" 
-		},
+        "plugin_name" : "com.sap.hana.di.logicalschema"
+        },
 		"hdbprocedure": {
 			"plugin_name": "com.sap.hana.di.procedure"
 		},

@@ -1,7 +1,7 @@
 {
-  "MATERIAL": {
+  "VENDOR": {
     "target": {
-      "object": "MATERIAL",
+      "object": "VENDOR",
       "schema": "SUPLPANEL"
     }
   }
