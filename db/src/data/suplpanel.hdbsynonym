@@ -1,8 +1,8 @@
 {
-  "VENDORS": {
+  "VENDOR_C": {
     "target": {
       "object": "VENDOR",
-      "schema": "SUPPLANER"
+      "schema": "SUPLPANEL"
     }
   }
 }

@@ -1,0 +1,8 @@
+{
+  "MATERIAL_C1": {
+    "target": {
+      "object": "MATERIAL",
+      "schema": "SUPLPANEL"
+    }
+  }
+}

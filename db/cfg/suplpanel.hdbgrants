@@ -1,0 +1,10 @@
+{
+  "CC_SUPLPANELACCESS": {
+    "object_owner" : {
+      "roles" : ["CCSUPROLE" ]
+    },
+    "application_user" : {
+      "roles" : ["CCSUPROLE" ]
+    }
+  }
+}

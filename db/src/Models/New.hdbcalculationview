@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:DataFoundation="http://www.sap.com/ndb/BiModelDataFoundation.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" id="New" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="New.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="MATERIAL_C1">
+    <resourceUri>MATERIAL_C1</resourceUri>
+  </DataSource>
+  <DataSource id="MATERIALGRPDESCR_C">
+    <resourceUri>MATERIALGRPDESCR_C</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="MAT_P">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="LVORM_MARA"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="LVORM_MARC"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="MATERIAL_C1"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="MAT_MATGRP_J" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="LVORM_MARA"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="LVORM_MARC"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="MATKL_1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="WGBEZ_L5"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="MAT_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LVORM_MARA" source="LVORM_MARA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_FR" source="MTBEZ_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_EN" source="MTBEZ_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERSDA" source="ERSDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAEDA" source="LAEDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_F" source="MAKTX_F"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LVORM_MARC" source="LVORM_MARC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAWN" source="STAWN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROFL" source="PROFL"/>
+    </input>
+    <input node="MATGRP_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_1" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L1" source="WGBEZ_L1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L2" source="WGBEZ_L2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L3" source="WGBEZ_L3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L4" source="WGBEZ_L4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L5" source="WGBEZ_L5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+    </input>
+    <joinAttribute name="MATKL"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="MATGRP_P" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="SPRAS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="MATERIALGRPDESCR_C"/>
+    <filter>&quot;SPRAS&quot;='FR'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="MAT_MATGRP_P">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="LVORM_MARA"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="LVORM_MARC"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="WGBEZ_L5"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="MAT_MATGRP_J"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="MAT_MATGRP_P">
+  <attributes>
+    <attribute id="MATNR" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="MATNR"/>
+    </attribute>
+    <attribute id="SOURCE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SOURCE"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="SOURCE"/>
+    </attribute>
+    <attribute id="LVORM_MARA" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LVORM_MARA"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="LVORM_MARA"/>
+    </attribute>
+    <attribute id="MATKL" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="MATKL"/>
+    </attribute>
+    <attribute id="BRGEW" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRGEW"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="BRGEW"/>
+    </attribute>
+    <attribute id="GEWEI" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEWEI"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="GEWEI"/>
+    </attribute>
+    <attribute id="MTART" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MTART"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="MTART"/>
+    </attribute>
+    <attribute id="MTBEZ_FR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MTBEZ_FR"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="MTBEZ_FR"/>
+    </attribute>
+    <attribute id="MTBEZ_EN" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MTBEZ_EN"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="MTBEZ_EN"/>
+    </attribute>
+    <attribute id="NTGEW" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NTGEW"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="NTGEW"/>
+    </attribute>
+    <attribute id="ERSDA" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ERSDA"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="ERSDA"/>
+    </attribute>
+    <attribute id="LAEDA" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LAEDA"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="LAEDA"/>
+    </attribute>
+    <attribute id="MAKTX_F" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAKTX_F"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="MAKTX_F"/>
+    </attribute>
+    <attribute id="WERKS" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="WERKS"/>
+    </attribute>
+    <attribute id="EKGRP" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EKGRP"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="EKGRP"/>
+    </attribute>
+    <attribute id="LVORM_MARC" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LVORM_MARC"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="LVORM_MARC"/>
+    </attribute>
+    <attribute id="STAWN" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STAWN"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="STAWN"/>
+    </attribute>
+    <attribute id="PRCTR" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRCTR"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="PRCTR"/>
+    </attribute>
+    <attribute id="MEINS" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MEINS"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="MEINS"/>
+    </attribute>
+    <attribute id="DISPO" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DISPO"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="DISPO"/>
+    </attribute>
+    <attribute id="PROFL" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROFL"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="PROFL"/>
+    </attribute>
+    <attribute id="WGBEZ_L1" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WGBEZ_L1"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="WGBEZ_L1"/>
+    </attribute>
+    <attribute id="WGBEZ_L2" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WGBEZ_L2"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="WGBEZ_L2"/>
+    </attribute>
+    <attribute id="WGBEZ_L3" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WGBEZ_L3"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="WGBEZ_L3"/>
+    </attribute>
+    <attribute id="WGBEZ_L4" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WGBEZ_L4"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="WGBEZ_L4"/>
+    </attribute>
+    <attribute id="WGBEZ_L5" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WGBEZ_L5"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="WGBEZ_L5"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures>
+    <measure id="COUNT_1" order="1" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
+      <exceptionAggregation>
+        <attribute attributeName="MATNR"/>
+      </exceptionAggregation>
+      <formula>1</formula>
+      </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+  <localDimensions>
+    <localDimension id="LEVEL_1">
+      <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L1</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L2</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L3</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L4</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L5</attributeRef>
+      <hierarchies>
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="LEVEL_1" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+          <descriptions defaultDescription=""/>
+          <unassignedMemberProperties mode="FALSE"/>
+          <levels>
+            <level levelAttribute="WGBEZ_L1" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="WGBEZ_L1" sortDirection="ASC"/>
+            <level levelAttribute="WGBEZ_L2" levelType="MDLEVEL_TYPE_REGULAR" order="2" orderAttribute="WGBEZ_L2" sortDirection="ASC"/>
+            <level levelAttribute="WGBEZ_L3" levelType="MDLEVEL_TYPE_REGULAR" order="3" orderAttribute="WGBEZ_L3" sortDirection="ASC"/>
+            <level levelAttribute="WGBEZ_L4" levelType="MDLEVEL_TYPE_REGULAR" order="4" orderAttribute="WGBEZ_L4" sortDirection="ASC"/>
+            <level levelAttribute="WGBEZ_L5" levelType="MDLEVEL_TYPE_REGULAR" order="5" orderAttribute="WGBEZ_L5" sortDirection="ASC"/>
+          </levels>
+        </hierarchy>
+      </hierarchies>
+    </localDimension>
+  </localDimensions>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="241.21650018073555" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="MAT_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92.00000000000006" y="481.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="MAT_MATGRP_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="222.93631278293594" y="341.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="MAT_P" modelObjectNameSpace="MAT_MATGRP_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="162.806640625"/>
+    </shape>
+    <shape modelObjectName="MATGRP_P" modelObjectNameSpace="MAT_MATGRP_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="144.6845703125"/>
+    </shape>
+    <shape expanded="true" modelObjectName="MATGRP_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302.0000000000001" y="481.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="MAT_MATGRP_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="222.93631278293594" y="236.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

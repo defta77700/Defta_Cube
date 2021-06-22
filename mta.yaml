@@ -34,6 +34,6 @@ resources:
 - name: cross-container-service-1
   type: org.cloudfoundry.existing-service
   parameters:
-    service-name: CC_ACCESS
+    service-name: CC_SUPLPANELACCESS
   properties:
     the-service-name: ${service-name}

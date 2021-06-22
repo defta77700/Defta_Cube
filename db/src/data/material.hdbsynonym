@@ -1,0 +1,20 @@
+{
+  "MATERIALGRPDESCR_C": {
+    "target": {
+      "object": "MATERIALGRPDESCR",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "PURCHINFORECORD_C": {
+    "target": {
+      "object": "PURCHINFORECORD",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "MATERIAL_C": {
+    "target": {
+      "object": "MATERIAL",
+      "schema": "SUPLPANEL"
+    }
+  }
+}
