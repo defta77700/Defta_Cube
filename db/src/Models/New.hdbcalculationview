@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:DataFoundation="http://www.sap.com/ndb/BiModelDataFoundation.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" id="New" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
-<descriptions defaultDescription="New.hdbcalculationview"/>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:DataFoundation="http://www.sap.com/ndb/BiModelDataFoundation.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" id="New1" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="New1.hdbcalculationview"/>
 <localVariables/>
 <variableMappings/>
 <dataSources>
   <DataSource id="MATERIAL">
     <resourceUri>MATERIAL</resourceUri>
   </DataSource>
-  <DataSource id="MATERIALGRPDESCR_C">
-    <resourceUri>MATERIALGRPDESCR_C</resourceUri>
+  <DataSource id="MATERIALGRPDESCR">
+    <resourceUri>MATERIALGRPDESCR</resourceUri>
+  </DataSource>
+  <DataSource id="PURCHINFORECORD">
+    <resourceUri>PURCHINFORECORD</resourceUri>
   </DataSource>
 </dataSources>
 <calculationViews>
@@ -115,8 +118,8 @@
       <viewAttribute id="SPRAS"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="MATERIALGRPDESCR_C"/>
-    <filter>&quot;SPRAS&quot;='FR'</filter>
+    <input node="MATERIALGRPDESCR"/>
+    <filter>&quot;SPRAS&quot;='F'</filter>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="MAT_MATGRP_P">
     <viewAttributes>
@@ -141,6 +144,151 @@
       <viewAttribute id="MEINS"/>
       <viewAttribute id="DISPO"/>
       <viewAttribute id="PROFL"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="NETPR"/>
+      <viewAttribute id="PEINH"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="MAT_GRP_PIR_J"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="MAT_GRP_PIR_J" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="LVORM_MARA"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="LVORM_MARC"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="MATKL_1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="EKORG_1"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="SOURCE_1"/>
+      <viewAttribute id="WERKS_1"/>
+      <viewAttribute id="NETPR" aggregationType="sum"/>
+      <viewAttribute id="PEINH" aggregationType="sum"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="PIR_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG_1" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESOKZ" source="ESOKZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE_1" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_1" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NETPR" source="NETPR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <input node="MAT_MATGRP_P1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LVORM_MARA" source="LVORM_MARA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_FR" source="MTBEZ_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_EN" source="MTBEZ_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERSDA" source="ERSDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAEDA" source="LAEDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_F" source="MAKTX_F"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LVORM_MARC" source="LVORM_MARC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAWN" source="STAWN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROFL" source="PROFL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_1" source="MATKL_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L1" source="WGBEZ_L1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L2" source="WGBEZ_L2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L3" source="WGBEZ_L3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L4" source="WGBEZ_L4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L5" source="WGBEZ_L5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="JOIN$MATNR$MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PIR_P">
+    <viewAttributes>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="NETPR"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="LOEKZ"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="BPRME"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="PRDAT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="IDNLF"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="URZLA"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="PURCHINFORECORD"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="MAT_MATGRP_P1">
+    <viewAttributes>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="LVORM_MARA"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="LVORM_MARC"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="MATKL_1"/>
       <viewAttribute id="WGBEZ_L1"/>
       <viewAttribute id="WGBEZ_L2"/>
       <viewAttribute id="WGBEZ_L3"/>
@@ -257,15 +405,34 @@
       <descriptions defaultDescription="WGBEZ_L5"/>
       <keyMapping columnObjectName="MAT_MATGRP_P" columnName="WGBEZ_L5"/>
     </attribute>
+  
+    <attribute id="INCO2" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCO2"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="INCO2"/>
+    </attribute>
+    <attribute id="ESOKZ" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ESOKZ"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="ESOKZ"/>
+    </attribute>
   </attributes>
   <calculatedAttributes/>
-  <baseMeasures/>
+  <baseMeasures>
+    <measure id="NETPR" order="30" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="NETPR"/>
+      <measureMapping columnObjectName="MAT_MATGRP_P" columnName="NETPR"/>
+    </measure>
+    <measure id="PEINH" order="31" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PEINH"/>
+      <measureMapping columnObjectName="MAT_MATGRP_P" columnName="PEINH"/>
+    </measure>
+  </baseMeasures>
   <calculatedMeasures>
     <measure id="COUNT_1" order="1" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
       <exceptionAggregation>
         <attribute attributeName="MATNR"/>
       </exceptionAggregation>
       <formula>1</formula>
+      
       </measure>
   </calculatedMeasures>
   <restrictedMeasures/>
@@ -295,17 +462,17 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="241" y="112"/>
+      <upperLeftCorner x="254.10498813711592" y="112"/>
     
       <rectangleSize width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="MAT_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="481"/>
+      <upperLeftCorner x="113.13252594444543" y="786.9999952316284"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape expanded="true" modelObjectName="MAT_MATGRP_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="222" y="341"/>
+    <shape expanded="false" modelObjectName="MAT_MATGRP_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="232.54695351946785" y="626.9999964237213"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="MAT_P" modelObjectNameSpace="MAT_MATGRP_J" modelObjectType="JoinNodeInput">
@@ -317,13 +484,33 @@
       <rectangleSize width="144"/>
     </shape>
     <shape expanded="true" modelObjectName="MATGRP_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302" y="481"/>
+      <upperLeftCorner x="323.13252594444543" y="786.9999952316284"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="MAT_MATGRP_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="222" y="236"/>
+      <upperLeftCorner x="232.31315768943762" y="236.9999988079071"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-  </shapes>
+    <shape expanded="true" modelObjectName="MAT_GRP_PIR_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="232.3131576894376" y="341.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="PIR_P" modelObjectNameSpace="MAT_GRP_PIR_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="MAT_MATGRP_P1" modelObjectNameSpace="MAT_GRP_PIR_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="620" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="PIR_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="501.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="MAT_MATGRP_P1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="501.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
 </layout>
 </Calculation:scenario>
