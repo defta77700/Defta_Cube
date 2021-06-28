@@ -1,0 +1,8 @@
+{
+  "INVOICES": {
+    "target": {
+      "object": "INVOICES",
+      "schema": "SUPLPANEL"
+    }
+  }
+}

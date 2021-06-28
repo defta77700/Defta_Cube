@@ -153,6 +153,7 @@
       <viewAttribute id="ESOKZ"/>
       <viewAttribute id="NETPR"/>
       <viewAttribute id="PEINH"/>
+      <viewAttribute id="LIFNR"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="MAT_GRP_PIR_J"/>
@@ -180,20 +181,21 @@
       <viewAttribute id="MEINS"/>
       <viewAttribute id="DISPO"/>
       <viewAttribute id="PROFL"/>
-      <viewAttribute id="MATKL_1"/>
       <viewAttribute id="WGBEZ_L1"/>
       <viewAttribute id="WGBEZ_L2"/>
       <viewAttribute id="WGBEZ_L3"/>
       <viewAttribute id="WGBEZ_L4"/>
       <viewAttribute id="WGBEZ_L5"/>
-      <viewAttribute id="EKORG"/>
       <viewAttribute id="INCO2"/>
-      <viewAttribute id="EKORG_1"/>
       <viewAttribute id="ESOKZ"/>
-      <viewAttribute id="SOURCE_1"/>
-      <viewAttribute id="WERKS_1"/>
       <viewAttribute id="NETPR" aggregationType="sum"/>
       <viewAttribute id="PEINH" aggregationType="sum"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="MATKL_1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="EKORG_1"/>
+      <viewAttribute id="SOURCE_1"/>
+      <viewAttribute id="WERKS_1"/>
       <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
     </viewAttributes>
     <calculatedViewAttributes/>
@@ -206,6 +208,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_1" source="WERKS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="NETPR" source="NETPR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
     </input>
     <input node="MAT_MATGRP_P1">
@@ -249,6 +252,7 @@
       <viewAttribute id="WERKS"/>
       <viewAttribute id="NETPR"/>
       <viewAttribute id="PEINH"/>
+      <viewAttribute id="LIFNR"/>
       <viewAttribute id="MATNR"/>
       <viewAttribute id="INFNR"/>
       <viewAttribute id="LOEKZ"/>
@@ -258,7 +262,6 @@
       <viewAttribute id="PRDAT"/>
       <viewAttribute id="WAERS"/>
       <viewAttribute id="IDNLF"/>
-      <viewAttribute id="LIFNR"/>
       <viewAttribute id="REGIO"/>
       <viewAttribute id="URZLA"/>
     </viewAttributes>
@@ -408,11 +411,17 @@
   
     <attribute id="INCO2" order="28" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="INCO2"/>
+  
       <keyMapping columnObjectName="MAT_MATGRP_P" columnName="INCO2"/>
+  
     </attribute>
     <attribute id="ESOKZ" order="29" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ESOKZ"/>
       <keyMapping columnObjectName="MAT_MATGRP_P" columnName="ESOKZ"/>
+    </attribute>
+    <attribute id="LIFNR" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LIFNR"/>
+      <keyMapping columnObjectName="MAT_MATGRP_P" columnName="LIFNR"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
@@ -437,15 +446,15 @@
   </calculatedMeasures>
   <restrictedMeasures/>
   <localDimensions>
-    <localDimension id="LEVEL_1">
+    <localDimension id="MATGRPLVL">
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L1</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L2</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L3</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L4</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L5</attributeRef>
       <hierarchies>
-        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="LEVEL_1" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
-          <descriptions defaultDescription=""/>
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="MATGRPLVL" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+          <descriptions defaultDescription="Material Group Level"/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>
             <level levelAttribute="WGBEZ_L1" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="WGBEZ_L1" sortDirection="ASC"/>
@@ -462,17 +471,17 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="254.10498813711592" y="112"/>
+      <upperLeftCorner x="254" y="112"/>
     
       <rectangleSize width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="MAT_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="113.13252594444543" y="786.9999952316284"/>
+      <upperLeftCorner x="113" y="786"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="false" modelObjectName="MAT_MATGRP_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="232.54695351946785" y="626.9999964237213"/>
+      <upperLeftCorner x="232" y="626"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="MAT_P" modelObjectNameSpace="MAT_MATGRP_J" modelObjectType="JoinNodeInput">
@@ -484,15 +493,15 @@
       <rectangleSize width="144"/>
     </shape>
     <shape expanded="true" modelObjectName="MATGRP_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="323.13252594444543" y="786.9999952316284"/>
+      <upperLeftCorner x="323" y="786"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="MAT_MATGRP_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="232.31315768943762" y="236.9999988079071"/>
+      <upperLeftCorner x="232" y="236"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="MAT_GRP_PIR_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="232.3131576894376" y="341.9999988079071"/>
+      <upperLeftCorner x="232" y="341"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="PIR_P" modelObjectNameSpace="MAT_GRP_PIR_J" modelObjectType="JoinNodeInput">
@@ -505,11 +514,11 @@
     </shape>
   
     <shape expanded="true" modelObjectName="PIR_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="501.9999976158142"/>
+      <upperLeftCorner x="92" y="501"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="MAT_MATGRP_P1" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302" y="501.9999976158142"/>
+      <upperLeftCorner x="302" y="501"/>
       <rectangleSize height="30" width="160"/>
     </shape></shapes>
 </layout>

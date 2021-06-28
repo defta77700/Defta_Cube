@@ -1,25 +1,19 @@
 {
-  "MATERIALGRPDESCR_C": {
-    "target": {
-      "object": "MATERIALGRPDESCR",
-      "schema": "SUPLPANEL"
-    }
-  },
   "PURCHINFORECORD": {
     "target": {
       "object": "PURCHINFORECORD",
       "schema": "SUPLPANEL"
     }
   },
-  "MATERIAL_C": {
-    "target": {
-      "object": "MATERIAL",
-      "schema": "SUPLPANEL"
-    }
-  },
   "MATERIALGRPDESCR": {
     "target": {
       "object": "MATERIALGRPDESCR",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "PLANT": {
+    "target": {
+      "object": "PLANT",
       "schema": "SUPLPANEL"
     }
   }
