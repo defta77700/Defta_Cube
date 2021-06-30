@@ -1,0 +1,8 @@
+{
+  "ZM_TIME_DIMENSION": {
+    "target": {
+      "object": "ZM_TIME_DIMENSION",
+      "schema": "SUPLPANEL"
+    }
+  }
+}

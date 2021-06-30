@@ -4,5 +4,29 @@
       "object": "INVOICES",
       "schema": "SUPLPANEL"
     }
+  },
+  "PRICECONDITION": {
+    "target": {
+      "object": "PRICECONDITION",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "PRICESCHEDULED": {
+    "target": {
+      "object": "PRICESCHEDULED",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "RECEIPT": {
+    "target": {
+      "object": "RECEIPT",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "REMAINSTODELIVER": {
+    "target": {
+      "object": "REMAINSTODELIVER",
+      "schema": "SUPLPANEL"
+    }
   }
 }

@@ -4,5 +4,29 @@
       "object": "VENDOR",
       "schema": "SUPLPANEL"
     }
+  },
+  "VENDORCLAIMS": {
+    "target": {
+      "object": "VENDORCLAIMS",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "VENDORCONTACT": {
+    "target": {
+      "object": "VENDORCONTACT",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "VENDORPAYMENTTYPE": {
+    "target": {
+      "object": "VENDORPAYMENTTYPE",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "VENDORSEVALUATION": {
+    "target": {
+      "object": "VENDORSEVALUATION",
+      "schema": "SUPLPANEL"
+    }
   }
 }

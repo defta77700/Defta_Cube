@@ -1,2 +1,5 @@
 **/node_modules/**
 .env*
+**/mta_archives/**
+**/mta_archive/**
+*.mtar

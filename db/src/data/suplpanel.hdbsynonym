@@ -1,7 +1,55 @@
 {
-  "VENDOR_C": {
+  "COMPANY": {
     "target": {
-      "object": "VENDOR",
+      "object": "COMPANY",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "PAYMENTCONDITIONS": {
+    "target": {
+      "object": "PAYMENTCONDITIONS",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "CHANGERATE": {
+    "target": {
+      "object": "CHANGERATE",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "CONTRACT": {
+    "target": {
+      "object": "CONTRACT",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "LTA": {
+    "target": {
+      "object": "LTA",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "QUOTA": {
+    "target": {
+      "object": "QUOTA",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "RSA": {
+    "target": {
+      "object": "RSA",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "SERVICERATE": {
+    "target": {
+      "object": "SERVICERATE",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "SHIPPINGORDER": {
+    "target": {
+      "object": "SHIPPINGORDER",
       "schema": "SUPLPANEL"
     }
   }
