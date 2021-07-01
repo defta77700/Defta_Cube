@@ -7,6 +7,9 @@
   <DataSource id="VENDOR">
     <resourceUri>VENDOR</resourceUri>
   </DataSource>
+  <DataSource id="VENDORCONTACT">
+    <resourceUri>VENDORCONTACT</resourceUri>
+  </DataSource>
 </dataSources>
 <calculationViews>
   <calculationView xsi:type="Calculation:ProjectionView" id="VENDOR_P">
@@ -65,6 +68,39 @@
     </calculatedViewAttributes>
     <input node="VENDOR"/>
   </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VND_CONT">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="NAMEV"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TITEL_AP"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="ABTNR"/>
+      <viewAttribute id="PAFKT"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="VTEXT_FR"/>
+      <viewAttribute id="VTEXT_EN"/>
+      <viewAttribute id="TEXT_FR"/>
+      <viewAttribute id="TEXT_EN"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="VENDORUNIK" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
+        <formula>CONCAT(CONCAT(&quot;KRAUS&quot;, &quot;STCEG&quot;), &quot;STCD1&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="VENDORCONTACT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="VEND_VNDCT_J">
+    <viewAttributes/>
+    <calculatedViewAttributes/>
+    <input node="VENDOR_P"/>
+    <input node="VND_CONT"/>
+  </calculationView>
 </calculationViews>
 <logicalModel>
   <attributes/>
@@ -80,8 +116,25 @@
     </shape>
   
     <shape expanded="true" modelObjectName="VENDOR_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="39" y="337"/>
+      <upperLeftCorner x="15" y="501"/>
       <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="VND_CONT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="260" y="501"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VEND_VNDCT_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="142" y="349"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="VENDOR_P" modelObjectNameSpace="VEND_VNDCT_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="159.34228515625"/>
+    </shape>
+    <shape modelObjectName="VND_CONT" modelObjectNameSpace="VEND_VNDCT_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="153.84228515625"/>
     </shape>
   </shapes>
 </layout>
