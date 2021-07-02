@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" id="DimVendor" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="VENDOR_HV.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="VENDOR">
+    <resourceUri>VENDOR</resourceUri>
+  </DataSource>
+  <DataSource id="VENDORCONTACT">
+    <resourceUri>VENDORCONTACT</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VENDOR_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="VENDORUNIK" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
+        <formula>CONCAT(CONCAT(&quot;KRAUS&quot;, &quot;STCEG&quot;), &quot;STCD1&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="VENDOR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VND_CONT">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="NAMEV"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TITEL_AP"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="ABTNR"/>
+      <viewAttribute id="PAFKT"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="VTEXT_FR"/>
+      <viewAttribute id="VTEXT_EN"/>
+      <viewAttribute id="TEXT_FR"/>
+      <viewAttribute id="TEXT_EN"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="VENDORUNIK" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
+        <formula>CONCAT(CONCAT(&quot;KRAUS&quot;, &quot;STCEG&quot;), &quot;STCD1&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="VENDORCONTACT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="VEND_VNDCT_J" cardinality="CN_N" dynamic="false" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="NAME1_VENDOR"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="NAMEV"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="TELF1_1"/>
+      <viewAttribute id="TITEL_AP"/>
+      <viewAttribute id="SMTP_ADDR_1"/>
+      <viewAttribute id="VTEXT_FR"/>
+      <viewAttribute id="VTEXT_EN"/>
+      <viewAttribute id="TEXT_FR"/>
+      <viewAttribute id="TEXT_EN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VENDOR_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1_VENDOR" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_X" source="SPERM_X"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_X" source="LOEVM_X"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBUND" source="VBUND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_Y" source="LOEVM_Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_Y" source="SPERM_Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENSL" source="VENSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZFAEL" source="ZFAEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMONA" source="ZMONA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTAG1" source="ZTAG1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_FR" source="BRTXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_EN" source="BRTXT_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTBUS" source="J_1KFTBUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MCOD1" source="MCOD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEBRE" source="WEBRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+    </input>
+    <input node="VND_CONT">
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAMEV" source="NAMEV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1_1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITEL_AP" source="TITEL_AP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR_1" source="SMTP_ADDR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTEXT_FR" source="VTEXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTEXT_EN" source="VTEXT_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT_FR" source="TEXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT_EN" source="TEXT_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+    </input>
+    <joinAttribute name="VENDORUNIK"/>
+    <joinAttribute name="LIFNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VEND_VNDCT_JP">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="NAME1_VENDOR"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="NAMEV"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="TELF1_1"/>
+      <viewAttribute id="TITEL_AP"/>
+      <viewAttribute id="SMTP_ADDR_1"/>
+      <viewAttribute id="VTEXT_FR"/>
+      <viewAttribute id="VTEXT_EN"/>
+      <viewAttribute id="TEXT_FR"/>
+      <viewAttribute id="TEXT_EN"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="VENDOR_CONTACTNAME" datatype="NVARCHAR" length="100" expressionLanguage="SQL">
+        <formula>CONCAT(CONCAT(&quot;NAMEV&quot;,' '),&quot;NAME1&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="VEND_VNDCT_J"/>
+  </calculationView>
+</calculationViews>
+<inlineHierarchy xsi:type="Dimension:LeveledHierarchy" id="VENDCTACT" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+  <descriptions defaultDescription="Vendor Contact"/>
+  <unassignedMemberProperties mode="FALSE"/>
+  <levels>
+    <level levelAttribute="VENDOR_CONTACTNAME" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="VENDOR_CONTACTNAME" sortDirection="ASC"/>
+  </levels>
+</inlineHierarchy>
+<logicalModel id="VEND_VNDCT_JP">
+  <attributes>
+    <attribute id="LIFNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Code"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="LIFNR"/>
+    </attribute>
+    <attribute id="KRAUS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DUNS"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="KRAUS"/>
+    </attribute>
+    <attribute id="STCEG" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VAT EU"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="STCEG"/>
+    </attribute>
+    <attribute id="STCD1" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SIRET"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="STCD1"/>
+    </attribute>
+    <attribute id="STCD2" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SIREN"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="STCD2"/>
+    </attribute>
+    <attribute id="EKORG" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Purchasing Organisation"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="EKORG"/>
+    </attribute>
+    <attribute id="SOURCE" hidden="true" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SOURCE"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="SOURCE"/>
+    </attribute>
+    <attribute id="ERDAT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Create Date"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="ERDAT"/>
+    </attribute>
+    <attribute id="NAME1_VENDOR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Company Name"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="NAME1_VENDOR"/>
+    </attribute>
+    <attribute id="STRAS" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Street"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="STRAS"/>
+    </attribute>
+    <attribute id="PFACH" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor PO BOX"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="PFACH"/>
+    </attribute>
+    <attribute id="PSTLZ" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Postal Code"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="PSTLZ"/>
+    </attribute>
+    <attribute id="ORT01" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor City"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="ORT01"/>
+    </attribute>
+    <attribute id="REGIO" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Region"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="REGIO"/>
+    </attribute>
+    <attribute id="LAND1" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Country Code"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="LAND1"/>
+    </attribute>
+    <attribute id="ADRNR" hidden="true" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADRNR"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="ADRNR"/>
+    </attribute>
+    <attribute id="TELF1" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Telephone 1"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="TELF1"/>
+    </attribute>
+    <attribute id="SPERR" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Central posting block"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="SPERR"/>
+    </attribute>
+    <attribute id="SPERM_X" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Central purchasing block"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="SPERM_X"/>
+    </attribute>
+    <attribute id="KTOKK" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Account Type"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="KTOKK"/>
+    </attribute>
+    <attribute id="LOEVM_X" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Central deletion flag"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="LOEVM_X"/>
+    </attribute>
+    <attribute id="SPRAS" hidden="true" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPRAS"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="VBUND" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Trading Partner"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="VBUND"/>
+    </attribute>
+    <attribute id="INCO1" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Incoterms 1"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="INCO1"/>
+    </attribute>
+    <attribute id="INCO2" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Incoterms 2"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="INCO2"/>
+    </attribute>
+    <attribute id="LFABC" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ABC indicator"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="LFABC"/>
+    </attribute>
+    <attribute id="LOEVM_Y" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Delete flag for purchasing organization"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="LOEVM_Y"/>
+    </attribute>
+    <attribute id="SPERM_Y" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Purch. block for purchasing organization"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="SPERM_Y"/>
+    </attribute>
+    <attribute id="VENSL" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor service level"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="VENSL"/>
+    </attribute>
+    <attribute id="WAERS" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Order currency"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="WAERS"/>
+    </attribute>
+    <attribute id="ZTERM" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Terms of Payment"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="ZTERM"/>
+    </attribute>
+    <attribute id="ZFAEL" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Terms of Payment detail / fix day"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="ZFAEL"/>
+    </attribute>
+    <attribute id="ZMONA" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Terms of Payment term of payment detail / additionnal mounths"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="ZMONA"/>
+    </attribute>
+    <attribute id="ZTAG1" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Terms of Payment term of payment detail / additionnal days"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="ZTAG1"/>
+    </attribute>
+    <attribute id="ZPRZ1" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Cash Discount Percentage Rate"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="ZPRZ1"/>
+    </attribute>
+    <attribute id="TEXT1_FR" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Terms of Payment term of payment detail / FR description"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="TEXT1_FR"/>
+    </attribute>
+    <attribute id="TEXT1_EN" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Terms of Payment term of payment detail / EN description"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="TEXT1_EN"/>
+    </attribute>
+    <attribute id="KONZS" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Group key"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="KONZS"/>
+    </attribute>
+    <attribute id="BRSCH" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Supplier generic familly"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="BRSCH"/>
+    </attribute>
+    <attribute id="BRTXT_FR" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Supplier generic familly Descr FR"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="BRTXT_FR"/>
+    </attribute>
+    <attribute id="BRTXT_EN" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Supplier generic familly Descr EN"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="BRTXT_EN"/>
+    </attribute>
+    <attribute id="J_1KFTBUS" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAF code"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="J_1KFTBUS"/>
+    </attribute>
+    <attribute id="MCOD1" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="matchcode search"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="MCOD1"/>
+    </attribute>
+    <attribute id="WEBRE" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: GR-Based Invoice Vefification"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="WEBRE"/>
+    </attribute>
+    <attribute id="PRFRE" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Indicator: relev. to price determination"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="PRFRE"/>
+    </attribute>
+    <attribute id="SMTP_ADDR" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor General Mail"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="SMTP_ADDR"/>
+    </attribute>
+    <attribute id="VENDORUNIK" hidden="true" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VENDORUNIK"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="VENDORUNIK"/>
+    </attribute>
+    <attribute id="VENDOR_CONTACTNAME" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Contact Name"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="VENDOR_CONTACTNAME"/>
+    </attribute>
+    <attribute id="TITEL_AP" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Contact Titel"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="TITEL_AP"/>
+    </attribute>
+    <attribute id="TELF1_1" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Contact Telephone1"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="TELF1_1"/>
+    </attribute>
+    <attribute id="SMTP_ADDR_1" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Contact Email"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="SMTP_ADDR_1"/>
+    </attribute>
+    <attribute id="VTEXT_FR" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Contact department FR descr"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="VTEXT_FR"/>
+    </attribute>
+    <attribute id="VTEXT_EN" order="53" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Contact department EN descr"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="VTEXT_EN"/>
+    </attribute>
+    <attribute id="TEXT_FR" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Contact Function FR decr"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="TEXT_FR"/>
+    </attribute>
+    <attribute id="TEXT_EN" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Contact Function EN decr"/>
+      <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="TEXT_EN"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="VENDOR_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="15" y="501"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="VND_CONT" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="260" y="501"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VEND_VNDCT_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="142" y="349"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="VENDOR_P" modelObjectNameSpace="VEND_VNDCT_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="159"/>
+    </shape>
+    <shape modelObjectName="VND_CONT" modelObjectNameSpace="VEND_VNDCT_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="302" y="212"/>
+      <rectangleSize width="159"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="VEND_VNDCT_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="142" y="285"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
