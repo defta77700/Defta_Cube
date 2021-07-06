@@ -206,7 +206,6 @@
       <viewAttribute id="WGBEZ_L5"/>
       <viewAttribute id="MENGE_SIGN" aggregationType="sum"/>
       <viewAttribute id="WRBTR_SIGN" aggregationType="sum"/>
-    
       <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
     </viewAttributes>
     <calculatedViewAttributes/>
@@ -1993,9 +1992,9 @@
       <viewAttribute id="BUTXT"/>
       <viewAttribute id="LAND1"/>
       <viewAttribute id="BUKRS"/>
-      <viewAttribute id="STCEG"/>
       <viewAttribute id="SOURCE"/>
-    </viewAttributes>
+    
+      <viewAttribute id="STCEG"/></viewAttributes>
     <calculatedViewAttributes/>
     <input node="COMPANY"/>
   </calculationView>
@@ -2611,7 +2610,7 @@
     </shape>
     <shape modelObjectName="PLANT_P" modelObjectNameSpace="INV_MAT_COMP_DT_VEND_PLA_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="515" y="651"/>
-      <rectangleSize width="165.470703125"/>
+      <rectangleSize width="165"/>
     </shape>
   
     <shape expanded="true" modelObjectName="INV_MAT_COMP_DT_VEND_JP" modelObjectNameSpace="CalculationView">

@@ -3,15 +3,245 @@
 <descriptions defaultDescription="CubeRanking.hdbcalculationview"/>
 <localVariables/>
 <variableMappings/>
-<dataSources/>
+<dataSources>
+  <DataSource id="DimVendor">
+    <resourceUri>DimVendor</resourceUri>
+  </DataSource>
+  <DataSource id="VENDORSEVALUATION">
+    <resourceUri>VENDORSEVALUATION</resourceUri>
+  </DataSource>
+  <DataSource id="VENDORCLAIMS">
+    <resourceUri>VENDORCLAIMS</resourceUri>
+  </DataSource>
+  <DataSource id="VENDORTHRESHOLD">
+    <resourceUri>VENDORTHRESHOLD</resourceUri>
+  </DataSource>
+</dataSources>
 <calculationViews>
   <calculationView xsi:type="Calculation:ProjectionView" id="BEFORE_AGG_P">
     <viewAttributes/>
     <calculatedViewAttributes/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
-    <viewAttributes/>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VENDOR_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+    </viewAttributes>
     <calculatedViewAttributes/>
+    <input node="DimVendor"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VEND_EVAL_P">
+    <viewAttributes>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="DUNS"/>
+      <viewAttribute id="VATCODE"/>
+      <viewAttribute id="SIRET"/>
+      <viewAttribute id="YEAR"/>
+      <viewAttribute id="VENDOR_NAME"/>
+      <viewAttribute id="CAT_VENDOR"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="VENDOR_DEV"/>
+      <viewAttribute id="ISO9001"/>
+      <viewAttribute id="ISO9001_ST"/>
+      <viewAttribute id="ISO9001_DT"/>
+      <viewAttribute id="ISO9001_DOC"/>
+      <viewAttribute id="IATF16949"/>
+      <viewAttribute id="IATF16949_ST"/>
+      <viewAttribute id="IATF16949_DT"/>
+      <viewAttribute id="IATF16949_DOC"/>
+      <viewAttribute id="ISO14001"/>
+      <viewAttribute id="ISO14001_ST"/>
+      <viewAttribute id="ISO14001_DT"/>
+      <viewAttribute id="ISO14001_DOC"/>
+      <viewAttribute id="SAS18001"/>
+      <viewAttribute id="SAS18001_ST"/>
+      <viewAttribute id="SAS18001_DT"/>
+      <viewAttribute id="SAS18001_DOC"/>
+      <viewAttribute id="AQAP2110"/>
+      <viewAttribute id="AQAP2110_ST"/>
+      <viewAttribute id="AQAP2110_DT"/>
+      <viewAttribute id="AQAP2110_DOC"/>
+      <viewAttribute id="EN9100"/>
+      <viewAttribute id="EN9100_ST"/>
+      <viewAttribute id="EN9100_DT"/>
+      <viewAttribute id="EN9100_DOC"/>
+      <viewAttribute id="ISO45001"/>
+      <viewAttribute id="ISO45001_ST"/>
+      <viewAttribute id="ISO45001_DT"/>
+      <viewAttribute id="ISO45001_DOC"/>
+      <viewAttribute id="ISO50001"/>
+      <viewAttribute id="ISO50001_ST"/>
+      <viewAttribute id="ISO50001_DT"/>
+      <viewAttribute id="ISO50001_DOC"/>
+      <viewAttribute id="AUDITIER"/>
+      <viewAttribute id="AUDITIER_ST"/>
+      <viewAttribute id="AUDITIER_DT"/>
+      <viewAttribute id="AUDITIER_DOC"/>
+      <viewAttribute id="DEFTAUDIT"/>
+      <viewAttribute id="DEFTAUDIT_ST"/>
+      <viewAttribute id="DEFTAUDIT_DT"/>
+      <viewAttribute id="DEFTAUDIT_DOC"/>
+      <viewAttribute id="QUALCERTGLOBCOMMENT"/>
+      <viewAttribute id="CONTCTINSCIV"/>
+      <viewAttribute id="CONTCTINSCIV_DT"/>
+      <viewAttribute id="CONTCTINSCIV_DOC"/>
+      <viewAttribute id="POGENCONDSIGN"/>
+      <viewAttribute id="CONFCONTRCTSIG"/>
+      <viewAttribute id="RSEADHESION"/>
+      <viewAttribute id="RSESUPP"/>
+      <viewAttribute id="FINEVOL"/>
+      <viewAttribute id="FINGLOBCOMMENT"/>
+      <viewAttribute id="EVAL_TURNOVER"/>
+      <viewAttribute id="USERATESUPP"/>
+      <viewAttribute id="MKTSUPPEVAL"/>
+      <viewAttribute id="GEOEVAL"/>
+      <viewAttribute id="CDCCONF"/>
+      <viewAttribute id="CDCCONFNOTE"/>
+      <viewAttribute id="PLANRESPCT"/>
+      <viewAttribute id="PLANRESPCTNOTE"/>
+      <viewAttribute id="RFQPRICE"/>
+      <viewAttribute id="RFQPRICENOTE"/>
+      <viewAttribute id="SUPPSTATUSUAP"/>
+      <viewAttribute id="STATUSCOMMENT"/>
+      <viewAttribute id="QUALSYSTNOTE"/>
+      <viewAttribute id="FINRISKNOTE"/>
+      <viewAttribute id="FINNIVNOTE"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="VENDORUNIK" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
+        <formula>CONCAT(CONCAT(&quot;DUNS&quot;,&quot;VATCODE&quot;),&quot;SIRET&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="VENDORSEVALUATION"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VEND_CLAIM_P">
+    <viewAttributes>
+      <viewAttribute id="CLAIM_NBR"/>
+      <viewAttribute id="CLAIM_DT"/>
+      <viewAttribute id="CLAIM_CREATE"/>
+      <viewAttribute id="CLAIM_TYPE"/>
+      <viewAttribute id="CLAIM_LVL"/>
+      <viewAttribute id="CLAIM_ST"/>
+      <viewAttribute id="CLAIM_RCPT"/>
+      <viewAttribute id="CLAIM_LIFNR"/>
+      <viewAttribute id="CLAIM_COUNTRY"/>
+      <viewAttribute id="CLAIM_DUNS"/>
+      <viewAttribute id="CLAIM_SIRET"/>
+      <viewAttribute id="CLAIM_VATCODE"/>
+      <viewAttribute id="CLAIM_NAME1"/>
+      <viewAttribute id="CLAIM_FMLY"/>
+      <viewAttribute id="PART_NBR"/>
+      <viewAttribute id="PART_NAME"/>
+      <viewAttribute id="CLAIM_SPART"/>
+      <viewAttribute id="CLAIM_RPART"/>
+      <viewAttribute id="DEFECT_TXT"/>
+      <viewAttribute id="DEFECT_CODE"/>
+      <viewAttribute id="DOUBT_QTY"/>
+      <viewAttribute id="NC_QTY"/>
+      <viewAttribute id="CLAIM_UNIT"/>
+      <viewAttribute id="CLAIM_RECIDIV"/>
+      <viewAttribute id="CLAIM_SEVERITY"/>
+      <viewAttribute id="RANKING_POINT"/>
+      <viewAttribute id="CLAIM_CANCEL_DT"/>
+      <viewAttribute id="CLAIM_CANCEL_REAS"/>
+      <viewAttribute id="CLAIM_TIMEFRAME"/>
+      <viewAttribute id="CLAIM14_ST"/>
+      <viewAttribute id="CLAIM14_DELIV"/>
+      <viewAttribute id="CLAIM14_PLAN_DT"/>
+      <viewAttribute id="CLAIM14_SEND_DT"/>
+      <viewAttribute id="CLAIM14_DONE_DT"/>
+      <viewAttribute id="CLAIM56_ST"/>
+      <viewAttribute id="CLAIM56_DELIV"/>
+      <viewAttribute id="CLAIM56_PLAN_DT"/>
+      <viewAttribute id="CLAIM56_SEND_DT"/>
+      <viewAttribute id="CLAIM56_DONE_DT"/>
+      <viewAttribute id="CLAIM78_ST"/>
+      <viewAttribute id="CLAIM78_DELIV"/>
+      <viewAttribute id="CLAIM78_PLAN_DT"/>
+      <viewAttribute id="CLAIM78_SEND_DT"/>
+      <viewAttribute id="CLAIM78_DONE_DT"/>
+      <viewAttribute id="CLAIM_WERKS"/>
+      <viewAttribute id="CLAIM_WERKS_NAME"/>
+      <viewAttribute id="CROSS_INCIDENT"/>
+      <viewAttribute id="CLAIM_8DSTATUS"/>
+      <viewAttribute id="INVOICE_ST"/>
+      <viewAttribute id="ORDER_NBR"/>
+      <viewAttribute id="COST_REINVOICE_CLT"/>
+      <viewAttribute id="ESTIM_COST_CLAIM"/>
+      <viewAttribute id="CLAIM_MNGMT_VAL_DT"/>
+      <viewAttribute id="CLAIM_INIT_AMOUNT"/>
+      <viewAttribute id="DEB_ADV_SEND_DT"/>
+      <viewAttribute id="CLAIM_VALID_AMOUNT"/>
+      <viewAttribute id="CLAIM_VALID_VAT"/>
+      <viewAttribute id="CLAIM_TX_INCL_DT"/>
+      <viewAttribute id="CLAIM_CANCEL_AMOUNT"/>
+      <viewAttribute id="CLAIM_ACCOUNT_TRF_DT"/>
+      <viewAttribute id="CLAIM_ACCOUNT_RECORD"/>
+      <viewAttribute id="CLAIM_PYMNT_DT"/>
+      <viewAttribute id="CLAIM_ADV_CANCEL_DT"/>
+      <viewAttribute id="CLAIM_COMMENTS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="VENDORUNIK" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
+        <formula>CONCAT(CONCAT(&quot;CLAIM_DUNS&quot;,&quot;CLAIM_VATCODE&quot;),&quot;CLAIM_SIRET&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="VENDORCLAIMS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VEND_THRES_P">
+    <viewAttributes>
+      <viewAttribute id="YEAR"/>
+      <viewAttribute id="SITECODE"/>
+      <viewAttribute id="THRESHOLD_FMLY"/>
+      <viewAttribute id="THRESHOLD_POINT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VENDORTHRESHOLD"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
@@ -32,8 +262,21 @@
       <upperLeftCorner x="100" y="184"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="100" y="261"/>
+    <shape expanded="true" modelObjectName="VENDOR_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-50" y="381"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="VEND_EVAL_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="115" y="469"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VEND_CLAIM_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="265" y="560"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VEND_THRES_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="451" y="644"/>
       <rectangleSize height="30" width="160"/>
     </shape>
   </shapes>

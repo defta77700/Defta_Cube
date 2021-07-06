@@ -28,5 +28,11 @@
       "object": "VENDORSEVALUATION",
       "schema": "SUPLPANEL"
     }
+  },
+  "VENDORTHRESHOLD": {
+    "target": {
+      "object": "VENDORTHRESHOLD",
+      "schema": "SUPLPANEL"
+    }
   }
 }
