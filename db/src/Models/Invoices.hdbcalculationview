@@ -2073,445 +2073,445 @@
       <descriptions defaultDescription="invoice doc status"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="RBSTAT"/>
     </attribute>
-    <attribute id="ZTERM" order="19" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ZTERM" order="19" displayAttribute="false" attributeHierarchyActive="false" descriptionColumnName="TEXT1_FR">
       <descriptions defaultDescription="Term of payment"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="ZTERM"/>
     </attribute>
-    <attribute id="ZFBDT" order="20" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="TEXT1_FR" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Terms Payment Descr FR"/>
+      <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="TEXT1_FR"/>
+    </attribute>
+    <attribute id="TEXT1_EN" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Terms Payment Descr EN"/>
+      <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="TEXT1_EN"/>
+    </attribute>
+    <attribute id="ZFBDT" order="22" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="baseline payment date"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="ZFBDT"/>
     </attribute>
-    <attribute id="NETDT" order="21" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="NETDT" order="23" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Net due date"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="NETDT"/>
     </attribute>
-    <attribute id="LIFNR" order="22" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LIFNR" order="24" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Supplier"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="LIFNR"/>
     </attribute>
-    <attribute id="VENDORUNIKCODE" order="23" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VENDORUNIKCODE" order="25" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="VENDORUNIKCODE"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="VENDORUNIK"/>
     </attribute>
-    <attribute id="KRAUS" order="24" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="KRAUS" order="26" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="DUNS"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="KRAUS"/>
     </attribute>
-    <attribute id="STCEG" order="25" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="STCEG" order="27" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="VAT EU"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="STCEG"/>
     </attribute>
-    <attribute id="STCD1" order="26" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="STCD1" order="28" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="SIRET"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="STCD1"/>
     </attribute>
-    <attribute id="NAME1" order="27" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="NAME1" order="29" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Supplier name"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="NAME1"/>
     </attribute>
-    <attribute id="WAERS" order="28" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WAERS" order="30" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Curency"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="WAERS"/>
     </attribute>
-    <attribute id="EBELN" order="29" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="EBELN" order="31" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Purchasing document"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="EBELN"/>
     </attribute>
-    <attribute id="EBELP" order="30" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="EBELP" order="32" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Purchasing document item"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="EBELP"/>
     </attribute>
-    <attribute id="MATNR" order="31" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MATNR" order="33" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material number"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MATNR"/>
     </attribute>
-    <attribute id="TXZ01" order="32" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="TXZ01" order="34" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material description"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="TXZ01"/>
     </attribute>
-    <attribute id="BSTME" order="35" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="BSTME" order="37" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Order unit"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="BSTME"/>
     </attribute>
-    <attribute id="SHKZG" order="38" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SHKZG" order="40" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Debit/credit indicator"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="SHKZG"/>
     </attribute>
-    <attribute id="LGORT" order="41" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LGORT" order="43" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Warehouse"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="LGORT"/>
     </attribute>
-    <attribute id="WERKS" order="42" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WERKS" order="44" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Plant"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="WERKS"/>
     </attribute>
-    <attribute id="STLKZ" order="43" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="STLKZ" order="45" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Assembly"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="STLKZ"/>
     </attribute>
-    <attribute id="ZNOME" order="44" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ZNOME" order="46" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="BOM component"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="ZNOME"/>
     </attribute>
-    <attribute id="MTART" order="45" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MTART" order="47" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material type"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MTART"/>
     </attribute>
-    <attribute id="MTBEZ" order="46" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MTBEZ" order="48" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material type description"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MTBEZ"/>
     </attribute>
-    <attribute id="SAKNR" order="47" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SAKNR" order="49" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="G/L account"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="SAKNR"/>
     </attribute>
-    <attribute id="TXT20" order="48" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="TXT20" order="50" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="G/L account Desc"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="TXT20"/>
     </attribute>
-    <attribute id="SOURCE" order="49" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SOURCE" order="51" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="SOURCE"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="SOURCE"/>
     </attribute>
-    <attribute id="MATNR_1" order="50" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MATNR_1" order="52" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MATNR_1"/>
     </attribute>
-    <attribute id="SOURCE_1" order="51" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SOURCE_1" order="53" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="SOURCE"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="SOURCE_1"/>
     </attribute>
-    <attribute id="MATKL" order="52" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MATKL" order="54" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Groupe Code"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MATKL"/>
     </attribute>
-    <attribute id="BRGEW" order="53" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="BRGEW" order="55" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Gross Weight"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="BRGEW"/>
     </attribute>
-    <attribute id="GEWEI" order="54" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="GEWEI" order="56" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Weight unit"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="GEWEI"/>
     </attribute>
-    <attribute id="MTART_1" order="55" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MTART_1" order="57" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Type"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MTART_1"/>
     </attribute>
-    <attribute id="MTBEZ_FR" order="56" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MTBEZ_FR" order="58" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Type Description FR"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MTBEZ_FR"/>
     </attribute>
-    <attribute id="MTBEZ_EN" order="57" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MTBEZ_EN" order="59" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Type Description EN"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MTBEZ_EN"/>
     </attribute>
-    <attribute id="NTGEW" order="58" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="NTGEW" order="60" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Net Weight"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="NTGEW"/>
     </attribute>
-    <attribute id="ERSDA" order="59" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ERSDA" order="61" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Created Date"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="ERSDA"/>
     </attribute>
-    <attribute id="LAEDA" order="60" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LAEDA" order="62" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Changed Date"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="LAEDA"/>
     </attribute>
-    <attribute id="MAKTX_F" order="61" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MAKTX_F" order="63" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material description FR"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MAKTX_F"/>
     </attribute>
-    <attribute id="MAKTX_E" order="62" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MAKTX_E" order="64" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material description EN"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MAKTX_E"/>
     </attribute>
-    <attribute id="WERKS_1" order="63" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WERKS_1" order="65" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Plant"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="WERKS_1"/>
     </attribute>
-    <attribute id="EKGRP" order="64" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="EKGRP" order="66" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Purchasing Group"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="EKGRP"/>
     </attribute>
-    <attribute id="STAWN" order="65" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="STAWN" order="67" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Commodity Code"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="STAWN"/>
     </attribute>
-    <attribute id="PRCTR" order="66" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PRCTR" order="68" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Profit Center"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="PRCTR"/>
     </attribute>
-    <attribute id="MEINS" order="67" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MEINS" order="69" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Base Unit"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MEINS"/>
     </attribute>
-    <attribute id="DISPO" order="68" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="DISPO" order="70" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="MRP controller"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="DISPO"/>
     </attribute>
-    <attribute id="PROFL" order="69" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PROFL" order="71" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="S/R code characteristic"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="PROFL"/>
     </attribute>
-    <attribute id="NAME1_1" order="70" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="NAME1_1" order="72" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Plant Name"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="NAME1_1"/>
     </attribute>
-    <attribute id="EKORG_1" order="71" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="EKORG_1" order="73" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Purchase Organization"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="EKORG_1"/>
     </attribute>
-    <attribute id="LAND1" order="72" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LAND1" order="74" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Plant Country Code"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="LAND1"/>
     </attribute>
-    <attribute id="MATKL_L1" order="73" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MATKL_L1" order="75" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Familly Level 1 Code"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MATKL_L1"/>
     </attribute>
-    <attribute id="WGBEZ_L1" order="74" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WGBEZ_L1" order="76" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Familly Level 1 Desc"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="WGBEZ_L1"/>
     </attribute>
-    <attribute id="MATKL_L2" order="75" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MATKL_L2" order="77" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Familly Level 2 Code"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MATKL_L2"/>
     </attribute>
-    <attribute id="WGBEZ_L2" order="76" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WGBEZ_L2" order="78" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Familly Level 2 Desc"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="WGBEZ_L2"/>
     </attribute>
-    <attribute id="MATKL_L3" order="77" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MATKL_L3" order="79" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Familly Level 3 Code"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MATKL_L3"/>
     </attribute>
-    <attribute id="WGBEZ_L3" order="78" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WGBEZ_L3" order="80" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Familly Level 3 Desc"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="WGBEZ_L3"/>
     </attribute>
-    <attribute id="MATKL_L4" order="79" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MATKL_L4" order="81" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Familly Level 4 Code"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MATKL_L4"/>
     </attribute>
-    <attribute id="WGBEZ_L4" order="80" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WGBEZ_L4" order="82" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Familly Level 4 Desc"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="WGBEZ_L4"/>
     </attribute>
-    <attribute id="MATKL_L5" order="81" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MATKL_L5" order="83" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Familly Level 5 Code"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MATKL_L5"/>
     </attribute>
-    <attribute id="WGBEZ_L5" order="82" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WGBEZ_L5" order="84" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Familly Level 5 Desc"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="WGBEZ_L5"/>
     </attribute>
   
-    <attribute id="CALQUARTER" order="83" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CALQUARTER" order="85" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CALQUARTER"/>
   
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="CALQUARTER"/>
   
     </attribute>
-    <attribute id="CALMONTH" order="84" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CALMONTH" order="86" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CALMONTH"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="CALMONTH"/>
     </attribute>
-    <attribute id="CALWEEK" order="85" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CALWEEK" order="87" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CALWEEK"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="CALWEEK"/>
     </attribute>
-    <attribute id="DAY_INT" order="86" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="DAY_INT" order="88" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="DAY_INT"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="DAY_INT"/>
     </attribute>
-    <attribute id="YEAR" order="87" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="YEAR" order="89" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="YEAR"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="YEAR"/>
     </attribute>
-    <attribute id="NAME1_VENDOR" order="88" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="NAME1_2"/>
+    <attribute id="NAME1_VENDOR" order="90" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Name"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="NAME1_VENDOR"/>
     </attribute>
-    <attribute id="ERDAT" order="89" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ERDAT" order="91" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="ERDAT"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="ERDAT"/>
     </attribute>
-    <attribute id="EKORG_2" order="90" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="EKORG_2"/>
+    <attribute id="EKORG_2" order="92" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Purchase Organization"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="EKORG_2"/>
-    </attribute>
-    <attribute id="ORT01" order="91" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ORT01"/>
-      <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="ORT01"/>
-    </attribute>
-    <attribute id="PFACH" order="92" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PFACH"/>
-      <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="PFACH"/>
     </attribute>
   
     <attribute id="STRAS" order="93" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="STRAS"/>
+      <descriptions defaultDescription="Vendor Address"/>
   
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="STRAS"/>
   
     </attribute>
-    <attribute id="PSTLZ" order="94" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PSTLZ_1"/>
+    <attribute id="PFACH" order="94" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor PO Box"/>
+      <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="PFACH"/>
+    </attribute>
+    <attribute id="PSTLZ" order="95" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Postal Code"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="PSTLZ"/>
     </attribute>
-    <attribute id="REGIO" order="95" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="REGIO"/>
+    <attribute id="ORT01" order="96" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor City"/>
+      <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="ORT01"/>
+    </attribute>
+    <attribute id="REGIO" order="97" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Region"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="REGIO"/>
     </attribute>
-    <attribute id="ADRNR" order="96" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LAND1_2" order="98" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Country"/>
+      <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="LAND1_2"/>
+    </attribute>
+    <attribute id="ADRNR" order="99" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="ADRNR"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="ADRNR"/>
     </attribute>
-    <attribute id="TELF1" order="97" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="TELF1"/>
+    <attribute id="TELF1" order="100" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Telephone"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="TELF1"/>
     </attribute>
-    <attribute id="SPERR" order="98" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="STCD2" order="101" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SIREN"/>
+      <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="STCD2"/>
+    </attribute>
+    <attribute id="SPERR" order="102" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="SPERR"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="SPERR"/>
     </attribute>
-    <attribute id="SPERM_X" order="99" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SPERM_X" order="103" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="SPERM_X"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="SPERM_X"/>
     </attribute>
-    <attribute id="LAND1_2" order="100" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="LAND1_2"/>
-      <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="LAND1_2"/>
-    </attribute>
-    <attribute id="KTOKK" order="101" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="KTOKK"/>
+    <attribute id="KTOKK" order="104" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Account Type"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="KTOKK"/>
     </attribute>
-    <attribute id="LOEVM_X" order="102" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LOEVM_X" order="105" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="LOEVM_X"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="LOEVM_X"/>
     </attribute>
-    <attribute id="STCD2" order="103" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="STCD2"/>
-      <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="STCD2"/>
-    </attribute>
-    <attribute id="VBUND" order="104" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="VBUND"/>
+    <attribute id="VBUND" order="106" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Trading Partner"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="VBUND"/>
     </attribute>
-    <attribute id="INCO1" order="105" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="INCO1"/>
+    <attribute id="INCO1" order="107" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Incoterms 1"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="INCO1"/>
     </attribute>
-    <attribute id="INCO2" order="106" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="INCO2"/>
+    <attribute id="INCO2" order="108" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Incoterms 2"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="INCO2"/>
     </attribute>
-    <attribute id="LFABC" order="107" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="LFABC"/>
+    <attribute id="LFABC" order="109" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Category"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="LFABC"/>
     </attribute>
-    <attribute id="VENSL" order="108" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="VENSL"/>
+    <attribute id="VENSL" order="110" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Service Level"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="VENSL"/>
     </attribute>
-    <attribute id="WAERS_1" order="109" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WAERS_1" order="111" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="WAERS_1"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="WAERS_1"/>
     </attribute>
   
-    <attribute id="ZFAEL" order="110" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ZFAEL"/>
+    <attribute id="ZFAEL" order="112" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Fixed Day"/>
   
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="ZFAEL"/>
   
     </attribute>
-    <attribute id="ZMONA" order="111" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ZMONA"/>
+    <attribute id="ZMONA" order="113" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Additional Month"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="ZMONA"/>
     </attribute>
-    <attribute id="ZTAG1" order="112" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ZTAG1"/>
+    <attribute id="ZTAG1" order="114" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Days From Baseline"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="ZTAG1"/>
     </attribute>
-    <attribute id="ZPRZ1" order="113" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ZPRZ1"/>
+    <attribute id="ZPRZ1" order="115" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Cash rate discount"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="ZPRZ1"/>
     </attribute>
-    <attribute id="TEXT1_FR" order="114" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="TEXT1_FR"/>
-      <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="TEXT1_FR"/>
-    </attribute>
-    <attribute id="TEXT1_EN" order="115" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="TEXT1_EN"/>
-      <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="TEXT1_EN"/>
-    </attribute>
     <attribute id="KONZS" order="116" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="KONZS"/>
+      <descriptions defaultDescription="Group Key"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="KONZS"/>
     </attribute>
-    <attribute id="BRSCH" order="117" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="BRSCH"/>
+    <attribute id="BRSCH" order="117" displayAttribute="false" attributeHierarchyActive="false" descriptionColumnName="BRTXT_FR">
+      <descriptions defaultDescription="Vendor Generic Familly"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="BRSCH"/>
     </attribute>
     <attribute id="BRTXT_FR" order="118" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="BRTXT_FR"/>
+      <descriptions defaultDescription="Vendor Generic Familly descr FR"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="BRTXT_FR"/>
     </attribute>
     <attribute id="BRTXT_EN" order="119" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="BRTXT_EN"/>
+      <descriptions defaultDescription="Vendor Generic Famillydescr EN"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="BRTXT_EN"/>
     </attribute>
     <attribute id="J_1KFTBUS" order="120" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="J_1KFTBUS"/>
+      <descriptions defaultDescription="Vendor Type of Business"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="J_1KFTBUS"/>
     </attribute>
     <attribute id="MCOD1" order="121" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MCOD1"/>
+      <descriptions defaultDescription="Vendor Matchcode"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MCOD1"/>
     </attribute>
     <attribute id="WEBRE" order="122" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="WEBRE"/>
+      <descriptions defaultDescription="Vendor GR-Based Invoice "/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="WEBRE"/>
     </attribute>
     <attribute id="PRFRE" order="123" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PRFRE"/>
+      <descriptions defaultDescription="Vendor relev. to price determination"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="PRFRE"/>
     </attribute>
-    <attribute id="SMTP_ADDR" order="124" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SMTP_ADDR" order="124" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="SMTP_ADDR"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="SMTP_ADDR"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
-    <measure id="MENGE" order="33" aggregationType="sum" measureType="quantity" semanticType="quantity">
+    <measure id="MENGE" order="35" aggregationType="sum" measureType="quantity" semanticType="quantity">
       <descriptions defaultDescription="Order Quantity Wo Sign"/>
       <unitCurrencyAttribute attributeName="BSTME"/>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="MENGE"/>
     </measure>
-    <measure id="MENGE_SIGN" order="34" semanticType="quantity" aggregationType="sum" measureType="quantity">
+    <measure id="MENGE_SIGN" order="36" semanticType="quantity" aggregationType="sum" measureType="quantity">
       <descriptions defaultDescription="Order Quantity"/>
       <unitCurrencyAttribute attributeName="BSTME"/>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="MENGE_SIGN"/>
     </measure>
-    <measure id="PEINH" order="36" aggregationType="sum" measureType="amount" semanticType="amount">
+    <measure id="PEINH" order="38" aggregationType="sum" measureType="amount" semanticType="amount">
       <descriptions defaultDescription="Price unit"/>
       <unitCurrencyAttribute attributeName="WAERS"/>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="PEINH"/>
     </measure>
-    <measure id="NETPR" order="37" aggregationType="sum" measureType="amount" semanticType="amount">
+    <measure id="NETPR" order="39" aggregationType="sum" measureType="amount" semanticType="amount">
       <descriptions defaultDescription="Net order price"/>
       <unitCurrencyAttribute attributeName="WAERS"/>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="NETPR"/>
     </measure>
-    <measure id="WRBTR" order="39" aggregationType="sum" measureType="amount" semanticType="amount">
+    <measure id="WRBTR" order="41" aggregationType="sum" measureType="amount" semanticType="amount">
       <descriptions defaultDescription="Amount Wo Sign"/>
       <unitCurrencyAttribute attributeName="WAERS"/>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="WRBTR"/>
     </measure>
   
-    <measure id="WRBTR_SIGN" order="40" semanticType="amount" aggregationType="sum" measureType="amount">
+    <measure id="WRBTR_SIGN" order="42" semanticType="amount" aggregationType="sum" measureType="amount">
       <descriptions defaultDescription="Amount"/>
       <unitCurrencyAttribute attributeName="WAERS"/>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="WRBTR_SIGN"/>
