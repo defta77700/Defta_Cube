@@ -2485,7 +2485,7 @@
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
-    <measure id="MENGE" order="35" aggregationType="sum" measureType="quantity" semanticType="quantity">
+    <measure id="MENGE" order="35" aggregationType="sum" measureType="quantity" semanticType="quantity" hidden="true">
       <descriptions defaultDescription="Order Quantity Wo Sign"/>
       <unitCurrencyAttribute attributeName="BSTME"/>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="MENGE"/>
@@ -2505,7 +2505,7 @@
       <unitCurrencyAttribute attributeName="WAERS"/>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="NETPR"/>
     </measure>
-    <measure id="WRBTR" order="41" aggregationType="sum" measureType="amount" semanticType="amount">
+    <measure id="WRBTR" order="41" aggregationType="sum" measureType="amount" semanticType="amount" hidden="true">
       <descriptions defaultDescription="Amount Wo Sign"/>
       <unitCurrencyAttribute attributeName="WAERS"/>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="WRBTR"/>
@@ -2554,6 +2554,22 @@
             <level levelAttribute="CALQUARTER" levelType="MDLEVEL_TYPE_TIME_QUARTERS" order="2" orderAttribute="CALQUARTER" sortDirection="ASC"/>
             <level levelAttribute="CALMONTH" levelType="MDLEVEL_TYPE_TIME_MONTHS" order="3" orderAttribute="CALMONTH" sortDirection="ASC"/>
             <level levelAttribute="CALWEEK" levelType="MDLEVEL_TYPE_TIME_WEEKS" order="4" orderAttribute="CALWEEK" sortDirection="ASC"/>
+          </levels>
+        </hierarchy>
+      </hierarchies>
+    </localDimension>
+    <localDimension id="VENDOR_ADR">
+      <attributeRef xsi:type="DataFoundation:Attribute">LAND1_2</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">REGIO</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">ORT01</attributeRef>
+      <hierarchies>
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="VENDOR_ADR" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+          <descriptions defaultDescription="Vendor Address"/>
+          <unassignedMemberProperties mode="FALSE"/>
+          <levels>
+            <level levelAttribute="LAND1_2" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="LAND1_2" sortDirection="ASC"/>
+            <level levelAttribute="REGIO" levelType="MDLEVEL_TYPE_REGULAR" order="2" orderAttribute="REGIO" sortDirection="ASC"/>
+            <level levelAttribute="ORT01" levelType="MDLEVEL_TYPE_REGULAR" order="3" orderAttribute="ORT01" sortDirection="ASC"/>
           </levels>
         </hierarchy>
       </hierarchies>
