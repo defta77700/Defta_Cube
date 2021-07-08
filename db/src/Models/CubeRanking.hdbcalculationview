@@ -7,20 +7,44 @@
   <DataSource id="DimVendor">
     <resourceUri>DimVendor</resourceUri>
   </DataSource>
-  <DataSource id="VENDORSEVALUATION">
-    <resourceUri>VENDORSEVALUATION</resourceUri>
+  <DataSource id="V_VENDOR_IDNC">
+    <resourceUri>V_VENDOR_IDNC</resourceUri>
   </DataSource>
-  <DataSource id="VENDORCLAIMS">
-    <resourceUri>VENDORCLAIMS</resourceUri>
+  <DataSource id="V_VENDOR_PRTDS">
+    <resourceUri>V_VENDOR_PRTDS</resourceUri>
   </DataSource>
   <DataSource id="VENDORTHRESHOLD">
     <resourceUri>VENDORTHRESHOLD</resourceUri>
   </DataSource>
+  <DataSource id="V_VENDOR_FIXERANKBASE">
+    <resourceUri>V_VENDOR_FIXERANKBASE</resourceUri>
+  </DataSource>
 </dataSources>
 <calculationViews>
   <calculationView xsi:type="Calculation:ProjectionView" id="BEFORE_AGG_P">
-    <viewAttributes/>
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="VENDORUNIK_INDC"/>
+      <viewAttribute id="CLAIM_LIFNR"/>
+      <viewAttribute id="IDNC_YEAR"/>
+      <viewAttribute id="YEARMONTH_CLAIM"/>
+      <viewAttribute id="CLAIM_FMLY"/>
+      <viewAttribute id="CLAIM_WERKS"/>
+      <viewAttribute id="RANKING_POINT"/>
+      <viewAttribute id="YEAR_THRES"/>
+      <viewAttribute id="THRESHOLD_POINT"/>
+      <viewAttribute id="PR_TDS"/>
+      <viewAttribute id="CCDC"/>
+      <viewAttribute id="RP"/>
+      <viewAttribute id="SQ"/>
+      <viewAttribute id="PDC"/>
+      <viewAttribute id="RF"/>
+      <viewAttribute id="IDNC"/>
+    </viewAttributes>
     <calculatedViewAttributes/>
+    <input node="VEND_ALL_JP"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VENDOR_P">
     <viewAttributes>
@@ -75,179 +99,387 @@
     <calculatedViewAttributes/>
     <input node="DimVendor"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VEND_EVAL_P">
+  <calculationView xsi:type="Calculation:ProjectionView" id="V_VENDOR_IDNC_P">
     <viewAttributes>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="DUNS"/>
-      <viewAttribute id="VATCODE"/>
-      <viewAttribute id="SIRET"/>
-      <viewAttribute id="YEAR"/>
-      <viewAttribute id="VENDOR_NAME"/>
-      <viewAttribute id="CAT_VENDOR"/>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="VENDOR_DEV"/>
-      <viewAttribute id="ISO9001"/>
-      <viewAttribute id="ISO9001_ST"/>
-      <viewAttribute id="ISO9001_DT"/>
-      <viewAttribute id="ISO9001_DOC"/>
-      <viewAttribute id="IATF16949"/>
-      <viewAttribute id="IATF16949_ST"/>
-      <viewAttribute id="IATF16949_DT"/>
-      <viewAttribute id="IATF16949_DOC"/>
-      <viewAttribute id="ISO14001"/>
-      <viewAttribute id="ISO14001_ST"/>
-      <viewAttribute id="ISO14001_DT"/>
-      <viewAttribute id="ISO14001_DOC"/>
-      <viewAttribute id="SAS18001"/>
-      <viewAttribute id="SAS18001_ST"/>
-      <viewAttribute id="SAS18001_DT"/>
-      <viewAttribute id="SAS18001_DOC"/>
-      <viewAttribute id="AQAP2110"/>
-      <viewAttribute id="AQAP2110_ST"/>
-      <viewAttribute id="AQAP2110_DT"/>
-      <viewAttribute id="AQAP2110_DOC"/>
-      <viewAttribute id="EN9100"/>
-      <viewAttribute id="EN9100_ST"/>
-      <viewAttribute id="EN9100_DT"/>
-      <viewAttribute id="EN9100_DOC"/>
-      <viewAttribute id="ISO45001"/>
-      <viewAttribute id="ISO45001_ST"/>
-      <viewAttribute id="ISO45001_DT"/>
-      <viewAttribute id="ISO45001_DOC"/>
-      <viewAttribute id="ISO50001"/>
-      <viewAttribute id="ISO50001_ST"/>
-      <viewAttribute id="ISO50001_DT"/>
-      <viewAttribute id="ISO50001_DOC"/>
-      <viewAttribute id="AUDITIER"/>
-      <viewAttribute id="AUDITIER_ST"/>
-      <viewAttribute id="AUDITIER_DT"/>
-      <viewAttribute id="AUDITIER_DOC"/>
-      <viewAttribute id="DEFTAUDIT"/>
-      <viewAttribute id="DEFTAUDIT_ST"/>
-      <viewAttribute id="DEFTAUDIT_DT"/>
-      <viewAttribute id="DEFTAUDIT_DOC"/>
-      <viewAttribute id="QUALCERTGLOBCOMMENT"/>
-      <viewAttribute id="CONTCTINSCIV"/>
-      <viewAttribute id="CONTCTINSCIV_DT"/>
-      <viewAttribute id="CONTCTINSCIV_DOC"/>
-      <viewAttribute id="POGENCONDSIGN"/>
-      <viewAttribute id="CONFCONTRCTSIG"/>
-      <viewAttribute id="RSEADHESION"/>
-      <viewAttribute id="RSESUPP"/>
-      <viewAttribute id="FINEVOL"/>
-      <viewAttribute id="FINGLOBCOMMENT"/>
-      <viewAttribute id="EVAL_TURNOVER"/>
-      <viewAttribute id="USERATESUPP"/>
-      <viewAttribute id="MKTSUPPEVAL"/>
-      <viewAttribute id="GEOEVAL"/>
-      <viewAttribute id="CDCCONF"/>
-      <viewAttribute id="CDCCONFNOTE"/>
-      <viewAttribute id="PLANRESPCT"/>
-      <viewAttribute id="PLANRESPCTNOTE"/>
-      <viewAttribute id="RFQPRICE"/>
-      <viewAttribute id="RFQPRICENOTE"/>
-      <viewAttribute id="SUPPSTATUSUAP"/>
-      <viewAttribute id="STATUSCOMMENT"/>
-      <viewAttribute id="QUALSYSTNOTE"/>
-      <viewAttribute id="FINRISKNOTE"/>
-      <viewAttribute id="FINNIVNOTE"/>
-    </viewAttributes>
-    <calculatedViewAttributes>
-      <calculatedViewAttribute id="VENDORUNIK" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
-        <formula>CONCAT(CONCAT(&quot;DUNS&quot;,&quot;VATCODE&quot;),&quot;SIRET&quot;)</formula>
-      </calculatedViewAttribute>
-    </calculatedViewAttributes>
-    <input node="VENDORSEVALUATION"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VEND_CLAIM_P">
-    <viewAttributes>
-      <viewAttribute id="CLAIM_NBR"/>
-      <viewAttribute id="CLAIM_DT"/>
-      <viewAttribute id="CLAIM_CREATE"/>
-      <viewAttribute id="CLAIM_TYPE"/>
-      <viewAttribute id="CLAIM_LVL"/>
-      <viewAttribute id="CLAIM_ST"/>
-      <viewAttribute id="CLAIM_RCPT"/>
+      <viewAttribute id="VENDORUNIK_INDC"/>
       <viewAttribute id="CLAIM_LIFNR"/>
-      <viewAttribute id="CLAIM_COUNTRY"/>
-      <viewAttribute id="CLAIM_DUNS"/>
-      <viewAttribute id="CLAIM_SIRET"/>
-      <viewAttribute id="CLAIM_VATCODE"/>
-      <viewAttribute id="CLAIM_NAME1"/>
+      <viewAttribute id="IDNC_YEAR"/>
+      <viewAttribute id="YEARMONTH_CLAIM"/>
       <viewAttribute id="CLAIM_FMLY"/>
-      <viewAttribute id="PART_NBR"/>
-      <viewAttribute id="PART_NAME"/>
-      <viewAttribute id="CLAIM_SPART"/>
-      <viewAttribute id="CLAIM_RPART"/>
-      <viewAttribute id="DEFECT_TXT"/>
-      <viewAttribute id="DEFECT_CODE"/>
-      <viewAttribute id="DOUBT_QTY"/>
-      <viewAttribute id="NC_QTY"/>
-      <viewAttribute id="CLAIM_UNIT"/>
-      <viewAttribute id="CLAIM_RECIDIV"/>
-      <viewAttribute id="CLAIM_SEVERITY"/>
-      <viewAttribute id="RANKING_POINT"/>
-      <viewAttribute id="CLAIM_CANCEL_DT"/>
-      <viewAttribute id="CLAIM_CANCEL_REAS"/>
-      <viewAttribute id="CLAIM_TIMEFRAME"/>
-      <viewAttribute id="CLAIM14_ST"/>
-      <viewAttribute id="CLAIM14_DELIV"/>
-      <viewAttribute id="CLAIM14_PLAN_DT"/>
-      <viewAttribute id="CLAIM14_SEND_DT"/>
-      <viewAttribute id="CLAIM14_DONE_DT"/>
-      <viewAttribute id="CLAIM56_ST"/>
-      <viewAttribute id="CLAIM56_DELIV"/>
-      <viewAttribute id="CLAIM56_PLAN_DT"/>
-      <viewAttribute id="CLAIM56_SEND_DT"/>
-      <viewAttribute id="CLAIM56_DONE_DT"/>
-      <viewAttribute id="CLAIM78_ST"/>
-      <viewAttribute id="CLAIM78_DELIV"/>
-      <viewAttribute id="CLAIM78_PLAN_DT"/>
-      <viewAttribute id="CLAIM78_SEND_DT"/>
-      <viewAttribute id="CLAIM78_DONE_DT"/>
       <viewAttribute id="CLAIM_WERKS"/>
-      <viewAttribute id="CLAIM_WERKS_NAME"/>
-      <viewAttribute id="CROSS_INCIDENT"/>
-      <viewAttribute id="CLAIM_8DSTATUS"/>
-      <viewAttribute id="INVOICE_ST"/>
-      <viewAttribute id="ORDER_NBR"/>
-      <viewAttribute id="COST_REINVOICE_CLT"/>
-      <viewAttribute id="ESTIM_COST_CLAIM"/>
-      <viewAttribute id="CLAIM_MNGMT_VAL_DT"/>
-      <viewAttribute id="CLAIM_INIT_AMOUNT"/>
-      <viewAttribute id="DEB_ADV_SEND_DT"/>
-      <viewAttribute id="CLAIM_VALID_AMOUNT"/>
-      <viewAttribute id="CLAIM_VALID_VAT"/>
-      <viewAttribute id="CLAIM_TX_INCL_DT"/>
-      <viewAttribute id="CLAIM_CANCEL_AMOUNT"/>
-      <viewAttribute id="CLAIM_ACCOUNT_TRF_DT"/>
-      <viewAttribute id="CLAIM_ACCOUNT_RECORD"/>
-      <viewAttribute id="CLAIM_PYMNT_DT"/>
-      <viewAttribute id="CLAIM_ADV_CANCEL_DT"/>
-      <viewAttribute id="CLAIM_COMMENTS"/>
+      <viewAttribute id="RANKING_POINT"/>
     </viewAttributes>
     <calculatedViewAttributes>
-      <calculatedViewAttribute id="VENDORUNIK" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
-        <formula>CONCAT(CONCAT(&quot;CLAIM_DUNS&quot;,&quot;CLAIM_VATCODE&quot;),&quot;CLAIM_SIRET&quot;)</formula>
+      <calculatedViewAttribute id="INDC_YEAR_C" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+        <formula>TO_CHAR(&quot;IDNC_YEAR&quot;)</formula>
       </calculatedViewAttribute>
     </calculatedViewAttributes>
-    <input node="VENDORCLAIMS"/>
+    <input node="V_VENDOR_IDNC">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK_INDC" source="VENDORUNIK"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="V_VENDOR_PRTDS_P">
+    <viewAttributes>
+      <viewAttribute id="YEAR_PRTDS"/>
+      <viewAttribute id="LIFNR_PRTDS"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="SUMTOLXJ"/>
+      <viewAttribute id="COUNTTOLXJ"/>
+      <viewAttribute id="PR_TDS"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="YEAR_PRTDS_C" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+        <formula>TO_CHAR(&quot;YEAR_PRTDS&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="V_VENDOR_PRTDS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_PRTDS" source="LIFNR"/>
+    </input>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VEND_THRES_P">
     <viewAttributes>
-      <viewAttribute id="YEAR"/>
+      <viewAttribute id="YEAR_THRES"/>
       <viewAttribute id="SITECODE"/>
       <viewAttribute id="THRESHOLD_FMLY"/>
       <viewAttribute id="THRESHOLD_POINT"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="VENDORTHRESHOLD"/>
+    <input node="VENDORTHRESHOLD">
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_THRES" source="YEAR"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="V_VENDOR_FIXERANKBASE_P">
+    <viewAttributes>
+      <viewAttribute id="YEAR_FIXRK"/>
+      <viewAttribute id="VENDORUNIK_FIXRK"/>
+      <viewAttribute id="LIFNR_FIXRK"/>
+      <viewAttribute id="CCDC"/>
+      <viewAttribute id="RP"/>
+      <viewAttribute id="SQ"/>
+      <viewAttribute id="PDC"/>
+      <viewAttribute id="RF"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="V_VENDOR_FIXERANKBASE">
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_FIXRK" source="YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK_FIXRK" source="VENDORUNIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_FIXRK" source="LIFNR"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="ALL_JP">
+    <viewAttributes>
+      <viewAttribute id="VENDORUNIK_INDC"/>
+      <viewAttribute id="CLAIM_LIFNR"/>
+      <viewAttribute id="IDNC_YEAR"/>
+      <viewAttribute id="YEARMONTH_CLAIM"/>
+      <viewAttribute id="CLAIM_FMLY"/>
+      <viewAttribute id="CLAIM_WERKS"/>
+      <viewAttribute id="RANKING_POINT"/>
+      <viewAttribute id="YEAR_THRES"/>
+      <viewAttribute id="THRESHOLD_POINT"/>
+      <viewAttribute id="PR_TDS"/>
+      <viewAttribute id="CCDC"/>
+      <viewAttribute id="RP"/>
+      <viewAttribute id="SQ"/>
+      <viewAttribute id="PDC"/>
+      <viewAttribute id="RF"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="IDNC" datatype="DECIMAL" length="15" scale="2" expressionLanguage="SQL">
+        <formula>CASE WHEN &quot;RANKING_POINT&quot; is null 
+      THEN 0
+      ELSE round(&quot;RANKING_POINT&quot;/&quot;THRESHOLD_POINT&quot;,2) 
+      END</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="ALL_J_3"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="VEND_ALL_J" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="VENDORUNIK_INDC"/>
+      <viewAttribute id="CLAIM_LIFNR"/>
+      <viewAttribute id="IDNC_YEAR" aggregationType="sum"/>
+      <viewAttribute id="YEARMONTH_CLAIM"/>
+      <viewAttribute id="CLAIM_FMLY"/>
+      <viewAttribute id="CLAIM_WERKS"/>
+      <viewAttribute id="RANKING_POINT" aggregationType="sum"/>
+      <viewAttribute id="YEAR_THRES"/>
+      <viewAttribute id="THRESHOLD_POINT" aggregationType="sum"/>
+      <viewAttribute id="PR_TDS" aggregationType="sum"/>
+      <viewAttribute id="CCDC" aggregationType="sum"/>
+      <viewAttribute id="RP" aggregationType="sum"/>
+      <viewAttribute id="SQ" aggregationType="sum"/>
+      <viewAttribute id="PDC" aggregationType="sum"/>
+      <viewAttribute id="RF" aggregationType="sum"/>
+      <viewAttribute id="IDNC" aggregationType="sum"/>
+      <viewAttribute hidden="true" id="JOIN$VENDORUNIK$VENDORUNIK_INDC"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VENDOR_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VENDORUNIK$VENDORUNIK_INDC" source="VENDORUNIK"/>
+    </input>
+    <input node="ALL_JP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK_INDC" source="VENDORUNIK_INDC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_LIFNR" source="CLAIM_LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNC_YEAR" source="IDNC_YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEARMONTH_CLAIM" source="YEARMONTH_CLAIM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_FMLY" source="CLAIM_FMLY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_WERKS" source="CLAIM_WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RANKING_POINT" source="RANKING_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_THRES" source="YEAR_THRES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="THRESHOLD_POINT" source="THRESHOLD_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PR_TDS" source="PR_TDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CCDC" source="CCDC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RP" source="RP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SQ" source="SQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PDC" source="PDC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RF" source="RF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNC" source="IDNC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$VENDORUNIK$VENDORUNIK_INDC" source="VENDORUNIK_INDC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="CLAIM_LIFNR"/>
+    </input>
+    <joinAttribute name="JOIN$VENDORUNIK$VENDORUNIK_INDC"/>
+    <joinAttribute name="LIFNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VEND_ALL_JP">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="VENDORUNIK_INDC"/>
+      <viewAttribute id="CLAIM_LIFNR"/>
+      <viewAttribute id="IDNC_YEAR"/>
+      <viewAttribute id="YEARMONTH_CLAIM"/>
+      <viewAttribute id="CLAIM_FMLY"/>
+      <viewAttribute id="CLAIM_WERKS"/>
+      <viewAttribute id="RANKING_POINT"/>
+      <viewAttribute id="YEAR_THRES"/>
+      <viewAttribute id="THRESHOLD_POINT"/>
+      <viewAttribute id="PR_TDS"/>
+      <viewAttribute id="CCDC"/>
+      <viewAttribute id="RP"/>
+      <viewAttribute id="SQ"/>
+      <viewAttribute id="PDC"/>
+      <viewAttribute id="RF"/>
+      <viewAttribute id="IDNC"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VEND_ALL_J"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="ALL_J_1" cardinality="CN_N" joinType="inner" multiJoinNode="ALL_J" multiJoinCentralTable="V_VENDOR_IDNC_P" multiJoinOrder="Outside In">
+    <viewAttributes>
+      <viewAttribute id="VENDORUNIK_INDC"/>
+      <viewAttribute id="CLAIM_LIFNR"/>
+      <viewAttribute id="IDNC_YEAR" aggregationType="sum"/>
+      <viewAttribute id="YEARMONTH_CLAIM"/>
+      <viewAttribute id="CLAIM_FMLY"/>
+      <viewAttribute id="CLAIM_WERKS"/>
+      <viewAttribute id="RANKING_POINT" aggregationType="sum"/>
+      <viewAttribute id="CCDC" aggregationType="sum"/>
+      <viewAttribute id="RP" aggregationType="sum"/>
+      <viewAttribute id="SQ" aggregationType="sum"/>
+      <viewAttribute id="PDC" aggregationType="sum"/>
+      <viewAttribute id="RF" aggregationType="sum"/>
+      <viewAttribute id="INDC_YEAR_C"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="V_VENDOR_IDNC_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK_INDC" source="VENDORUNIK_INDC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_LIFNR" source="CLAIM_LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNC_YEAR" source="IDNC_YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEARMONTH_CLAIM" source="YEARMONTH_CLAIM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_FMLY" source="CLAIM_FMLY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_WERKS" source="CLAIM_WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RANKING_POINT" source="RANKING_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDC_YEAR_C" source="INDC_YEAR_C"/>
+    </input>
+    <input node="V_VENDOR_FIXERANKBASE_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CCDC" source="CCDC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RP" source="RP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SQ" source="SQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PDC" source="PDC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RF" source="RF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_LIFNR" source="LIFNR_FIXRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNC_YEAR" source="YEAR_FIXRK"/>
+    </input>
+    <joinAttribute name="CLAIM_LIFNR"/>
+    <joinAttribute name="IDNC_YEAR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="ALL_J_2" cardinality="CN_N" joinType="inner" multiJoinNode="ALL_J" multiJoinCentralTable="V_VENDOR_IDNC_P" multiJoinOrder="Outside In">
+    <viewAttributes>
+      <viewAttribute id="VENDORUNIK_INDC"/>
+      <viewAttribute id="CLAIM_LIFNR"/>
+      <viewAttribute id="IDNC_YEAR" aggregationType="sum"/>
+      <viewAttribute id="YEARMONTH_CLAIM"/>
+      <viewAttribute id="CLAIM_FMLY"/>
+      <viewAttribute id="CLAIM_WERKS"/>
+      <viewAttribute id="RANKING_POINT" aggregationType="sum"/>
+      <viewAttribute id="PR_TDS" aggregationType="sum"/>
+      <viewAttribute id="CCDC" aggregationType="sum"/>
+      <viewAttribute id="RP" aggregationType="sum"/>
+      <viewAttribute id="SQ" aggregationType="sum"/>
+      <viewAttribute id="PDC" aggregationType="sum"/>
+      <viewAttribute id="RF" aggregationType="sum"/>
+      <viewAttribute id="INDC_YEAR_C"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="ALL_J_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK_INDC" source="VENDORUNIK_INDC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_LIFNR" source="CLAIM_LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNC_YEAR" source="IDNC_YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEARMONTH_CLAIM" source="YEARMONTH_CLAIM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_FMLY" source="CLAIM_FMLY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_WERKS" source="CLAIM_WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RANKING_POINT" source="RANKING_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CCDC" source="CCDC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RP" source="RP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SQ" source="SQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PDC" source="PDC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RF" source="RF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDC_YEAR_C" source="INDC_YEAR_C"/>
+    </input>
+    <input node="V_VENDOR_PRTDS_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PR_TDS" source="PR_TDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_LIFNR" source="LIFNR_PRTDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDC_YEAR_C" source="YEAR_PRTDS_C"/>
+    </input>
+    <joinAttribute name="CLAIM_LIFNR"/>
+    <joinAttribute name="INDC_YEAR_C"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="ALL_J_3" cardinality="CN_N" joinType="inner" multiJoinNode="ALL_J" multiJoinCentralTable="V_VENDOR_IDNC_P" multiJoinOrder="Outside In">
+    <viewAttributes>
+      <viewAttribute id="VENDORUNIK_INDC"/>
+      <viewAttribute id="CLAIM_LIFNR"/>
+      <viewAttribute id="IDNC_YEAR" aggregationType="sum"/>
+      <viewAttribute id="YEARMONTH_CLAIM"/>
+      <viewAttribute id="CLAIM_FMLY"/>
+      <viewAttribute id="CLAIM_WERKS"/>
+      <viewAttribute id="RANKING_POINT" aggregationType="sum"/>
+      <viewAttribute id="YEAR_THRES"/>
+      <viewAttribute id="THRESHOLD_POINT" aggregationType="sum"/>
+      <viewAttribute id="PR_TDS" aggregationType="sum"/>
+      <viewAttribute id="CCDC" aggregationType="sum"/>
+      <viewAttribute id="RP" aggregationType="sum"/>
+      <viewAttribute id="SQ" aggregationType="sum"/>
+      <viewAttribute id="PDC" aggregationType="sum"/>
+      <viewAttribute id="RF" aggregationType="sum"/>
+      <viewAttribute id="INDC_YEAR_C"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="ALL_J_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK_INDC" source="VENDORUNIK_INDC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_LIFNR" source="CLAIM_LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNC_YEAR" source="IDNC_YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEARMONTH_CLAIM" source="YEARMONTH_CLAIM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_FMLY" source="CLAIM_FMLY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_WERKS" source="CLAIM_WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RANKING_POINT" source="RANKING_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PR_TDS" source="PR_TDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CCDC" source="CCDC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RP" source="RP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SQ" source="SQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PDC" source="PDC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RF" source="RF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDC_YEAR_C" source="INDC_YEAR_C"/>
+    </input>
+    <input node="VEND_THRES_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_THRES" source="YEAR_THRES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="THRESHOLD_POINT" source="THRESHOLD_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_FMLY" source="THRESHOLD_FMLY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_WERKS" source="SITECODE"/>
+    </input>
+    <joinAttribute name="CLAIM_FMLY"/>
+    <joinAttribute name="CLAIM_WERKS"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
-  <attributes/>
+  <attributes>
+    <attribute id="LIFNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LIFNR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR"/>
+    </attribute>
+    <attribute id="NAME1" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME1"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="NAME1"/>
+    </attribute>
+    <attribute id="LFABC" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LFABC"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LFABC"/>
+    </attribute>
+    <attribute id="VENDORUNIK_INDC" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VENDORUNIK_INDC"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK_INDC"/>
+    </attribute>
+    <attribute id="CLAIM_LIFNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_LIFNR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_LIFNR"/>
+    </attribute>
+    <attribute id="IDNC_YEAR" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IDNC_YEAR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="IDNC_YEAR"/>
+    </attribute>
+    <attribute id="YEARMONTH_CLAIM" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="YEARMONTH_CLAIM"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEARMONTH_CLAIM"/>
+    </attribute>
+    <attribute id="CLAIM_FMLY" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_FMLY"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_FMLY"/>
+    </attribute>
+    <attribute id="CLAIM_WERKS" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_WERKS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_WERKS"/>
+    </attribute>
+    <attribute id="YEAR_THRES" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="YEAR_THRES"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR_THRES"/>
+    </attribute>
+  </attributes>
   <calculatedAttributes/>
-  <baseMeasures/>
+  <baseMeasures>
+    <measure id="RANKING_POINT" order="10" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="RANKING_POINT"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="RANKING_POINT"/>
+    </measure>
+    <measure id="THRESHOLD_POINT" order="12" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="THRESHOLD_POINT"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="THRESHOLD_POINT"/>
+    </measure>
+    <measure id="PR_TDS" order="13" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PR_TDS"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="PR_TDS"/>
+    </measure>
+    <measure id="CCDC" order="14" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="CCDC"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CCDC"/>
+    </measure>
+    <measure id="RP" order="15" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="RP"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="RP"/>
+    </measure>
+    <measure id="SQ" order="16" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="SQ"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="SQ"/>
+    </measure>
+    <measure id="PDC" order="17" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PDC"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="PDC"/>
+    </measure>
+    <measure id="RF" order="18" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="RF"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="RF"/>
+    </measure>
+    <measure id="IDNC" order="19" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="IDNC"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="IDNC"/>
+    </measure>
+  </baseMeasures>
   <calculatedMeasures/>
   <restrictedMeasures/>
   <localDimensions/>
@@ -255,28 +487,76 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="40" y="85"/>
+      <upperLeftCorner x="547.298637758136" y="112"/>
+    
+      <rectangleSize width="160"/>
     </shape>
   
-    <shape expanded="false" modelObjectName="BEFORE_AGG_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="100" y="184"/>
+    <shape expanded="true" modelObjectName="BEFORE_AGG_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="547.298637758136" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="VENDOR_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-50" y="381"/>
+      <upperLeftCorner x="352.41669823507516" y="586.9999976158142"/>
       <rectangleSize height="30" width="160"/>
     </shape>
   
-    <shape expanded="true" modelObjectName="VEND_EVAL_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="115" y="469"/>
+    <shape expanded="true" modelObjectName="V_VENDOR_IDNC_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="901.9999952316284"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape expanded="true" modelObjectName="VEND_CLAIM_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="265" y="560"/>
+    <shape expanded="true" modelObjectName="V_VENDOR_PRTDS_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="512" y="901.9999952316284"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape expanded="true" modelObjectName="VEND_THRES_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="451" y="644"/>
+    <shape expanded="false" modelObjectName="VEND_THRES_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="722" y="901.9999952316284"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="V_VENDOR_FIXERANKBASE_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91.99999999999994" y="901.9999952316284"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="ALL_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="496" y="711.9999964237213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="V_VENDOR_IDNC_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
+      <upperLeftCorner x="288" y="125"/>
+      <rectangleSize width="196.01611328125"/>
+    </shape>
+    <shape modelObjectName="VEND_THRES_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
+      <upperLeftCorner x="-14" y="311"/>
+      <rectangleSize width="193.572265625"/>
+    </shape>
+  
+    <shape modelObjectName="V_VENDOR_PRTDS_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
+      <upperLeftCorner x="557" y="57"/>
+      <rectangleSize width="192.0390625"/>
+    </shape>
+    <shape modelObjectName="V_VENDOR_FIXERANKBASE_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
+      <upperLeftCorner x="-72" y="41"/>
+      <rectangleSize width="246.044921875"/>
+    </shape>
+    <shape expanded="true" modelObjectName="ALL_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="562.416698235075" y="586.9999976158142"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VEND_ALL_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="516.9626544012688" y="446.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="VENDOR_P" modelObjectNameSpace="VEND_ALL_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="159.34228515625"/>
+    </shape>
+    <shape modelObjectName="ALL_JP" modelObjectNameSpace="VEND_ALL_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="196.01611328125"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VEND_ALL_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="516.9626544012688" y="341.9999988079071"/>
       <rectangleSize height="30" width="160"/>
     </shape>
   </shapes>

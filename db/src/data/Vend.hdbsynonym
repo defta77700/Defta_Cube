@@ -34,5 +34,23 @@
       "object": "VENDORTHRESHOLD",
       "schema": "SUPLPANEL"
     }
+  },
+  "V_VENDOR_IDNC": {
+    "target": {
+      "object": "V_VENDOR_IDNC",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "V_VENDOR_PRTDS": {
+    "target": {
+      "object": "V_VENDOR_PRTDS",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "V_VENDOR_FIXERANKBASE": {
+    "target": {
+      "object": "V_VENDOR_FIXERANKBASE",
+      "schema": "SUPLPANEL"
+    }
   }
 }
