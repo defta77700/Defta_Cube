@@ -312,7 +312,11 @@ END</formula>
       <viewAttribute id="PDC"/>
       <viewAttribute id="RF"/>
     </viewAttributes>
-    <calculatedViewAttributes/>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="YEAR_FIXRK_C" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+        <formula>to_char(&quot;YEAR_FIXRK&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
     <input node="V_VENDOR_FIXERANKBASE">
       <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_FIXRK" source="YEAR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK_FIXRK" source="VENDORUNIK"/>
@@ -330,7 +334,7 @@ END</formula>
       <viewAttribute id="YEAR_PRTDS_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="V_VENDOR_PRTDS_P">
+    <input node="V_VENDOR_PRTDS_P" emptyUnionBehavior="NO_ROW">
       <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_PRTDS" source="YEAR_PRTDS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_PRTDS" source="LIFNR_PRTDS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
@@ -339,7 +343,7 @@ END</formula>
       <mapping xsi:type="Calculation:AttributeMapping" target="TDS" source="TDS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_PRTDS_C" source="YEAR_PRTDS_C"/>
     </input>
-    <input node="V_VENDOR_PRTDS_H_P">
+    <input node="V_VENDOR_PRTDS_H_P" emptyUnionBehavior="NO_ROW">
       <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_PRTDS" source="YEAR_PRTDS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_PRTDS" source="LIFNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
@@ -387,7 +391,8 @@ END</formula>
       <viewAttribute id="CLAIM_FMLY"/>
       <viewAttribute id="CLAIM_WERKS"/>
       <viewAttribute id="RANKING_POINT" aggregationType="sum"/>
-      <viewAttribute id="TDS" aggregationType="sum"/>
+      <viewAttribute id="YEAR_THRES"/>
+      <viewAttribute id="THRESHOLD_POINT" aggregationType="sum"/>
       <viewAttribute id="INDC_YEAR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
@@ -401,12 +406,15 @@ END</formula>
       <mapping xsi:type="Calculation:AttributeMapping" target="RANKING_POINT" source="RANKING_POINT"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="INDC_YEAR_C" source="INDC_YEAR_C"/>
     </input>
-    <input node="V_VENDOR_PRTDS_UP">
-      <mapping xsi:type="Calculation:AttributeMapping" target="TDS" source="TDS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_LIFNR" source="LIFNR_PRTDS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="INDC_YEAR_C" source="YEAR_PRTDS_C"/>
+    <input node="VEND_THRES_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_THRES" source="YEAR_THRES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="THRESHOLD_POINT" source="THRESHOLD_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_FMLY" source="THRESHOLD_FMLY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_WERKS" source="SITECODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDC_YEAR_C" source="YEAR_THRES"/>
     </input>
-    <joinAttribute name="CLAIM_LIFNR"/>
+    <joinAttribute name="CLAIM_FMLY"/>
+    <joinAttribute name="CLAIM_WERKS"/>
     <joinAttribute name="INDC_YEAR_C"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="ALL_J_2" cardinality="CN_N" joinType="inner" multiJoinNode="ALL_J" multiJoinCentralTable="V_VENDOR_IDNC_P" multiJoinOrder="Outside In">
@@ -418,12 +426,9 @@ END</formula>
       <viewAttribute id="CLAIM_FMLY"/>
       <viewAttribute id="CLAIM_WERKS"/>
       <viewAttribute id="RANKING_POINT" aggregationType="sum"/>
+      <viewAttribute id="YEAR_THRES"/>
+      <viewAttribute id="THRESHOLD_POINT" aggregationType="sum"/>
       <viewAttribute id="TDS" aggregationType="sum"/>
-      <viewAttribute id="CCDC" aggregationType="sum"/>
-      <viewAttribute id="RP" aggregationType="sum"/>
-      <viewAttribute id="SQ" aggregationType="sum"/>
-      <viewAttribute id="PDC" aggregationType="sum"/>
-      <viewAttribute id="RF" aggregationType="sum"/>
       <viewAttribute id="INDC_YEAR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
@@ -435,20 +440,17 @@ END</formula>
       <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_FMLY" source="CLAIM_FMLY"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_WERKS" source="CLAIM_WERKS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="RANKING_POINT" source="RANKING_POINT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TDS" source="TDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_THRES" source="YEAR_THRES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="THRESHOLD_POINT" source="THRESHOLD_POINT"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="INDC_YEAR_C" source="INDC_YEAR_C"/>
     </input>
-    <input node="V_VENDOR_FIXERANKBASE_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="CCDC" source="CCDC"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="RP" source="RP"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SQ" source="SQ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PDC" source="PDC"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="RF" source="RF"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_LIFNR" source="LIFNR_FIXRK"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="IDNC_YEAR" source="YEAR_FIXRK"/>
+    <input node="V_VENDOR_PRTDS_UP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="TDS" source="TDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_LIFNR" source="LIFNR_PRTDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDC_YEAR_C" source="YEAR_PRTDS_C"/>
     </input>
     <joinAttribute name="CLAIM_LIFNR"/>
-    <joinAttribute name="IDNC_YEAR"/>
+    <joinAttribute name="INDC_YEAR_C"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="ALL_J_3" cardinality="CN_N" joinType="inner" multiJoinNode="ALL_J" multiJoinCentralTable="V_VENDOR_IDNC_P" multiJoinOrder="Outside In">
     <viewAttributes>
@@ -478,22 +480,22 @@ END</formula>
       <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_FMLY" source="CLAIM_FMLY"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_WERKS" source="CLAIM_WERKS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="RANKING_POINT" source="RANKING_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_THRES" source="YEAR_THRES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="THRESHOLD_POINT" source="THRESHOLD_POINT"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="TDS" source="TDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDC_YEAR_C" source="INDC_YEAR_C"/>
+    </input>
+    <input node="V_VENDOR_FIXERANKBASE_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="CCDC" source="CCDC"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="RP" source="RP"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SQ" source="SQ"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PDC" source="PDC"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="RF" source="RF"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="INDC_YEAR_C" source="INDC_YEAR_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_LIFNR" source="LIFNR_FIXRK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INDC_YEAR_C" source="YEAR_FIXRK"/>
     </input>
-    <input node="VEND_THRES_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_THRES" source="YEAR_THRES"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="THRESHOLD_POINT" source="THRESHOLD_POINT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_FMLY" source="THRESHOLD_FMLY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_WERKS" source="SITECODE"/>
-    </input>
-    <joinAttribute name="CLAIM_FMLY"/>
-    <joinAttribute name="CLAIM_WERKS"/>
+    <joinAttribute name="CLAIM_LIFNR"/>
+    <joinAttribute name="INDC_YEAR_C"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
@@ -649,33 +651,13 @@ END</formula>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="false" modelObjectName="VEND_THRES_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="722" y="901"/>
+      <upperLeftCorner x="761" y="901"/>
       <rectangleSize height="30" width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="V_VENDOR_FIXERANKBASE_P" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="91" y="901"/>
       <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape expanded="true" modelObjectName="ALL_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="496" y="711"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape modelObjectName="VEND_THRES_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
-      <upperLeftCorner x="-14" y="311"/>
-      <rectangleSize width="193"/>
-    </shape>
-    <shape modelObjectName="V_VENDOR_IDNC_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
-      <upperLeftCorner x="288" y="125"/>
-      <rectangleSize width="196"/>
-    </shape>
-    <shape modelObjectName="V_VENDOR_FIXERANKBASE_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
-      <upperLeftCorner x="-72" y="41"/>
-      <rectangleSize width="246"/>
-    </shape>
-    <shape modelObjectName="V_VENDOR_PRTDS_UP" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
-      <upperLeftCorner x="557" y="231"/>
-      <rectangleSize width="200.705078125"/>
     </shape>
     <shape expanded="true" modelObjectName="V_VENDOR_PRTDS_U" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="516" y="1018"/>
@@ -689,6 +671,26 @@ END</formula>
       <upperLeftCorner x="512" y="901"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-  </shapes>
+  
+    <shape expanded="true" modelObjectName="ALL_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="496" y="711"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="V_VENDOR_FIXERANKBASE_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
+      <upperLeftCorner x="-72" y="41"/>
+      <rectangleSize width="246"/>
+    </shape>
+    <shape modelObjectName="V_VENDOR_IDNC_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
+      <upperLeftCorner x="288" y="125"/>
+      <rectangleSize width="196"/>
+    </shape>
+    <shape modelObjectName="V_VENDOR_PRTDS_UP" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
+      <upperLeftCorner x="557" y="231"/>
+      <rectangleSize width="200"/>
+    </shape>
+    <shape modelObjectName="VEND_THRES_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
+      <upperLeftCorner x="-14" y="311"/>
+      <rectangleSize width="193"/>
+    </shape></shapes>
 </layout>
 </Calculation:scenario>
