@@ -52,5 +52,11 @@
       "object": "V_VENDOR_FIXERANKBASE",
       "schema": "SUPLPANEL"
     }
+  },
+  "V_VENDOR_PRTDS_H": {
+    "target": {
+      "object": "V_VENDOR_PRTDS_H",
+      "schema": "SUPLPANEL"
+    }
   }
 }
