@@ -58,5 +58,17 @@
       "object": "V_VENDOR_PRTDS_H",
       "schema": "SUPLPANEL"
     }
+  },
+  "V_VENDOR_PRTDS_MONTH": {
+    "target": {
+      "object": "V_VENDOR_PRTDS_MONTH",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "V_VENDOR_IDNC_MONTH": {
+    "target": {
+      "object": "V_VENDOR_IDNC_MONTH",
+      "schema": "SUPLPANEL"
+    }
   }
 }
