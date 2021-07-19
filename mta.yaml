@@ -1,6 +1,6 @@
 _schema-version: "2.1"
 ID: SuppPanel2
-version: 0.0.1
+version: 0.0.2
 modules:
 - name: db
   type: hdb
@@ -14,11 +14,6 @@ modules:
     properties:
       key: ServiceName_1
       service: ~{the-service-name}
-- name: user_db
-  type: hdb
-  path: user_db
-  requires:
-  - name: hdi_user_db
 resources:
 - name: hdi_db
   type: com.sap.xs.hdi-container
