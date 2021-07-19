@@ -70,5 +70,11 @@
       "object": "V_VENDOR_IDNC_MONTH",
       "schema": "SUPLPANEL"
     }
+  },
+  "V_VENDOR_PRDTS_IDNC_MONTH_J": {
+    "target": {
+      "object": "V_VENDOR_PRDTS_IDNC_MONTH_J",
+      "schema": "SUPLPANEL"
+    }
   }
 }

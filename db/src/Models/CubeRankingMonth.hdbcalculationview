@@ -4,18 +4,47 @@
 <localVariables/>
 <variableMappings/>
 <dataSources>
-  <DataSource id="V_VENDOR_PRTDS_MONTH">
-    <resourceUri>V_VENDOR_PRTDS_MONTH</resourceUri>
-  </DataSource>
   <DataSource id="DimVendor">
     <resourceUri>DimVendor</resourceUri>
   </DataSource>
-  <DataSource id="V_VENDOR_IDNC_MONTH">
-    <resourceUri>V_VENDOR_IDNC_MONTH</resourceUri>
+  <DataSource id="V_VENDOR_PRDTS_IDNC_MONTH_J">
+    <resourceUri>V_VENDOR_PRDTS_IDNC_MONTH_J</resourceUri>
   </DataSource>
 </dataSources>
 <calculationViews>
   <calculationView xsi:type="Calculation:ProjectionView" id="BEFORE_AGG_P">
+    <viewAttributes>
+      <viewAttribute id="YEAR"/>
+      <viewAttribute id="YEARMONTH_PRTDS"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="CLAIM_FMLY"/>
+      <viewAttribute id="RANKING_POINT"/>
+    
+      <viewAttribute id="YEAR_MONTHS_C"/>
+      <viewAttribute id="LIFNR_C"/>
+      <viewAttribute id="WERKS_C"/>
+      <viewAttribute id="YEAR_C"/>
+      <viewAttribute id="SUMTOLXJ_C"/>
+      <viewAttribute id="COUNTTOLXJ_C"/>
+      <viewAttribute id="PR_TDS_C"/>
+      <viewAttribute id="RANKING_POINT_C"/>
+      <viewAttribute id="YEARMONTH_CLAIM"/>
+      <viewAttribute id="CLAIM_LIFNR"/>
+      <viewAttribute id="CLAIM_WERKS"/>
+      <viewAttribute id="IDNC_YEAR"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="LAND1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VDR_VNDR_PRTDS_JP"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VDR_VNDR_PRTDS_JP">
     <viewAttributes>
       <viewAttribute id="YEAR"/>
       <viewAttribute id="YEARMONTH_PRTDS"/>
@@ -29,23 +58,95 @@
       <viewAttribute id="WERKS"/>
       <viewAttribute id="CLAIM_FMLY"/>
       <viewAttribute id="RANKING_POINT"/>
+    
+      <viewAttribute id="YEAR_MONTHS_C"/>
+      <viewAttribute id="LIFNR_C"/>
+      <viewAttribute id="WERKS_C"/>
+      <viewAttribute id="YEAR_C"/>
+      <viewAttribute id="SUMTOLXJ_C"/>
+      <viewAttribute id="COUNTTOLXJ_C"/>
+      <viewAttribute id="PR_TDS_C"/>
+      <viewAttribute id="RANKING_POINT_C"/>
+      <viewAttribute id="YEARMONTH_CLAIM"/>
+      <viewAttribute id="CLAIM_LIFNR"/>
+      <viewAttribute id="CLAIM_WERKS"/>
+      <viewAttribute id="IDNC_YEAR"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="LAND1"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="VDR_VNDR_PRTDS_JP"/>
+    <input node="VDR_VNDR_PRTDS_J"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VDR_PRTDS_MONTH_P">
+  <calculationView xsi:type="Calculation:JoinView" id="VDR_VNDR_PRTDS_J" joinType="inner">
     <viewAttributes>
-      <viewAttribute id="YEAR"/>
+      <viewAttribute id="YEAR" aggregationType="sum"/>
       <viewAttribute id="YEARMONTH_PRTDS"/>
       <viewAttribute id="LIFNR"/>
       <viewAttribute id="SOURCE"/>
-      <viewAttribute id="SUMTOLXJ"/>
-      <viewAttribute id="COUNTTOLXJ"/>
-      <viewAttribute id="PR_TDS"/>
+      <viewAttribute id="SUMTOLXJ" aggregationType="sum"/>
+      <viewAttribute id="COUNTTOLXJ" aggregationType="sum"/>
+      <viewAttribute id="PR_TDS" aggregationType="sum"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="NAME1"/>
       <viewAttribute id="WERKS"/>
+      <viewAttribute id="CLAIM_FMLY"/>
+      <viewAttribute id="RANKING_POINT" aggregationType="sum"/>
+      <viewAttribute id="YEAR_MONTHS_C"/>
+      <viewAttribute id="LIFNR_C"/>
+      <viewAttribute id="WERKS_C"/>
+      <viewAttribute id="YEAR_C"/>
+      <viewAttribute id="SUMTOLXJ_C" aggregationType="sum"/>
+      <viewAttribute id="COUNTTOLXJ_C" aggregationType="sum"/>
+      <viewAttribute id="PR_TDS_C" aggregationType="sum"/>
+      <viewAttribute id="RANKING_POINT_C" aggregationType="sum"/>
+      <viewAttribute id="YEARMONTH_CLAIM"/>
+      <viewAttribute id="CLAIM_LIFNR"/>
+      <viewAttribute id="CLAIM_WERKS"/>
+      <viewAttribute id="IDNC_YEAR" aggregationType="sum"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute hidden="true" id="JOIN$LIFNR$LIFNR_C_1"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="V_VENDOR_PRTDS_MONTH"/>
+    <input node="VENDOR_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$LIFNR_C_1" source="LIFNR"/>
+    </input>
+    <input node="VEND_PRDTS_IDNC_MONTH_JP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEARMONTH_PRTDS" source="YEARMONTH_PRTDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUMTOLXJ" source="SUMTOLXJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTTOLXJ" source="COUNTTOLXJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PR_TDS" source="PR_TDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_FMLY" source="CLAIM_FMLY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RANKING_POINT" source="RANKING_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_MONTHS_C" source="YEAR_MONTH_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C" source="LIFNR_C_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_C" source="WERKS_C_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_C" source="YEAR_C_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUMTOLXJ_C" source="SUMTOLXJ_C_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTTOLXJ_C" source="COUNTTOLXJ_C_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PR_TDS_C" source="PR_TDS_C_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RANKING_POINT_C" source="RANKING_POINT_C_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEARMONTH_CLAIM" source="YEARMONTH_CLAIM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_LIFNR" source="CLAIM_LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_WERKS" source="CLAIM_WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNC_YEAR" source="IDNC_YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$LIFNR_C_1" source="LIFNR_C_1"/>
+    </input>
+    <joinAttribute name="JOIN$LIFNR$LIFNR_C_1"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VENDOR_P">
     <viewAttributes>
@@ -100,199 +201,177 @@
     <calculatedViewAttributes/>
     <input node="DimVendor"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="VDR_VNDR_PRTDS_J" cardinality="CN_N" joinType="inner">
-    <viewAttributes>
-      <viewAttribute id="YEAR" aggregationType="sum"/>
-      <viewAttribute id="YEARMONTH_PRTDS"/>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="SUMTOLXJ" aggregationType="sum"/>
-      <viewAttribute id="COUNTTOLXJ" aggregationType="sum"/>
-      <viewAttribute id="PR_TDS" aggregationType="sum"/>
-      <viewAttribute id="VENDORUNIK"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="WERKS"/>
-      <viewAttribute id="CLAIM_FMLY"/>
-      <viewAttribute id="RANKING_POINT" aggregationType="sum"/>
-      <viewAttribute hidden="true" id="JOIN$LIFNR$LIFNR"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="VENDOR_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$LIFNR" source="LIFNR"/>
-    </input>
-    <input node="VEND_PRDTS_IDNC_MONTH_JP">
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEARMONTH_PRTDS" source="YEARMONTH_PRTDS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SUMTOLXJ" source="SUMTOLXJ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTTOLXJ" source="COUNTTOLXJ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PR_TDS" source="PR_TDS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_FMLY" source="CLAIM_FMLY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="RANKING_POINT" source="RANKING_POINT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$LIFNR" source="LIFNR"/>
-    </input>
-    <joinAttribute name="JOIN$LIFNR$LIFNR"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VDR_VNDR_PRTDS_JP">
-    <viewAttributes>
-      <viewAttribute id="YEAR"/>
-      <viewAttribute id="YEARMONTH_PRTDS"/>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="SUMTOLXJ"/>
-      <viewAttribute id="COUNTTOLXJ"/>
-      <viewAttribute id="PR_TDS"/>
-      <viewAttribute id="VENDORUNIK"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="WERKS"/>
-      <viewAttribute id="CLAIM_FMLY"/>
-      <viewAttribute id="RANKING_POINT"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="VDR_VNDR_PRTDS_J"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="VEND_PRDTS_IDNC_MONTH_J" cardinality="CN_N" joinType="inner">
-    <viewAttributes>
-      <viewAttribute id="YEAR" aggregationType="sum"/>
-      <viewAttribute id="YEARMONTH_PRTDS"/>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="SUMTOLXJ" aggregationType="sum"/>
-      <viewAttribute id="COUNTTOLXJ" aggregationType="sum"/>
-      <viewAttribute id="PR_TDS" aggregationType="sum"/>
-      <viewAttribute id="CLAIM_FMLY"/>
-      <viewAttribute id="WERKS"/>
-      <viewAttribute id="RANKING_POINT" aggregationType="sum"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="VDR_PRTDS_MONTH_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEARMONTH_PRTDS" source="YEARMONTH_PRTDS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SUMTOLXJ" source="SUMTOLXJ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTTOLXJ" source="COUNTTOLXJ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PR_TDS" source="PR_TDS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
-    </input>
-    <input node="VEND_INDC_MONTH_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_FMLY" source="CLAIM_FMLY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="RANKING_POINT" source="RANKING_POINT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="IDNC_YEAR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEARMONTH_PRTDS" source="YEARMONTH_CLAIM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="CLAIM_LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="CLAIM_WERKS"/>
-    </input>
-    <joinAttribute name="YEAR"/>
-    <joinAttribute name="YEARMONTH_PRTDS"/>
-    <joinAttribute name="LIFNR"/>
-    <joinAttribute name="WERKS"/>
-  </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VEND_PRDTS_IDNC_MONTH_JP">
     <viewAttributes>
       <viewAttribute id="YEAR"/>
       <viewAttribute id="YEARMONTH_PRTDS"/>
-      <viewAttribute id="LIFNR"/>
       <viewAttribute id="WERKS"/>
       <viewAttribute id="SUMTOLXJ"/>
       <viewAttribute id="COUNTTOLXJ"/>
       <viewAttribute id="PR_TDS"/>
       <viewAttribute id="CLAIM_FMLY"/>
       <viewAttribute id="RANKING_POINT"/>
+      <viewAttribute id="LIFNR"/>
       <viewAttribute id="SOURCE"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="VEND_PRDTS_IDNC_MONTH_J"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VEND_INDC_MONTH_P">
-    <viewAttributes>
-      <viewAttribute id="CLAIM_LIFNR"/>
-      <viewAttribute id="IDNC_YEAR"/>
+    
       <viewAttribute id="YEARMONTH_CLAIM"/>
-      <viewAttribute id="CLAIM_FMLY"/>
+      <viewAttribute id="CLAIM_LIFNR"/>
       <viewAttribute id="CLAIM_WERKS"/>
-      <viewAttribute id="RANKING_POINT"/>
+      <viewAttribute id="IDNC_YEAR"/>
+      <viewAttribute id="YEAR_C_1"/>
+      <viewAttribute id="YEAR_MONTH_C"/>
+      <viewAttribute id="LIFNR_C_1"/>
+      <viewAttribute id="WERKS_C_1"/>
+      <viewAttribute id="SUMTOLXJ_C_1"/>
+      <viewAttribute id="COUNTTOLXJ_C_1"/>
+      <viewAttribute id="PR_TDS_C_1"/>
+      <viewAttribute id="RANKING_POINT_C_1"/>
     </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="V_VENDOR_IDNC_MONTH"/>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="YEAR_MONTHS_C" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;YEARMONTH_PRTDS&quot;,&quot;YEARMONTH_CLAIM&quot;)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="LIFNR_C" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;LIFNR&quot;, &quot;CLAIM_LIFNR&quot;)
+</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="WERKS_C" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;WERKS&quot;, &quot;CLAIM_WERKS&quot;)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="YEAR_C" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
+        <formula>(IFNULL(&quot;YEAR&quot;, &quot;IDNC_YEAR&quot;))</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="SUMTOLXJ_C" datatype="DECIMAL" length="18" scale="4" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;SUMTOLXJ&quot;, 0)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="COUNTTOLXJ_C" datatype="DECIMAL" length="18" scale="4" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;COUNTTOLXJ&quot;, 0)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="PR_TDS_C" datatype="DECIMAL" length="18" scale="4" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;PR_TDS&quot;, 0)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="RANKING_POINT_C" datatype="DECIMAL" length="18" scale="4" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;RANKING_POINT&quot;, 0)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="V_VENDOR_PRDTS_IDNC_MONTH_J">
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_C_1" source="YEAR_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C_1" source="LIFNR_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_C_1" source="WERKS_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUMTOLXJ_C_1" source="SUMTOLXJ_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTTOLXJ_C_1" source="COUNTTOLXJ_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PR_TDS_C_1" source="PR_TDS_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RANKING_POINT_C_1" source="RANKING_POINT_C"/>
+    </input>
   </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
   <attributes>
-    <attribute id="LIFNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Code"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR"/>
+    <attribute id="YEAR_C" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="YEAR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR_C"/>
     </attribute>
-    <attribute id="NAME1" order="2" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="YEAR_MONTHS_C" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="YEAR MONTHS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR_MONTHS_C"/>
+    </attribute>
+    <attribute id="NAME1" order="3" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Vendor Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="NAME1"/>
     </attribute>
-    <attribute id="VENDORUNIK" order="3" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LIFNR_C" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Code"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR_C"/>
+    </attribute>
+    <attribute id="VENDORUNIK" order="5" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="VENDORUNIK"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
     </attribute>
-    <attribute id="WERKS" order="4" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Plant Code"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WERKS"/>
+    <attribute id="WERKS_C" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Plant"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WERKS_C"/>
     </attribute>
-    <attribute id="CLAIM_FMLY" order="5" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Claim Familly Material groupe codeLevel 1"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_FMLY"/>
+    <attribute id="ORT01" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor City"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ORT01"/>
     </attribute>
-    <attribute id="YEAR" order="6" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR"/>
+    <attribute id="PSTLZ" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Postal Code"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PSTLZ"/>
     </attribute>
-    <attribute id="YEARMONTH_PRTDS" order="7" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEARMONTH_PRTDS"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEARMONTH_PRTDS"/>
+    <attribute id="REGIO" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Region"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="REGIO"/>
     </attribute>
-    <attribute id="SOURCE" hidden="true" order="13" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LAND1" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Country"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAND1"/>
+    </attribute>
+    <attribute id="SOURCE" hidden="true" order="17" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="SOURCE"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SOURCE"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
-    <measure id="SUMTOLXJ" order="8" aggregationType="sum" measureType="simple">
+    <measure id="SUMTOLXJ_C" order="11" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="SUMTOLXJ"/>
-      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="SUMTOLXJ"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="SUMTOLXJ_C"/>
     </measure>
-    <measure id="COUNTTOLXJ" order="9" aggregationType="sum" measureType="simple">
+    <measure id="COUNTTOLXJ_C" order="12" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="COUNTTOLXJ"/>
-      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="COUNTTOLXJ"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="COUNTTOLXJ_C"/>
     </measure>
-    <measure id="PR_TDS" hidden="true" order="10" aggregationType="sum" measureType="simple">
+    <measure id="PR_TDS_C" hidden="true" order="13" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="PR_TDS"/>
-      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="PR_TDS"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="PR_TDS_C"/>
     </measure>
-    <measure id="RANKING_POINT" order="12" aggregationType="sum" measureType="simple">
+    <measure id="RANKING_POINT_C" order="14" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="RANKING_POINT"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="RANKING_POINT_C"/>
+    </measure>
+    <measure id="RANKING_POINT" order="16" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="Ranking Point"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="RANKING_POINT"/>
     </measure>
   </baseMeasures>
   <calculatedMeasures>
-    <measure id="TDS_VIEW" order="11" aggregationType="sum" measureType="simple" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
+    <measure id="TDS_VIEW" order="15" aggregationType="sum" measureType="simple" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
       <descriptions defaultDescription="TDS"/>
-      <formula>ROUND(&quot;SUMTOLXJ&quot;/&quot;COUNTTOLXJ&quot;,2)</formula>
+      <formula>ROUND(&quot;SUMTOLXJ_C&quot;/&quot;COUNTTOLXJ_C&quot;,2)</formula>
+      
       </measure>
   </calculatedMeasures>
   <restrictedMeasures/>
   <localDimensions>
     <localDimension id="YEAR_MONTH">
-      <attributeRef xsi:type="DataFoundation:Attribute">YEAR</attributeRef>
-      <attributeRef xsi:type="DataFoundation:Attribute">YEARMONTH_PRTDS</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">YEAR_C</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">YEAR_MONTHS_C</attributeRef>
       <hierarchies>
         <hierarchy xsi:type="Dimension:LeveledHierarchy" id="YEAR_MONTH" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
           <descriptions defaultDescription="YEAR_MONTH"/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>
-            <level levelAttribute="YEAR" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="YEAR" sortDirection="ASC"/>
-            <level levelAttribute="YEARMONTH_PRTDS" levelType="MDLEVEL_TYPE_REGULAR" order="2" orderAttribute="YEARMONTH_PRTDS" sortDirection="ASC"/>
+            <level levelAttribute="YEAR_C" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="YEAR_C" sortDirection="ASC"/>
+            <level levelAttribute="YEAR_MONTHS_C" levelType="MDLEVEL_TYPE_REGULAR" order="2" orderAttribute="YEAR_MONTHS_C" sortDirection="ASC"/>
+          </levels>
+        </hierarchy>
+      </hierarchies>
+    </localDimension>
+    <localDimension id="VENDOR_GEO">
+      <attributeRef xsi:type="DataFoundation:Attribute">LAND1</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">REGIO</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">PSTLZ</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">ORT01</attributeRef>
+      <hierarchies>
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="VENDOR_GEO" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+          <descriptions defaultDescription="VENDOR_GEO"/>
+          <unassignedMemberProperties mode="FALSE"/>
+          <levels>
+            <level levelAttribute="LAND1" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="LAND1" sortDirection="ASC"/>
+            <level levelAttribute="REGIO" levelType="MDLEVEL_TYPE_REGULAR" order="2" orderAttribute="REGIO" sortDirection="ASC"/>
+            <level levelAttribute="PSTLZ" levelType="MDLEVEL_TYPE_REGULAR" order="3" orderAttribute="PSTLZ" sortDirection="ASC"/>
+            <level levelAttribute="ORT01" levelType="MDLEVEL_TYPE_REGULAR" order="4" orderAttribute="ORT01" sortDirection="ASC"/>
           </levels>
         </hierarchy>
       </hierarchies>
@@ -302,60 +381,39 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="256.3960458518511" y="112"/>
+      <upperLeftCorner x="256" y="112"/>
     
       <rectangleSize width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="BEFORE_AGG_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="256.3960458518511" y="217"/>
+      <upperLeftCorner x="256" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape expanded="true" modelObjectName="VDR_PRTDS_MONTH_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="222.13242045583735" y="841.9999952316284"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-  
-    <shape expanded="true" modelObjectName="VENDOR_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="586.9999976158142"/>
+    <shape expanded="true" modelObjectName="VDR_VNDR_PRTDS_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="232" y="341"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="VDR_VNDR_PRTDS_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="232.36162814508887" y="446.9999988079071"/>
+      <upperLeftCorner x="232" y="446"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="VENDOR_P" modelObjectNameSpace="VDR_VNDR_PRTDS_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VDR_VNDR_PRTDS_J">
       <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="202.0234375"/>
+      <rectangleSize width="202"/>
     </shape>
     <shape modelObjectName="VEND_PRDTS_IDNC_MONTH_JP" modelObjectNameSpace="VDR_VNDR_PRTDS_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VDR_VNDR_PRTDS_J">
-      <upperLeftCorner x="343.34228515625" y="60"/>
-      <rectangleSize width="252.70703125"/>
+      <upperLeftCorner x="267" y="14"/>
+      <rectangleSize width="100"/>
     </shape>
-    <shape expanded="true" modelObjectName="VDR_VNDR_PRTDS_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="232.36162814508887" y="341.9999988079071"/>
+  
+    <shape expanded="true" modelObjectName="VENDOR_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="586"/>
       <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape expanded="true" modelObjectName="VEND_PRDTS_IDNC_MONTH_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="335.5468480308598" y="717.9999964237213"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape modelObjectName="VDR_PRTDS_MONTH_P" modelObjectNameSpace="VEND_PRDTS_IDNC_MONTH_J" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="250"/>
-    </shape>
-    <shape modelObjectName="VEND_INDC_MONTH_P" modelObjectNameSpace="VEND_PRDTS_IDNC_MONTH_J" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="250"/>
     </shape>
     <shape expanded="true" modelObjectName="VEND_PRDTS_IDNC_MONTH_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="341" y="586.9999976158142"/>
+      <upperLeftCorner x="341" y="586"/>
       <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape expanded="true" modelObjectName="VEND_INDC_MONTH_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="452.13242045583735" y="841.9999952316284"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-  </shapes>
+    </shape></shapes>
 </layout>
 </Calculation:scenario>
