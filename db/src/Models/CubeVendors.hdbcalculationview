@@ -13,9 +13,6 @@
   <DataSource id="PLANT">
     <resourceUri>PLANT</resourceUri>
   </DataSource>
-  <DataSource id="COMPANY">
-    <resourceUri>COMPANY</resourceUri>
-  </DataSource>
   <DataSource id="V_VENDOR_INVOICE_2Y">
     <resourceUri>V_VENDOR_INVOICE_2Y</resourceUri>
   </DataSource>
@@ -25,8 +22,103 @@
 </dataSources>
 <calculationViews>
   <calculationView xsi:type="Calculation:ProjectionView" id="BEFORE_AGG_P">
-    <viewAttributes/>
+    <viewAttributes>
+      <viewAttribute id="VND_LIFNR"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="VND_SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="VND_NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+      <viewAttribute id="INV_VENDOR_2Y"/>
+      <viewAttribute id="INV_VENDOR_2Y_BOOL"/>
+      <viewAttribute id="PIR_WERKS"/>
+      <viewAttribute id="PIR_EKORG"/>
+      <viewAttribute id="PIR_MATNR"/>
+      <viewAttribute id="NETPR"/>
+      <viewAttribute id="PIR_WAERS_1"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="PIR_LIFNR"/>
+      <viewAttribute id="PIR_URZLAND"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="MAT_EKORG"/>
+      <viewAttribute id="MAT_LAND1"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="PIR_SOURCE"/>
+      <viewAttribute id="PLANT_NAME"/>
+      <viewAttribute id="EKORG_1_1"/>
+    </viewAttributes>
     <calculatedViewAttributes/>
+    <input node="VND2Y_PIRMATPLANT_JP"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VND_P">
     <viewAttributes>
@@ -82,19 +174,42 @@
     <input node="DimVendor"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="PIR_P">
-    <viewAttributes/>
+    <viewAttributes>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="LOEKZ"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="BPRME"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="NETPR"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="PRDAT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="IDNLF"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="URZLA"/>
+    </viewAttributes>
     <calculatedViewAttributes/>
     <input node="PURCHINFORECORD"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="PLANT_P">
-    <viewAttributes/>
+    <viewAttributes>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="SOURCE"/>
+    </viewAttributes>
     <calculatedViewAttributes/>
     <input node="PLANT"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="COMPNY_P">
-    <viewAttributes/>
-    <calculatedViewAttributes/>
-    <input node="COMPANY"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VEND2Y_P">
     <viewAttributes>
@@ -110,7 +225,41 @@
     <input node="V_VENDOR_INVOICE_2Y"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="MAT_P">
-    <viewAttributes/>
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+    </viewAttributes>
     <calculatedViewAttributes/>
     <input node="DimMaterial"/>
   </calculationView>
@@ -165,11 +314,7 @@
       <viewAttribute id="ZPRZ1" aggregationType="sum"/>
       <viewAttribute id="INV_VENDOR_2Y" aggregationType="sum"/>
     </viewAttributes>
-    <calculatedViewAttributes>
-      <calculatedViewAttribute id="INV_VENDOR_2Y_D" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
-        <formula>IFNULL(&quot;INV_VENDOR_2Y&quot;, 0)</formula>
-      </calculatedViewAttribute>
-    </calculatedViewAttributes>
+    <calculatedViewAttributes/>
     <input node="VND_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
@@ -274,16 +419,990 @@
       <viewAttribute id="PRFRE"/>
       <viewAttribute id="SMTP_ADDR"/>
       <viewAttribute id="ZPRZ1"/>
-      <viewAttribute id="INV_VENDOR_2Y_D"/>
+      <viewAttribute id="INV_VENDOR_2Y"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="INV_VENDOR_2Y_BOOL" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;INV_VENDOR_2Y&quot;, 0)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="VND_2Y_J"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="PIR_MAT_J" cardinality="CN_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="PIR_WERKS"/>
+      <viewAttribute id="PIR_EKORG"/>
+      <viewAttribute id="PIR_MATNR"/>
+      <viewAttribute id="NETPR" aggregationType="sum"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="PEINH" aggregationType="sum"/>
+      <viewAttribute id="PIR_LIFNR"/>
+      <viewAttribute id="PIR_URZLAND"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+    
+      <viewAttribute id="PIR_SOURCE"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="VND_2Y_J"/>
+    <input node="PIR_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NETPR" source="NETPR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_URZLAND" source="URZLA"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_SOURCE" source="SOURCE"/>
+    </input>
+    <input node="MAT_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_FR" source="MTBEZ_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_EN" source="MTBEZ_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_F" source="MAKTX_F"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_E" source="MAKTX_E"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERSDA" source="ERSDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAEDA" source="LAEDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAWN" source="STAWN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROFL" source="PROFL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L1" source="MATKL_L1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L1" source="WGBEZ_L1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L2" source="MATKL_L2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L2" source="WGBEZ_L2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L3" source="MATKL_L3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L3" source="WGBEZ_L3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L4" source="MATKL_L4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L4" source="WGBEZ_L4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L5" source="MATKL_L5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L5" source="WGBEZ_L5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_MATNR" source="MATNR"/>
+    </input>
+    <joinAttribute name="PIR_MATNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PIR_MAT_JP">
+    <viewAttributes>
+      <viewAttribute id="PIR_WERKS"/>
+      <viewAttribute id="PIR_EKORG"/>
+      <viewAttribute id="PIR_MATNR"/>
+      <viewAttribute id="NETPR"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="PIR_LIFNR"/>
+      <viewAttribute id="PIR_URZLAND"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+    
+      <viewAttribute id="PIR_SOURCE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="PIR_MAT_J"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="PIR_MAT_PLANT_J" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="PIR_WERKS"/>
+      <viewAttribute id="PIR_EKORG"/>
+      <viewAttribute id="PIR_MATNR"/>
+      <viewAttribute id="NETPR" aggregationType="sum"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="PEINH" aggregationType="sum"/>
+      <viewAttribute id="PIR_LIFNR"/>
+      <viewAttribute id="PIR_URZLAND"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="PIR_SOURCE"/>
+      <viewAttribute id="PLANT_NAME"/>
+      <viewAttribute id="EKORG_1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="PIR_MAT_JP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_WERKS" source="PIR_WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_EKORG" source="PIR_EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_MATNR" source="PIR_MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NETPR" source="NETPR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_LIFNR" source="PIR_LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_URZLAND" source="PIR_URZLAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_FR" source="MTBEZ_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_EN" source="MTBEZ_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_F" source="MAKTX_F"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_E" source="MAKTX_E"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERSDA" source="ERSDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAEDA" source="LAEDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAWN" source="STAWN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROFL" source="PROFL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L1" source="MATKL_L1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L1" source="WGBEZ_L1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L2" source="MATKL_L2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L2" source="WGBEZ_L2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L3" source="MATKL_L3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L3" source="WGBEZ_L3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L4" source="MATKL_L4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L4" source="WGBEZ_L4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L5" source="MATKL_L5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L5" source="WGBEZ_L5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_SOURCE" source="PIR_SOURCE"/>
+    </input>
+    <input node="PLANT_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_NAME" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG_1" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_SOURCE" source="SOURCE"/>
+    </input>
+  
+    <joinAttribute name="PIR_WERKS"/>
+    <joinAttribute name="PIR_SOURCE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PIR_MAT_PLANT_JP">
+    <viewAttributes>
+      <viewAttribute id="PIR_WERKS"/>
+      <viewAttribute id="PIR_EKORG"/>
+      <viewAttribute id="PIR_MATNR"/>
+      <viewAttribute id="NETPR"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="PIR_LIFNR"/>
+      <viewAttribute id="PIR_URZLAND"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="PIR_SOURCE"/>
+      <viewAttribute id="PLANT_NAME"/>
+      <viewAttribute id="EKORG_1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="PIR_MAT_PLANT_J"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="VND2Y_PIRMATPLANT_J" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="VND_LIFNR"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="VND_SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="VND_NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1" aggregationType="sum"/>
+      <viewAttribute id="INV_VENDOR_2Y" aggregationType="sum"/>
+      <viewAttribute id="INV_VENDOR_2Y_BOOL"/>
+      <viewAttribute id="PIR_WERKS"/>
+      <viewAttribute id="PIR_EKORG"/>
+      <viewAttribute id="PIR_MATNR"/>
+      <viewAttribute id="NETPR" aggregationType="sum"/>
+      <viewAttribute id="PIR_WAERS_1"/>
+      <viewAttribute id="PEINH" aggregationType="sum"/>
+      <viewAttribute id="PIR_LIFNR"/>
+      <viewAttribute id="PIR_URZLAND"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="MAT_EKORG"/>
+      <viewAttribute id="MAT_LAND1"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="PIR_SOURCE"/>
+      <viewAttribute id="PLANT_NAME"/>
+      <viewAttribute id="EKORG_1_1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VND_2Y_JP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_X" source="SPERM_X"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_X" source="LOEVM_X"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBUND" source="VBUND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_Y" source="LOEVM_Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_Y" source="SPERM_Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENSL" source="VENSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZFAEL" source="ZFAEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMONA" source="ZMONA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTAG1" source="ZTAG1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_FR" source="BRTXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_EN" source="BRTXT_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTBUS" source="J_1KFTBUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MCOD1" source="MCOD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEBRE" source="WEBRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INV_VENDOR_2Y" source="INV_VENDOR_2Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INV_VENDOR_2Y_BOOL" source="INV_VENDOR_2Y_BOOL"/>
+    </input>
+    <input node="PIR_MAT_PLANT_JP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_WERKS" source="PIR_WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_EKORG" source="PIR_EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_MATNR" source="PIR_MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NETPR" source="NETPR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_WAERS_1" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_LIFNR" source="PIR_LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_URZLAND" source="PIR_URZLAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_FR" source="MTBEZ_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_EN" source="MTBEZ_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_F" source="MAKTX_F"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_E" source="MAKTX_E"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERSDA" source="ERSDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAEDA" source="LAEDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAWN" source="STAWN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROFL" source="PROFL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAT_EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAT_LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L1" source="MATKL_L1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L1" source="WGBEZ_L1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L2" source="MATKL_L2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L2" source="WGBEZ_L2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L3" source="MATKL_L3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L3" source="WGBEZ_L3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L4" source="MATKL_L4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L4" source="WGBEZ_L4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L5" source="MATKL_L5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L5" source="WGBEZ_L5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_SOURCE" source="PIR_SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_NAME" source="PLANT_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG_1_1" source="EKORG_1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_LIFNR" source="PIR_LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_SOURCE" source="PIR_SOURCE"/>
+    </input>
+    <joinAttribute name="VND_LIFNR"/>
+    <joinAttribute name="VND_SOURCE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VND2Y_PIRMATPLANT_JP">
+    <viewAttributes>
+      <viewAttribute id="VND_LIFNR"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="VND_SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="VND_NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+      <viewAttribute id="INV_VENDOR_2Y"/>
+      <viewAttribute id="INV_VENDOR_2Y_BOOL"/>
+      <viewAttribute id="PIR_WERKS"/>
+      <viewAttribute id="PIR_EKORG"/>
+      <viewAttribute id="PIR_MATNR"/>
+      <viewAttribute id="NETPR"/>
+      <viewAttribute id="PIR_WAERS_1"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="PIR_LIFNR"/>
+      <viewAttribute id="PIR_URZLAND"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="MAT_EKORG"/>
+      <viewAttribute id="MAT_LAND1"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="PIR_SOURCE"/>
+      <viewAttribute id="PLANT_NAME"/>
+      <viewAttribute id="EKORG_1_1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VND2Y_PIRMATPLANT_J"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
-  <attributes/>
+  <attributes>
+    <attribute id="VND_LIFNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LIFNR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_LIFNR"/>
+    </attribute>
+    <attribute id="VENDORUNIK" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VENDORUNIK"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
+    </attribute>
+    <attribute id="KRAUS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KRAUS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KRAUS"/>
+    </attribute>
+    <attribute id="STCEG" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STCEG"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCEG"/>
+    </attribute>
+    <attribute id="STCD1" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STCD1"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCD1"/>
+    </attribute>
+    <attribute id="EKORG" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EKORG"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG"/>
+    </attribute>
+    <attribute id="VND_SOURCE" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SOURCE"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_SOURCE"/>
+    </attribute>
+    <attribute id="ERDAT" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ERDAT"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ERDAT"/>
+    </attribute>
+    <attribute id="VND_NAME1" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME1"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_NAME1"/>
+    </attribute>
+    <attribute id="ORT01" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ORT01"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ORT01"/>
+    </attribute>
+    <attribute id="PFACH" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PFACH"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PFACH"/>
+    </attribute>
+    <attribute id="STRAS" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STRAS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STRAS"/>
+    </attribute>
+    <attribute id="PSTLZ" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PSTLZ"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PSTLZ"/>
+    </attribute>
+    <attribute id="REGIO" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="REGIO"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="REGIO"/>
+    </attribute>
+    <attribute id="ADRNR" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADRNR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ADRNR"/>
+    </attribute>
+    <attribute id="TELF1" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TELF1"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TELF1"/>
+    </attribute>
+    <attribute id="SPERR" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPERR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SPERR"/>
+    </attribute>
+    <attribute id="SPERM_X" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPERM_X"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SPERM_X"/>
+    </attribute>
+    <attribute id="LAND1" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LAND1"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAND1"/>
+    </attribute>
+    <attribute id="KTOKK" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KTOKK"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KTOKK"/>
+    </attribute>
+    <attribute id="LOEVM_X" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LOEVM_X"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LOEVM_X"/>
+    </attribute>
+    <attribute id="SPRAS" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPRAS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SPRAS"/>
+    </attribute>
+    <attribute id="STCD2" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STCD2"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCD2"/>
+    </attribute>
+    <attribute id="VBUND" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VBUND"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VBUND"/>
+    </attribute>
+    <attribute id="INCO1" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCO1"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="INCO1"/>
+    </attribute>
+    <attribute id="INCO2" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCO2"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="INCO2"/>
+    </attribute>
+    <attribute id="LFABC" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LFABC"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LFABC"/>
+    </attribute>
+    <attribute id="LOEVM_Y" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LOEVM_Y"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LOEVM_Y"/>
+    </attribute>
+    <attribute id="SPERM_Y" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SPERM_Y"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SPERM_Y"/>
+    </attribute>
+    <attribute id="VENSL" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VENSL"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENSL"/>
+    </attribute>
+    <attribute id="WAERS" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WAERS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WAERS"/>
+    </attribute>
+    <attribute id="ZTERM" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZTERM"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZTERM"/>
+    </attribute>
+    <attribute id="ZFAEL" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZFAEL"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZFAEL"/>
+    </attribute>
+    <attribute id="ZMONA" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZMONA"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZMONA"/>
+    </attribute>
+    <attribute id="ZTAG1" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ZTAG1"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZTAG1"/>
+    </attribute>
+    <attribute id="TEXT1_FR" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TEXT1_FR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TEXT1_FR"/>
+    </attribute>
+    <attribute id="TEXT1_EN" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TEXT1_EN"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TEXT1_EN"/>
+    </attribute>
+    <attribute id="KONZS" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KONZS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KONZS"/>
+    </attribute>
+    <attribute id="BRSCH" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRSCH"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRSCH"/>
+    </attribute>
+    <attribute id="BRTXT_FR" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRTXT_FR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRTXT_FR"/>
+    </attribute>
+    <attribute id="BRTXT_EN" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRTXT_EN"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRTXT_EN"/>
+    </attribute>
+    <attribute id="J_1KFTBUS" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="J_1KFTBUS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="J_1KFTBUS"/>
+    </attribute>
+    <attribute id="MCOD1" order="43" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MCOD1"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MCOD1"/>
+    </attribute>
+    <attribute id="WEBRE" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WEBRE"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WEBRE"/>
+    </attribute>
+    <attribute id="PRFRE" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRFRE"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PRFRE"/>
+    </attribute>
+    <attribute id="SMTP_ADDR" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SMTP_ADDR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SMTP_ADDR"/>
+    </attribute>
+    <attribute id="INV_VENDOR_2Y_BOOL" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INV_VENDOR_2Y_BOOL"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="INV_VENDOR_2Y_BOOL"/>
+    </attribute>
+    <attribute id="PIR_WERKS" order="50" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PIR_WERKS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_WERKS"/>
+    </attribute>
+    <attribute id="PIR_EKORG" order="51" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PIR_EKORG"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_EKORG"/>
+    </attribute>
+    <attribute id="PIR_MATNR" order="52" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PIR_MATNR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_MATNR"/>
+    </attribute>
+    <attribute id="PIR_WAERS_1" order="54" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WAERS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_WAERS_1"/>
+    </attribute>
+    <attribute id="PIR_LIFNR" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PIR_LIFNR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_LIFNR"/>
+    </attribute>
+    <attribute id="PIR_URZLAND" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PIR_URZLAND"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_URZLAND"/>
+    </attribute>
+    <attribute id="MATNR" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATNR"/>
+    </attribute>
+    <attribute id="MATKL" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL"/>
+    </attribute>
+    <attribute id="BRGEW" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BRGEW"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRGEW"/>
+    </attribute>
+    <attribute id="GEWEI" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="GEWEI"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="GEWEI"/>
+    </attribute>
+    <attribute id="MTART" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MTART"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MTART"/>
+    </attribute>
+    <attribute id="MTBEZ_FR" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MTBEZ_FR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MTBEZ_FR"/>
+    </attribute>
+    <attribute id="MTBEZ_EN" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MTBEZ_EN"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MTBEZ_EN"/>
+    </attribute>
+    <attribute id="NTGEW" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NTGEW"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="NTGEW"/>
+    </attribute>
+    <attribute id="MAKTX_F" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAKTX_F"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MAKTX_F"/>
+    </attribute>
+    <attribute id="MAKTX_E" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MAKTX_E"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MAKTX_E"/>
+    </attribute>
+    <attribute id="SOURCE" order="68" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SOURCE"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SOURCE"/>
+    </attribute>
+    <attribute id="ERSDA" order="69" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ERSDA"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ERSDA"/>
+    </attribute>
+    <attribute id="LAEDA" order="70" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LAEDA"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAEDA"/>
+    </attribute>
+    <attribute id="WERKS" order="71" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WERKS"/>
+    </attribute>
+    <attribute id="EKGRP" order="72" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EKGRP"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKGRP"/>
+    </attribute>
+    <attribute id="STAWN" order="73" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STAWN"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STAWN"/>
+    </attribute>
+    <attribute id="PRCTR" order="74" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRCTR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PRCTR"/>
+    </attribute>
+    <attribute id="MEINS" order="75" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MEINS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MEINS"/>
+    </attribute>
+    <attribute id="DISPO" order="76" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DISPO"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DISPO"/>
+    </attribute>
+    <attribute id="PROFL" order="77" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PROFL"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PROFL"/>
+    </attribute>
+    <attribute id="NAME1" order="78" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME1"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="NAME1"/>
+    </attribute>
+    <attribute id="MAT_EKORG" order="79" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EKORG"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MAT_EKORG"/>
+    </attribute>
+    <attribute id="MAT_LAND1" order="80" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LAND1"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MAT_LAND1"/>
+    </attribute>
+    <attribute id="MATKL_L1" order="81" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL_L1"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L1"/>
+    </attribute>
+    <attribute id="WGBEZ_L1" order="82" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WGBEZ_L1"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L1"/>
+    </attribute>
+    <attribute id="MATKL_L2" order="83" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL_L2"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L2"/>
+    </attribute>
+    <attribute id="WGBEZ_L2" order="84" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WGBEZ_L2"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L2"/>
+    </attribute>
+    <attribute id="MATKL_L3" order="85" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL_L3"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L3"/>
+    </attribute>
+    <attribute id="WGBEZ_L3" order="86" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WGBEZ_L3"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L3"/>
+    </attribute>
+    <attribute id="MATKL_L4" order="87" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL_L4"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L4"/>
+    </attribute>
+    <attribute id="WGBEZ_L4" order="88" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WGBEZ_L4"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L4"/>
+    </attribute>
+    <attribute id="MATKL_L5" order="89" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATKL_L5"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L5"/>
+    </attribute>
+    <attribute id="WGBEZ_L5" order="90" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WGBEZ_L5"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L5"/>
+    </attribute>
+    <attribute id="PIR_SOURCE" order="91" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SOURCE_1"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_SOURCE"/>
+    </attribute>
+    <attribute id="PLANT_NAME" order="92" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME1"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PLANT_NAME"/>
+    </attribute>
+    <attribute id="EKORG_1_1" order="93" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EKORG"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG_1_1"/>
+    </attribute>
+  </attributes>
   <calculatedAttributes/>
-  <baseMeasures/>
+  <baseMeasures>
+    <measure id="ZPRZ1" order="47" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="ZPRZ1"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="ZPRZ1"/>
+    </measure>
+    <measure id="INV_VENDOR_2Y" order="48" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="INV_VENDOR_2Y"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="INV_VENDOR_2Y"/>
+    </measure>
+    <measure id="NETPR" order="53" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="NETPR"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="NETPR"/>
+    </measure>
+    <measure id="PEINH" order="55" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="PEINH"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="PEINH"/>
+    </measure>
+  </baseMeasures>
   <calculatedMeasures/>
   <restrictedMeasures/>
   <localDimensions/>
@@ -302,45 +1421,89 @@
     </shape>
   
     <shape expanded="true" modelObjectName="VND_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-167" y="666"/>
+      <upperLeftCorner x="-257" y="771"/>
       <rectangleSize height="30" width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="PIR_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="100" y="335"/>
+      <upperLeftCorner x="336" y="843"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PLANT_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-450" y="250"/>
+      <upperLeftCorner x="211" y="619"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape expanded="true" modelObjectName="COMPNY_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-247" y="250"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-  
     <shape expanded="true" modelObjectName="VEND2Y_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="20" y="666"/>
+      <upperLeftCorner x="-59" y="771"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="MAT_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="438" y="466"/>
+      <upperLeftCorner x="565" y="843"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="VND_2Y_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-69" y="558"/>
+      <upperLeftCorner x="-163" y="647"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="VND_P" modelObjectNameSpace="VND_2Y_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="104.013671875"/>
+      <rectangleSize width="104"/>
     </shape>
     <shape modelObjectName="VEND2Y_P" modelObjectNameSpace="VND_2Y_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="177.08837890625"/>
+      <rectangleSize width="177"/>
     </shape>
     <shape expanded="true" modelObjectName="VND_2Y_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-69" y="496"/>
+      <upperLeftCorner x="-153" y="552"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="PIR_MAT_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="451" y="712"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="PIR_P" modelObjectNameSpace="PIR_MAT_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="100"/>
+    </shape>
+    <shape modelObjectName="MAT_P" modelObjectNameSpace="PIR_MAT_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="103"/>
+    </shape>
+    <shape expanded="true" modelObjectName="PIR_MAT_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="452" y="619"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="PIR_MAT_PLANT_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="331" y="510"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="PIR_MAT_JP" modelObjectNameSpace="PIR_MAT_PLANT_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="162"/>
+    </shape>
+    <shape modelObjectName="PLANT_P" modelObjectNameSpace="PIR_MAT_PLANT_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="312" y="476"/>
+      <rectangleSize width="133.0615234375"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="PIR_MAT_PLANT_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="326" y="438"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VND2Y_PIRMATPLANT_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-13" y="360"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="VND_2Y_JP" modelObjectNameSpace="VND2Y_PIRMATPLANT_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="PIR_MAT_PLANT_JP" modelObjectNameSpace="VND2Y_PIRMATPLANT_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VND2Y_PIRMATPLANT_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-6" y="285"/>
       <rectangleSize height="30" width="160"/>
     </shape>
   </shapes>
