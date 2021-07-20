@@ -276,6 +276,8 @@
       <viewAttribute id="CALMONTH"/>
       <viewAttribute id="CALQUARTER"/>
       <viewAttribute id="YEAR"/>
+    
+      <viewAttribute id="SOURCE"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="DIMVND_CLAIM_JP">
@@ -357,6 +359,8 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM14_DELIV_D" source="CLAIM14_DELIV_D"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM56_DELIV_D" source="CLAIM56_DELIV_D"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM78_DELIV_D" source="CLAIM78_DELIV_D"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
     </input>
     <input node="DATDIM_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
@@ -447,6 +451,8 @@
       <viewAttribute id="CLAIM14_DELIV_D"/>
       <viewAttribute id="CLAIM56_DELIV_D"/>
       <viewAttribute id="CLAIM78_DELIV_D"/>
+    
+      <viewAttribute id="SOURCE"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="DIMVND_CLAIM_J"/>
@@ -473,7 +479,7 @@
     <calculatedViewAttributes/>
     <input node="ZM_TIME_DIMENSION"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="DIMVND_CLAIM_J" cardinality="CN_N" joinType="inner">
+  <calculationView xsi:type="Calculation:JoinView" id="DIMVND_CLAIM_J" cardinality="CN_N" joinType="leftOuter">
     <viewAttributes>
       <viewAttribute id="VENDORUNIK"/>
       <viewAttribute id="NAME1"/>
@@ -553,26 +559,10 @@
       <viewAttribute id="CLAIM14_DELIV_D" aggregationType="sum"/>
       <viewAttribute id="CLAIM56_DELIV_D" aggregationType="sum"/>
       <viewAttribute id="CLAIM78_DELIV_D" aggregationType="sum"/>
-      <viewAttribute hidden="true" id="JOIN$LIFNR$CLAIM_LIFNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute hidden="true" id="JOIN$CLAIM_LIFNR$LIFNR"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="DIMVND_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_FR" source="BRTXT_FR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_EN" source="BRTXT_EN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$CLAIM_LIFNR" source="LIFNR"/>
-    </input>
     <input node="VNDCLAIMS_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_NBR" source="CLAIM_NBR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_DT" source="CLAIM_DT"/>
@@ -638,9 +628,27 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM14_DELIV_D" source="CLAIM14_DELIV_D"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM56_DELIV_D" source="CLAIM56_DELIV_D"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM78_DELIV_D" source="CLAIM78_DELIV_D"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR$CLAIM_LIFNR" source="CLAIM_LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CLAIM_LIFNR$LIFNR" source="CLAIM_LIFNR"/>
     </input>
-    <joinAttribute name="JOIN$LIFNR$CLAIM_LIFNR"/>
+    <input node="DIMVND_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_FR" source="BRTXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_EN" source="BRTXT_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CLAIM_LIFNR$LIFNR" source="LIFNR"/>
+    </input>
+    <joinAttribute name="JOIN$CLAIM_LIFNR$LIFNR"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="DIMVND_P">
     <viewAttributes>
@@ -1223,11 +1231,11 @@
       <upperLeftCorner x="232" y="731"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape modelObjectName="DIMVND_P" modelObjectNameSpace="DIMVND_CLAIM_J" modelObjectType="JoinNodeInput">
+    <shape modelObjectName="VNDCLAIMS_P" modelObjectNameSpace="DIMVND_CLAIM_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="20" y="30"/>
       <rectangleSize width="126"/>
     </shape>
-    <shape modelObjectName="VNDCLAIMS_P" modelObjectNameSpace="DIMVND_CLAIM_J" modelObjectType="JoinNodeInput">
+    <shape modelObjectName="DIMVND_P" modelObjectNameSpace="DIMVND_CLAIM_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="320" y="30"/>
       <rectangleSize width="233"/>
     </shape>
