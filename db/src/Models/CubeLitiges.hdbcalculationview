@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CubeLitiges" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:DataFoundation="http://www.sap.com/ndb/BiModelDataFoundation.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" id="CubeLitiges" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
 <descriptions defaultDescription="CubeLitiges.hdbcalculationview"/>
 <localVariables/>
 <variableMappings/>
 <dataSources>
-  <DataSource id="VENDORCLAIMS">
-    <resourceUri>VENDORCLAIMS</resourceUri>
+  <DataSource id="ZM_TIME_DIMENSION">
+    <resourceUri>ZM_TIME_DIMENSION</resourceUri>
   </DataSource>
   <DataSource id="DimVendor">
     <resourceUri>DimVendor</resourceUri>
+  </DataSource>
+  <DataSource id="VENDORCLAIMS">
+    <resourceUri>VENDORCLAIMS</resourceUri>
   </DataSource>
 </dataSources>
 <calculationViews>
@@ -92,9 +95,277 @@
       <viewAttribute id="CLAIM14_DELIV_D"/>
       <viewAttribute id="CLAIM56_DELIV_D"/>
       <viewAttribute id="CLAIM78_DELIV_D"/>
+    
+      <viewAttribute id="CALWEEK"/>
+      <viewAttribute id="CALMONTH"/>
+      <viewAttribute id="CALQUARTER"/>
+      <viewAttribute id="YEAR"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="DIMVND_CLAIM_JP"/>
+    <input node="DIMVND_CLAIM_DATE_JP"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="DIMVND_CLAIM_DATE_JP">
+    <viewAttributes>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="CLAIM_NBR"/>
+      <viewAttribute id="CLAIM_DT"/>
+      <viewAttribute id="CLAIM_CREATE"/>
+      <viewAttribute id="CLAIM_TYPE"/>
+      <viewAttribute id="CLAIM_LVL"/>
+      <viewAttribute id="CLAIM_ST"/>
+      <viewAttribute id="CLAIM_RCPT"/>
+      <viewAttribute id="CLAIM_COUNTRY"/>
+      <viewAttribute id="CLAIM_NAME1"/>
+      <viewAttribute id="CLAIM_FMLY"/>
+      <viewAttribute id="PART_NBR"/>
+      <viewAttribute id="PART_NAME"/>
+      <viewAttribute id="CLAIM_SPART"/>
+      <viewAttribute id="CLAIM_RPART"/>
+      <viewAttribute id="DEFECT_TXT"/>
+      <viewAttribute id="DEFECT_CODE"/>
+      <viewAttribute id="DOUBT_QTY"/>
+      <viewAttribute id="NC_QTY"/>
+      <viewAttribute id="CLAIM_UNIT"/>
+      <viewAttribute id="CLAIM_RECIDIV"/>
+      <viewAttribute id="CLAIM_SEVERITY"/>
+      <viewAttribute id="RANKING_POINT"/>
+      <viewAttribute id="CLAIM_CANCEL_DT"/>
+      <viewAttribute id="CLAIM_CANCEL_REAS"/>
+      <viewAttribute id="CLAIM_TIMEFRAME"/>
+      <viewAttribute id="CLAIM14_ST"/>
+      <viewAttribute id="CLAIM14_DELIV"/>
+      <viewAttribute id="CLAIM14_PLAN_DT"/>
+      <viewAttribute id="CLAIM14_SEND_DT"/>
+      <viewAttribute id="CLAIM14_DONE_DT"/>
+      <viewAttribute id="CLAIM56_ST"/>
+      <viewAttribute id="CLAIM56_DELIV"/>
+      <viewAttribute id="CLAIM56_PLAN_DT"/>
+      <viewAttribute id="CLAIM56_SEND_DT"/>
+      <viewAttribute id="CLAIM56_DONE_DT"/>
+      <viewAttribute id="CLAIM78_ST"/>
+      <viewAttribute id="CLAIM78_DELIV"/>
+      <viewAttribute id="CLAIM78_PLAN_DT"/>
+      <viewAttribute id="CLAIM78_SEND_DT"/>
+      <viewAttribute id="CLAIM78_DONE_DT"/>
+      <viewAttribute id="CLAIM_WERKS"/>
+      <viewAttribute id="CLAIM_WERKS_NAME"/>
+      <viewAttribute id="CROSS_INCIDENT"/>
+      <viewAttribute id="CLAIM_8DSTATUS"/>
+      <viewAttribute id="INVOICE_ST"/>
+      <viewAttribute id="ORDER_NBR"/>
+      <viewAttribute id="COST_REINVOICE_CLT"/>
+      <viewAttribute id="ESTIM_COST_CLAIM"/>
+      <viewAttribute id="CLAIM_MNGMT_VAL_DT"/>
+      <viewAttribute id="CLAIM_INIT_AMOUNT"/>
+      <viewAttribute id="DEB_ADV_SEND_DT"/>
+      <viewAttribute id="CLAIM_VALID_AMOUNT"/>
+      <viewAttribute id="CLAIM_VALID_VAT"/>
+      <viewAttribute id="CLAIM_TX_INCL_DT"/>
+      <viewAttribute id="CLAIM_CANCEL_AMOUNT"/>
+      <viewAttribute id="CLAIM_ACCOUNT_TRF_DT"/>
+      <viewAttribute id="CLAIM_ACCOUNT_RECORD"/>
+      <viewAttribute id="CLAIM_PYMNT_DT"/>
+      <viewAttribute id="CLAIM_ADV_CANCEL_DT"/>
+      <viewAttribute id="CLAIM_COMMENTS"/>
+      <viewAttribute id="CLAIM_DATE"/>
+      <viewAttribute id="CLAIM14_DELIV_D"/>
+      <viewAttribute id="CLAIM56_DELIV_D"/>
+      <viewAttribute id="CLAIM78_DELIV_D"/>
+      <viewAttribute id="CALWEEK"/>
+      <viewAttribute id="CALMONTH"/>
+      <viewAttribute id="CALQUARTER"/>
+      <viewAttribute id="YEAR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="DIMVND_CLAIM_DATE_J"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="DIMVND_CLAIM_DATE_J" cardinality="CN_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="CLAIM_NBR"/>
+      <viewAttribute id="CLAIM_DT"/>
+      <viewAttribute id="CLAIM_CREATE"/>
+      <viewAttribute id="CLAIM_TYPE"/>
+      <viewAttribute id="CLAIM_LVL"/>
+      <viewAttribute id="CLAIM_ST"/>
+      <viewAttribute id="CLAIM_RCPT"/>
+      <viewAttribute id="CLAIM_COUNTRY"/>
+      <viewAttribute id="CLAIM_NAME1"/>
+      <viewAttribute id="CLAIM_FMLY"/>
+      <viewAttribute id="PART_NBR"/>
+      <viewAttribute id="PART_NAME"/>
+      <viewAttribute id="CLAIM_SPART"/>
+      <viewAttribute id="CLAIM_RPART"/>
+      <viewAttribute id="DEFECT_TXT"/>
+      <viewAttribute id="DEFECT_CODE"/>
+      <viewAttribute id="DOUBT_QTY" aggregationType="sum"/>
+      <viewAttribute id="NC_QTY" aggregationType="sum"/>
+      <viewAttribute id="CLAIM_UNIT"/>
+      <viewAttribute id="CLAIM_RECIDIV"/>
+      <viewAttribute id="CLAIM_SEVERITY"/>
+      <viewAttribute id="RANKING_POINT" aggregationType="sum"/>
+      <viewAttribute id="CLAIM_CANCEL_DT"/>
+      <viewAttribute id="CLAIM_CANCEL_REAS"/>
+      <viewAttribute id="CLAIM_TIMEFRAME"/>
+      <viewAttribute id="CLAIM14_ST"/>
+      <viewAttribute id="CLAIM14_DELIV"/>
+      <viewAttribute id="CLAIM14_PLAN_DT"/>
+      <viewAttribute id="CLAIM14_SEND_DT"/>
+      <viewAttribute id="CLAIM14_DONE_DT"/>
+      <viewAttribute id="CLAIM56_ST"/>
+      <viewAttribute id="CLAIM56_DELIV"/>
+      <viewAttribute id="CLAIM56_PLAN_DT"/>
+      <viewAttribute id="CLAIM56_SEND_DT"/>
+      <viewAttribute id="CLAIM56_DONE_DT"/>
+      <viewAttribute id="CLAIM78_ST"/>
+      <viewAttribute id="CLAIM78_DELIV"/>
+      <viewAttribute id="CLAIM78_PLAN_DT"/>
+      <viewAttribute id="CLAIM78_SEND_DT"/>
+      <viewAttribute id="CLAIM78_DONE_DT"/>
+      <viewAttribute id="CLAIM_WERKS"/>
+      <viewAttribute id="CLAIM_WERKS_NAME"/>
+      <viewAttribute id="CROSS_INCIDENT"/>
+      <viewAttribute id="CLAIM_8DSTATUS"/>
+      <viewAttribute id="INVOICE_ST"/>
+      <viewAttribute id="ORDER_NBR"/>
+      <viewAttribute id="COST_REINVOICE_CLT" aggregationType="sum"/>
+      <viewAttribute id="ESTIM_COST_CLAIM" aggregationType="sum"/>
+      <viewAttribute id="CLAIM_MNGMT_VAL_DT"/>
+      <viewAttribute id="CLAIM_INIT_AMOUNT" aggregationType="sum"/>
+      <viewAttribute id="DEB_ADV_SEND_DT"/>
+      <viewAttribute id="CLAIM_VALID_AMOUNT" aggregationType="sum"/>
+      <viewAttribute id="CLAIM_VALID_VAT" aggregationType="sum"/>
+      <viewAttribute id="CLAIM_TX_INCL_DT"/>
+      <viewAttribute id="CLAIM_CANCEL_AMOUNT" aggregationType="sum"/>
+      <viewAttribute id="CLAIM_ACCOUNT_TRF_DT"/>
+      <viewAttribute id="CLAIM_ACCOUNT_RECORD"/>
+      <viewAttribute id="CLAIM_PYMNT_DT"/>
+      <viewAttribute id="CLAIM_ADV_CANCEL_DT"/>
+      <viewAttribute id="CLAIM_COMMENTS"/>
+      <viewAttribute id="CLAIM_DATE"/>
+      <viewAttribute id="CLAIM14_DELIV_D" aggregationType="sum"/>
+      <viewAttribute id="CLAIM56_DELIV_D" aggregationType="sum"/>
+      <viewAttribute id="CLAIM78_DELIV_D" aggregationType="sum"/>
+      <viewAttribute id="CALWEEK"/>
+      <viewAttribute id="CALMONTH"/>
+      <viewAttribute id="CALQUARTER"/>
+      <viewAttribute id="YEAR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="DIMVND_CLAIM_JP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_FR" source="BRTXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_EN" source="BRTXT_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_NBR" source="CLAIM_NBR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_DT" source="CLAIM_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_CREATE" source="CLAIM_CREATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_TYPE" source="CLAIM_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_LVL" source="CLAIM_LVL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_ST" source="CLAIM_ST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_RCPT" source="CLAIM_RCPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_COUNTRY" source="CLAIM_COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_NAME1" source="CLAIM_NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_FMLY" source="CLAIM_FMLY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PART_NBR" source="PART_NBR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PART_NAME" source="PART_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_SPART" source="CLAIM_SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_RPART" source="CLAIM_RPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEFECT_TXT" source="DEFECT_TXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEFECT_CODE" source="DEFECT_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOUBT_QTY" source="DOUBT_QTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NC_QTY" source="NC_QTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_UNIT" source="CLAIM_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_RECIDIV" source="CLAIM_RECIDIV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_SEVERITY" source="CLAIM_SEVERITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RANKING_POINT" source="RANKING_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_CANCEL_DT" source="CLAIM_CANCEL_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_CANCEL_REAS" source="CLAIM_CANCEL_REAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_TIMEFRAME" source="CLAIM_TIMEFRAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM14_ST" source="CLAIM14_ST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM14_DELIV" source="CLAIM14_DELIV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM14_PLAN_DT" source="CLAIM14_PLAN_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM14_SEND_DT" source="CLAIM14_SEND_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM14_DONE_DT" source="CLAIM14_DONE_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM56_ST" source="CLAIM56_ST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM56_DELIV" source="CLAIM56_DELIV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM56_PLAN_DT" source="CLAIM56_PLAN_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM56_SEND_DT" source="CLAIM56_SEND_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM56_DONE_DT" source="CLAIM56_DONE_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM78_ST" source="CLAIM78_ST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM78_DELIV" source="CLAIM78_DELIV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM78_PLAN_DT" source="CLAIM78_PLAN_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM78_SEND_DT" source="CLAIM78_SEND_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM78_DONE_DT" source="CLAIM78_DONE_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_WERKS" source="CLAIM_WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_WERKS_NAME" source="CLAIM_WERKS_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CROSS_INCIDENT" source="CROSS_INCIDENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_8DSTATUS" source="CLAIM_8DSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INVOICE_ST" source="INVOICE_ST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORDER_NBR" source="ORDER_NBR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COST_REINVOICE_CLT" source="COST_REINVOICE_CLT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESTIM_COST_CLAIM" source="ESTIM_COST_CLAIM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_MNGMT_VAL_DT" source="CLAIM_MNGMT_VAL_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_INIT_AMOUNT" source="CLAIM_INIT_AMOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEB_ADV_SEND_DT" source="DEB_ADV_SEND_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_VALID_AMOUNT" source="CLAIM_VALID_AMOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_VALID_VAT" source="CLAIM_VALID_VAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_TX_INCL_DT" source="CLAIM_TX_INCL_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_CANCEL_AMOUNT" source="CLAIM_CANCEL_AMOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_ACCOUNT_TRF_DT" source="CLAIM_ACCOUNT_TRF_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_ACCOUNT_RECORD" source="CLAIM_ACCOUNT_RECORD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_PYMNT_DT" source="CLAIM_PYMNT_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_ADV_CANCEL_DT" source="CLAIM_ADV_CANCEL_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_COMMENTS" source="CLAIM_COMMENTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_DATE" source="CLAIM_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM14_DELIV_D" source="CLAIM14_DELIV_D"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM56_DELIV_D" source="CLAIM56_DELIV_D"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM78_DELIV_D" source="CLAIM78_DELIV_D"/>
+    </input>
+    <input node="DATDIM_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALMONTH" source="CALMONTH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALQUARTER" source="CALQUARTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_DATE" source="DATE_SQL"/>
+    </input>
+    <joinAttribute name="CLAIM_DATE"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="DIMVND_CLAIM_JP">
     <viewAttributes>
@@ -180,141 +451,27 @@
     <calculatedViewAttributes/>
     <input node="DIMVND_CLAIM_J"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VNDCLAIMS_P">
+  <calculationView xsi:type="Calculation:ProjectionView" id="DATDIM_P">
     <viewAttributes>
-      <viewAttribute id="CLAIM_NBR"/>
-      <viewAttribute id="CLAIM_DT"/>
-      <viewAttribute id="CLAIM_CREATE"/>
-      <viewAttribute id="CLAIM_TYPE"/>
-      <viewAttribute id="CLAIM_LVL"/>
-      <viewAttribute id="CLAIM_ST"/>
-      <viewAttribute id="CLAIM_RCPT"/>
-      <viewAttribute id="CLAIM_LIFNR"/>
-      <viewAttribute id="CLAIM_COUNTRY"/>
-      <viewAttribute id="CLAIM_DUNS"/>
-      <viewAttribute id="CLAIM_SIRET"/>
-      <viewAttribute id="CLAIM_VATCODE"/>
-      <viewAttribute id="CLAIM_NAME1"/>
-      <viewAttribute id="CLAIM_FMLY"/>
-      <viewAttribute id="PART_NBR"/>
-      <viewAttribute id="PART_NAME"/>
-      <viewAttribute id="CLAIM_SPART"/>
-      <viewAttribute id="CLAIM_RPART"/>
-      <viewAttribute id="DEFECT_TXT"/>
-      <viewAttribute id="DEFECT_CODE"/>
-      <viewAttribute id="DOUBT_QTY"/>
-      <viewAttribute id="NC_QTY"/>
-      <viewAttribute id="CLAIM_UNIT"/>
-      <viewAttribute id="CLAIM_RECIDIV"/>
-      <viewAttribute id="CLAIM_SEVERITY"/>
-      <viewAttribute id="RANKING_POINT"/>
-      <viewAttribute id="CLAIM_CANCEL_DT"/>
-      <viewAttribute id="CLAIM_CANCEL_REAS"/>
-      <viewAttribute id="CLAIM_TIMEFRAME"/>
-      <viewAttribute id="CLAIM14_ST"/>
-      <viewAttribute id="CLAIM14_DELIV"/>
-      <viewAttribute id="CLAIM14_PLAN_DT"/>
-      <viewAttribute id="CLAIM14_SEND_DT"/>
-      <viewAttribute id="CLAIM14_DONE_DT"/>
-      <viewAttribute id="CLAIM56_ST"/>
-      <viewAttribute id="CLAIM56_DELIV"/>
-      <viewAttribute id="CLAIM56_PLAN_DT"/>
-      <viewAttribute id="CLAIM56_SEND_DT"/>
-      <viewAttribute id="CLAIM56_DONE_DT"/>
-      <viewAttribute id="CLAIM78_ST"/>
-      <viewAttribute id="CLAIM78_DELIV"/>
-      <viewAttribute id="CLAIM78_PLAN_DT"/>
-      <viewAttribute id="CLAIM78_SEND_DT"/>
-      <viewAttribute id="CLAIM78_DONE_DT"/>
-      <viewAttribute id="CLAIM_WERKS"/>
-      <viewAttribute id="CLAIM_WERKS_NAME"/>
-      <viewAttribute id="CROSS_INCIDENT"/>
-      <viewAttribute id="CLAIM_8DSTATUS"/>
-      <viewAttribute id="INVOICE_ST"/>
-      <viewAttribute id="ORDER_NBR"/>
-      <viewAttribute id="COST_REINVOICE_CLT"/>
-      <viewAttribute id="ESTIM_COST_CLAIM"/>
-      <viewAttribute id="CLAIM_MNGMT_VAL_DT"/>
-      <viewAttribute id="CLAIM_INIT_AMOUNT"/>
-      <viewAttribute id="DEB_ADV_SEND_DT"/>
-      <viewAttribute id="CLAIM_VALID_AMOUNT"/>
-      <viewAttribute id="CLAIM_VALID_VAT"/>
-      <viewAttribute id="CLAIM_TX_INCL_DT"/>
-      <viewAttribute id="CLAIM_CANCEL_AMOUNT"/>
-      <viewAttribute id="CLAIM_ACCOUNT_TRF_DT"/>
-      <viewAttribute id="CLAIM_ACCOUNT_RECORD"/>
-      <viewAttribute id="CLAIM_PYMNT_DT"/>
-      <viewAttribute id="CLAIM_ADV_CANCEL_DT"/>
-      <viewAttribute id="CLAIM_COMMENTS"/>
-    </viewAttributes>
-    <calculatedViewAttributes>
-      <calculatedViewAttribute id="CLAIM_DATE" datatype="DATE" expressionLanguage="SQL">
-        <formula>TO_DATE(&quot;CLAIM_DT&quot;,'YYYY-MM-DD')</formula>
-      </calculatedViewAttribute>
-      <calculatedViewAttribute id="CLAIM14_DELIV_D" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
-        <formula>TO_DECIMAL(&quot;CLAIM14_DELIV&quot;)</formula>
-      </calculatedViewAttribute>
-      <calculatedViewAttribute id="CLAIM56_DELIV_D" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
-        <formula>TO_DECIMAL(&quot;CLAIM56_DELIV&quot;)</formula>
-      </calculatedViewAttribute>
-      <calculatedViewAttribute id="CLAIM78_DELIV_D" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
-        <formula>TO_DECIMAL(&quot;CLAIM78_DELIV&quot;)</formula>
-      </calculatedViewAttribute>
-    </calculatedViewAttributes>
-    <input node="VENDORCLAIMS"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="DIMVND_P">
-    <viewAttributes>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="VENDORUNIK"/>
-      <viewAttribute id="KRAUS"/>
-      <viewAttribute id="STCEG"/>
-      <viewAttribute id="STCD1"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="ERDAT"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="ORT01"/>
-      <viewAttribute id="PFACH"/>
-      <viewAttribute id="STRAS"/>
-      <viewAttribute id="PSTLZ"/>
-      <viewAttribute id="REGIO"/>
-      <viewAttribute id="ADRNR"/>
-      <viewAttribute id="TELF1"/>
-      <viewAttribute id="SPERR"/>
-      <viewAttribute id="SPERM_X"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="KTOKK"/>
-      <viewAttribute id="LOEVM_X"/>
-      <viewAttribute id="SPRAS"/>
-      <viewAttribute id="STCD2"/>
-      <viewAttribute id="VBUND"/>
-      <viewAttribute id="INCO1"/>
-      <viewAttribute id="INCO2"/>
-      <viewAttribute id="LFABC"/>
-      <viewAttribute id="LOEVM_Y"/>
-      <viewAttribute id="SPERM_Y"/>
-      <viewAttribute id="VENSL"/>
-      <viewAttribute id="WAERS"/>
-      <viewAttribute id="ZTERM"/>
-      <viewAttribute id="ZFAEL"/>
-      <viewAttribute id="ZMONA"/>
-      <viewAttribute id="ZTAG1"/>
-      <viewAttribute id="TEXT1_FR"/>
-      <viewAttribute id="TEXT1_EN"/>
-      <viewAttribute id="KONZS"/>
-      <viewAttribute id="BRSCH"/>
-      <viewAttribute id="BRTXT_FR"/>
-      <viewAttribute id="BRTXT_EN"/>
-      <viewAttribute id="J_1KFTBUS"/>
-      <viewAttribute id="MCOD1"/>
-      <viewAttribute id="WEBRE"/>
-      <viewAttribute id="PRFRE"/>
-      <viewAttribute id="SMTP_ADDR"/>
-      <viewAttribute id="ZPRZ1"/>
+      <viewAttribute id="CALWEEK"/>
+      <viewAttribute id="CALMONTH"/>
+      <viewAttribute id="CALQUARTER"/>
+      <viewAttribute id="YEAR"/>
+      <viewAttribute id="DATE_SQL"/>
+      <viewAttribute id="DATE_SAP"/>
+      <viewAttribute id="QUARTER"/>
+      <viewAttribute id="MONTH"/>
+      <viewAttribute id="WEEK"/>
+      <viewAttribute id="DAY_OF_WEEK"/>
+      <viewAttribute id="YEAR_INT"/>
+      <viewAttribute id="QUARTER_INT"/>
+      <viewAttribute id="MONTH_INT"/>
+      <viewAttribute id="WEEK_INT"/>
+      <viewAttribute id="DAY_OF_WEEK_INT"/>
+      <viewAttribute id="DAY_INT"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="DimVendor"/>
+    <input node="ZM_TIME_DIMENSION"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="DIMVND_CLAIM_J" cardinality="CN_N" joinType="inner">
     <viewAttributes>
@@ -485,66 +642,202 @@
     </input>
     <joinAttribute name="JOIN$LIFNR$CLAIM_LIFNR"/>
   </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="DIMVND_P">
+    <viewAttributes>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="DimVendor"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VNDCLAIMS_P">
+    <viewAttributes>
+      <viewAttribute id="CLAIM_NBR"/>
+      <viewAttribute id="CLAIM_DT"/>
+      <viewAttribute id="CLAIM_CREATE"/>
+      <viewAttribute id="CLAIM_TYPE"/>
+      <viewAttribute id="CLAIM_LVL"/>
+      <viewAttribute id="CLAIM_ST"/>
+      <viewAttribute id="CLAIM_RCPT"/>
+      <viewAttribute id="CLAIM_COUNTRY"/>
+      <viewAttribute id="CLAIM_NAME1"/>
+      <viewAttribute id="CLAIM_FMLY"/>
+      <viewAttribute id="PART_NBR"/>
+      <viewAttribute id="PART_NAME"/>
+      <viewAttribute id="CLAIM_SPART"/>
+      <viewAttribute id="CLAIM_RPART"/>
+      <viewAttribute id="DEFECT_TXT"/>
+      <viewAttribute id="DEFECT_CODE"/>
+      <viewAttribute id="DOUBT_QTY"/>
+      <viewAttribute id="NC_QTY"/>
+      <viewAttribute id="CLAIM_UNIT"/>
+      <viewAttribute id="CLAIM_RECIDIV"/>
+      <viewAttribute id="CLAIM_SEVERITY"/>
+      <viewAttribute id="RANKING_POINT"/>
+      <viewAttribute id="CLAIM_CANCEL_DT"/>
+      <viewAttribute id="CLAIM_CANCEL_REAS"/>
+      <viewAttribute id="CLAIM_TIMEFRAME"/>
+      <viewAttribute id="CLAIM14_ST"/>
+      <viewAttribute id="CLAIM14_DELIV"/>
+      <viewAttribute id="CLAIM14_PLAN_DT"/>
+      <viewAttribute id="CLAIM14_SEND_DT"/>
+      <viewAttribute id="CLAIM14_DONE_DT"/>
+      <viewAttribute id="CLAIM56_ST"/>
+      <viewAttribute id="CLAIM56_DELIV"/>
+      <viewAttribute id="CLAIM56_PLAN_DT"/>
+      <viewAttribute id="CLAIM56_SEND_DT"/>
+      <viewAttribute id="CLAIM56_DONE_DT"/>
+      <viewAttribute id="CLAIM78_ST"/>
+      <viewAttribute id="CLAIM78_DELIV"/>
+      <viewAttribute id="CLAIM78_PLAN_DT"/>
+      <viewAttribute id="CLAIM78_SEND_DT"/>
+      <viewAttribute id="CLAIM78_DONE_DT"/>
+      <viewAttribute id="CLAIM_WERKS"/>
+      <viewAttribute id="CLAIM_WERKS_NAME"/>
+      <viewAttribute id="CROSS_INCIDENT"/>
+      <viewAttribute id="CLAIM_8DSTATUS"/>
+      <viewAttribute id="INVOICE_ST"/>
+      <viewAttribute id="ORDER_NBR"/>
+      <viewAttribute id="COST_REINVOICE_CLT"/>
+      <viewAttribute id="ESTIM_COST_CLAIM"/>
+      <viewAttribute id="CLAIM_MNGMT_VAL_DT"/>
+      <viewAttribute id="CLAIM_INIT_AMOUNT"/>
+      <viewAttribute id="DEB_ADV_SEND_DT"/>
+      <viewAttribute id="CLAIM_VALID_AMOUNT"/>
+      <viewAttribute id="CLAIM_VALID_VAT"/>
+      <viewAttribute id="CLAIM_TX_INCL_DT"/>
+      <viewAttribute id="CLAIM_CANCEL_AMOUNT"/>
+      <viewAttribute id="CLAIM_ACCOUNT_TRF_DT"/>
+      <viewAttribute id="CLAIM_ACCOUNT_RECORD"/>
+      <viewAttribute id="CLAIM_PYMNT_DT"/>
+      <viewAttribute id="CLAIM_ADV_CANCEL_DT"/>
+      <viewAttribute id="CLAIM_COMMENTS"/>
+    
+      <viewAttribute id="CLAIM_LIFNR"/>
+      <viewAttribute id="CLAIM_DUNS"/>
+      <viewAttribute id="CLAIM_SIRET"/>
+      <viewAttribute id="CLAIM_VATCODE"/></viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CLAIM_DATE" datatype="DATE" expressionLanguage="SQL">
+        <formula>TO_DATE(&quot;CLAIM_DT&quot;,'YYYY-MM-DD')</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CLAIM14_DELIV_D" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
+        <formula>TO_DECIMAL(&quot;CLAIM14_DELIV&quot;)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CLAIM56_DELIV_D" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
+        <formula>TO_DECIMAL(&quot;CLAIM56_DELIV&quot;)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="CLAIM78_DELIV_D" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
+        <formula>TO_DECIMAL(&quot;CLAIM78_DELIV&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="VENDORCLAIMS"/>
+  </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
   <attributes>
-    <attribute id="VENDORUNIK" order="3" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VENDORUNIK" order="1" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="VENDORUNIK"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
     </attribute>
-    <attribute id="NAME1" order="4" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="NAME1" order="2" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="NAME1"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="NAME1"/>
     </attribute>
-    <attribute id="ORT01" order="5" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ORT01" order="3" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ORT01"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ORT01"/>
     </attribute>
-    <attribute id="PSTLZ" order="6" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PSTLZ" order="4" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="PSTLZ"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PSTLZ"/>
     </attribute>
-    <attribute id="REGIO" order="7" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="REGIO" order="5" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="REGIO"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="REGIO"/>
     </attribute>
-    <attribute id="LAND1" order="8" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LAND1" order="6" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="LAND1"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAND1"/>
     </attribute>
-    <attribute id="LFABC" order="9" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LFABC" order="7" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="LFABC"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LFABC"/>
     </attribute>
-    <attribute id="BRSCH" order="10" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="BRSCH" order="8" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="BRSCH"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRSCH"/>
     </attribute>
-    <attribute id="BRTXT_FR" order="11" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="BRTXT_FR" order="9" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="BRTXT_FR"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRTXT_FR"/>
     </attribute>
-    <attribute id="BRTXT_EN" order="12" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="BRTXT_EN" order="10" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="BRTXT_EN"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRTXT_EN"/>
     </attribute>
-    <attribute id="ZTERM" order="13" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ZTERM" order="11" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ZTERM"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZTERM"/>
     </attribute>
-    <attribute id="TEXT1_FR" order="14" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="TEXT1_FR" order="12" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="TEXT1_FR"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TEXT1_FR"/>
     </attribute>
-    <attribute id="TEXT1_EN" order="15" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="TEXT1_EN" order="13" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="TEXT1_EN"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TEXT1_EN"/>
     </attribute>
-    <attribute id="KONZS" order="16" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="KONZS" order="14" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="KONZS"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KONZS"/>
     </attribute>
-    <attribute id="CLAIM_NBR" order="17" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_NBR" order="15" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM_NBR"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_NBR"/>
     </attribute>
@@ -552,275 +845,292 @@
       <descriptions defaultDescription="CLAIM_DT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_DT"/>
     </attribute>
-    <attribute id="CLAIM_CREATE" order="19" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_CREATE"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_CREATE"/>
-    </attribute>
-    <attribute id="CLAIM_TYPE" order="20" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_TYPE"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_TYPE"/>
-    </attribute>
-    <attribute id="CLAIM_LVL" order="21" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_LVL"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_LVL"/>
-    </attribute>
-    <attribute id="CLAIM_ST" order="22" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_ST"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_ST"/>
-    </attribute>
-    <attribute id="CLAIM_RCPT" order="23" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_RCPT"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_RCPT"/>
-    </attribute>
-    <attribute id="CLAIM_COUNTRY" order="24" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_COUNTRY"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_COUNTRY"/>
-    </attribute>
-    <attribute id="CLAIM_NAME1" order="25" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_NAME1"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_NAME1"/>
-    </attribute>
-    <attribute id="CLAIM_FMLY" order="26" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_FMLY"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_FMLY"/>
-    </attribute>
-    <attribute id="PART_NBR" order="27" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PART_NBR"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PART_NBR"/>
-    </attribute>
-    <attribute id="PART_NAME" order="28" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PART_NAME"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PART_NAME"/>
-    </attribute>
-    <attribute id="CLAIM_SPART" order="29" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_SPART"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_SPART"/>
-    </attribute>
-    <attribute id="CLAIM_RPART" order="30" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_RPART"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_RPART"/>
-    </attribute>
-    <attribute id="DEFECT_TXT" order="31" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="DEFECT_TXT"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DEFECT_TXT"/>
-    </attribute>
-    <attribute id="DEFECT_CODE" order="32" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="DEFECT_CODE"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DEFECT_CODE"/>
-    </attribute>
-    <attribute id="CLAIM_UNIT" order="35" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_UNIT"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_UNIT"/>
-    </attribute>
-    <attribute id="CLAIM_RECIDIV" order="36" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_RECIDIV"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_RECIDIV"/>
-    </attribute>
-    <attribute id="CLAIM_SEVERITY" order="37" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_SEVERITY"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_SEVERITY"/>
-    </attribute>
-    <attribute id="CLAIM_CANCEL_DT" order="39" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_CANCEL_DT"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_CANCEL_DT"/>
-    </attribute>
-    <attribute id="CLAIM14_ST" order="40" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM14_ST"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_ST"/>
-    </attribute>
-    <attribute id="CLAIM_CANCEL_REAS" order="41" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_CANCEL_REAS"/>
-      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_CANCEL_REAS"/>
-    </attribute>
-    <attribute id="CLAIM_DATE" order="42" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_DATE" order="19" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM_DATE"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_DATE"/>
     </attribute>
-    <attribute id="CLAIM_TIMEFRAME" order="43" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CALWEEK" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CALWEEK"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALWEEK"/>
+    </attribute>
+    <attribute id="CALMONTH" order="21" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CALMONTH"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALMONTH"/>
+    </attribute>
+    <attribute id="CALQUARTER" order="22" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CALQUARTER"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALQUARTER"/>
+    </attribute>
+    <attribute id="YEAR" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="YEAR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR"/>
+    </attribute>
+    <attribute id="CLAIM_CREATE" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_CREATE"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_CREATE"/>
+    </attribute>
+    <attribute id="CLAIM_TYPE" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_TYPE"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_TYPE"/>
+    </attribute>
+    <attribute id="CLAIM_LVL" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_LVL"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_LVL"/>
+    </attribute>
+    <attribute id="CLAIM_ST" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_ST"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_ST"/>
+    </attribute>
+    <attribute id="CLAIM_RCPT" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_RCPT"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_RCPT"/>
+    </attribute>
+    <attribute id="CLAIM_COUNTRY" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_COUNTRY"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_COUNTRY"/>
+    </attribute>
+    <attribute id="CLAIM_NAME1" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_NAME1"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_NAME1"/>
+    </attribute>
+    <attribute id="CLAIM_FMLY" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_FMLY"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_FMLY"/>
+    </attribute>
+    <attribute id="PART_NBR" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PART_NBR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PART_NBR"/>
+    </attribute>
+    <attribute id="PART_NAME" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PART_NAME"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PART_NAME"/>
+    </attribute>
+    <attribute id="CLAIM_SPART" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_SPART"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_SPART"/>
+    </attribute>
+    <attribute id="CLAIM_RPART" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_RPART"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_RPART"/>
+    </attribute>
+    <attribute id="DEFECT_TXT" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DEFECT_TXT"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DEFECT_TXT"/>
+    </attribute>
+    <attribute id="DEFECT_CODE" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DEFECT_CODE"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DEFECT_CODE"/>
+    </attribute>
+    <attribute id="CLAIM_UNIT" order="40" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_UNIT"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_UNIT"/>
+    </attribute>
+    <attribute id="CLAIM_RECIDIV" order="41" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_RECIDIV"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_RECIDIV"/>
+    </attribute>
+    <attribute id="CLAIM_SEVERITY" order="42" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_SEVERITY"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_SEVERITY"/>
+    </attribute>
+    <attribute id="CLAIM_CANCEL_DT" order="44" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_CANCEL_DT"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_CANCEL_DT"/>
+    </attribute>
+    <attribute id="CLAIM14_ST" order="45" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM14_ST"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_ST"/>
+    </attribute>
+    <attribute id="CLAIM_CANCEL_REAS" order="46" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_CANCEL_REAS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_CANCEL_REAS"/>
+    </attribute>
+    <attribute id="CLAIM_TIMEFRAME" order="47" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM_TIMEFRAME"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_TIMEFRAME"/>
     </attribute>
-    <attribute id="CLAIM14_PLAN_DT" order="44" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM14_PLAN_DT" order="48" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM14_PLAN_DT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_PLAN_DT"/>
     </attribute>
-    <attribute id="CLAIM14_SEND_DT" order="45" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM14_SEND_DT" order="49" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM14_SEND_DT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_SEND_DT"/>
     </attribute>
-    <attribute id="CLAIM14_DELIV" hidden="true" order="47" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM14_DELIV" hidden="true" order="51" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM14_DELIV"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_DELIV"/>
     </attribute>
-    <attribute id="CLAIM14_DONE_DT" order="48" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM14_DONE_DT" order="52" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM14_DONE_DT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_DONE_DT"/>
     </attribute>
-    <attribute id="CLAIM56_ST" order="49" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM56_ST" order="53" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM56_ST"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM56_ST"/>
     </attribute>
-    <attribute id="CLAIM56_DELIV" hidden="true" order="51" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM56_DELIV" hidden="true" order="55" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM56_DELIV"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM56_DELIV"/>
     </attribute>
-    <attribute id="CLAIM56_PLAN_DT" order="52" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM56_PLAN_DT" order="56" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM56_PLAN_DT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM56_PLAN_DT"/>
     </attribute>
-    <attribute id="CLAIM56_SEND_DT" order="53" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM56_SEND_DT" order="57" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM56_SEND_DT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM56_SEND_DT"/>
     </attribute>
-    <attribute id="CLAIM56_DONE_DT" order="54" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM56_DONE_DT" order="58" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM56_DONE_DT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM56_DONE_DT"/>
     </attribute>
-    <attribute id="CLAIM78_ST" order="55" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM78_ST" order="59" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM78_ST"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_ST"/>
     </attribute>
-    <attribute id="CLAIM78_DELIV" hidden="true" order="57" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM78_DELIV" hidden="true" order="61" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM78_DELIV"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_DELIV"/>
     </attribute>
-    <attribute id="CLAIM78_PLAN_DT" order="58" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM78_PLAN_DT" order="62" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM78_PLAN_DT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_PLAN_DT"/>
     </attribute>
-    <attribute id="CLAIM78_SEND_DT" order="59" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM78_SEND_DT" order="63" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM78_SEND_DT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_SEND_DT"/>
     </attribute>
-    <attribute id="CLAIM78_DONE_DT" order="60" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM78_DONE_DT" order="64" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM78_DONE_DT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_DONE_DT"/>
     </attribute>
-    <attribute id="CLAIM_WERKS" order="61" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_WERKS" order="65" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM_WERKS"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_WERKS"/>
     </attribute>
-    <attribute id="CLAIM_WERKS_NAME" order="62" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_WERKS_NAME" order="66" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM_WERKS_NAME"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_WERKS_NAME"/>
     </attribute>
-    <attribute id="CROSS_INCIDENT" order="63" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CROSS_INCIDENT" order="67" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CROSS_INCIDENT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CROSS_INCIDENT"/>
     </attribute>
-    <attribute id="CLAIM_8DSTATUS" order="64" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_8DSTATUS" order="68" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM_8DSTATUS"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_8DSTATUS"/>
     </attribute>
-    <attribute id="INVOICE_ST" order="65" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="INVOICE_ST" order="69" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="INVOICE_ST"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="INVOICE_ST"/>
     </attribute>
-    <attribute id="ORDER_NBR" order="66" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ORDER_NBR" order="70" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ORDER_NBR"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ORDER_NBR"/>
     </attribute>
-    <attribute id="CLAIM_MNGMT_VAL_DT" order="69" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_MNGMT_VAL_DT" order="73" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM_MNGMT_VAL_DT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_MNGMT_VAL_DT"/>
     </attribute>
-    <attribute id="DEB_ADV_SEND_DT" order="71" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="DEB_ADV_SEND_DT" order="75" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="DEB_ADV_SEND_DT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DEB_ADV_SEND_DT"/>
     </attribute>
-    <attribute id="CLAIM_TX_INCL_DT" order="74" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_TX_INCL_DT" order="78" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM_TX_INCL_DT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_TX_INCL_DT"/>
     </attribute>
-    <attribute id="CLAIM_ACCOUNT_TRF_DT" order="76" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_ACCOUNT_TRF_DT" order="80" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM_ACCOUNT_TRF_DT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_ACCOUNT_TRF_DT"/>
     </attribute>
-    <attribute id="CLAIM_ACCOUNT_RECORD" order="77" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_ACCOUNT_RECORD" order="81" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM_ACCOUNT_RECORD"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_ACCOUNT_RECORD"/>
     </attribute>
-    <attribute id="CLAIM_PYMNT_DT" order="78" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_PYMNT_DT" order="82" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM_PYMNT_DT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_PYMNT_DT"/>
     </attribute>
-    <attribute id="CLAIM_ADV_CANCEL_DT" order="79" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_ADV_CANCEL_DT" order="83" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM_ADV_CANCEL_DT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_ADV_CANCEL_DT"/>
     </attribute>
-    <attribute id="CLAIM_COMMENTS" order="80" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_COMMENTS" order="84" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM_COMMENTS"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_COMMENTS"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
-    <measure id="DOUBT_QTY" order="33" aggregationType="sum" measureType="quantity" semanticType="quantity">
+    <measure id="DOUBT_QTY" order="38" aggregationType="sum" measureType="quantity" semanticType="quantity">
       <descriptions defaultDescription="DOUBT_QTY"/>
       <unitCurrencyAttribute attributeName="CLAIM_UNIT"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="DOUBT_QTY"/>
     </measure>
-    <measure id="NC_QTY" order="34" aggregationType="sum" measureType="quantity" semanticType="quantity">
+    <measure id="NC_QTY" order="39" aggregationType="sum" measureType="quantity" semanticType="quantity">
       <descriptions defaultDescription="NC_QTY"/>
       <unitCurrencyAttribute attributeName="CLAIM_UNIT"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="NC_QTY"/>
     </measure>
-    <measure id="RANKING_POINT" order="38" aggregationType="sum" measureType="simple">
+    <measure id="RANKING_POINT" order="43" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="RANKING_POINT"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="RANKING_POINT"/>
     </measure>
-    <measure id="CLAIM14_DELIV_D" order="46" aggregationType="sum" measureType="simple" engineAggregation="none">
+    <measure id="CLAIM14_DELIV_D" order="50" aggregationType="sum" measureType="simple" engineAggregation="none">
       <descriptions defaultDescription="CLAIM14_DELIV_D"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_DELIV_D"/>
     </measure>
-    <measure id="CLAIM56_DELIV_D" order="50" aggregationType="sum" measureType="simple">
+    <measure id="CLAIM56_DELIV_D" order="54" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="CLAIM56_DELIV_D"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM56_DELIV_D"/>
     </measure>
-    <measure id="CLAIM78_DELIV_D" order="56" aggregationType="sum" measureType="simple">
+    <measure id="CLAIM78_DELIV_D" order="60" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="CLAIM78_DELIV_D"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_DELIV_D"/>
     </measure>
-    <measure id="COST_REINVOICE_CLT" order="67" aggregationType="sum" measureType="amount" semanticType="amount">
-      <descriptions defaultDescription="COST_REINVOICE_CLT"/>
-      <fixedCurrency>EUR</fixedCurrency>
-      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="COST_REINVOICE_CLT"/>
-    </measure>
-    <measure id="ESTIM_COST_CLAIM" order="68" aggregationType="sum" measureType="amount" semanticType="amount">
+    <measure id="ESTIM_COST_CLAIM" order="71" aggregationType="sum" measureType="amount" semanticType="amount">
       <descriptions defaultDescription="ESTIM_COST_CLAIM"/>
       <fixedCurrency>EUR</fixedCurrency>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="ESTIM_COST_CLAIM"/>
     </measure>
-    <measure id="CLAIM_INIT_AMOUNT" order="70" aggregationType="sum" measureType="amount" semanticType="amount">
+    <measure id="COST_REINVOICE_CLT" order="72" aggregationType="sum" measureType="amount" semanticType="amount">
+      <descriptions defaultDescription="COST_REINVOICE_CLT"/>
+      <fixedCurrency>EUR</fixedCurrency>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="COST_REINVOICE_CLT"/>
+    </measure>
+    <measure id="CLAIM_INIT_AMOUNT" order="74" aggregationType="sum" measureType="amount" semanticType="amount">
       <descriptions defaultDescription="CLAIM_INIT_AMOUNT"/>
       <fixedCurrency>EUR</fixedCurrency>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_INIT_AMOUNT"/>
     </measure>
-    <measure id="CLAIM_VALID_AMOUNT" order="72" aggregationType="sum" measureType="amount" semanticType="amount">
+    <measure id="CLAIM_VALID_AMOUNT" order="76" aggregationType="sum" measureType="amount" semanticType="amount">
       <descriptions defaultDescription="CLAIM_VALID_AMOUNT"/>
       <fixedCurrency>EUR</fixedCurrency>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_VALID_AMOUNT"/>
     </measure>
-    <measure id="CLAIM_VALID_VAT" order="73" aggregationType="sum" measureType="amount" semanticType="amount">
+    <measure id="CLAIM_VALID_VAT" order="77" aggregationType="sum" measureType="amount" semanticType="amount">
       <descriptions defaultDescription="CLAIM_VALID_VAT"/>
       <fixedCurrency>EUR</fixedCurrency>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_VALID_VAT"/>
     </measure>
-    <measure id="CLAIM_CANCEL_AMOUNT" order="75" aggregationType="sum" measureType="amount" semanticType="amount">
+    <measure id="CLAIM_CANCEL_AMOUNT" order="79" aggregationType="sum" measureType="amount" semanticType="amount">
       <descriptions defaultDescription="CLAIM_CANCEL_AMOUNT"/>
       <fixedCurrency>EUR</fixedCurrency>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_CANCEL_AMOUNT"/>
     </measure>
   </baseMeasures>
   <calculatedMeasures>
-    <measure id="NBR_LITIGE" order="1" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
+    <measure id="NBR_LITIGE" order="16" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
       <descriptions defaultDescription="Nombre de Litige"/>
       <exceptionAggregation>
         <attribute attributeName="CLAIM_NBR"/>
       </exceptionAggregation>
       <formula>1</formula>
+      
       </measure>
-    <measure id="TYPE_LITIGE" order="2" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
+    <measure id="TYPE_LITIGE" order="17" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
       <descriptions defaultDescription="Nombre de typologie de Litiges">
         <comment text="Nombre de Type différent"/>
       </descriptions>
@@ -828,36 +1138,89 @@
         <attribute attributeName="CLAIM_TYPE"/>
       </exceptionAggregation>
       <formula>1</formula>
+      
       </measure>
   </calculatedMeasures>
   <restrictedMeasures/>
-  <localDimensions/>
+  <localDimensions>
+    <localDimension id="VENDOR_GEO">
+      <attributeRef xsi:type="DataFoundation:Attribute">LAND1</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">REGIO</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">PSTLZ</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">ORT01</attributeRef>
+      <hierarchies>
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="VENDOR_GEO" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+          <descriptions defaultDescription="Vendor Geography "/>
+          <unassignedMemberProperties mode="FALSE"/>
+          <levels>
+            <level levelAttribute="LAND1" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="LAND1" sortDirection="ASC"/>
+            <level levelAttribute="REGIO" levelType="MDLEVEL_TYPE_REGULAR" order="2" orderAttribute="REGIO" sortDirection="ASC"/>
+            <level levelAttribute="PSTLZ" levelType="MDLEVEL_TYPE_REGULAR" order="3" orderAttribute="PSTLZ" sortDirection="ASC"/>
+            <level levelAttribute="ORT01" levelType="MDLEVEL_TYPE_REGULAR" order="4" orderAttribute="ORT01" sortDirection="ASC"/>
+          </levels>
+        </hierarchy>
+      </hierarchies>
+    </localDimension>
+    <localDimension id="CLAIM_DATE_HIER">
+      <attributeRef xsi:type="DataFoundation:Attribute">YEAR</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">CALQUARTER</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">CALMONTH</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">CALWEEK</attributeRef>
+      <hierarchies>
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="CLAIM_DATE_HIER" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+          <descriptions defaultDescription="Claim Date hierarchy"/>
+          <unassignedMemberProperties mode="FALSE"/>
+          <levels>
+            <level levelAttribute="YEAR" levelType="MDLEVEL_TYPE_TIME_YEARS" order="1" orderAttribute="YEAR" sortDirection="ASC"/>
+            <level levelAttribute="CALQUARTER" levelType="MDLEVEL_TYPE_TIME_QUARTERS" order="2" orderAttribute="CALQUARTER" sortDirection="ASC"/>
+            <level levelAttribute="CALMONTH" levelType="MDLEVEL_TYPE_TIME_MONTHS" order="3" orderAttribute="CALMONTH" sortDirection="ASC"/>
+            <level levelAttribute="CALWEEK" levelType="MDLEVEL_TYPE_TIME_WEEKS" order="4" orderAttribute="CALWEEK" sortDirection="ASC"/>
+          </levels>
+        </hierarchy>
+      </hierarchies>
+    </localDimension>
+  </localDimensions>
 </logicalModel>
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="40" y="85"/>
+      <upperLeftCorner x="256" y="112"/>
+    
+      <rectangleSize width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="BEFORE_AGG_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="100" y="190"/>
+      <upperLeftCorner x="256" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape expanded="true" modelObjectName="DIMVND_CLAIM_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="51" y="318"/>
+    <shape expanded="true" modelObjectName="DIMVND_CLAIM_DATE_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="232" y="341"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="DIMVND_CLAIM_DATE_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="232" y="446"/>
       <rectangleSize height="30" width="160"/>
     </shape>
   
-    <shape expanded="true" modelObjectName="VNDCLAIMS_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="141" y="513"/>
+    <shape modelObjectName="DIMVND_CLAIM_JP" modelObjectNameSpace="DIMVND_CLAIM_DATE_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+    <shape modelObjectName="DATDIM_P" modelObjectNameSpace="DIMVND_CLAIM_DATE_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="474" y="1209"/>
+      <rectangleSize width="191"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="DIMVND_CLAIM_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="606"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape expanded="true" modelObjectName="DIMVND_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-50" y="513"/>
+    <shape expanded="false" modelObjectName="DATDIM_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="606"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="DIMVND_CLAIM_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="51" y="408"/>
+      <upperLeftCorner x="232" y="731"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="DIMVND_P" modelObjectNameSpace="DIMVND_CLAIM_J" modelObjectType="JoinNodeInput">
@@ -867,6 +1230,15 @@
     <shape modelObjectName="VNDCLAIMS_P" modelObjectNameSpace="DIMVND_CLAIM_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="320" y="30"/>
       <rectangleSize width="233"/>
+    </shape>
+    <shape expanded="true" modelObjectName="DIMVND_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="113" y="891"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="VNDCLAIMS_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="323" y="891"/>
+      <rectangleSize height="30" width="160"/>
     </shape></shapes>
 </layout>
 </Calculation:scenario>
