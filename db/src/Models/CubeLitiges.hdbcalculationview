@@ -7,11 +7,11 @@
   <DataSource id="ZM_TIME_DIMENSION">
     <resourceUri>ZM_TIME_DIMENSION</resourceUri>
   </DataSource>
-  <DataSource id="DimVendor">
-    <resourceUri>DimVendor</resourceUri>
-  </DataSource>
   <DataSource id="VENDORCLAIMS">
     <resourceUri>VENDORCLAIMS</resourceUri>
+  </DataSource>
+  <DataSource id="DimVendor">
+    <resourceUri>DimVendor</resourceUri>
   </DataSource>
 </dataSources>
 <calculationViews>
@@ -111,7 +111,6 @@
   <calculationView xsi:type="Calculation:ProjectionView" id="DIMVND_CLAIM_DATE_JP">
     <viewAttributes>
       <viewAttribute id="VENDORUNIK"/>
-      <viewAttribute id="NAME1"/>
       <viewAttribute id="ORT01"/>
       <viewAttribute id="PSTLZ"/>
       <viewAttribute id="REGIO"/>
@@ -192,7 +191,8 @@
       <viewAttribute id="CALMONTH"/>
       <viewAttribute id="CALQUARTER"/>
       <viewAttribute id="YEAR"/>
-    </viewAttributes>
+    
+      <viewAttribute id="NAME1"/></viewAttributes>
     <calculatedViewAttributes>
       <calculatedViewAttribute id="CLAIM_VND_NAME" datatype="NVARCHAR" length="35" expressionLanguage="SQL">
         <formula>IFNULL(&quot;NAME1&quot;, &quot;CLAIM_NAME1&quot;)</formula>
@@ -203,7 +203,6 @@
   <calculationView xsi:type="Calculation:JoinView" id="DIMVND_CLAIM_DATE_J" cardinality="CN_1" joinType="leftOuter">
     <viewAttributes>
       <viewAttribute id="VENDORUNIK"/>
-      <viewAttribute id="NAME1"/>
       <viewAttribute id="ORT01"/>
       <viewAttribute id="PSTLZ"/>
       <viewAttribute id="REGIO"/>
@@ -284,6 +283,7 @@
       <viewAttribute id="CALMONTH"/>
       <viewAttribute id="CALQUARTER"/>
       <viewAttribute id="YEAR"/>
+      <viewAttribute id="NAME1"/>
     
       <viewAttribute id="SOURCE"/>
     </viewAttributes>
@@ -658,59 +658,6 @@
     </input>
     <joinAttribute name="JOIN$CLAIM_LIFNR$LIFNR"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="DIMVND_P">
-    <viewAttributes>
-      <viewAttribute id="VENDORUNIK"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="ORT01"/>
-      <viewAttribute id="PSTLZ"/>
-      <viewAttribute id="REGIO"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="LFABC"/>
-      <viewAttribute id="BRSCH"/>
-      <viewAttribute id="BRTXT_FR"/>
-      <viewAttribute id="BRTXT_EN"/>
-      <viewAttribute id="ZTERM"/>
-      <viewAttribute id="TEXT1_FR"/>
-      <viewAttribute id="TEXT1_EN"/>
-      <viewAttribute id="KONZS"/>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="KRAUS"/>
-      <viewAttribute id="STCEG"/>
-      <viewAttribute id="STCD1"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="ERDAT"/>
-      <viewAttribute id="PFACH"/>
-      <viewAttribute id="STRAS"/>
-      <viewAttribute id="ADRNR"/>
-      <viewAttribute id="TELF1"/>
-      <viewAttribute id="SPERR"/>
-      <viewAttribute id="SPERM_X"/>
-      <viewAttribute id="KTOKK"/>
-      <viewAttribute id="LOEVM_X"/>
-      <viewAttribute id="SPRAS"/>
-      <viewAttribute id="STCD2"/>
-      <viewAttribute id="VBUND"/>
-      <viewAttribute id="INCO1"/>
-      <viewAttribute id="INCO2"/>
-      <viewAttribute id="LOEVM_Y"/>
-      <viewAttribute id="SPERM_Y"/>
-      <viewAttribute id="VENSL"/>
-      <viewAttribute id="WAERS"/>
-      <viewAttribute id="ZFAEL"/>
-      <viewAttribute id="ZMONA"/>
-      <viewAttribute id="ZTAG1"/>
-      <viewAttribute id="J_1KFTBUS"/>
-      <viewAttribute id="MCOD1"/>
-      <viewAttribute id="WEBRE"/>
-      <viewAttribute id="PRFRE"/>
-      <viewAttribute id="SMTP_ADDR"/>
-      <viewAttribute id="ZPRZ1"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="DimVendor"/>
-  </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VNDCLAIMS_P">
     <viewAttributes>
       <viewAttribute id="CLAIM_NBR"/>
@@ -793,6 +740,59 @@
       </calculatedViewAttribute>
     </calculatedViewAttributes>
     <input node="VENDORCLAIMS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="DIMVND_P">
+    <viewAttributes>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="DimVendor"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
@@ -1080,7 +1080,9 @@
   
     <attribute id="CLAIM_VND_NAME" order="85" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CLAIM_VND_NAME"/>
+  
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_VND_NAME"/>
+  
     </attribute>
   </attributes>
   <calculatedAttributes/>
@@ -1254,13 +1256,13 @@
       <upperLeftCorner x="320" y="30"/>
       <rectangleSize width="233"/>
     </shape>
-    <shape expanded="true" modelObjectName="DIMVND_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="113" y="891"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
   
     <shape expanded="true" modelObjectName="VNDCLAIMS_P" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="323" y="891"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="DIMVND_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="113" y="891"/>
       <rectangleSize height="30" width="160"/>
     </shape></shapes>
 </layout>

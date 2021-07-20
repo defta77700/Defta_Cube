@@ -76,5 +76,11 @@
       "object": "V_VENDOR_PRDTS_IDNC_MONTH_J",
       "schema": "SUPLPANEL"
     }
+  },
+  "V_VENDOR_INVOICE_2Y": {
+    "target": {
+      "object": "V_VENDOR_INVOICE_2Y",
+      "schema": "SUPLPANEL"
+    }
   }
 }

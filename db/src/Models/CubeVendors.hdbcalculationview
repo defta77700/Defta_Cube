@@ -7,16 +7,277 @@
   <DataSource id="DimVendor">
     <resourceUri>DimVendor</resourceUri>
   </DataSource>
+  <DataSource id="PURCHINFORECORD">
+    <resourceUri>PURCHINFORECORD</resourceUri>
+  </DataSource>
+  <DataSource id="PLANT">
+    <resourceUri>PLANT</resourceUri>
+  </DataSource>
+  <DataSource id="COMPANY">
+    <resourceUri>COMPANY</resourceUri>
+  </DataSource>
+  <DataSource id="V_VENDOR_INVOICE_2Y">
+    <resourceUri>V_VENDOR_INVOICE_2Y</resourceUri>
+  </DataSource>
+  <DataSource id="DimMaterial">
+    <resourceUri>DimMaterial</resourceUri>
+  </DataSource>
 </dataSources>
 <calculationViews>
   <calculationView xsi:type="Calculation:ProjectionView" id="BEFORE_AGG_P">
     <viewAttributes/>
     <calculatedViewAttributes/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
-    <viewAttributes/>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VND_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+    </viewAttributes>
     <calculatedViewAttributes/>
     <input node="DimVendor"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PIR_P">
+    <viewAttributes/>
+    <calculatedViewAttributes/>
+    <input node="PURCHINFORECORD"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PLANT_P">
+    <viewAttributes/>
+    <calculatedViewAttributes/>
+    <input node="PLANT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="COMPNY_P">
+    <viewAttributes/>
+    <calculatedViewAttributes/>
+    <input node="COMPANY"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VEND2Y_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="INV_VENDOR_2Y"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="V_VENDOR_INVOICE_2Y"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="MAT_P">
+    <viewAttributes/>
+    <calculatedViewAttributes/>
+    <input node="DimMaterial"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="VND_2Y_J" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1" aggregationType="sum"/>
+      <viewAttribute id="INV_VENDOR_2Y" aggregationType="sum"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="INV_VENDOR_2Y_D" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;INV_VENDOR_2Y&quot;, 0)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="VND_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_X" source="SPERM_X"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_X" source="LOEVM_X"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBUND" source="VBUND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_Y" source="LOEVM_Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_Y" source="SPERM_Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENSL" source="VENSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZFAEL" source="ZFAEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMONA" source="ZMONA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTAG1" source="ZTAG1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_FR" source="BRTXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_EN" source="BRTXT_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTBUS" source="J_1KFTBUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MCOD1" source="MCOD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEBRE" source="WEBRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
+    </input>
+    <input node="VEND2Y_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="INV_VENDOR_2Y" source="INV_VENDOR_2Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+    </input>
+    <joinAttribute name="LIFNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VND_2Y_JP">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+      <viewAttribute id="INV_VENDOR_2Y_D"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VND_2Y_J"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
@@ -40,8 +301,46 @@
       <rectangleSize height="30" width="160"/>
     </shape>
   
-    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-12" y="422"/>
+    <shape expanded="true" modelObjectName="VND_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-167" y="666"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="PIR_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="335"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="PLANT_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-450" y="250"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="COMPNY_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-247" y="250"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="VEND2Y_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="20" y="666"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="MAT_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="438" y="466"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VND_2Y_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-69" y="558"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="VND_P" modelObjectNameSpace="VND_2Y_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="104.013671875"/>
+    </shape>
+    <shape modelObjectName="VEND2Y_P" modelObjectNameSpace="VND_2Y_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="177.08837890625"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VND_2Y_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-69" y="496"/>
       <rectangleSize height="30" width="160"/>
     </shape>
   </shapes>
