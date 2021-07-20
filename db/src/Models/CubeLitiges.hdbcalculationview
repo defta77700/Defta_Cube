@@ -100,9 +100,13 @@
       <viewAttribute id="CALMONTH"/>
       <viewAttribute id="CALQUARTER"/>
       <viewAttribute id="YEAR"/>
+    
+      <viewAttribute id="CLAIM_VND_NAME"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="DIMVND_CLAIM_DATE_JP"/>
+    <input node="DIMVND_CLAIM_DATE_JP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="CLAIM_VND_NAME"/>
+    </input>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="DIMVND_CLAIM_DATE_JP">
     <viewAttributes>
@@ -189,7 +193,11 @@
       <viewAttribute id="CALQUARTER"/>
       <viewAttribute id="YEAR"/>
     </viewAttributes>
-    <calculatedViewAttributes/>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="CLAIM_VND_NAME" datatype="NVARCHAR" length="35" expressionLanguage="SQL">
+        <formula>IFNULL(&quot;NAME1&quot;, &quot;CLAIM_NAME1&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
     <input node="DIMVND_CLAIM_DATE_J"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="DIMVND_CLAIM_DATE_J" cardinality="CN_1" joinType="leftOuter">
@@ -1069,6 +1077,11 @@
       <descriptions defaultDescription="CLAIM_COMMENTS"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_COMMENTS"/>
     </attribute>
+  
+    <attribute id="CLAIM_VND_NAME" order="85" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIM_VND_NAME"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_VND_NAME"/>
+    </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
@@ -1137,6 +1150,7 @@
       </exceptionAggregation>
       <formula>1</formula>
       
+      
       </measure>
     <measure id="TYPE_LITIGE" order="17" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
       <descriptions defaultDescription="Nombre de typologie de Litiges">
@@ -1146,6 +1160,7 @@
         <attribute attributeName="CLAIM_TYPE"/>
       </exceptionAggregation>
       <formula>1</formula>
+      
       
       </measure>
   </calculatedMeasures>
