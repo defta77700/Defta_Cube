@@ -2177,7 +2177,7 @@
       <descriptions defaultDescription="G/L account Desc"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="TXT20"/>
     </attribute>
-    <attribute id="SOURCE" order="51" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+    <attribute id="SOURCE" order="51" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="SOURCE"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="SOURCE"/>
     </attribute>
@@ -2517,7 +2517,17 @@
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="WRBTR_SIGN"/>
     </measure>
   </baseMeasures>
-  <calculatedMeasures/>
+  <calculatedMeasures>
+    <measure id="NB_VENDOR" order="125" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
+      <descriptions defaultDescription="Nb_VENDOR UnikCode">
+        <comment text="Count on Vendor Unik Code DUNS VAT SIRET"/>
+      </descriptions>
+      <exceptionAggregation>
+        <attribute attributeName="VENDORUNIKCODE"/>
+      </exceptionAggregation>
+      <formula>1</formula>
+      </measure>
+  </calculatedMeasures>
   <restrictedMeasures/>
   <localDimensions>
     <localDimension id="MATGRPDESC">
