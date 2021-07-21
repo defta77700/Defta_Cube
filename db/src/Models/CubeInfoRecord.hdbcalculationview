@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CubeInfoRecord" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:DataFoundation="http://www.sap.com/ndb/BiModelDataFoundation.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" id="CubeInfoRecord" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
 <descriptions defaultDescription="CubeInfoRecord.hdbcalculationview"/>
 <localVariables/>
 <variableMappings/>
@@ -443,31 +443,31 @@
 <logicalModel id="BEFORE_AGG_P">
   <attributes>
     <attribute id="PIR_WERKS" order="1" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PIR_WERKS"/>
+      <descriptions defaultDescription="Material Plant"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_WERKS"/>
     </attribute>
     <attribute id="PIR_EKORG" order="2" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PIR_EKORG"/>
+      <descriptions defaultDescription="Material Purchase Organization"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_EKORG"/>
     </attribute>
     <attribute id="PIR_MATNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PIR_MATNR"/>
+      <descriptions defaultDescription="PIR Material Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_MATNR"/>
     </attribute>
     <attribute id="WAERS" order="5" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="WAERS"/>
+      <descriptions defaultDescription="Currency"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WAERS"/>
     </attribute>
     <attribute id="PIR_LIFNR" order="7" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PIR_LIFNR"/>
+      <descriptions defaultDescription="Vendor Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_LIFNR"/>
     </attribute>
     <attribute id="PIR_URZLAND" order="8" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PIR_URZLAND"/>
+      <descriptions defaultDescription="Material Origine Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_URZLAND"/>
     </attribute>
     <attribute id="MATNR" order="9" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MATNR"/>
+      <descriptions defaultDescription="Material Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATNR"/>
     </attribute>
     <attribute id="MATKL" order="10" displayAttribute="false" attributeHierarchyActive="false">
@@ -547,7 +547,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PROFL"/>
     </attribute>
     <attribute id="NAME1" order="29" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="NAME1"/>
+      <descriptions defaultDescription="Company Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="NAME1"/>
     </attribute>
     <attribute id="EKORG" order="30" displayAttribute="false" attributeHierarchyActive="false">
@@ -555,7 +555,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG"/>
     </attribute>
     <attribute id="LAND1" order="31" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="LAND1"/>
+      <descriptions defaultDescription="Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAND1"/>
     </attribute>
     <attribute id="MATKL_L1" order="32" displayAttribute="false" attributeHierarchyActive="false">
@@ -613,18 +613,75 @@
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
-    <measure id="NETPR" order="4" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="NETPR"/>
+    <measure id="NETPR" order="4" semanticType="amount" aggregationType="sum" measureType="amount">
+      <descriptions defaultDescription="Net Price"/>
+      <unitCurrencyAttribute attributeName="WAERS"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="NETPR"/>
     </measure>
     <measure id="PEINH" order="6" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="PEINH"/>
+      <descriptions defaultDescription="Price Unit"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="PEINH"/>
     </measure>
   </baseMeasures>
-  <calculatedMeasures/>
+  <calculatedMeasures>
+    <measure id="NB_VENDOR" order="45" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
+      <descriptions defaultDescription="NBr VENDOR"/>
+      <exceptionAggregation>
+        <attribute attributeName="PIR_LIFNR"/>
+      </exceptionAggregation>
+      <formula>1</formula>
+      </measure>
+    <measure id="NB_MATERIAL" order="46" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
+      <descriptions defaultDescription="NBR MATERIAL"/>
+      <exceptionAggregation>
+        <attribute attributeName="MATNR"/>
+      </exceptionAggregation>
+      <formula>1</formula>
+      </measure>
+  </calculatedMeasures>
   <restrictedMeasures/>
-  <localDimensions/>
+  <localDimensions>
+    <localDimension id="MATERIALGRP_HIER_CODE">
+      <attributeRef xsi:type="DataFoundation:Attribute">MATKL_L1</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">MATKL_L2</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">MATKL_L3</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">MATKL_L4</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">MATKL_L5</attributeRef>
+      <hierarchies>
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="MATERIALGRP_HIER_CODE" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+          <descriptions defaultDescription="MATERIAL GROUP Code Hierachy"/>
+          <unassignedMemberProperties mode="FALSE"/>
+          <levels>
+            <level levelAttribute="MATKL_L1" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="MATKL_L1" sortDirection="ASC"/>
+            <level levelAttribute="MATKL_L2" levelType="MDLEVEL_TYPE_REGULAR" order="2" orderAttribute="MATKL_L2" sortDirection="ASC"/>
+            <level levelAttribute="MATKL_L3" levelType="MDLEVEL_TYPE_REGULAR" order="3" orderAttribute="MATKL_L3" sortDirection="ASC"/>
+            <level levelAttribute="MATKL_L4" levelType="MDLEVEL_TYPE_REGULAR" order="4" orderAttribute="MATKL_L4" sortDirection="ASC"/>
+            <level levelAttribute="MATKL_L5" levelType="MDLEVEL_TYPE_REGULAR" order="5" orderAttribute="MATKL_L5" sortDirection="ASC"/>
+          </levels>
+        </hierarchy>
+      </hierarchies>
+    </localDimension>
+    <localDimension id="MATERIALGRP_HIER_DESC">
+      <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L1</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L2</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L3</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L4</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L5</attributeRef>
+      <hierarchies>
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="MATERIALGRP_HIER_DESC" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+          <descriptions defaultDescription="MATERIAL GROUP Description Hierarchy"/>
+          <unassignedMemberProperties mode="FALSE"/>
+          <levels>
+            <level levelAttribute="WGBEZ_L1" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="WGBEZ_L1" sortDirection="ASC"/>
+            <level levelAttribute="WGBEZ_L2" levelType="MDLEVEL_TYPE_REGULAR" order="2" orderAttribute="WGBEZ_L2" sortDirection="ASC"/>
+            <level levelAttribute="WGBEZ_L3" levelType="MDLEVEL_TYPE_REGULAR" order="3" orderAttribute="WGBEZ_L3" sortDirection="ASC"/>
+            <level levelAttribute="WGBEZ_L4" levelType="MDLEVEL_TYPE_REGULAR" order="4" orderAttribute="WGBEZ_L4" sortDirection="ASC"/>
+            <level levelAttribute="WGBEZ_L5" levelType="MDLEVEL_TYPE_REGULAR" order="5" orderAttribute="WGBEZ_L5" sortDirection="ASC"/>
+          </levels>
+        </hierarchy>
+      </hierarchies>
+    </localDimension>
+  </localDimensions>
 </logicalModel>
 <layout>
   <shapes>

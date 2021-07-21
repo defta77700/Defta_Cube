@@ -1,6 +1,6 @@
 _schema-version: "2.1"
 ID: SuppPanel2
-version: 0.0.3
+version: 0.0.4
 modules:
 - name: db
   type: hdb
@@ -20,10 +20,6 @@ resources:
   parameters:
     config:
       schema: DM1
-  properties:
-    hdi-container-name: ${service-name}
-- name: hdi_user_db
-  type: com.sap.xs.hdi-container
   properties:
     hdi-container-name: ${service-name}
 - name: cross-container-service-1
