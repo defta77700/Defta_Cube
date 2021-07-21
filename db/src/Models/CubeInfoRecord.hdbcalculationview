@@ -4,6 +4,9 @@
 <localVariables/>
 <variableMappings/>
 <dataSources>
+  <DataSource id="ZM_TIME_DIMENSION">
+    <resourceUri>ZM_TIME_DIMENSION</resourceUri>
+  </DataSource>
   <DataSource id="PURCHINFORECORD">
     <resourceUri>PURCHINFORECORD</resourceUri>
   </DataSource>
@@ -12,9 +15,6 @@
   </DataSource>
   <DataSource id="DimMaterial">
     <resourceUri>DimMaterial</resourceUri>
-  </DataSource>
-  <DataSource id="ZM_TIME_DIMENSION">
-    <resourceUri>ZM_TIME_DIMENSION</resourceUri>
   </DataSource>
 </dataSources>
 <calculationViews>
@@ -252,8 +252,85 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT_DT" source="DATE_SQL"/>
     </input>
-  
     <joinAttribute name="ERDAT_DT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PIR_MAT_PLANT_JP">
+    <viewAttributes>
+    
+      <viewAttribute id="PIR_ERDAT"/>
+      <viewAttribute id="PIR_INCO1"/>
+      <viewAttribute id="PIR_INCO2"/>
+      <viewAttribute id="PIR_WERKS"/>
+      <viewAttribute id="PIR_EKORG"/>
+      <viewAttribute id="PIR_MATNR"/>
+      <viewAttribute id="NETPR"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="PIR_LIFNR"/>
+      <viewAttribute id="PIR_URZLAND"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="PIR_SOURCE"/>
+      <viewAttribute id="PLANT_NAME"/>
+      <viewAttribute id="EKORG_1"/>
+    
+      <viewAttribute id="ERDAT_DT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="PIR_MAT_PLANT_J"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="DATE_P">
+    <viewAttributes>
+      <viewAttribute id="YEAR"/>
+      <viewAttribute id="CALQUARTER"/>
+      <viewAttribute id="CALMONTH"/>
+      <viewAttribute id="CALWEEK"/>
+      <viewAttribute id="DATE_SQL"/>
+      <viewAttribute id="DATE_SAP"/>
+      <viewAttribute id="QUARTER"/>
+      <viewAttribute id="MONTH"/>
+      <viewAttribute id="WEEK"/>
+      <viewAttribute id="DAY_OF_WEEK"/>
+      <viewAttribute id="YEAR_INT"/>
+      <viewAttribute id="QUARTER_INT"/>
+      <viewAttribute id="MONTH_INT"/>
+      <viewAttribute id="WEEK_INT"/>
+      <viewAttribute id="DAY_OF_WEEK_INT"/>
+      <viewAttribute id="DAY_INT"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="ZM_TIME_DIMENSION"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="PIR_P">
     <viewAttributes>
@@ -279,7 +356,7 @@
     </viewAttributes>
     <calculatedViewAttributes>
       <calculatedViewAttribute id="ERDAT_DT" datatype="DATE" expressionLanguage="SQL">
-        <formula></formula>
+        <formula>TO_DATE(&quot;ERDAT&quot;,'YYYY-MM-DD')</formula>
       </calculatedViewAttribute>
     </calculatedViewAttributes>
     <input node="PURCHINFORECORD"/>
@@ -613,84 +690,6 @@
     <joinAttribute name="PIR_WERKS"/>
     <joinAttribute name="PIR_SOURCE"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="PIR_MAT_PLANT_JP">
-    <viewAttributes>
-      <viewAttribute id="PIR_WERKS"/>
-      <viewAttribute id="PIR_EKORG"/>
-      <viewAttribute id="PIR_MATNR"/>
-      <viewAttribute id="NETPR"/>
-      <viewAttribute id="WAERS"/>
-      <viewAttribute id="PEINH"/>
-      <viewAttribute id="PIR_LIFNR"/>
-      <viewAttribute id="PIR_URZLAND"/>
-      <viewAttribute id="MATNR"/>
-      <viewAttribute id="MATKL"/>
-      <viewAttribute id="BRGEW"/>
-      <viewAttribute id="GEWEI"/>
-      <viewAttribute id="MTART"/>
-      <viewAttribute id="MTBEZ_FR"/>
-      <viewAttribute id="MTBEZ_EN"/>
-      <viewAttribute id="NTGEW"/>
-      <viewAttribute id="MAKTX_F"/>
-      <viewAttribute id="MAKTX_E"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="ERSDA"/>
-      <viewAttribute id="LAEDA"/>
-      <viewAttribute id="WERKS"/>
-      <viewAttribute id="EKGRP"/>
-      <viewAttribute id="STAWN"/>
-      <viewAttribute id="PRCTR"/>
-      <viewAttribute id="MEINS"/>
-      <viewAttribute id="DISPO"/>
-      <viewAttribute id="PROFL"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="MATKL_L1"/>
-      <viewAttribute id="WGBEZ_L1"/>
-      <viewAttribute id="MATKL_L2"/>
-      <viewAttribute id="WGBEZ_L2"/>
-      <viewAttribute id="MATKL_L3"/>
-      <viewAttribute id="WGBEZ_L3"/>
-      <viewAttribute id="MATKL_L4"/>
-      <viewAttribute id="WGBEZ_L4"/>
-      <viewAttribute id="MATKL_L5"/>
-      <viewAttribute id="WGBEZ_L5"/>
-      <viewAttribute id="PIR_SOURCE"/>
-      <viewAttribute id="PLANT_NAME"/>
-      <viewAttribute id="EKORG_1"/>
-    
-      <viewAttribute id="PIR_ERDAT"/>
-      <viewAttribute id="PIR_INCO1"/>
-      <viewAttribute id="PIR_INCO2"/>
-    
-      <viewAttribute id="ERDAT_DT"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="PIR_MAT_PLANT_J"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="DATE_P">
-    <viewAttributes>
-      <viewAttribute id="DATE_SQL"/>
-      <viewAttribute id="DATE_SAP"/>
-      <viewAttribute id="YEAR"/>
-      <viewAttribute id="QUARTER"/>
-      <viewAttribute id="MONTH"/>
-      <viewAttribute id="WEEK"/>
-      <viewAttribute id="DAY_OF_WEEK"/>
-      <viewAttribute id="CALQUARTER"/>
-      <viewAttribute id="CALMONTH"/>
-      <viewAttribute id="CALWEEK"/>
-      <viewAttribute id="YEAR_INT"/>
-      <viewAttribute id="QUARTER_INT"/>
-      <viewAttribute id="MONTH_INT"/>
-      <viewAttribute id="WEEK_INT"/>
-      <viewAttribute id="DAY_OF_WEEK_INT"/>
-      <viewAttribute id="DAY_INT"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="ZM_TIME_DIMENSION"/>
-  </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
   <attributes>
@@ -877,7 +876,9 @@
   
     <attribute id="ERDAT_DT" order="50" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ERDAT_DT"/>
+  
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ERDAT_DT"/>
+  
     </attribute>
     <attribute id="YEAR" order="51" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="YEAR"/>
@@ -991,21 +992,21 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="285.57475797004986" y="112"/>
+      <upperLeftCorner x="285" y="112"/>
     
       <rectangleSize width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="BEFORE_AGG_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="285.57475797004986" y="217"/>
+      <upperLeftCorner x="285" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PIR_MAT_PLANT_DATE_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="277.2499152329989" y="341.9999988079071"/>
+      <upperLeftCorner x="277" y="341"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PIR_MAT_PLANT_DATE_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="277.2499152329989" y="446.9999988079071"/>
+      <upperLeftCorner x="277" y="446"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="PIR_MAT_PLANT_JP" modelObjectNameSpace="PIR_MAT_PLANT_DATE_J" modelObjectType="JoinNodeInput">
@@ -1014,24 +1015,33 @@
     </shape>
     <shape modelObjectName="DATE_P" modelObjectNameSpace="PIR_MAT_PLANT_DATE_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="353" y="666"/>
-      <rectangleSize width="191.5419921875"/>
+      <rectangleSize width="191"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="PIR_MAT_PLANT_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="154" y="586"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="DATE_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="364" y="586"/>
+      <rectangleSize height="30" width="160"/>
     </shape>
   
   
     <shape expanded="true" modelObjectName="PIR_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="142.55900868085394" y="1116.9999952316284"/>
+      <upperLeftCorner x="142" y="1116"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PLANT_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92.00000000000003" y="851.9999964237213"/>
+      <upperLeftCorner x="92" y="851"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="MAT_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="352.55900868085394" y="1116.9999952316284"/>
+      <upperLeftCorner x="352" y="1116"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PIR_MAT_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302" y="956.9999964237213"/>
+      <upperLeftCorner x="302" y="956"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="PIR_P" modelObjectNameSpace="PIR_MAT_J" modelObjectType="JoinNodeInput">
@@ -1043,11 +1053,11 @@
       <rectangleSize width="103"/>
     </shape>
     <shape expanded="true" modelObjectName="PIR_MAT_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302" y="851.9999964237213"/>
+      <upperLeftCorner x="302" y="851"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PIR_MAT_PLANT_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="154.80261297723706" y="691.9999976158142"/>
+      <upperLeftCorner x="154" y="691"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="PIR_MAT_JP" modelObjectNameSpace="PIR_MAT_PLANT_J" modelObjectType="JoinNodeInput">
@@ -1057,15 +1067,6 @@
     <shape modelObjectName="PLANT_P" modelObjectNameSpace="PIR_MAT_PLANT_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="312" y="476"/>
       <rectangleSize width="133"/>
-    </shape>
-  
-    <shape expanded="true" modelObjectName="PIR_MAT_PLANT_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="154.80261297723706" y="586.9999976158142"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape expanded="true" modelObjectName="DATE_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="364.80261297723706" y="586.9999976158142"/>
-      <rectangleSize height="30" width="160"/>
     </shape></shapes>
 </layout>
 </Calculation:scenario>
