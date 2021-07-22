@@ -82,5 +82,11 @@
       "object": "V_VENDOR_INVOICE_2Y",
       "schema": "SUPLPANEL"
     }
+  },
+  "V_VENDOR_THRESHOLD_MONTH": {
+    "target": {
+      "object": "V_VENDOR_THRESHOLD_MONTH",
+      "schema": "SUPLPANEL"
+    }
   }
 }

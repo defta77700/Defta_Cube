@@ -1,6 +1,6 @@
 _schema-version: "2.1"
 ID: SuppPanel2
-version: 0.0.6
+version: 0.0.7
 modules:
 - name: db
   type: hdb

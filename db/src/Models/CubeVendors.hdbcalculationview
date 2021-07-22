@@ -134,6 +134,9 @@
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="VND_2Y_J" cardinality="CN_N" joinType="leftOuter">
     <viewAttributes>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="VNDP_LIFNR"/>
       <viewAttribute id="VENDORUNIK"/>
       <viewAttribute id="KRAUS"/>
       <viewAttribute id="STCEG"/>
@@ -180,9 +183,6 @@
       <viewAttribute id="SMTP_ADDR"/>
       <viewAttribute id="ZPRZ1" aggregationType="sum"/>
       <viewAttribute id="INV_VENDOR_2Y" aggregationType="sum"/>
-      <viewAttribute id="VNDP_LIFNR"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="NAME1"/>
       <viewAttribute id="VND2YP_LIFNR"/>
     </viewAttributes>
     <calculatedViewAttributes>
@@ -522,6 +522,7 @@
         <attribute attributeName="VND_LIFNR"/>
       </exceptionAggregation>
       <formula>1</formula>
+      
       </measure>
   </calculatedMeasures>
   <restrictedMeasures>
@@ -559,21 +560,21 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="243.4012701828858" y="112"/>
+      <upperLeftCorner x="243" y="112"/>
     
       <rectangleSize width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="BEFORE_AGG_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="243.4012701828858" y="217"/>
+      <upperLeftCorner x="243" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="VND_2Y_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="222.98453709850173" y="341.9999988079071"/>
+      <upperLeftCorner x="222" y="341"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="VND_2Y_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="222.98453709850173" y="446.9999988079071"/>
+      <upperLeftCorner x="222" y="446"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="VND_P" modelObjectNameSpace="VND_2Y_J" modelObjectType="JoinNodeInput">
@@ -586,11 +587,11 @@
     </shape>
   
     <shape expanded="true" modelObjectName="VND_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="606.9999976158142"/>
+      <upperLeftCorner x="92" y="606"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="VEND2Y_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302.00000000000006" y="606.9999976158142"/>
+      <upperLeftCorner x="302" y="606"/>
       <rectangleSize height="30" width="160"/>
     </shape></shapes>
 </layout>
