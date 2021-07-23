@@ -293,9 +293,11 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
     </input>
     <joinAttribute name="JOIN$MATNR$MATNR"/>
     <joinAttribute name="WERKS"/>
+    <joinAttribute name="SOURCE"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="INV_MAT_JP">
     <viewAttributes>
@@ -2611,8 +2613,8 @@
       <rectangleSize width="144"/>
     </shape>
     <shape modelObjectName="MATERIAL_P" modelObjectNameSpace="INV_MAT_J" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="538" y="23"/>
-      <rectangleSize width="144"/>
+      <upperLeftCorner x="633" y="19"/>
+      <rectangleSize width="144.6845703125"/>
     </shape>
     <shape expanded="true" modelObjectName="INV_MAT_JP" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="357" y="1441"/>

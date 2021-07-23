@@ -1,0 +1,9 @@
+---
+applications:
+- name: db
+  no-route: true
+  path: db/ 
+  health-check-type: none
+  memory: 512M
+  services:
+    - hdi_db
