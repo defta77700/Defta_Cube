@@ -379,60 +379,64 @@
       <descriptions defaultDescription="VENDORUNIK"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
     </attribute>
-    <attribute id="WERKS_C" order="6" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_FMLY" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Material Familly"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_FMLY"/>
+    </attribute>
+    <attribute id="WERKS_C" order="7" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Plant"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WERKS_C"/>
     </attribute>
-    <attribute id="ORT01" order="7" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ORT01" order="8" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Vendor City"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ORT01"/>
     </attribute>
-    <attribute id="PSTLZ" order="8" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PSTLZ" order="9" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Vendor Postal Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PSTLZ"/>
     </attribute>
-    <attribute id="REGIO" order="9" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="REGIO" order="10" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Vendor Region"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="REGIO"/>
     </attribute>
-    <attribute id="LAND1" order="10" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LAND1" order="11" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Vendor Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAND1"/>
     </attribute>
-    <attribute id="SOURCE" hidden="true" order="18" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SOURCE" hidden="true" order="19" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="SOURCE"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SOURCE"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
-    <measure id="SUMTOLXJ_C" order="11" aggregationType="sum" measureType="simple">
+    <measure id="SUMTOLXJ_C" order="12" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="SUMTOLXJ"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="SUMTOLXJ_C"/>
     </measure>
-    <measure id="COUNTTOLXJ_C" order="12" aggregationType="sum" measureType="simple">
+    <measure id="COUNTTOLXJ_C" order="13" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="COUNTTOLXJ"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="COUNTTOLXJ_C"/>
     </measure>
-    <measure id="PR_TDS_C" hidden="true" order="13" aggregationType="sum" measureType="simple">
+    <measure id="PR_TDS_C" hidden="true" order="14" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="PR_TDS"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="PR_TDS_C"/>
     </measure>
-    <measure id="RANKING_POINT_C" order="14" aggregationType="sum" measureType="simple">
+    <measure id="RANKING_POINT_C" order="15" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="RANKING_POINT"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="RANKING_POINT_C"/>
     </measure>
-    <measure id="THRESHOLD_POINT_MONTH_C" order="15" aggregationType="sum" measureType="simple">
+    <measure id="THRESHOLD_POINT_MONTH_C" order="16" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="THRESHOLD_POINT_MONTH "/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="THRESHOLD_POINT_MONTH_CC"/>
     </measure>
-    <measure id="RANKING_POINT" order="17" aggregationType="sum" measureType="simple" hidden="true">
+    <measure id="RANKING_POINT" order="18" aggregationType="sum" measureType="simple" hidden="true">
       <descriptions defaultDescription="Ranking Point"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="RANKING_POINT"/>
     </measure>
   </baseMeasures>
   <calculatedMeasures>
-    <measure id="TDS_VIEW" order="16" aggregationType="sum" measureType="simple" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
+    <measure id="TDS_VIEW" order="17" aggregationType="sum" measureType="simple" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
       <descriptions defaultDescription="TDS"/>
       <formula>ROUND(&quot;SUMTOLXJ_C&quot;/&quot;COUNTTOLXJ_C&quot;,2)</formula>
       
@@ -491,22 +495,6 @@
       <upperLeftCorner x="232" y="341"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape expanded="true" modelObjectName="VDR_VNDR_PRTDS_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="232" y="446"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape modelObjectName="VENDOR_P" modelObjectNameSpace="VDR_VNDR_PRTDS_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VDR_VNDR_PRTDS_J">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="202"/>
-    </shape>
-    <shape modelObjectName="VEND_PRDTS_IDNC_MONTH_JP" modelObjectNameSpace="VDR_VNDR_PRTDS_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VDR_VNDR_PRTDS_J">
-      <upperLeftCorner x="267" y="14"/>
-      <rectangleSize width="100"/>
-    </shape>
-    <shape modelObjectName="VND_THRESHOLD_MONTH_P" modelObjectNameSpace="VDR_VNDR_PRTDS_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VDR_VNDR_PRTDS_J">
-      <upperLeftCorner x="674" y="282"/>
-      <rectangleSize width="240.01611328125"/>
-    </shape>
   
     <shape expanded="true" modelObjectName="VENDOR_P" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="92" y="586"/>
@@ -520,6 +508,22 @@
       <upperLeftCorner x="573" y="584"/>
       <rectangleSize height="30" width="294"/>
     </shape>
-  </shapes>
+  
+    <shape expanded="true" modelObjectName="VDR_VNDR_PRTDS_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="232" y="446"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="VEND_PRDTS_IDNC_MONTH_JP" modelObjectNameSpace="VDR_VNDR_PRTDS_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VDR_VNDR_PRTDS_J">
+      <upperLeftCorner x="267" y="14"/>
+      <rectangleSize width="100"/>
+    </shape>
+    <shape modelObjectName="VND_THRESHOLD_MONTH_P" modelObjectNameSpace="VDR_VNDR_PRTDS_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VDR_VNDR_PRTDS_J">
+      <upperLeftCorner x="674" y="282"/>
+      <rectangleSize width="240"/>
+    </shape>
+    <shape modelObjectName="VENDOR_P" modelObjectNameSpace="VDR_VNDR_PRTDS_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VDR_VNDR_PRTDS_J">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="202"/>
+    </shape></shapes>
 </layout>
 </Calculation:scenario>
