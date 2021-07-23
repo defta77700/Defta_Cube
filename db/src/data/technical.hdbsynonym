@@ -1,0 +1,8 @@
+{
+  "WFACPIVENDOR": {
+    "target": {
+      "object": "WFACPIVENDOR",
+      "schema": "SUPLPANEL"
+    }
+  }
+}

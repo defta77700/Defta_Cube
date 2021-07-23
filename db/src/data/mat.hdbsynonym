@@ -4,5 +4,11 @@
       "object": "MATERIAL",
       "schema": "SUPLPANEL"
     }
+  },
+  "MARKETEVOLUTION": {
+    "target": {
+      "object": "MARKETEVOLUTION",
+      "schema": "SUPLPANEL"
+    }
   }
 }
