@@ -93,6 +93,10 @@
       <calculatedViewAttribute id="VENDORUNIK" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
         <formula>concat(concat(&quot;DUNS&quot;,&quot;VATCODE&quot;),&quot;SIRET&quot;)</formula>
       </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="LIFNR_C" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+        <formula>RIGHT(CONCAT('00000000000000000000', &quot;LIFNR&quot;),10)</formula>
+      </calculatedViewAttribute>
     </calculatedViewAttributes>
     <input node="VENDORSEVALUATION"/>
   </calculationView>
@@ -223,6 +227,134 @@
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="VNDEVAL_DIMVND_JP"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VNDEVAL_DIMVND_JP">
+    <viewAttributes>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="DUNS"/>
+      <viewAttribute id="VATCODE"/>
+      <viewAttribute id="SIRET"/>
+      <viewAttribute id="YEAR"/>
+      <viewAttribute id="VENDOR_NAME"/>
+      <viewAttribute id="CAT_VENDOR"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="VENDOR_DEV"/>
+      <viewAttribute id="ISO9001"/>
+      <viewAttribute id="ISO9001_ST"/>
+      <viewAttribute id="ISO9001_DT"/>
+      <viewAttribute id="ISO9001_DOC"/>
+      <viewAttribute id="IATF16949"/>
+      <viewAttribute id="IATF16949_ST"/>
+      <viewAttribute id="IATF16949_DT"/>
+      <viewAttribute id="IATF16949_DOC"/>
+      <viewAttribute id="ISO14001"/>
+      <viewAttribute id="ISO14001_ST"/>
+      <viewAttribute id="ISO14001_DT"/>
+      <viewAttribute id="ISO14001_DOC"/>
+      <viewAttribute id="SAS18001"/>
+      <viewAttribute id="SAS18001_ST"/>
+      <viewAttribute id="SAS18001_DT"/>
+      <viewAttribute id="SAS18001_DOC"/>
+      <viewAttribute id="AQAP2110"/>
+      <viewAttribute id="AQAP2110_ST"/>
+      <viewAttribute id="AQAP2110_DT"/>
+      <viewAttribute id="AQAP2110_DOC"/>
+      <viewAttribute id="EN9100"/>
+      <viewAttribute id="EN9100_ST"/>
+      <viewAttribute id="EN9100_DT"/>
+      <viewAttribute id="EN9100_DOC"/>
+      <viewAttribute id="ISO45001"/>
+      <viewAttribute id="ISO45001_ST"/>
+      <viewAttribute id="ISO45001_DT"/>
+      <viewAttribute id="ISO45001_DOC"/>
+      <viewAttribute id="ISO50001"/>
+      <viewAttribute id="ISO50001_ST"/>
+      <viewAttribute id="ISO50001_DT"/>
+      <viewAttribute id="ISO50001_DOC"/>
+      <viewAttribute id="AUDITIER"/>
+      <viewAttribute id="AUDITIER_ST"/>
+      <viewAttribute id="AUDITIER_DT"/>
+      <viewAttribute id="AUDITIER_DOC"/>
+      <viewAttribute id="DEFTAUDIT"/>
+      <viewAttribute id="DEFTAUDIT_ST"/>
+      <viewAttribute id="DEFTAUDIT_DT"/>
+      <viewAttribute id="DEFTAUDIT_DOC"/>
+      <viewAttribute id="QUALCERTGLOBCOMMENT"/>
+      <viewAttribute id="CONTCTINSCIV"/>
+      <viewAttribute id="CONTCTINSCIV_DT"/>
+      <viewAttribute id="CONTCTINSCIV_DOC"/>
+      <viewAttribute id="POGENCONDSIGN"/>
+      <viewAttribute id="CONFCONTRCTSIG"/>
+      <viewAttribute id="RSEADHESION"/>
+      <viewAttribute id="RSESUPP"/>
+      <viewAttribute id="FINEVOL"/>
+      <viewAttribute id="FINGLOBCOMMENT"/>
+      <viewAttribute id="EVAL_TURNOVER"/>
+      <viewAttribute id="USERATESUPP"/>
+      <viewAttribute id="MKTSUPPEVAL"/>
+      <viewAttribute id="GEOEVAL"/>
+      <viewAttribute id="CDCCONF"/>
+      <viewAttribute id="CDCCONFNOTE"/>
+      <viewAttribute id="PLANRESPCT"/>
+      <viewAttribute id="PLANRESPCTNOTE"/>
+      <viewAttribute id="RFQPRICE"/>
+      <viewAttribute id="RFQPRICENOTE"/>
+      <viewAttribute id="SUPPSTATUSUAP"/>
+      <viewAttribute id="STATUSCOMMENT"/>
+      <viewAttribute id="QUALSYSTNOTE"/>
+      <viewAttribute id="FINRISKNOTE"/>
+      <viewAttribute id="FINNIVNOTE"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="VND_LIFNR"/>
+      <viewAttribute id="VND_VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="VND_SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="VND_NAME"/>
+      <viewAttribute id="VND_CITY"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="VND_PSTLZ"/>
+      <viewAttribute id="VND_REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="VND_LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VNDEVAL_DIMVND_J"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="DIMVND_P">
     <viewAttributes>
@@ -401,6 +533,8 @@
       <viewAttribute id="PRFRE"/>
       <viewAttribute id="SMTP_ADDR"/>
       <viewAttribute id="ZPRZ1" aggregationType="sum"/>
+    
+      <viewAttribute hidden="true" id="JOIN$LIFNR_C$LIFNR"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="VNDEVAL_P">
@@ -479,6 +613,8 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="FINRISKNOTE" source="FINRISKNOTE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="FINNIVNOTE" source="FINNIVNOTE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR_C$LIFNR" source="LIFNR_C"/>
     </input>
     <input node="DIMVND_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="VND_LIFNR" source="LIFNR"/>
@@ -528,139 +664,11 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR_C$LIFNR" source="LIFNR"/>
     </input>
-    <joinAttribute name="LIFNR"/>
     <joinAttribute name="VENDORUNIK"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VNDEVAL_DIMVND_JP">
-    <viewAttributes>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="DUNS"/>
-      <viewAttribute id="VATCODE"/>
-      <viewAttribute id="SIRET"/>
-      <viewAttribute id="YEAR"/>
-      <viewAttribute id="VENDOR_NAME"/>
-      <viewAttribute id="CAT_VENDOR"/>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="VENDOR_DEV"/>
-      <viewAttribute id="ISO9001"/>
-      <viewAttribute id="ISO9001_ST"/>
-      <viewAttribute id="ISO9001_DT"/>
-      <viewAttribute id="ISO9001_DOC"/>
-      <viewAttribute id="IATF16949"/>
-      <viewAttribute id="IATF16949_ST"/>
-      <viewAttribute id="IATF16949_DT"/>
-      <viewAttribute id="IATF16949_DOC"/>
-      <viewAttribute id="ISO14001"/>
-      <viewAttribute id="ISO14001_ST"/>
-      <viewAttribute id="ISO14001_DT"/>
-      <viewAttribute id="ISO14001_DOC"/>
-      <viewAttribute id="SAS18001"/>
-      <viewAttribute id="SAS18001_ST"/>
-      <viewAttribute id="SAS18001_DT"/>
-      <viewAttribute id="SAS18001_DOC"/>
-      <viewAttribute id="AQAP2110"/>
-      <viewAttribute id="AQAP2110_ST"/>
-      <viewAttribute id="AQAP2110_DT"/>
-      <viewAttribute id="AQAP2110_DOC"/>
-      <viewAttribute id="EN9100"/>
-      <viewAttribute id="EN9100_ST"/>
-      <viewAttribute id="EN9100_DT"/>
-      <viewAttribute id="EN9100_DOC"/>
-      <viewAttribute id="ISO45001"/>
-      <viewAttribute id="ISO45001_ST"/>
-      <viewAttribute id="ISO45001_DT"/>
-      <viewAttribute id="ISO45001_DOC"/>
-      <viewAttribute id="ISO50001"/>
-      <viewAttribute id="ISO50001_ST"/>
-      <viewAttribute id="ISO50001_DT"/>
-      <viewAttribute id="ISO50001_DOC"/>
-      <viewAttribute id="AUDITIER"/>
-      <viewAttribute id="AUDITIER_ST"/>
-      <viewAttribute id="AUDITIER_DT"/>
-      <viewAttribute id="AUDITIER_DOC"/>
-      <viewAttribute id="DEFTAUDIT"/>
-      <viewAttribute id="DEFTAUDIT_ST"/>
-      <viewAttribute id="DEFTAUDIT_DT"/>
-      <viewAttribute id="DEFTAUDIT_DOC"/>
-      <viewAttribute id="QUALCERTGLOBCOMMENT"/>
-      <viewAttribute id="CONTCTINSCIV"/>
-      <viewAttribute id="CONTCTINSCIV_DT"/>
-      <viewAttribute id="CONTCTINSCIV_DOC"/>
-      <viewAttribute id="POGENCONDSIGN"/>
-      <viewAttribute id="CONFCONTRCTSIG"/>
-      <viewAttribute id="RSEADHESION"/>
-      <viewAttribute id="RSESUPP"/>
-      <viewAttribute id="FINEVOL"/>
-      <viewAttribute id="FINGLOBCOMMENT"/>
-      <viewAttribute id="EVAL_TURNOVER"/>
-      <viewAttribute id="USERATESUPP"/>
-      <viewAttribute id="MKTSUPPEVAL"/>
-      <viewAttribute id="GEOEVAL"/>
-      <viewAttribute id="CDCCONF"/>
-      <viewAttribute id="CDCCONFNOTE"/>
-      <viewAttribute id="PLANRESPCT"/>
-      <viewAttribute id="PLANRESPCTNOTE"/>
-      <viewAttribute id="RFQPRICE"/>
-      <viewAttribute id="RFQPRICENOTE"/>
-      <viewAttribute id="SUPPSTATUSUAP"/>
-      <viewAttribute id="STATUSCOMMENT"/>
-      <viewAttribute id="QUALSYSTNOTE"/>
-      <viewAttribute id="FINRISKNOTE"/>
-      <viewAttribute id="FINNIVNOTE"/>
-      <viewAttribute id="VENDORUNIK"/>
-      <viewAttribute id="VND_LIFNR"/>
-      <viewAttribute id="VND_VENDORUNIK"/>
-      <viewAttribute id="KRAUS"/>
-      <viewAttribute id="STCEG"/>
-      <viewAttribute id="STCD1"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="VND_SOURCE"/>
-      <viewAttribute id="ERDAT"/>
-      <viewAttribute id="VND_NAME"/>
-      <viewAttribute id="VND_CITY"/>
-      <viewAttribute id="PFACH"/>
-      <viewAttribute id="STRAS"/>
-      <viewAttribute id="VND_PSTLZ"/>
-      <viewAttribute id="VND_REGIO"/>
-      <viewAttribute id="ADRNR"/>
-      <viewAttribute id="TELF1"/>
-      <viewAttribute id="SPERR"/>
-      <viewAttribute id="SPERM_X"/>
-      <viewAttribute id="VND_LAND1"/>
-      <viewAttribute id="KTOKK"/>
-      <viewAttribute id="LOEVM_X"/>
-      <viewAttribute id="SPRAS"/>
-      <viewAttribute id="STCD2"/>
-      <viewAttribute id="VBUND"/>
-      <viewAttribute id="INCO1"/>
-      <viewAttribute id="INCO2"/>
-      <viewAttribute id="LFABC"/>
-      <viewAttribute id="LOEVM_Y"/>
-      <viewAttribute id="SPERM_Y"/>
-      <viewAttribute id="VENSL"/>
-      <viewAttribute id="WAERS"/>
-      <viewAttribute id="ZTERM"/>
-      <viewAttribute id="ZFAEL"/>
-      <viewAttribute id="ZMONA"/>
-      <viewAttribute id="ZTAG1"/>
-      <viewAttribute id="TEXT1_FR"/>
-      <viewAttribute id="TEXT1_EN"/>
-      <viewAttribute id="KONZS"/>
-      <viewAttribute id="BRSCH"/>
-      <viewAttribute id="BRTXT_FR"/>
-      <viewAttribute id="BRTXT_EN"/>
-      <viewAttribute id="J_1KFTBUS"/>
-      <viewAttribute id="MCOD1"/>
-      <viewAttribute id="WEBRE"/>
-      <viewAttribute id="PRFRE"/>
-      <viewAttribute id="SMTP_ADDR"/>
-      <viewAttribute id="ZPRZ1"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="VNDEVAL_DIMVND_J"/>
+    <joinAttribute name="JOIN$LIFNR_C$LIFNR"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
@@ -1204,6 +1212,11 @@
       <upperLeftCorner x="38" y="195"/>
       <rectangleSize height="30" width="160"/>
     </shape>
+    <shape expanded="true" modelObjectName="VNDEVAL_DIMVND_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-72" y="443"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
     <shape expanded="true" modelObjectName="DIMVND_P" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="28" y="646"/>
       <rectangleSize height="30" width="160"/>
@@ -1214,16 +1227,11 @@
     </shape>
     <shape modelObjectName="VNDEVAL_P" modelObjectNameSpace="VNDEVAL_DIMVND_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="233.0927734375"/>
+      <rectangleSize width="233"/>
     </shape>
     <shape modelObjectName="DIMVND_P" modelObjectNameSpace="VNDEVAL_DIMVND_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="412" y="1236"/>
-      <rectangleSize width="159.34228515625"/>
-    </shape>
-    <shape expanded="true" modelObjectName="VNDEVAL_DIMVND_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-72" y="443"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-  </shapes>
+      <rectangleSize width="159"/>
+    </shape></shapes>
 </layout>
 </Calculation:scenario>

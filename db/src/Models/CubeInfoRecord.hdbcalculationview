@@ -16,6 +16,9 @@
   <DataSource id="DimMaterial">
     <resourceUri>DimMaterial</resourceUri>
   </DataSource>
+  <DataSource id="DimVendor">
+    <resourceUri>DimVendor</resourceUri>
+  </DataSource>
 </dataSources>
 <calculationViews>
   <calculationView xsi:type="Calculation:ProjectionView" id="BEFORE_AGG_P">
@@ -73,9 +76,25 @@
       <viewAttribute id="CALQUARTER"/>
       <viewAttribute id="CALMONTH"/>
       <viewAttribute id="CALWEEK"/>
+    
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="VND_NAME1"/>
+      <viewAttribute id="VND_CITY"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="VND_PSTLZ"/>
+      <viewAttribute id="VND_REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="VND_COUNTRY"/>
+      <viewAttribute id="LFABC"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="PIR_MAT_PLANT_DATE_JP"/>
+    <input node="PIR_MAT_PLANT_DATE_JP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_LIFNR" source="PIR_LIFNR_C"/>
+    </input>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="PIR_MAT_PLANT_DATE_JP">
     <viewAttributes>
@@ -132,6 +151,22 @@
       <viewAttribute id="CALQUARTER"/>
       <viewAttribute id="CALMONTH"/>
       <viewAttribute id="CALWEEK"/>
+    
+      <viewAttribute id="PIR_LIFNR_C"/>
+    
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="VND_NAME1"/>
+      <viewAttribute id="VND_CITY"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="VND_PSTLZ"/>
+      <viewAttribute id="VND_REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="VND_COUNTRY"/>
+      <viewAttribute id="LFABC"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="PIR_MAT_PLANT_DATE_J"/>
@@ -192,6 +227,22 @@
       <viewAttribute id="CALQUARTER"/>
       <viewAttribute id="CALMONTH"/>
       <viewAttribute id="CALWEEK"/>
+    
+      <viewAttribute id="PIR_LIFNR_C"/>
+    
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="VND_NAME1"/>
+      <viewAttribute id="VND_CITY"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="VND_PSTLZ"/>
+      <viewAttribute id="VND_REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="VND_COUNTRY"/>
+      <viewAttribute id="LFABC"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="PIR_MAT_PLANT_JP">
@@ -244,6 +295,22 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_NAME" source="PLANT_NAME"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="EKORG_1" source="EKORG_1"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT_DT" source="ERDAT_DT"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_LIFNR_C" source="PIR_LIFNR_C"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_NAME1" source="VND_NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_CITY" source="VND_CITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_PSTLZ" source="VND_PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_REGIO" source="VND_REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_COUNTRY" source="VND_COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
     </input>
     <input node="DATE_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
@@ -306,6 +373,22 @@
       <viewAttribute id="EKORG_1"/>
     
       <viewAttribute id="ERDAT_DT"/>
+    
+      <viewAttribute id="PIR_LIFNR_C"/>
+    
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="VND_NAME1"/>
+      <viewAttribute id="VND_CITY"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="VND_PSTLZ"/>
+      <viewAttribute id="VND_REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="VND_COUNTRY"/>
+      <viewAttribute id="LFABC"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="PIR_MAT_PLANT_J"/>
@@ -384,9 +467,25 @@
       <viewAttribute id="EKORG_1"/>
     
       <viewAttribute id="ERDAT_DT"/>
+    
+      <viewAttribute id="PIR_LIFNR_C"/>
+    
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="VND_NAME1"/>
+      <viewAttribute id="VND_CITY"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="VND_PSTLZ"/>
+      <viewAttribute id="VND_REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="VND_COUNTRY"/>
+      <viewAttribute id="LFABC"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="PIR_MAT_JP">
+    <input node="PIR_MAT_VND_JP">
       <mapping xsi:type="Calculation:AttributeMapping" target="PIR_WERKS" source="PIR_WERKS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PIR_EKORG" source="PIR_EKORG"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PIR_MATNR" source="PIR_MATNR"/>
@@ -435,6 +534,22 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="PIR_INCO2" source="PIR_INCO2"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT_DT" source="ERDAT_DT"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_LIFNR_C" source="PIR_LIFNR_C"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_NAME1" source="VND_NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_CITY" source="VND_CITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_PSTLZ" source="VND_PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_REGIO" source="VND_REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_COUNTRY" source="VND_COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
     </input>
     <input node="PLANT_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_NAME" source="NAME1"/>
@@ -444,6 +559,218 @@
     </input>
     <joinAttribute name="PIR_WERKS"/>
     <joinAttribute name="PIR_SOURCE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PIR_MAT_VND_JP">
+    <viewAttributes>
+      <viewAttribute id="PIR_WERKS"/>
+      <viewAttribute id="PIR_EKORG"/>
+      <viewAttribute id="PIR_MATNR"/>
+      <viewAttribute id="NETPR"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="PIR_LIFNR"/>
+      <viewAttribute id="PIR_URZLAND"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="PIR_SOURCE"/>
+      <viewAttribute id="PIR_ERDAT"/>
+      <viewAttribute id="PIR_INCO1"/>
+      <viewAttribute id="PIR_INCO2"/>
+      <viewAttribute id="ERDAT_DT"/>
+      <viewAttribute id="PIR_LIFNR_C"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="VND_NAME1"/>
+      <viewAttribute id="VND_CITY"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="VND_PSTLZ"/>
+      <viewAttribute id="VND_REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="VND_COUNTRY"/>
+      <viewAttribute id="LFABC"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="PIR_MAT_VND_J"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PLANT_P">
+    <viewAttributes>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="SOURCE"/>
+    
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="SPRAS"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="PLANT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="PIR_MAT_VND_J" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="PIR_WERKS"/>
+      <viewAttribute id="PIR_EKORG"/>
+      <viewAttribute id="PIR_MATNR"/>
+      <viewAttribute id="NETPR" aggregationType="sum"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="PEINH" aggregationType="sum"/>
+      <viewAttribute id="PIR_LIFNR"/>
+      <viewAttribute id="PIR_URZLAND"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="PIR_SOURCE"/>
+      <viewAttribute id="PIR_ERDAT"/>
+      <viewAttribute id="PIR_INCO1"/>
+      <viewAttribute id="PIR_INCO2"/>
+      <viewAttribute id="ERDAT_DT"/>
+      <viewAttribute id="PIR_LIFNR_C"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="VND_NAME1"/>
+      <viewAttribute id="VND_CITY"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="VND_PSTLZ"/>
+      <viewAttribute id="VND_REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="VND_COUNTRY"/>
+      <viewAttribute id="LFABC"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="PIR_MAT_JP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_WERKS" source="PIR_WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_EKORG" source="PIR_EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_MATNR" source="PIR_MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NETPR" source="NETPR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_LIFNR" source="PIR_LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_URZLAND" source="PIR_URZLAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_FR" source="MTBEZ_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_EN" source="MTBEZ_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_F" source="MAKTX_F"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_E" source="MAKTX_E"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERSDA" source="ERSDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAEDA" source="LAEDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAWN" source="STAWN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROFL" source="PROFL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L1" source="MATKL_L1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L1" source="WGBEZ_L1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L2" source="MATKL_L2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L2" source="WGBEZ_L2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L3" source="MATKL_L3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L3" source="WGBEZ_L3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L4" source="MATKL_L4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L4" source="WGBEZ_L4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L5" source="MATKL_L5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L5" source="WGBEZ_L5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_SOURCE" source="PIR_SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_ERDAT" source="PIR_ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_INCO1" source="PIR_INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_INCO2" source="PIR_INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT_DT" source="ERDAT_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_LIFNR_C" source="PIR_LIFNR_C"/>
+    </input>
+    <input node="VND_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_CITY" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_COUNTRY" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_LIFNR_C" source="LIFNR"/>
+    </input>
+    <joinAttribute name="SOURCE"/>
+    <joinAttribute name="PIR_LIFNR_C"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="PIR_MAT_JP">
     <viewAttributes>
@@ -496,94 +823,11 @@
       <viewAttribute id="PIR_INCO2"/>
     
       <viewAttribute id="ERDAT_DT"/>
+    
+      <viewAttribute id="PIR_LIFNR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="PIR_MAT_J"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="PLANT_P">
-    <viewAttributes>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="WERKS"/>
-      <viewAttribute id="SOURCE"/>
-    
-      <viewAttribute id="VKORG"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="SPRAS"/></viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="PLANT"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="PIR_P">
-    <viewAttributes>
-      <viewAttribute id="INFNR"/>
-      <viewAttribute id="WERKS"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="ESOKZ"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="LOEKZ"/>
-      <viewAttribute id="ERDAT"/>
-      <viewAttribute id="BPRME"/>
-      <viewAttribute id="INCO1"/>
-      <viewAttribute id="INCO2"/>
-      <viewAttribute id="NETPR"/>
-      <viewAttribute id="PEINH"/>
-      <viewAttribute id="PRDAT"/>
-      <viewAttribute id="WAERS"/>
-      <viewAttribute id="MATNR"/>
-      <viewAttribute id="IDNLF"/>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="REGIO"/>
-      <viewAttribute id="URZLA"/>
-    </viewAttributes>
-    <calculatedViewAttributes>
-      <calculatedViewAttribute id="ERDAT_DT" datatype="DATE" expressionLanguage="SQL">
-        <formula>TO_DATE(&quot;ERDAT&quot;,'YYYY-MM-DD')</formula>
-      </calculatedViewAttribute>
-    
-      <calculatedViewAttribute id="MATNR_C" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
-        <formula>RIGHT(CONCAT('00000000000000000000', &quot;MATNR&quot;),20)</formula>
-      </calculatedViewAttribute>
-    </calculatedViewAttributes>
-    <input node="PURCHINFORECORD"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="MAT_P">
-    <viewAttributes>
-      <viewAttribute id="MATNR"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="MATKL"/>
-      <viewAttribute id="BRGEW"/>
-      <viewAttribute id="GEWEI"/>
-      <viewAttribute id="MTART"/>
-      <viewAttribute id="MTBEZ_FR"/>
-      <viewAttribute id="MTBEZ_EN"/>
-      <viewAttribute id="NTGEW"/>
-      <viewAttribute id="ERSDA"/>
-      <viewAttribute id="LAEDA"/>
-      <viewAttribute id="MAKTX_F"/>
-      <viewAttribute id="MAKTX_E"/>
-      <viewAttribute id="WERKS"/>
-      <viewAttribute id="EKGRP"/>
-      <viewAttribute id="STAWN"/>
-      <viewAttribute id="PRCTR"/>
-      <viewAttribute id="MEINS"/>
-      <viewAttribute id="DISPO"/>
-      <viewAttribute id="PROFL"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="MATKL_L1"/>
-      <viewAttribute id="WGBEZ_L1"/>
-      <viewAttribute id="MATKL_L2"/>
-      <viewAttribute id="WGBEZ_L2"/>
-      <viewAttribute id="MATKL_L3"/>
-      <viewAttribute id="WGBEZ_L3"/>
-      <viewAttribute id="MATKL_L4"/>
-      <viewAttribute id="WGBEZ_L4"/>
-      <viewAttribute id="MATKL_L5"/>
-      <viewAttribute id="WGBEZ_L5"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="DimMaterial"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="PIR_MAT_J" cardinality="CN_N" joinType="leftOuter">
     <viewAttributes>
@@ -637,8 +881,10 @@
     
       <viewAttribute id="ERDAT_DT"/>
     
-      <viewAttribute id="MATNR_C"/>
-    </viewAttributes>
+      <viewAttribute id="PIR_LIFNR_C"/>
+    
+    
+      <viewAttribute id="MATNR_C"/></viewAttributes>
     <calculatedViewAttributes/>
     <input node="PIR_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="PIR_WERKS" source="WERKS"/>
@@ -659,6 +905,8 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT_DT" source="ERDAT_DT"/>
     
       <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_LIFNR_C" source="PIR_LIFNR_C"/>
     </input>
     <input node="MAT_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
@@ -699,6 +947,139 @@
     </input>
     <joinAttribute name="MATNR_C"/>
     <joinAttribute name="PIR_SOURCE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PIR_P">
+    <viewAttributes>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="NETPR"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="URZLA"/>
+    
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="LOEKZ"/>
+      <viewAttribute id="BPRME"/>
+      <viewAttribute id="PRDAT"/>
+      <viewAttribute id="IDNLF"/>
+      <viewAttribute id="REGIO"/></viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="ERDAT_DT" datatype="DATE" expressionLanguage="SQL">
+        <formula>TO_DATE(&quot;ERDAT&quot;,'YYYY-MM-DD')</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="MATNR_C" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+    
+        <formula>RIGHT(CONCAT('00000000000000000000', &quot;MATNR&quot;),20)</formula>
+    
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="PIR_LIFNR_C" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+    
+        <formula>RIGHT(CONCAT('00000000000000000000', &quot;LIFNR&quot;),10)</formula>
+    
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="PURCHINFORECORD"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="MAT_P">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="DimMaterial"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VND_P">
+    <viewAttributes>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="DimVendor"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
@@ -812,51 +1193,51 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="NAME1"/>
     </attribute>
     <attribute id="EKORG" order="30" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="EKORG"/>
+      <descriptions defaultDescription="Company Purchase Org"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG"/>
     </attribute>
     <attribute id="LAND1" order="31" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Country"/>
+      <descriptions defaultDescription="Company Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAND1"/>
     </attribute>
     <attribute id="MATKL_L1" order="32" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MATKL_L1"/>
+      <descriptions defaultDescription="Material Group Code L1"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L1"/>
     </attribute>
     <attribute id="WGBEZ_L1" order="33" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="WGBEZ_L1"/>
+      <descriptions defaultDescription="Material Group Descr L1"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L1"/>
     </attribute>
     <attribute id="MATKL_L2" order="34" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MATKL_L2"/>
+      <descriptions defaultDescription="Material Group Code L2"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L2"/>
     </attribute>
     <attribute id="WGBEZ_L2" order="35" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="WGBEZ_L2"/>
+      <descriptions defaultDescription="Material Group Descr L2"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L2"/>
     </attribute>
     <attribute id="MATKL_L3" order="36" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MATKL_L3"/>
+      <descriptions defaultDescription="Material Group Code L3"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L3"/>
     </attribute>
     <attribute id="WGBEZ_L3" order="37" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="WGBEZ_L3"/>
+      <descriptions defaultDescription="Material Group Descr L3"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L3"/>
     </attribute>
     <attribute id="MATKL_L4" order="38" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MATKL_L4"/>
+      <descriptions defaultDescription="Material Group Code L4"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L4"/>
     </attribute>
     <attribute id="WGBEZ_L4" order="39" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="WGBEZ_L4"/>
+      <descriptions defaultDescription="Material Group Descr L4"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L4"/>
     </attribute>
     <attribute id="MATKL_L5" order="40" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MATKL_L5"/>
+      <descriptions defaultDescription="Material Group Code L5"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L5"/>
     </attribute>
     <attribute id="WGBEZ_L5" order="41" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="WGBEZ_L5"/>
+      <descriptions defaultDescription="Material Group Descr L5"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L5"/>
     </attribute>
     <attribute id="PIR_SOURCE" order="42" displayAttribute="false" attributeHierarchyActive="false">
@@ -864,11 +1245,11 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_SOURCE"/>
     </attribute>
     <attribute id="PLANT_NAME" order="43" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PLANT_NAME"/>
+      <descriptions defaultDescription="Plant Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PLANT_NAME"/>
     </attribute>
     <attribute id="EKORG_1" order="44" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="EKORG_1"/>
+      <descriptions defaultDescription="Plant Purchase Org"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG_1"/>
     </attribute>
     <attribute id="PIR_ERDAT" order="47" displayAttribute="false" attributeHierarchyActive="false">
@@ -905,6 +1286,59 @@
     <attribute id="CALWEEK" order="54" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CALWEEK"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALWEEK"/>
+    </attribute>
+  
+    <attribute id="VENDORUNIK" order="55" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VENDORUNIK"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
+    </attribute>
+    <attribute id="KRAUS" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor DUNS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KRAUS"/>
+    </attribute>
+    <attribute id="STCEG" order="57" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor VAT"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCEG"/>
+    </attribute>
+    <attribute id="STCD1" order="58" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor SIRET"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCD1"/>
+    </attribute>
+    <attribute id="VND_NAME1" order="59" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Name"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_NAME1"/>
+    </attribute>
+    <attribute id="VND_CITY" order="60" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor City"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_CITY"/>
+    </attribute>
+    <attribute id="PFACH" hidden="true" order="61" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PFACH"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PFACH"/>
+    </attribute>
+    <attribute id="STRAS" order="62" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Address"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STRAS"/>
+    </attribute>
+    <attribute id="VND_PSTLZ" order="63" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Postal Code"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_PSTLZ"/>
+    </attribute>
+    <attribute id="VND_REGIO" order="64" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Region"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_REGIO"/>
+    </attribute>
+    <attribute id="ADRNR" hidden="true" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADRNR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ADRNR"/>
+    </attribute>
+    <attribute id="VND_COUNTRY" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Country"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_COUNTRY"/>
+    </attribute>
+    <attribute id="LFABC" order="67" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Indicator ABC"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LFABC"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
@@ -997,26 +1431,44 @@
         </hierarchy>
       </hierarchies>
     </localDimension>
+    <localDimension id="VENDOR_GEO">
+      <attributeRef xsi:type="DataFoundation:Attribute">VND_COUNTRY</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">VND_REGIO</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">VND_PSTLZ</attributeRef>
+      <attributeRef xsi:type="DataFoundation:Attribute">VND_CITY</attributeRef>
+      <hierarchies>
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="VENDOR_GEO" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+          <descriptions defaultDescription="Vendor Geography Hierarchy"/>
+          <unassignedMemberProperties mode="FALSE"/>
+          <levels>
+            <level levelAttribute="VND_COUNTRY" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="VND_COUNTRY" sortDirection="ASC"/>
+            <level levelAttribute="VND_REGIO" levelType="MDLEVEL_TYPE_REGULAR" order="2" orderAttribute="VND_REGIO" sortDirection="ASC"/>
+            <level levelAttribute="VND_PSTLZ" levelType="MDLEVEL_TYPE_REGULAR" order="3" orderAttribute="VND_PSTLZ" sortDirection="ASC"/>
+            <level levelAttribute="VND_CITY" levelType="MDLEVEL_TYPE_REGULAR" order="4" orderAttribute="VND_CITY" sortDirection="ASC"/>
+          </levels>
+        </hierarchy>
+      </hierarchies>
+    </localDimension>
   </localDimensions>
 </logicalModel>
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="285" y="112"/>
+      <upperLeftCorner x="281.8669615453051" y="112"/>
     
       <rectangleSize width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="BEFORE_AGG_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="285" y="217"/>
+      <upperLeftCorner x="281.8669615453051" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PIR_MAT_PLANT_DATE_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="277" y="341"/>
+      <upperLeftCorner x="258.46215119639174" y="341.9999988079071"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PIR_MAT_PLANT_DATE_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="277" y="446"/>
+      <upperLeftCorner x="258.46215119639174" y="446.9999988079071"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="PIR_MAT_PLANT_JP" modelObjectNameSpace="PIR_MAT_PLANT_DATE_J" modelObjectType="JoinNodeInput">
@@ -1029,45 +1481,51 @@
     </shape>
   
     <shape expanded="true" modelObjectName="PIR_MAT_PLANT_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="154" y="586"/>
+      <upperLeftCorner x="344.82880611476793" y="606.9999976158142"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="DATE_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="364" y="586"/>
+      <upperLeftCorner x="134.82880611476793" y="606.9999976158142"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PIR_MAT_PLANT_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="154" y="691"/>
+      <upperLeftCorner x="289.1312878349328" y="731.9999964237213"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape modelObjectName="PIR_MAT_JP" modelObjectNameSpace="PIR_MAT_PLANT_J" modelObjectType="JoinNodeInput">
+    <shape modelObjectName="PIR_MAT_VND_JP" modelObjectNameSpace="PIR_MAT_PLANT_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="162"/>
-    </shape>
+      <rectangleSize width="250"/>
+    </shape><shape><upperLeftCorner/><rectangleSize/></shape>
     <shape modelObjectName="PLANT_P" modelObjectNameSpace="PIR_MAT_PLANT_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="312" y="476"/>
       <rectangleSize width="133"/>
     </shape>
-    <shape expanded="true" modelObjectName="PIR_MAT_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302" y="851"/>
+    <shape expanded="true" modelObjectName="PIR_MAT_VND_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="162.62079476563065" y="891.9999952316284"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PLANT_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="851"/>
+      <upperLeftCorner x="372.6207947656307" y="891.9999952316284"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-  
-  
-    <shape expanded="true" modelObjectName="PIR_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="142" y="1116"/>
+    <shape expanded="true" modelObjectName="PIR_MAT_VND_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="162.62079476563065" y="996.9999952316284"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape expanded="true" modelObjectName="MAT_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="352" y="1116"/>
+    <shape modelObjectName="PIR_MAT_JP" modelObjectNameSpace="PIR_MAT_VND_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="162"/>
+    </shape>
+    <shape modelObjectName="VND_P" modelObjectNameSpace="PIR_MAT_VND_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="622" y="685"/>
+      <rectangleSize width="159"/>
+    </shape>
+    <shape expanded="true" modelObjectName="PIR_MAT_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="1156.9999940395355"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PIR_MAT_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302" y="956"/>
+      <upperLeftCorner x="302" y="1261.9999940395355"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="PIR_P" modelObjectNameSpace="PIR_MAT_J" modelObjectType="JoinNodeInput">
@@ -1077,6 +1535,21 @@
     <shape modelObjectName="MAT_P" modelObjectNameSpace="PIR_MAT_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="320" y="30"/>
       <rectangleSize width="103"/>
-    </shape></shapes>
+    </shape>
+  
+  
+    <shape expanded="true" modelObjectName="PIR_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="147.7455048799095" y="1421.9999928474426"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="MAT_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="357.74550487990956" y="1421.9999928474426"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VND_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="1156.9999940395355"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
 </layout>
 </Calculation:scenario>

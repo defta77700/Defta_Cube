@@ -515,7 +515,9 @@
   
     <attribute id="MATNR_C" order="37" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="MATNR_C"/>
+  
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="MATNR_C"/>
+  
     </attribute>
   </attributes>
   <calculatedAttributes/>
