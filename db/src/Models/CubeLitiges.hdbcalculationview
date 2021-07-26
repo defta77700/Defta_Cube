@@ -564,7 +564,7 @@
       <viewAttribute id="WGBEZ_L5"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="DIMVND_CLAIM_J"/>
+    <input node="DIMVND_CLAIM_J_2"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="DATDIM_P">
     <viewAttributes>
@@ -761,6 +761,20 @@
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="DIMVND_CLAIM_J_1" cardinality="CN_1" joinType="leftOuter" multiJoinNode="DIMVND_CLAIM_J" multiJoinCentralTable="VNDCLAIMS_P" multiJoinOrder="Outside In">
     <viewAttributes>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
       <viewAttribute id="CLAIM_NBR"/>
       <viewAttribute id="CLAIM_DT"/>
       <viewAttribute id="CLAIM_CREATE"/>
@@ -825,23 +839,10 @@
       <viewAttribute id="CLAIM14_DELIV_D" aggregationType="sum"/>
       <viewAttribute id="CLAIM56_DELIV_D" aggregationType="sum"/>
       <viewAttribute id="CLAIM78_DELIV_D" aggregationType="sum"/>
+      <viewAttribute id="SOURCE"/>
       <viewAttribute id="PART_NBR_C"/>
-      <viewAttribute id="MATNR"/>
-      <viewAttribute id="MATERIAL_SOURCE"/>
-      <viewAttribute id="MATKL"/>
-      <viewAttribute id="MTART"/>
-      <viewAttribute id="MAKTX_F"/>
-      <viewAttribute id="MAKTX_E"/>
-      <viewAttribute id="MATKL_L1"/>
-      <viewAttribute id="WGBEZ_L1"/>
-      <viewAttribute id="MATKL_L2"/>
-      <viewAttribute id="WGBEZ_L2"/>
-      <viewAttribute id="MATKL_L3"/>
-      <viewAttribute id="WGBEZ_L3"/>
-      <viewAttribute id="MATKL_L4"/>
-      <viewAttribute id="WGBEZ_L4"/>
-      <viewAttribute id="MATKL_L5"/>
-      <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="VND_LIFNR"/>
+      <viewAttribute hidden="true" id="JOIN$CLAIM_LIFNR_C$LIFNR"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="VNDCLAIMS_P">
@@ -910,6 +911,212 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM56_DELIV_D" source="CLAIM56_DELIV_D"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM78_DELIV_D" source="CLAIM78_DELIV_D"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PART_NBR_C" source="PART_NBR_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CLAIM_LIFNR_C$LIFNR" source="CLAIM_LIFNR_C"/>
+    </input>
+    <input node="DIMVND_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_FR" source="BRTXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_EN" source="BRTXT_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CLAIM_LIFNR_C$LIFNR" source="LIFNR"/>
+    </input>
+    <joinAttribute name="JOIN$CLAIM_LIFNR_C$LIFNR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="DIMVND_CLAIM_J_2" cardinality="CN_1" joinType="leftOuter" multiJoinNode="DIMVND_CLAIM_J" multiJoinCentralTable="VNDCLAIMS_P" multiJoinOrder="Outside In">
+    <viewAttributes>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="CLAIM_NBR"/>
+      <viewAttribute id="CLAIM_DT"/>
+      <viewAttribute id="CLAIM_CREATE"/>
+      <viewAttribute id="CLAIM_TYPE"/>
+      <viewAttribute id="CLAIM_LVL"/>
+      <viewAttribute id="CLAIM_ST"/>
+      <viewAttribute id="CLAIM_RCPT"/>
+      <viewAttribute id="CLAIM_COUNTRY"/>
+      <viewAttribute id="CLAIM_NAME1"/>
+      <viewAttribute id="CLAIM_FMLY"/>
+      <viewAttribute id="PART_NBR"/>
+      <viewAttribute id="PART_NAME"/>
+      <viewAttribute id="CLAIM_SPART"/>
+      <viewAttribute id="CLAIM_RPART"/>
+      <viewAttribute id="DEFECT_TXT"/>
+      <viewAttribute id="DEFECT_CODE"/>
+      <viewAttribute id="DOUBT_QTY" aggregationType="sum"/>
+      <viewAttribute id="NC_QTY" aggregationType="sum"/>
+      <viewAttribute id="CLAIM_UNIT"/>
+      <viewAttribute id="CLAIM_RECIDIV"/>
+      <viewAttribute id="CLAIM_SEVERITY"/>
+      <viewAttribute id="RANKING_POINT" aggregationType="sum"/>
+      <viewAttribute id="CLAIM_CANCEL_DT"/>
+      <viewAttribute id="CLAIM_CANCEL_REAS"/>
+      <viewAttribute id="CLAIM_TIMEFRAME"/>
+      <viewAttribute id="CLAIM14_ST"/>
+      <viewAttribute id="CLAIM14_DELIV"/>
+      <viewAttribute id="CLAIM14_PLAN_DT"/>
+      <viewAttribute id="CLAIM14_SEND_DT"/>
+      <viewAttribute id="CLAIM14_DONE_DT"/>
+      <viewAttribute id="CLAIM56_ST"/>
+      <viewAttribute id="CLAIM56_DELIV"/>
+      <viewAttribute id="CLAIM56_PLAN_DT"/>
+      <viewAttribute id="CLAIM56_SEND_DT"/>
+      <viewAttribute id="CLAIM56_DONE_DT"/>
+      <viewAttribute id="CLAIM78_ST"/>
+      <viewAttribute id="CLAIM78_DELIV"/>
+      <viewAttribute id="CLAIM78_PLAN_DT"/>
+      <viewAttribute id="CLAIM78_SEND_DT"/>
+      <viewAttribute id="CLAIM78_DONE_DT"/>
+      <viewAttribute id="CLAIM_WERKS"/>
+      <viewAttribute id="CLAIM_WERKS_NAME"/>
+      <viewAttribute id="CROSS_INCIDENT"/>
+      <viewAttribute id="CLAIM_8DSTATUS"/>
+      <viewAttribute id="INVOICE_ST"/>
+      <viewAttribute id="ORDER_NBR"/>
+      <viewAttribute id="COST_REINVOICE_CLT" aggregationType="sum"/>
+      <viewAttribute id="ESTIM_COST_CLAIM" aggregationType="sum"/>
+      <viewAttribute id="CLAIM_MNGMT_VAL_DT"/>
+      <viewAttribute id="CLAIM_INIT_AMOUNT" aggregationType="sum"/>
+      <viewAttribute id="DEB_ADV_SEND_DT"/>
+      <viewAttribute id="CLAIM_VALID_AMOUNT" aggregationType="sum"/>
+      <viewAttribute id="CLAIM_VALID_VAT" aggregationType="sum"/>
+      <viewAttribute id="CLAIM_TX_INCL_DT"/>
+      <viewAttribute id="CLAIM_CANCEL_AMOUNT" aggregationType="sum"/>
+      <viewAttribute id="CLAIM_ACCOUNT_TRF_DT"/>
+      <viewAttribute id="CLAIM_ACCOUNT_RECORD"/>
+      <viewAttribute id="CLAIM_PYMNT_DT"/>
+      <viewAttribute id="CLAIM_ADV_CANCEL_DT"/>
+      <viewAttribute id="CLAIM_COMMENTS"/>
+      <viewAttribute id="CLAIM_DATE"/>
+      <viewAttribute id="CLAIM14_DELIV_D" aggregationType="sum"/>
+      <viewAttribute id="CLAIM56_DELIV_D" aggregationType="sum"/>
+      <viewAttribute id="CLAIM78_DELIV_D" aggregationType="sum"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="PART_NBR_C"/>
+      <viewAttribute id="VND_LIFNR"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATERIAL_SOURCE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="DIMVND_CLAIM_J_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_FR" source="BRTXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_EN" source="BRTXT_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_NBR" source="CLAIM_NBR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_DT" source="CLAIM_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_CREATE" source="CLAIM_CREATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_TYPE" source="CLAIM_TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_LVL" source="CLAIM_LVL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_ST" source="CLAIM_ST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_RCPT" source="CLAIM_RCPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_COUNTRY" source="CLAIM_COUNTRY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_NAME1" source="CLAIM_NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_FMLY" source="CLAIM_FMLY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PART_NBR" source="PART_NBR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PART_NAME" source="PART_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_SPART" source="CLAIM_SPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_RPART" source="CLAIM_RPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEFECT_TXT" source="DEFECT_TXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEFECT_CODE" source="DEFECT_CODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DOUBT_QTY" source="DOUBT_QTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NC_QTY" source="NC_QTY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_UNIT" source="CLAIM_UNIT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_RECIDIV" source="CLAIM_RECIDIV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_SEVERITY" source="CLAIM_SEVERITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RANKING_POINT" source="RANKING_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_CANCEL_DT" source="CLAIM_CANCEL_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_CANCEL_REAS" source="CLAIM_CANCEL_REAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_TIMEFRAME" source="CLAIM_TIMEFRAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM14_ST" source="CLAIM14_ST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM14_DELIV" source="CLAIM14_DELIV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM14_PLAN_DT" source="CLAIM14_PLAN_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM14_SEND_DT" source="CLAIM14_SEND_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM14_DONE_DT" source="CLAIM14_DONE_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM56_ST" source="CLAIM56_ST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM56_DELIV" source="CLAIM56_DELIV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM56_PLAN_DT" source="CLAIM56_PLAN_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM56_SEND_DT" source="CLAIM56_SEND_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM56_DONE_DT" source="CLAIM56_DONE_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM78_ST" source="CLAIM78_ST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM78_DELIV" source="CLAIM78_DELIV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM78_PLAN_DT" source="CLAIM78_PLAN_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM78_SEND_DT" source="CLAIM78_SEND_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM78_DONE_DT" source="CLAIM78_DONE_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_WERKS" source="CLAIM_WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_WERKS_NAME" source="CLAIM_WERKS_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CROSS_INCIDENT" source="CROSS_INCIDENT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_8DSTATUS" source="CLAIM_8DSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INVOICE_ST" source="INVOICE_ST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORDER_NBR" source="ORDER_NBR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COST_REINVOICE_CLT" source="COST_REINVOICE_CLT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ESTIM_COST_CLAIM" source="ESTIM_COST_CLAIM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_MNGMT_VAL_DT" source="CLAIM_MNGMT_VAL_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_INIT_AMOUNT" source="CLAIM_INIT_AMOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEB_ADV_SEND_DT" source="DEB_ADV_SEND_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_VALID_AMOUNT" source="CLAIM_VALID_AMOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_VALID_VAT" source="CLAIM_VALID_VAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_TX_INCL_DT" source="CLAIM_TX_INCL_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_CANCEL_AMOUNT" source="CLAIM_CANCEL_AMOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_ACCOUNT_TRF_DT" source="CLAIM_ACCOUNT_TRF_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_ACCOUNT_RECORD" source="CLAIM_ACCOUNT_RECORD"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_PYMNT_DT" source="CLAIM_PYMNT_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_ADV_CANCEL_DT" source="CLAIM_ADV_CANCEL_DT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_COMMENTS" source="CLAIM_COMMENTS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_DATE" source="CLAIM_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM14_DELIV_D" source="CLAIM14_DELIV_D"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM56_DELIV_D" source="CLAIM56_DELIV_D"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM78_DELIV_D" source="CLAIM78_DELIV_D"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PART_NBR_C" source="PART_NBR_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_LIFNR" source="VND_LIFNR"/>
     </input>
     <input node="DIMMAT_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
@@ -931,45 +1138,6 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="PART_NBR_C" source="MATNR"/>
     </input>
     <joinAttribute name="PART_NBR_C"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="DIMVND_CLAIM_J_2" multiJoinNode="DIMVND_CLAIM_J" multiJoinCentralTable="VNDCLAIMS_P" multiJoinOrder="Outside In">
-    <viewAttributes>
-      <viewAttribute id="VENDORUNIK"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="ORT01"/>
-      <viewAttribute id="PSTLZ"/>
-      <viewAttribute id="REGIO"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="LFABC"/>
-      <viewAttribute id="BRSCH"/>
-      <viewAttribute id="BRTXT_FR"/>
-      <viewAttribute id="BRTXT_EN"/>
-      <viewAttribute id="ZTERM"/>
-      <viewAttribute id="TEXT1_FR"/>
-      <viewAttribute id="TEXT1_EN"/>
-      <viewAttribute id="KONZS"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="VND_LIFNR"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="DIMVND_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_FR" source="BRTXT_FR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_EN" source="BRTXT_EN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VND_LIFNR" source="LIFNR"/>
-    </input>
   </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
@@ -1537,6 +1705,23 @@
       <rectangleSize height="30" width="160"/>
     </shape>
   
+    <shape expanded="true" modelObjectName="DIMVND_CLAIM_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="232" y="731"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="DIMVND_P" modelObjectNameSpace="DIMVND_CLAIM_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="DIMVND_CLAIM_J">
+      <upperLeftCorner x="307" y="1389"/>
+      <rectangleSize width="159"/>
+    </shape>
+    <shape modelObjectName="VNDCLAIMS_P" modelObjectNameSpace="DIMVND_CLAIM_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="DIMVND_CLAIM_J">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="126"/>
+    </shape>
+    <shape modelObjectName="DIMMAT_P" modelObjectNameSpace="DIMVND_CLAIM_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="DIMVND_CLAIM_J">
+      <upperLeftCorner x="495" y="1247"/>
+      <rectangleSize width="144"/>
+    </shape>
+  
     <shape expanded="true" modelObjectName="VNDCLAIMS_P" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="323" y="891"/>
       <rectangleSize height="30" width="160"/>
@@ -1548,23 +1733,6 @@
     <shape expanded="true" modelObjectName="DIMMAT_P" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="544" y="891"/>
       <rectangleSize height="30" width="160"/>
-    </shape>
-  
-    <shape expanded="true" modelObjectName="DIMVND_CLAIM_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="232" y="731"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape modelObjectName="VNDCLAIMS_P" modelObjectNameSpace="DIMVND_CLAIM_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="DIMVND_CLAIM_J">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="126"/>
-    </shape>
-    <shape modelObjectName="DIMMAT_P" modelObjectNameSpace="DIMVND_CLAIM_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="DIMVND_CLAIM_J">
-      <upperLeftCorner x="495" y="1247"/>
-      <rectangleSize width="144"/>
-    </shape>
-    <shape modelObjectName="DIMVND_P" modelObjectNameSpace="DIMVND_CLAIM_J" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="307" y="1389"/>
-      <rectangleSize width="159.34228515625"/>
     </shape></shapes>
 </layout>
 </Calculation:scenario>
