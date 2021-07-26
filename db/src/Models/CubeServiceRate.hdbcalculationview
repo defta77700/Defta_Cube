@@ -93,11 +93,13 @@
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VND_SRVRATE_DT_PLA_COMP_JP">
     <viewAttributes>
+    
+      <viewAttribute id="MATNR_C"/>
+    
       <viewAttribute id="EBELN"/>
       <viewAttribute id="EBELP"/>
       <viewAttribute id="BUKRS"/>
       <viewAttribute id="LIFNR"/>
-      <viewAttribute id="MATNR"/>
       <viewAttribute id="EINDT"/>
       <viewAttribute id="MENGR"/>
       <viewAttribute id="MENGC"/>
@@ -153,9 +155,7 @@
       <viewAttribute id="WGBEZ_L4"/>
       <viewAttribute id="MATKL_L5"/>
       <viewAttribute id="WGBEZ_L5"/>
-    
-      <viewAttribute id="MATNR_C"/>
-    </viewAttributes>
+      <viewAttribute id="MATNR"/></viewAttributes>
     <calculatedViewAttributes/>
     <input node="VND_SRVRATE_DT_PLA_COMP_J_3"/>
   </calculationView>
@@ -520,7 +520,9 @@
       </calculatedViewAttribute>
     
       <calculatedViewAttribute id="MATNR_C" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+    
         <formula>RIGHT(CONCAT('00000000000000000000', &quot;MATNR&quot;),20)</formula>
+    
       </calculatedViewAttribute>
       <calculatedViewAttribute id="LIFNR_C" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
         <formula>RIGHT(CONCAT('00000000000000000000', &quot;LIFNR&quot;),10)</formula>
@@ -621,7 +623,6 @@
       <viewAttribute id="EBELP"/>
       <viewAttribute id="BUKRS"/>
       <viewAttribute id="LIFNR"/>
-      <viewAttribute id="MATNR"/>
       <viewAttribute id="EINDT"/>
       <viewAttribute id="MENGR" aggregationType="sum"/>
       <viewAttribute id="MENGC" aggregationType="sum"/>
@@ -658,8 +659,9 @@
       <viewAttribute id="VND_REGIO"/>
       <viewAttribute id="VND_PSTLCODE"/>
       <viewAttribute id="VND_CNTRY"/>
-      <viewAttribute id="COMPANY_NAME"/>
-      <viewAttribute id="COMPANY_LAND"/>
+      <viewAttribute id="PLANT_NAME"/>
+      <viewAttribute id="PLANT_EKORG"/>
+      <viewAttribute id="MATNR"/>
       <viewAttribute id="MATNR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
@@ -707,13 +709,13 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="VND_CNTRY" source="VND_CNTRY"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
     </input>
-    <input node="CMPNY_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANY_NAME" source="BUTXT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANY_LAND" source="LAND1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+    <input node="PLANT_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_NAME" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
     </input>
-    <joinAttribute name="BUKRS"/>
+    <joinAttribute name="WERKS"/>
     <joinAttribute name="SOURCE"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="VND_SRVRATE_DT_PLA_COMP_J_2" cardinality="CN_1" joinType="leftOuter" multiJoinNode="VND_SRVRATE_DT_PLA_COMP_J" multiJoinCentralTable="VND_SRV_RATE_DATE_JP" multiJoinOrder="Outside In">
@@ -722,7 +724,6 @@
       <viewAttribute id="EBELP"/>
       <viewAttribute id="BUKRS"/>
       <viewAttribute id="LIFNR"/>
-      <viewAttribute id="MATNR"/>
       <viewAttribute id="EINDT"/>
       <viewAttribute id="MENGR" aggregationType="sum"/>
       <viewAttribute id="MENGC" aggregationType="sum"/>
@@ -761,21 +762,10 @@
       <viewAttribute id="VND_CNTRY"/>
       <viewAttribute id="COMPANY_NAME"/>
       <viewAttribute id="COMPANY_LAND"/>
-      <viewAttribute id="MATKL"/>
-      <viewAttribute id="MAKTX_F"/>
-      <viewAttribute id="MAKTX_E"/>
-      <viewAttribute id="MATKL_L1"/>
-      <viewAttribute id="WGBEZ_L1"/>
-      <viewAttribute id="MATKL_L2"/>
-      <viewAttribute id="WGBEZ_L2"/>
-      <viewAttribute id="MATKL_L3"/>
-      <viewAttribute id="WGBEZ_L3"/>
-      <viewAttribute id="MATKL_L4"/>
-      <viewAttribute id="WGBEZ_L4"/>
-      <viewAttribute id="MATKL_L5"/>
-      <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="PLANT_NAME"/>
+      <viewAttribute id="PLANT_EKORG"/>
+      <viewAttribute id="MATNR"/>
       <viewAttribute id="MATNR_C"/>
-      <viewAttribute hidden="true" id="JOIN$MATNR_C$MATNR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="VND_SRVRATE_DT_PLA_COMP_J_1">
@@ -783,7 +773,6 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="EBELP" source="EBELP"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="EINDT" source="EINDT"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MENGR" source="MENGR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MENGC" source="MENGC"/>
@@ -820,38 +809,27 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="VND_REGIO" source="VND_REGIO"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="VND_PSTLCODE" source="VND_PSTLCODE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="VND_CNTRY" source="VND_CNTRY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANY_NAME" source="COMPANY_NAME"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANY_LAND" source="COMPANY_LAND"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR_C$MATNR_C" source="MATNR_C"/>
-    </input>
-    <input node="MAT_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_F" source="MAKTX_F"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_E" source="MAKTX_E"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L1" source="MATKL_L1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L1" source="WGBEZ_L1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L2" source="MATKL_L2"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L2" source="WGBEZ_L2"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L3" source="MATKL_L3"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L3" source="WGBEZ_L3"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L4" source="MATKL_L4"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L4" source="WGBEZ_L4"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L5" source="MATKL_L5"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L5" source="WGBEZ_L5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_NAME" source="PLANT_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_EKORG" source="PLANT_EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR_C$MATNR_C" source="MATNR_C"/>
     </input>
+    <input node="CMPNY_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANY_NAME" source="BUTXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMPANY_LAND" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+    </input>
+    <joinAttribute name="BUKRS"/>
     <joinAttribute name="SOURCE"/>
-    <joinAttribute name="JOIN$MATNR_C$MATNR_C"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="VND_SRVRATE_DT_PLA_COMP_J_3" cardinality="CN_1" joinType="leftOuter" multiJoinNode="VND_SRVRATE_DT_PLA_COMP_J" multiJoinCentralTable="VND_SRV_RATE_DATE_JP" multiJoinOrder="Outside In">
     <viewAttributes>
+      <viewAttribute id="MATNR_C"/>
       <viewAttribute id="EBELN"/>
       <viewAttribute id="EBELP"/>
       <viewAttribute id="BUKRS"/>
       <viewAttribute id="LIFNR"/>
-      <viewAttribute id="MATNR"/>
       <viewAttribute id="EINDT"/>
       <viewAttribute id="MENGR" aggregationType="sum"/>
       <viewAttribute id="MENGC" aggregationType="sum"/>
@@ -905,7 +883,8 @@
       <viewAttribute id="WGBEZ_L4"/>
       <viewAttribute id="MATKL_L5"/>
       <viewAttribute id="WGBEZ_L5"/>
-      <viewAttribute id="MATNR_C"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute hidden="true" id="JOIN$MATNR_C$MATNR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="VND_SRVRATE_DT_PLA_COMP_J_2">
@@ -913,7 +892,6 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="EBELP" source="EBELP"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="EINDT" source="EINDT"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MENGR" source="MENGR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MENGC" source="MENGC"/>
@@ -952,6 +930,12 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="VND_CNTRY" source="VND_CNTRY"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="COMPANY_NAME" source="COMPANY_NAME"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="COMPANY_LAND" source="COMPANY_LAND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_NAME" source="PLANT_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_EKORG" source="PLANT_EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR_C$MATNR_C" source="MATNR_C"/>
+    </input>
+    <input node="MAT_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_F" source="MAKTX_F"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_E" source="MAKTX_E"/>
@@ -966,15 +950,11 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L5" source="MATKL_L5"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L5" source="WGBEZ_L5"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
-    </input>
-    <input node="PLANT_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_NAME" source="NAME1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_EKORG" source="EKORG"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR_C$MATNR_C" source="MATNR_C"/>
     </input>
-    <joinAttribute name="WERKS"/>
     <joinAttribute name="SOURCE"/>
+    <joinAttribute name="JOIN$MATNR_C$MATNR_C"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
@@ -1384,20 +1364,20 @@
       <upperLeftCorner x="448" y="435"/>
       <rectangleSize height="30" width="324"/>
     </shape>
-    <shape modelObjectName="PLANT_P" modelObjectNameSpace="VND_SRVRATE_DT_PLA_COMP_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VND_SRVRATE_DT_PLA_COMP_J">
-      <upperLeftCorner x="-60" y="325"/>
-      <rectangleSize width="133"/>
+    <shape modelObjectName="MAT_P" modelObjectNameSpace="VND_SRVRATE_DT_PLA_COMP_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VND_SRVRATE_DT_PLA_COMP_J">
+      <upperLeftCorner x="681" y="218"/>
+      <rectangleSize width="144"/>
     </shape>
     <shape modelObjectName="VND_SRV_RATE_DATE_JP" modelObjectNameSpace="VND_SRVRATE_DT_PLA_COMP_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VND_SRVRATE_DT_PLA_COMP_J">
       <upperLeftCorner x="352" y="27"/>
       <rectangleSize width="218"/>
     </shape>
-    <shape modelObjectName="MAT_P" modelObjectNameSpace="VND_SRVRATE_DT_PLA_COMP_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VND_SRVRATE_DT_PLA_COMP_J">
-      <upperLeftCorner x="681" y="218"/>
-      <rectangleSize width="144"/>
-    </shape>
     <shape modelObjectName="CMPNY_P" modelObjectNameSpace="VND_SRVRATE_DT_PLA_COMP_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VND_SRVRATE_DT_PLA_COMP_J">
       <upperLeftCorner x="182" y="365"/>
+      <rectangleSize width="133"/>
+    </shape>
+    <shape modelObjectName="PLANT_P" modelObjectNameSpace="VND_SRVRATE_DT_PLA_COMP_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VND_SRVRATE_DT_PLA_COMP_J">
+      <upperLeftCorner x="-60" y="325"/>
       <rectangleSize width="133"/>
     </shape></shapes>
 </layout>
