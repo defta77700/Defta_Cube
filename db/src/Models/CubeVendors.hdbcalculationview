@@ -534,7 +534,7 @@
         </filter>
         <attributeName>INV_VENDOR_2Y_BOOL</attributeName>
       </restriction>
-      </measure>
+    </measure>
   </restrictedMeasures>
   <localDimensions>
     <localDimension id="VENDOR_GEO">

@@ -13,8 +13,8 @@
   <DataSource id="PLANT">
     <resourceUri>PLANT</resourceUri>
   </DataSource>
-  <DataSource id="VENDOR">
-    <resourceUri>VENDOR</resourceUri>
+  <DataSource id="DimVendor">
+    <resourceUri>DimVendor</resourceUri>
   </DataSource>
   <DataSource id="ZM_TIME_DIMENSION">
     <resourceUri>ZM_TIME_DIMENSION</resourceUri>
@@ -123,6 +123,15 @@
 	 ELSE &quot;WRBTR&quot;
  END</formula>
       </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="MATNR_C" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+    
+        <formula>RIGHT(CONCAT('00000000000000000000', &quot;MATNR&quot;),20)</formula>
+    
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="LIFNR_C" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+        <formula>RIGHT(CONCAT('00000000000000000000', &quot;LIFNR&quot;),10)</formula>
+      </calculatedViewAttribute>
     </calculatedViewAttributes>
     <input node="INVOICES"/>
   </calculationView>
@@ -206,7 +215,8 @@
       <viewAttribute id="WGBEZ_L5"/>
       <viewAttribute id="MENGE_SIGN" aggregationType="sum"/>
       <viewAttribute id="WRBTR_SIGN" aggregationType="sum"/>
-      <viewAttribute hidden="true" id="JOIN$MATNR$MATNR"/>
+      <viewAttribute id="MATNR_C"/>
+      <viewAttribute id="LIFNR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="INVOICES_P">
@@ -254,7 +264,8 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MENGE_SIGN" source="MENGE_SIGN"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="WRBTR_SIGN" source="WRBTR_SIGN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C" source="LIFNR_C"/>
     </input>
     <input node="MATERIAL_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_1" source="MATNR"/>
@@ -291,13 +302,13 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L5" source="MATKL_L5"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L5" source="WGBEZ_L5"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$MATNR$MATNR" source="MATNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR"/>
     </input>
-    <joinAttribute name="JOIN$MATNR$MATNR"/>
     <joinAttribute name="WERKS"/>
     <joinAttribute name="SOURCE"/>
+    <joinAttribute name="MATNR_C"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="INV_MAT_JP">
     <viewAttributes>
@@ -382,6 +393,9 @@
     
       <viewAttribute id="MENGE_SIGN"/>
       <viewAttribute id="WRBTR_SIGN"/>
+    
+      <viewAttribute id="MATNR_C"/>
+      <viewAttribute id="LIFNR_C"/>
     </viewAttributes>
     <calculatedViewAttributes>
       <calculatedViewAttribute id="VENDORUNIK" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
@@ -1227,7 +1241,9 @@
       <viewAttribute id="STCD1_1"/>
       <viewAttribute id="SOURCE_2"/>
       <viewAttribute id="LOEVM_Y"/>
-      <viewAttribute id="SPERM_Y"/></viewAttributes>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute hidden="true" id="JOIN$LIFNR_C$LIFNR"/>
+    </viewAttributes>
     <calculatedViewAttributes/>
     <input node="INV_MAT_COMP_DT_JP">
       <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
@@ -1318,6 +1334,7 @@
     
       <mapping xsi:type="Calculation:AttributeMapping" target="MENGE_SIGN" source="MENGE_SIGN"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="WRBTR_SIGN" source="WRBTR_SIGN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR_C$LIFNR" source="LIFNR_C"/>
     </input>
     <input node="VENDOR_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_1" source="LIFNR"/>
@@ -1366,9 +1383,13 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR_C$LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
     </input>
-    <joinAttribute name="LIFNR"/>
+    <joinAttribute name="JOIN$LIFNR_C$LIFNR"/>
+    <joinAttribute name="VENDORUNIK"/>
+    <joinAttribute name="SOURCE"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="INV_MAT_COMP_DT_JP">
     <viewAttributes>
@@ -1461,6 +1482,8 @@
     
       <viewAttribute id="MENGE_SIGN"/>
       <viewAttribute id="WRBTR_SIGN"/>
+    
+      <viewAttribute id="LIFNR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="INV_MAT_COMP_DT_J"/>
@@ -1513,9 +1536,11 @@
       <viewAttribute id="PRFRE"/>
       <viewAttribute id="SMTP_ADDR"/>
       <viewAttribute id="ZPRZ1"/>
+    
+      <viewAttribute id="VENDORUNIK"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="VENDOR">
+    <input node="DimVendor">
       <mapping xsi:type="Calculation:AttributeMapping" target="NAME1_VENDOR" source="NAME1"/>
     </input>
   </calculationView>
@@ -1610,7 +1635,10 @@
     
       <viewAttribute id="MENGE_SIGN" aggregationType="sum"/>
       <viewAttribute id="WRBTR_SIGN" aggregationType="sum"/>
-    </viewAttributes>
+      <viewAttribute id="LIFNR_C"/>
+    
+    
+      <viewAttribute id="MATNR_C"/></viewAttributes>
     <calculatedViewAttributes/>
     <input node="INV_MAT_COMP_JP">
       <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
@@ -1696,6 +1724,9 @@
     
       <mapping xsi:type="Calculation:AttributeMapping" target="MENGE_SIGN" source="MENGE_SIGN"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="WRBTR_SIGN" source="WRBTR_SIGN"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C" source="LIFNR_C"/>
     </input>
     <input node="DATE_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="CALQUARTER" source="CALQUARTER"/>
@@ -1792,6 +1823,9 @@
     
       <viewAttribute id="MENGE_SIGN"/>
       <viewAttribute id="WRBTR_SIGN"/>
+    
+      <viewAttribute id="MATNR_C"/>
+      <viewAttribute id="LIFNR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="INV_MAT_COMP_J"/>
@@ -1895,6 +1929,9 @@
     
       <viewAttribute id="MENGE_SIGN" aggregationType="sum"/>
       <viewAttribute id="WRBTR_SIGN" aggregationType="sum"/>
+    
+      <viewAttribute id="MATNR_C"/>
+      <viewAttribute id="LIFNR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="INV_MAT_JP">
@@ -1979,6 +2016,9 @@
     
       <mapping xsi:type="Calculation:AttributeMapping" target="MENGE_SIGN" source="MENGE_SIGN"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="WRBTR_SIGN" source="WRBTR_SIGN"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C" source="LIFNR_C"/>
     </input>
     <input node="COMP_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="BUTXT" source="BUTXT"/>
@@ -2570,12 +2610,12 @@
         </hierarchy>
       </hierarchies>
     </localDimension>
-    <localDimension id="VENDOR_ADR">
+    <localDimension id="VENDOR_GEO">
       <attributeRef xsi:type="DataFoundation:Attribute">LAND1_2</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">REGIO</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">ORT01</attributeRef>
       <hierarchies>
-        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="VENDOR_ADR" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="VENDOR_GEO" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
           <descriptions defaultDescription="Vendor Address"/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>
@@ -2614,7 +2654,7 @@
     </shape>
     <shape modelObjectName="MATERIAL_P" modelObjectNameSpace="INV_MAT_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="633" y="19"/>
-      <rectangleSize width="144.6845703125"/>
+      <rectangleSize width="144"/>
     </shape>
     <shape expanded="true" modelObjectName="INV_MAT_JP" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="357" y="1441"/>

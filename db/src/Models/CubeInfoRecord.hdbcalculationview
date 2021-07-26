@@ -7,11 +7,11 @@
   <DataSource id="ZM_TIME_DIMENSION">
     <resourceUri>ZM_TIME_DIMENSION</resourceUri>
   </DataSource>
-  <DataSource id="PURCHINFORECORD">
-    <resourceUri>PURCHINFORECORD</resourceUri>
-  </DataSource>
   <DataSource id="PLANT">
     <resourceUri>PLANT</resourceUri>
+  </DataSource>
+  <DataSource id="PURCHINFORECORD">
+    <resourceUri>PURCHINFORECORD</resourceUri>
   </DataSource>
   <DataSource id="DimMaterial">
     <resourceUri>DimMaterial</resourceUri>
@@ -445,196 +445,6 @@
     <joinAttribute name="PIR_WERKS"/>
     <joinAttribute name="PIR_SOURCE"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="PIR_P">
-    <viewAttributes>
-      <viewAttribute id="INFNR"/>
-      <viewAttribute id="WERKS"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="ESOKZ"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="LOEKZ"/>
-      <viewAttribute id="ERDAT"/>
-      <viewAttribute id="BPRME"/>
-      <viewAttribute id="INCO1"/>
-      <viewAttribute id="INCO2"/>
-      <viewAttribute id="NETPR"/>
-      <viewAttribute id="PEINH"/>
-      <viewAttribute id="PRDAT"/>
-      <viewAttribute id="WAERS"/>
-      <viewAttribute id="MATNR"/>
-      <viewAttribute id="IDNLF"/>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="REGIO"/>
-      <viewAttribute id="URZLA"/>
-    </viewAttributes>
-    <calculatedViewAttributes>
-      <calculatedViewAttribute id="ERDAT_DT" datatype="DATE" expressionLanguage="SQL">
-        <formula>TO_DATE(&quot;ERDAT&quot;,'YYYY-MM-DD')</formula>
-      </calculatedViewAttribute>
-    </calculatedViewAttributes>
-    <input node="PURCHINFORECORD"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="PLANT_P">
-    <viewAttributes>
-      <viewAttribute id="WERKS"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="VKORG"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="SPRAS"/>
-      <viewAttribute id="SOURCE"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="PLANT"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="MAT_P">
-    <viewAttributes>
-      <viewAttribute id="MATNR"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="MATKL"/>
-      <viewAttribute id="BRGEW"/>
-      <viewAttribute id="GEWEI"/>
-      <viewAttribute id="MTART"/>
-      <viewAttribute id="MTBEZ_FR"/>
-      <viewAttribute id="MTBEZ_EN"/>
-      <viewAttribute id="NTGEW"/>
-      <viewAttribute id="ERSDA"/>
-      <viewAttribute id="LAEDA"/>
-      <viewAttribute id="MAKTX_F"/>
-      <viewAttribute id="MAKTX_E"/>
-      <viewAttribute id="WERKS"/>
-      <viewAttribute id="EKGRP"/>
-      <viewAttribute id="STAWN"/>
-      <viewAttribute id="PRCTR"/>
-      <viewAttribute id="MEINS"/>
-      <viewAttribute id="DISPO"/>
-      <viewAttribute id="PROFL"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="MATKL_L1"/>
-      <viewAttribute id="WGBEZ_L1"/>
-      <viewAttribute id="MATKL_L2"/>
-      <viewAttribute id="WGBEZ_L2"/>
-      <viewAttribute id="MATKL_L3"/>
-      <viewAttribute id="WGBEZ_L3"/>
-      <viewAttribute id="MATKL_L4"/>
-      <viewAttribute id="WGBEZ_L4"/>
-      <viewAttribute id="MATKL_L5"/>
-      <viewAttribute id="WGBEZ_L5"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="DimMaterial"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="PIR_MAT_J" cardinality="CN_N" joinType="inner">
-    <viewAttributes>
-      <viewAttribute id="PIR_WERKS"/>
-      <viewAttribute id="PIR_EKORG"/>
-      <viewAttribute id="PIR_MATNR"/>
-      <viewAttribute id="NETPR" aggregationType="sum"/>
-      <viewAttribute id="WAERS"/>
-      <viewAttribute id="PEINH" aggregationType="sum"/>
-      <viewAttribute id="PIR_LIFNR"/>
-      <viewAttribute id="PIR_URZLAND"/>
-      <viewAttribute id="MATNR"/>
-      <viewAttribute id="MATKL"/>
-      <viewAttribute id="BRGEW"/>
-      <viewAttribute id="GEWEI"/>
-      <viewAttribute id="MTART"/>
-      <viewAttribute id="MTBEZ_FR"/>
-      <viewAttribute id="MTBEZ_EN"/>
-      <viewAttribute id="NTGEW"/>
-      <viewAttribute id="MAKTX_F"/>
-      <viewAttribute id="MAKTX_E"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="ERSDA"/>
-      <viewAttribute id="LAEDA"/>
-      <viewAttribute id="WERKS"/>
-      <viewAttribute id="EKGRP"/>
-      <viewAttribute id="STAWN"/>
-      <viewAttribute id="PRCTR"/>
-      <viewAttribute id="MEINS"/>
-      <viewAttribute id="DISPO"/>
-      <viewAttribute id="PROFL"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="MATKL_L1"/>
-      <viewAttribute id="WGBEZ_L1"/>
-      <viewAttribute id="MATKL_L2"/>
-      <viewAttribute id="WGBEZ_L2"/>
-      <viewAttribute id="MATKL_L3"/>
-      <viewAttribute id="WGBEZ_L3"/>
-      <viewAttribute id="MATKL_L4"/>
-      <viewAttribute id="WGBEZ_L4"/>
-      <viewAttribute id="MATKL_L5"/>
-      <viewAttribute id="WGBEZ_L5"/>
-    
-      <viewAttribute id="PIR_SOURCE"/>
-    
-      <viewAttribute id="PIR_ERDAT"/>
-      <viewAttribute id="PIR_INCO1"/>
-      <viewAttribute id="PIR_INCO2"/>
-    
-      <viewAttribute id="ERDAT_DT"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="PIR_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_WERKS" source="WERKS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_EKORG" source="EKORG"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_MATNR" source="MATNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="NETPR" source="NETPR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_LIFNR" source="LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_URZLAND" source="URZLA"/>
-    
-      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_SOURCE" source="SOURCE"/>
-    
-      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_ERDAT" source="ERDAT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_INCO1" source="INCO1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_INCO2" source="INCO2"/>
-    
-      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT_DT" source="ERDAT_DT"/>
-    </input>
-    <input node="MAT_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_FR" source="MTBEZ_FR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_EN" source="MTBEZ_EN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_F" source="MAKTX_F"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_E" source="MAKTX_E"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ERSDA" source="ERSDA"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LAEDA" source="LAEDA"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="STAWN" source="STAWN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PROFL" source="PROFL"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L1" source="MATKL_L1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L1" source="WGBEZ_L1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L2" source="MATKL_L2"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L2" source="WGBEZ_L2"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L3" source="MATKL_L3"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L3" source="WGBEZ_L3"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L4" source="MATKL_L4"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L4" source="WGBEZ_L4"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L5" source="MATKL_L5"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L5" source="WGBEZ_L5"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_MATNR" source="MATNR"/>
-    </input>
-    <joinAttribute name="PIR_MATNR"/>
-  </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="PIR_MAT_JP">
     <viewAttributes>
       <viewAttribute id="PIR_WERKS"/>
@@ -689,6 +499,206 @@
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="PIR_MAT_J"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PLANT_P">
+    <viewAttributes>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="SOURCE"/>
+    
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="SPRAS"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="PLANT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PIR_P">
+    <viewAttributes>
+      <viewAttribute id="INFNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ESOKZ"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="LOEKZ"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="BPRME"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="NETPR"/>
+      <viewAttribute id="PEINH"/>
+      <viewAttribute id="PRDAT"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="IDNLF"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="URZLA"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="ERDAT_DT" datatype="DATE" expressionLanguage="SQL">
+        <formula>TO_DATE(&quot;ERDAT&quot;,'YYYY-MM-DD')</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="MATNR_C" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>RIGHT(CONCAT('00000000000000000000', &quot;MATNR&quot;),20)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="PURCHINFORECORD"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="MAT_P">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="DimMaterial"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="PIR_MAT_J" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="PIR_WERKS"/>
+      <viewAttribute id="PIR_EKORG"/>
+      <viewAttribute id="PIR_MATNR"/>
+      <viewAttribute id="NETPR" aggregationType="sum"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="PEINH" aggregationType="sum"/>
+      <viewAttribute id="PIR_LIFNR"/>
+      <viewAttribute id="PIR_URZLAND"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+    
+      <viewAttribute id="PIR_SOURCE"/>
+    
+      <viewAttribute id="PIR_ERDAT"/>
+      <viewAttribute id="PIR_INCO1"/>
+      <viewAttribute id="PIR_INCO2"/>
+    
+      <viewAttribute id="ERDAT_DT"/>
+    
+      <viewAttribute id="MATNR_C"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="PIR_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NETPR" source="NETPR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PEINH" source="PEINH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_URZLAND" source="URZLA"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_SOURCE" source="SOURCE"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_INCO2" source="INCO2"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT_DT" source="ERDAT_DT"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
+    </input>
+    <input node="MAT_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="GEWEI" source="GEWEI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_FR" source="MTBEZ_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_EN" source="MTBEZ_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_F" source="MAKTX_F"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_E" source="MAKTX_E"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERSDA" source="ERSDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAEDA" source="LAEDA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STAWN" source="STAWN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PROFL" source="PROFL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L1" source="MATKL_L1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L1" source="WGBEZ_L1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L2" source="MATKL_L2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L2" source="WGBEZ_L2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L3" source="MATKL_L3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L3" source="WGBEZ_L3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L4" source="MATKL_L4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L4" source="WGBEZ_L4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L5" source="MATKL_L5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L5" source="WGBEZ_L5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PIR_SOURCE" source="SOURCE"/>
+    </input>
+    <joinAttribute name="MATNR_C"/>
+    <joinAttribute name="PIR_SOURCE"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
@@ -1038,14 +1048,18 @@
       <upperLeftCorner x="312" y="476"/>
       <rectangleSize width="133"/>
     </shape>
-  
-  
-    <shape expanded="true" modelObjectName="PIR_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="142" y="1116"/>
+    <shape expanded="true" modelObjectName="PIR_MAT_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="851"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PLANT_P" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="92" y="851"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+  
+    <shape expanded="true" modelObjectName="PIR_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="142" y="1116"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="MAT_P" modelObjectNameSpace="CalculationView">
@@ -1063,10 +1077,6 @@
     <shape modelObjectName="MAT_P" modelObjectNameSpace="PIR_MAT_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="320" y="30"/>
       <rectangleSize width="103"/>
-    </shape>
-    <shape expanded="true" modelObjectName="PIR_MAT_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302" y="851"/>
-      <rectangleSize height="30" width="160"/>
     </shape></shapes>
 </layout>
 </Calculation:scenario>

@@ -62,6 +62,10 @@
       <calculatedViewAttribute id="VENDORUNIK" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
         <formula>CONCAT(CONCAT(&quot;KRAUS&quot;,&quot;STCEG&quot;),&quot;STCD1&quot;)</formula>
       </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="LIFNR_C" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+        <formula>RIGHT(CONCAT('00000000000000000000', &quot;LIFNR&quot;),10)</formula>
+      </calculatedViewAttribute>
     </calculatedViewAttributes>
     <input node="VENDOR"/>
   </calculationView>
@@ -70,7 +74,7 @@
   <attributes>
     <attribute id="LIFNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="LIFNR"/>
-      <keyMapping columnObjectName="Vendor_P" columnName="LIFNR"/>
+      <keyMapping columnObjectName="Vendor_P" columnName="LIFNR_C"/>
     </attribute>
     <attribute id="VENDORUNIK" order="2" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="VENDORUNIK"/>

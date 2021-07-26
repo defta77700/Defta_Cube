@@ -41,7 +41,11 @@
       <viewAttribute id="DISPO"/>
       <viewAttribute id="PROFL"/>
     </viewAttributes>
-    <calculatedViewAttributes/>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="MATNR_C" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>RIGHT(CONCAT('00000000000000000000', &quot;MATNR&quot;),20)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
     <input node="MATERIAL"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="MATGRP_P" filterExpressionLanguage="SQL">
@@ -101,6 +105,8 @@
       <viewAttribute id="WGBEZ_L4"/>
       <viewAttribute id="MATKL_L5"/>
       <viewAttribute id="WGBEZ_L5"/>
+    
+      <viewAttribute id="MATNR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="MAT_P">
@@ -127,6 +133,8 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PROFL" source="PROFL"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
     </input>
     <input node="MATGRP_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_1" source="MATKL"/>
@@ -181,6 +189,8 @@
       <viewAttribute id="WGBEZ_L4"/>
       <viewAttribute id="MATKL_L5"/>
       <viewAttribute id="WGBEZ_L5"/>
+    
+      <viewAttribute id="MATNR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="MAT_MATGRP_J"/>
@@ -237,6 +247,8 @@
       <viewAttribute id="WGBEZ_L4"/>
       <viewAttribute id="MATKL_L5"/>
       <viewAttribute id="WGBEZ_L5"/>
+    
+      <viewAttribute id="MATNR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="MAT_MATGRP_J_P">
@@ -274,6 +286,8 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L4" source="WGBEZ_L4"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L5" source="MATKL_L5"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L5" source="WGBEZ_L5"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
     </input>
     <input node="PLANT_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
@@ -322,6 +336,8 @@
       <viewAttribute id="WGBEZ_L4"/>
       <viewAttribute id="MATKL_L5"/>
       <viewAttribute id="WGBEZ_L5"/>
+    
+      <viewAttribute id="MATNR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="MAT_PLANT_J"/>
@@ -354,7 +370,7 @@
   <attributes>
     <attribute id="MATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material"/>
-      <keyMapping columnObjectName="MAT_PLA_J_P" columnName="MATNR"/>
+      <keyMapping columnObjectName="MAT_PLA_J_P" columnName="MATNR_C"/>
     </attribute>
     <attribute id="SOURCE" order="2" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="SOURCE"/>
@@ -496,6 +512,11 @@
       <descriptions defaultDescription="Material Familly Level 5 Desc"/>
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="WGBEZ_L5"/>
     </attribute>
+  
+    <attribute id="MATNR_C" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR_C"/>
+      <keyMapping columnObjectName="MAT_PLA_J_P" columnName="MATNR_C"/>
+    </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures/>
@@ -532,11 +553,11 @@
       <rectangleSize width="144"/>
     </shape>
     <shape expanded="true" modelObjectName="MAT_MATGRP_J_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302" y="451"/>
+      <upperLeftCorner x="296" y="468"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PLANT_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="441"/>
+      <upperLeftCorner x="73" y="458"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="false" modelObjectName="MAT_PLANT_J" modelObjectNameSpace="CalculationView">
