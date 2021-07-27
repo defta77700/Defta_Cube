@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CubeMarketEvolution" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CubeMarketEvolution.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="MARKETEVOLUTION">
+    <resourceUri>MARKETEVOLUTION</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="BEFORE_AGG_P">
+    <viewAttributes>
+      <viewAttribute id="PERIODE"/>
+      <viewAttribute id="PARITE"/>
+      <viewAttribute id="ALU_LME_EURO"/>
+      <viewAttribute id="NICKEL_LME_EURO"/>
+      <viewAttribute id="CUIVRE_LME_EURO"/>
+      <viewAttribute id="ZINC_LME_EURO"/>
+      <viewAttribute id="SCRAP_FR"/>
+      <viewAttribute id="SCRAP_DE"/>
+      <viewAttribute id="SCRAP_ES"/>
+      <viewAttribute id="INOX_TDS_FR"/>
+      <viewAttribute id="INOX_TDS_ES"/>
+      <viewAttribute id="INOX_TDS_DE"/>
+      <viewAttribute id="LAC_TDS_FR"/>
+      <viewAttribute id="LAF_TDS_FR"/>
+      <viewAttribute id="GALVA_TDS_FR"/>
+      <viewAttribute id="LAC_TDS_DE"/>
+      <viewAttribute id="LAF_TDS_DE"/>
+      <viewAttribute id="GALVA_TDS_DE"/>
+      <viewAttribute id="LAC_TDS_ES"/>
+      <viewAttribute id="LAF_TDS_ES"/>
+      <viewAttribute id="GALVA_TDS_ES"/>
+      <viewAttribute id="WIRE_ROD_MEPS_EU"/>
+      <viewAttribute id="WIRE_ROD_MEPS_DE"/>
+      <viewAttribute id="WIRE_ROD_MEPS_FR"/>
+      <viewAttribute id="WIRE_ROD_MEPS_ES"/>
+      <viewAttribute id="REINF_BAR_MEPS_EU"/>
+      <viewAttribute id="LAC_MEPS_FR"/>
+      <viewAttribute id="LAF_MEPS_FR"/>
+      <viewAttribute id="GALVA_MEPS_FR"/>
+      <viewAttribute id="LAC_MEPS_DE"/>
+      <viewAttribute id="LAF_MEPS_DE"/>
+      <viewAttribute id="GALVA_MEPS_DE"/>
+      <viewAttribute id="LAC_MEPS_ES"/>
+      <viewAttribute id="LAF_MEPS_ES"/>
+      <viewAttribute id="GALVA_MEPS_ES"/>
+      <viewAttribute id="LAC_MEPS_IT"/>
+      <viewAttribute id="LAF_MEPS_IT"/>
+      <viewAttribute id="GALVA_MEPS_IT"/>
+      <viewAttribute id="FIL_FAF_WRBA"/>
+      <viewAttribute id="FIL_FAF_DWBA"/>
+      <viewAttribute id="FIL_FAF_DWU"/>
+      <viewAttribute id="MESH_TDS_FR"/>
+      <viewAttribute id="MESH_TDS_ES"/>
+      <viewAttribute id="MESH_TDS_DE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="MKTEVOL_P"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="MKTEVOL_P">
+    <viewAttributes>
+      <viewAttribute id="PERIODE"/>
+      <viewAttribute id="PARITE"/>
+      <viewAttribute id="ALU_LME_EURO"/>
+      <viewAttribute id="NICKEL_LME_EURO"/>
+      <viewAttribute id="CUIVRE_LME_EURO"/>
+      <viewAttribute id="ZINC_LME_EURO"/>
+      <viewAttribute id="SCRAP_FR"/>
+      <viewAttribute id="SCRAP_DE"/>
+      <viewAttribute id="SCRAP_ES"/>
+      <viewAttribute id="INOX_TDS_FR"/>
+      <viewAttribute id="INOX_TDS_ES"/>
+      <viewAttribute id="INOX_TDS_DE"/>
+      <viewAttribute id="LAC_TDS_FR"/>
+      <viewAttribute id="LAF_TDS_FR"/>
+      <viewAttribute id="GALVA_TDS_FR"/>
+      <viewAttribute id="LAC_TDS_DE"/>
+      <viewAttribute id="LAF_TDS_DE"/>
+      <viewAttribute id="GALVA_TDS_DE"/>
+      <viewAttribute id="LAC_TDS_ES"/>
+      <viewAttribute id="LAF_TDS_ES"/>
+      <viewAttribute id="GALVA_TDS_ES"/>
+      <viewAttribute id="WIRE_ROD_MEPS_EU"/>
+      <viewAttribute id="WIRE_ROD_MEPS_DE"/>
+      <viewAttribute id="WIRE_ROD_MEPS_FR"/>
+      <viewAttribute id="WIRE_ROD_MEPS_ES"/>
+      <viewAttribute id="REINF_BAR_MEPS_EU"/>
+      <viewAttribute id="LAC_MEPS_FR"/>
+      <viewAttribute id="LAF_MEPS_FR"/>
+      <viewAttribute id="GALVA_MEPS_FR"/>
+      <viewAttribute id="LAC_MEPS_DE"/>
+      <viewAttribute id="LAF_MEPS_DE"/>
+      <viewAttribute id="GALVA_MEPS_DE"/>
+      <viewAttribute id="LAC_MEPS_ES"/>
+      <viewAttribute id="LAF_MEPS_ES"/>
+      <viewAttribute id="GALVA_MEPS_ES"/>
+      <viewAttribute id="LAC_MEPS_IT"/>
+      <viewAttribute id="LAF_MEPS_IT"/>
+      <viewAttribute id="GALVA_MEPS_IT"/>
+      <viewAttribute id="FIL_FAF_WRBA"/>
+      <viewAttribute id="FIL_FAF_DWBA"/>
+      <viewAttribute id="FIL_FAF_DWU"/>
+      <viewAttribute id="MESH_TDS_FR"/>
+      <viewAttribute id="MESH_TDS_ES"/>
+      <viewAttribute id="MESH_TDS_DE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="MARKETEVOLUTION"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="BEFORE_AGG_P">
+  <attributes>
+    <attribute id="PERIODE" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PERIODE"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PERIODE"/>
+    </attribute>
+    <attribute id="PARITE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PARITE"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PARITE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="ALU_LME_EURO" order="3" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="ALU_LME_EURO"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="ALU_LME_EURO"/>
+    </measure>
+    <measure id="NICKEL_LME_EURO" order="4" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="NICKEL_LME_EURO"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="NICKEL_LME_EURO"/>
+    </measure>
+    <measure id="CUIVRE_LME_EURO" order="5" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="CUIVRE_LME_EURO"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CUIVRE_LME_EURO"/>
+    </measure>
+    <measure id="ZINC_LME_EURO" order="6" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="ZINC_LME_EURO"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="ZINC_LME_EURO"/>
+    </measure>
+    <measure id="SCRAP_FR" order="7" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="SCRAP_FR"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="SCRAP_FR"/>
+    </measure>
+    <measure id="SCRAP_DE" order="8" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="SCRAP_DE"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="SCRAP_DE"/>
+    </measure>
+    <measure id="SCRAP_ES" order="9" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="SCRAP_ES"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="SCRAP_ES"/>
+    </measure>
+    <measure id="INOX_TDS_FR" order="10" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="INOX_TDS_FR"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="INOX_TDS_FR"/>
+    </measure>
+    <measure id="INOX_TDS_ES" order="11" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="INOX_TDS_ES"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="INOX_TDS_ES"/>
+    </measure>
+    <measure id="INOX_TDS_DE" order="12" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="INOX_TDS_DE"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="INOX_TDS_DE"/>
+    </measure>
+    <measure id="LAC_TDS_FR" order="13" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LAC_TDS_FR"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="LAC_TDS_FR"/>
+    </measure>
+    <measure id="LAF_TDS_FR" order="14" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LAF_TDS_FR"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="LAF_TDS_FR"/>
+    </measure>
+    <measure id="GALVA_TDS_FR" order="15" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="GALVA_TDS_FR"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="GALVA_TDS_FR"/>
+    </measure>
+    <measure id="LAC_TDS_DE" order="16" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LAC_TDS_DE"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="LAC_TDS_DE"/>
+    </measure>
+    <measure id="LAF_TDS_DE" order="17" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LAF_TDS_DE"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="LAF_TDS_DE"/>
+    </measure>
+    <measure id="GALVA_TDS_DE" order="18" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="GALVA_TDS_DE"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="GALVA_TDS_DE"/>
+    </measure>
+    <measure id="LAC_TDS_ES" order="19" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LAC_TDS_ES"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="LAC_TDS_ES"/>
+    </measure>
+    <measure id="LAF_TDS_ES" order="20" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LAF_TDS_ES"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="LAF_TDS_ES"/>
+    </measure>
+    <measure id="GALVA_TDS_ES" order="21" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="GALVA_TDS_ES"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="GALVA_TDS_ES"/>
+    </measure>
+    <measure id="WIRE_ROD_MEPS_EU" order="22" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WIRE_ROD_MEPS_EU"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="WIRE_ROD_MEPS_EU"/>
+    </measure>
+    <measure id="WIRE_ROD_MEPS_DE" order="23" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WIRE_ROD_MEPS_DE"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="WIRE_ROD_MEPS_DE"/>
+    </measure>
+    <measure id="WIRE_ROD_MEPS_FR" order="24" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WIRE_ROD_MEPS_FR"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="WIRE_ROD_MEPS_FR"/>
+    </measure>
+    <measure id="WIRE_ROD_MEPS_ES" order="25" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WIRE_ROD_MEPS_ES"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="WIRE_ROD_MEPS_ES"/>
+    </measure>
+    <measure id="REINF_BAR_MEPS_EU" order="26" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="REINF_BAR_MEPS_EU"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="REINF_BAR_MEPS_EU"/>
+    </measure>
+    <measure id="LAC_MEPS_FR" order="27" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LAC_MEPS_FR"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="LAC_MEPS_FR"/>
+    </measure>
+    <measure id="LAF_MEPS_FR" order="28" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LAF_MEPS_FR"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="LAF_MEPS_FR"/>
+    </measure>
+    <measure id="GALVA_MEPS_FR" order="29" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="GALVA_MEPS_FR"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="GALVA_MEPS_FR"/>
+    </measure>
+    <measure id="LAC_MEPS_DE" order="30" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LAC_MEPS_DE"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="LAC_MEPS_DE"/>
+    </measure>
+    <measure id="LAF_MEPS_DE" order="31" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LAF_MEPS_DE"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="LAF_MEPS_DE"/>
+    </measure>
+    <measure id="GALVA_MEPS_DE" order="32" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="GALVA_MEPS_DE"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="GALVA_MEPS_DE"/>
+    </measure>
+    <measure id="LAC_MEPS_ES" order="33" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LAC_MEPS_ES"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="LAC_MEPS_ES"/>
+    </measure>
+    <measure id="LAF_MEPS_ES" order="34" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LAF_MEPS_ES"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="LAF_MEPS_ES"/>
+    </measure>
+    <measure id="GALVA_MEPS_ES" order="35" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="GALVA_MEPS_ES"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="GALVA_MEPS_ES"/>
+    </measure>
+    <measure id="LAC_MEPS_IT" order="36" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LAC_MEPS_IT"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="LAC_MEPS_IT"/>
+    </measure>
+    <measure id="LAF_MEPS_IT" order="37" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="LAF_MEPS_IT"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="LAF_MEPS_IT"/>
+    </measure>
+    <measure id="GALVA_MEPS_IT" order="38" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="GALVA_MEPS_IT"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="GALVA_MEPS_IT"/>
+    </measure>
+    <measure id="FIL_FAF_WRBA" order="39" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="FIL_FAF_WRBA"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="FIL_FAF_WRBA"/>
+    </measure>
+    <measure id="FIL_FAF_DWBA" order="40" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="FIL_FAF_DWBA"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="FIL_FAF_DWBA"/>
+    </measure>
+    <measure id="FIL_FAF_DWU" order="41" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="FIL_FAF_DWU"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="FIL_FAF_DWU"/>
+    </measure>
+    <measure id="MESH_TDS_FR" order="42" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="MESH_TDS_FR"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="MESH_TDS_FR"/>
+    </measure>
+    <measure id="MESH_TDS_ES" order="43" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="MESH_TDS_ES"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="MESH_TDS_ES"/>
+    </measure>
+    <measure id="MESH_TDS_DE" order="44" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="MESH_TDS_DE"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="MESH_TDS_DE"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="BEFORE_AGG_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="195"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="MKTEVOL_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="290"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

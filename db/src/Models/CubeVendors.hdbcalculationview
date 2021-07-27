@@ -10,6 +10,15 @@
   <DataSource id="V_VENDOR_INVOICE_2Y">
     <resourceUri>V_VENDOR_INVOICE_2Y</resourceUri>
   </DataSource>
+  <DataSource id="PAYMENTCONDITIONS">
+    <resourceUri>PAYMENTCONDITIONS</resourceUri>
+  </DataSource>
+  <DataSource id="VENDORPAYMENTTYPE">
+    <resourceUri>VENDORPAYMENTTYPE</resourceUri>
+  </DataSource>
+  <DataSource id="COMPANY">
+    <resourceUri>COMPANY</resourceUri>
+  </DataSource>
 </dataSources>
 <calculationViews>
   <calculationView xsi:type="Calculation:ProjectionView" id="BEFORE_AGG_P">
@@ -63,9 +72,292 @@
       <viewAttribute id="ZPRZ1"/>
       <viewAttribute id="INV_VENDOR_2Y"/>
       <viewAttribute id="INV_VENDOR_2Y_BOOL"/>
+    
+      <viewAttribute id="VNDPAY_LIFNR"/>
+      <viewAttribute id="VNDPAY_KRAUS"/>
+      <viewAttribute id="VNDPAY_STCEG"/>
+      <viewAttribute id="VNDPAY_STCD1"/>
+      <viewAttribute id="VNDPAY_BUKRS"/>
+      <viewAttribute id="VNDPAY_SOURCE"/>
+      <viewAttribute id="VNDPAY_AKONT"/>
+      <viewAttribute id="VNDPAY_LOEVM"/>
+      <viewAttribute id="VNDPAY_SPERR"/>
+      <viewAttribute id="VNDPAY_ZTERM"/>
+      <viewAttribute id="VNDPAY_ZWELS"/>
+      <viewAttribute id="VNDPAY_TEXT1_FR"/>
+      <viewAttribute id="VNDPAY_TEXT1_EN"/>
+      <viewAttribute id="VNDPAY_FDGRV"/>
+      <viewAttribute id="VNDPAY_REPRF"/>
+      <viewAttribute id="VNDPAY_LIFNR_C"/>
+      <viewAttribute id="PAYMENT_TERMS_DESCRIPTION_EN"/>
+      <viewAttribute id="PAYMENT_TERMS_DESCRIPTION_FR"/>
+      <viewAttribute id="NOTE"/>
+      <viewAttribute id="EVALUATION_EN"/>
+      <viewAttribute id="EVALUATION_FR"/>
+    
+      <viewAttribute id="COMP_BUKRS"/>
+      <viewAttribute id="COMP_BUTXT"/>
+      <viewAttribute id="COMP_LAND1"/>
+      <viewAttribute id="COMP_STCEG"/>
+      <viewAttribute id="COMP_SOURCE"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="VND_2Y_JP"/>
+    <input node="VND2Y_VENDPAYMNT_JP"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VND2Y_VENDPAYMNT_JP">
+    <viewAttributes>
+      <viewAttribute id="VND_LIFNR"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="VND_SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="VND_NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+      <viewAttribute id="INV_VENDOR_2Y"/>
+      <viewAttribute id="INV_VENDOR_2Y_BOOL"/>
+      <viewAttribute id="VNDPAY_LIFNR"/>
+      <viewAttribute id="VNDPAY_KRAUS"/>
+      <viewAttribute id="VNDPAY_STCEG"/>
+      <viewAttribute id="VNDPAY_STCD1"/>
+      <viewAttribute id="VNDPAY_BUKRS"/>
+      <viewAttribute id="VNDPAY_SOURCE"/>
+      <viewAttribute id="VNDPAY_AKONT"/>
+      <viewAttribute id="VNDPAY_LOEVM"/>
+      <viewAttribute id="VNDPAY_SPERR"/>
+      <viewAttribute id="VNDPAY_ZTERM"/>
+      <viewAttribute id="VNDPAY_ZWELS"/>
+      <viewAttribute id="VNDPAY_TEXT1_FR"/>
+      <viewAttribute id="VNDPAY_TEXT1_EN"/>
+      <viewAttribute id="VNDPAY_FDGRV"/>
+      <viewAttribute id="VNDPAY_REPRF"/>
+      <viewAttribute id="VNDPAY_LIFNR_C"/>
+      <viewAttribute id="PAYMENT_TERMS_DESCRIPTION_EN"/>
+      <viewAttribute id="PAYMENT_TERMS_DESCRIPTION_FR"/>
+      <viewAttribute id="NOTE"/>
+      <viewAttribute id="EVALUATION_EN"/>
+      <viewAttribute id="EVALUATION_FR"/>
+    
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="COMP_BUKRS"/>
+      <viewAttribute id="COMP_BUTXT"/>
+      <viewAttribute id="COMP_LAND1"/>
+      <viewAttribute id="COMP_STCEG"/>
+      <viewAttribute id="COMP_SOURCE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VND2Y_VENDPAYMNT_J"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="VND2Y_VENDPAYMNT_J" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="VND_LIFNR"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="VND_SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="VND_NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1" aggregationType="sum"/>
+      <viewAttribute id="INV_VENDOR_2Y" aggregationType="sum"/>
+      <viewAttribute id="INV_VENDOR_2Y_BOOL"/>
+      <viewAttribute id="VNDPAY_LIFNR"/>
+      <viewAttribute id="VNDPAY_KRAUS"/>
+      <viewAttribute id="VNDPAY_STCEG"/>
+      <viewAttribute id="VNDPAY_STCD1"/>
+      <viewAttribute id="VNDPAY_BUKRS"/>
+      <viewAttribute id="VNDPAY_SOURCE"/>
+      <viewAttribute id="VNDPAY_AKONT"/>
+      <viewAttribute id="VNDPAY_LOEVM"/>
+      <viewAttribute id="VNDPAY_SPERR"/>
+      <viewAttribute id="VNDPAY_ZTERM"/>
+      <viewAttribute id="VNDPAY_ZWELS"/>
+      <viewAttribute id="VNDPAY_TEXT1_FR"/>
+      <viewAttribute id="VNDPAY_TEXT1_EN"/>
+      <viewAttribute id="VNDPAY_FDGRV"/>
+      <viewAttribute id="VNDPAY_REPRF"/>
+      <viewAttribute id="VNDPAY_LIFNR_C"/>
+      <viewAttribute id="PAYMENT_TERMS_DESCRIPTION_EN"/>
+      <viewAttribute id="PAYMENT_TERMS_DESCRIPTION_FR"/>
+      <viewAttribute id="NOTE" aggregationType="sum"/>
+      <viewAttribute id="EVALUATION_EN"/>
+      <viewAttribute id="EVALUATION_FR"/>
+    
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="COMP_BUKRS"/>
+      <viewAttribute id="COMP_BUTXT"/>
+      <viewAttribute id="COMP_LAND1"/>
+      <viewAttribute id="COMP_STCEG"/>
+      <viewAttribute id="COMP_SOURCE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VND_2Y_JP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_LIFNR" source="VND_LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_SOURCE" source="VND_SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_NAME1" source="VND_NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_X" source="SPERM_X"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_X" source="LOEVM_X"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBUND" source="VBUND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_Y" source="LOEVM_Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_Y" source="SPERM_Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENSL" source="VENSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZFAEL" source="ZFAEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMONA" source="ZMONA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTAG1" source="ZTAG1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_FR" source="BRTXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_EN" source="BRTXT_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTBUS" source="J_1KFTBUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MCOD1" source="MCOD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEBRE" source="WEBRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INV_VENDOR_2Y" source="INV_VENDOR_2Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INV_VENDOR_2Y_BOOL" source="INV_VENDOR_2Y_BOOL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+    </input>
+    <input node="VNDPAYTYP_PAYCOND_JP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNDPAY_LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNDPAY_KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNDPAY_STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNDPAY_STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNDPAY_BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNDPAY_SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNDPAY_AKONT" source="AKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNDPAY_LOEVM" source="LOEVM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNDPAY_SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNDPAY_ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNDPAY_ZWELS" source="ZWELS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNDPAY_TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNDPAY_TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNDPAY_FDGRV" source="FDGRV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNDPAY_REPRF" source="REPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VNDPAY_LIFNR_C" source="LIFNR_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAYMENT_TERMS_DESCRIPTION_EN" source="PAYMENT_TERMS_DESCRIPTION_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAYMENT_TERMS_DESCRIPTION_FR" source="PAYMENT_TERMS_DESCRIPTION_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NOTE" source="NOTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EVALUATION_EN" source="EVALUATION_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EVALUATION_FR" source="EVALUATION_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_BUKRS" source="COMP_BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_BUTXT" source="COMP_BUTXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_LAND1" source="COMP_LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_STCEG" source="COMP_STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_SOURCE" source="COMP_SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_LIFNR" source="LIFNR_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VND_SOURCE" source="SOURCE"/>
+    </input>
+    <joinAttribute name="VND_LIFNR"/>
+    <joinAttribute name="VND_SOURCE"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VND_2Y_JP">
     <viewAttributes>
@@ -131,6 +423,39 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="VND_NAME1" source="NAME1"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="VNDP_LIFNR"/>
     </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VNDPAYTYP_PAYCOND_JP">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="REPRF"/>
+      <viewAttribute id="LIFNR_C"/>
+      <viewAttribute id="PAYMENT_TERMS_DESCRIPTION_EN"/>
+      <viewAttribute id="PAYMENT_TERMS_DESCRIPTION_FR"/>
+      <viewAttribute id="NOTE"/>
+      <viewAttribute id="EVALUATION_EN"/>
+      <viewAttribute id="EVALUATION_FR"/>
+    
+      <viewAttribute id="COMP_BUKRS"/>
+      <viewAttribute id="COMP_BUTXT"/>
+      <viewAttribute id="COMP_LAND1"/>
+      <viewAttribute id="COMP_STCEG"/>
+      <viewAttribute id="COMP_SOURCE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VNDPAYTYP_PAYCOND_J_2"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="VND_2Y_J" cardinality="CN_N" joinType="leftOuter">
     <viewAttributes>
@@ -312,6 +637,181 @@
     <calculatedViewAttributes/>
     <input node="V_VENDOR_INVOICE_2Y"/>
   </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PAYCOND_P">
+    <viewAttributes>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="CPMT"/>
+      <viewAttribute id="PAYMENT_TERMS_DESCRIPTION_EN"/>
+      <viewAttribute id="PAYMENT_TERMS_DESCRIPTION_FR"/>
+      <viewAttribute id="NOTE"/>
+      <viewAttribute id="EVALUATION_EN"/>
+      <viewAttribute id="EVALUATION_FR"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="PAYMENTCONDITIONS"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VNDCONDTYP_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="REPRF"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="LIFNR_C" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+        <formula>RIGHT(CONCAT('00000000000000000000', &quot;LIFNR&quot;),10)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="VENDORPAYMENTTYPE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="COMP_P">
+    <viewAttributes>
+      <viewAttribute id="COMP_BUKRS"/>
+      <viewAttribute id="COMP_BUTXT"/>
+      <viewAttribute id="COMP_LAND1"/>
+      <viewAttribute id="COMP_STCEG"/>
+      <viewAttribute id="COMP_SOURCE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="COMPANY">
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_BUTXT" source="BUTXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_SOURCE" source="SOURCE"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="VNDPAYTYP_PAYCOND_J_1" cardinality="CN_1" joinType="leftOuter" multiJoinNode="VNDPAYTYP_PAYCOND_J" multiJoinCentralTable="VNDCONDTYP_P" multiJoinOrder="Outside In">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="REPRF"/>
+      <viewAttribute id="LIFNR_C"/>
+      <viewAttribute id="COMP_BUKRS"/>
+      <viewAttribute id="COMP_BUTXT"/>
+      <viewAttribute id="COMP_LAND1"/>
+      <viewAttribute id="COMP_STCEG"/>
+      <viewAttribute id="COMP_SOURCE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VNDCONDTYP_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AKONT" source="AKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWELS" source="ZWELS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FDGRV" source="FDGRV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REPRF" source="REPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C" source="LIFNR_C"/>
+    </input>
+    <input node="COMP_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_BUKRS" source="COMP_BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_BUTXT" source="COMP_BUTXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_LAND1" source="COMP_LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_STCEG" source="COMP_STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_SOURCE" source="COMP_SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="COMP_BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="COMP_SOURCE"/>
+    </input>
+    <joinAttribute name="BUKRS"/>
+    <joinAttribute name="SOURCE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="VNDPAYTYP_PAYCOND_J_2" cardinality="CN_N" joinType="leftOuter" multiJoinNode="VNDPAYTYP_PAYCOND_J" multiJoinCentralTable="VNDCONDTYP_P" multiJoinOrder="Outside In">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="REPRF"/>
+      <viewAttribute id="LIFNR_C"/>
+      <viewAttribute id="PAYMENT_TERMS_DESCRIPTION_EN"/>
+      <viewAttribute id="PAYMENT_TERMS_DESCRIPTION_FR"/>
+      <viewAttribute id="NOTE" aggregationType="sum"/>
+      <viewAttribute id="EVALUATION_EN"/>
+      <viewAttribute id="EVALUATION_FR"/>
+      <viewAttribute id="COMP_BUKRS"/>
+      <viewAttribute id="COMP_BUTXT"/>
+      <viewAttribute id="COMP_LAND1"/>
+      <viewAttribute id="COMP_STCEG"/>
+      <viewAttribute id="COMP_SOURCE"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VNDPAYTYP_PAYCOND_J_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AKONT" source="AKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWELS" source="ZWELS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FDGRV" source="FDGRV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REPRF" source="REPRF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C" source="LIFNR_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_BUKRS" source="COMP_BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_BUTXT" source="COMP_BUTXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_LAND1" source="COMP_LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_STCEG" source="COMP_STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_SOURCE" source="COMP_SOURCE"/>
+    </input>
+    <input node="PAYCOND_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAYMENT_TERMS_DESCRIPTION_EN" source="PAYMENT_TERMS_DESCRIPTION_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAYMENT_TERMS_DESCRIPTION_FR" source="PAYMENT_TERMS_DESCRIPTION_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NOTE" source="NOTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EVALUATION_EN" source="EVALUATION_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EVALUATION_FR" source="EVALUATION_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="CPMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+    </input>
+    <joinAttribute name="ZTERM"/>
+    <joinAttribute name="SOURCE"/>
+  </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
   <attributes>
@@ -352,7 +852,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_NAME1"/>
     </attribute>
     <attribute id="ORT01" order="10" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ORT01"/>
+      <descriptions defaultDescription="Vendor City"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ORT01"/>
     </attribute>
     <attribute id="PFACH" order="11" displayAttribute="false" attributeHierarchyActive="false">
@@ -360,7 +860,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PFACH"/>
     </attribute>
     <attribute id="STRAS" order="12" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="STRAS"/>
+      <descriptions defaultDescription="Vendor Address2"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STRAS"/>
     </attribute>
     <attribute id="PSTLZ" order="13" displayAttribute="false" attributeHierarchyActive="false">
@@ -440,7 +940,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WAERS"/>
     </attribute>
     <attribute id="ZTERM" order="32" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ZTERM"/>
+      <descriptions defaultDescription="Vendor Payment Type"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZTERM"/>
     </attribute>
     <attribute id="ZFAEL" order="33" displayAttribute="false" attributeHierarchyActive="false">
@@ -507,12 +1007,121 @@
       <descriptions defaultDescription="Vendor Actif O/N"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="INV_VENDOR_2Y_BOOL"/>
     </attribute>
+  
+    <attribute id="VNDPAY_LIFNR" order="52" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="VNDPAY_LIFNR"/>
+  
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_LIFNR"/>
+  
+    </attribute>
+    <attribute id="VNDPAY_KRAUS" order="53" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="VNDPAY_KRAUS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_KRAUS"/>
+    </attribute>
+    <attribute id="VNDPAY_STCEG" order="54" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="VNDPAY_STCEG"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_STCEG"/>
+    </attribute>
+    <attribute id="VNDPAY_STCD1" order="55" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="VNDPAY_STCD1"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_STCD1"/>
+    </attribute>
+    <attribute id="VNDPAY_BUKRS" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Vendor Company Code"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_BUKRS"/>
+    </attribute>
+    <attribute id="VNDPAY_SOURCE" order="57" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="VNDPAY_SOURCE"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_SOURCE"/>
+    </attribute>
+    <attribute id="VNDPAY_AKONT" order="58" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="VNDPAY_AKONT"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_AKONT"/>
+    </attribute>
+    <attribute id="VNDPAY_LOEVM" order="59" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="VNDPAY_LOEVM"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_LOEVM"/>
+    </attribute>
+    <attribute id="VNDPAY_SPERR" order="60" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="VNDPAY_SPERR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_SPERR"/>
+    </attribute>
+    <attribute id="VNDPAY_ZTERM" order="61" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="VNDPAY_ZTERM"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_ZTERM"/>
+    </attribute>
+    <attribute id="VNDPAY_ZWELS" order="62" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="VNDPAY_ZWELS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_ZWELS"/>
+    </attribute>
+    <attribute id="VNDPAY_TEXT1_FR" order="63" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="VNDPAY_TEXT1_FR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_TEXT1_FR"/>
+    </attribute>
+    <attribute id="VNDPAY_TEXT1_EN" order="64" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="VNDPAY_TEXT1_EN"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_TEXT1_EN"/>
+    </attribute>
+    <attribute id="VNDPAY_FDGRV" order="65" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Planning group"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_FDGRV"/>
+    </attribute>
+    <attribute id="VNDPAY_REPRF" order="66" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Check Flag for Double Invoices or Credit Memos"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_REPRF"/>
+    </attribute>
+    <attribute id="VNDPAY_LIFNR_C" order="67" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="VNDPAY_LIFNR_C"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_LIFNR_C"/>
+    </attribute>
+    <attribute id="PAYMENT_TERMS_DESCRIPTION_EN" order="68" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Payment Terms Descr EN"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PAYMENT_TERMS_DESCRIPTION_EN"/>
+    </attribute>
+    <attribute id="PAYMENT_TERMS_DESCRIPTION_FR" order="69" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Payment Terms Descr FR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PAYMENT_TERMS_DESCRIPTION_FR"/>
+    </attribute>
+    <attribute id="EVALUATION_EN" order="71" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Evaluation EN"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EVALUATION_EN"/>
+    </attribute>
+    <attribute id="EVALUATION_FR" order="72" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Evaluation FR"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EVALUATION_FR"/>
+    </attribute>
+  
+    <attribute id="COMP_BUKRS" hidden="true" order="73" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMP_BUKRS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="COMP_BUKRS"/>
+    </attribute>
+    <attribute id="COMP_BUTXT" order="74" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Company Name"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="COMP_BUTXT"/>
+    </attribute>
+    <attribute id="COMP_LAND1" order="75" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Company Country"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="COMP_LAND1"/>
+    </attribute>
+    <attribute id="COMP_STCEG" hidden="true" order="76" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMP_STCEG"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="COMP_STCEG"/>
+    </attribute>
+    <attribute id="COMP_SOURCE" hidden="true" order="77" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMP_SOURCE"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="COMP_SOURCE"/>
+    </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
     <measure id="INV_VENDOR_2Y" order="48" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="INV_VENDOR_2Y"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="INV_VENDOR_2Y"/>
+    </measure>
+  
+    <measure id="NOTE" order="70" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="NOTE"/>
+      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="NOTE"/>
     </measure>
   </baseMeasures>
   <calculatedMeasures>
@@ -522,6 +1131,7 @@
         <attribute attributeName="VND_LIFNR"/>
       </exceptionAggregation>
       <formula>1</formula>
+      
       
       </measure>
   </calculatedMeasures>
@@ -560,21 +1170,42 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="243" y="112"/>
+      <upperLeftCorner x="614" y="112"/>
     
       <rectangleSize width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="BEFORE_AGG_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="243" y="217"/>
+      <upperLeftCorner x="614" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
+    <shape expanded="true" modelObjectName="VND2Y_VENDPAYMNT_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="510" y="341"/>
+      <rectangleSize height="30" width="257"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VND2Y_VENDPAYMNT_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="510" y="446"/>
+      <rectangleSize height="30" width="257"/>
+    </shape>
+    <shape modelObjectName="VND_2Y_JP" modelObjectNameSpace="VND2Y_VENDPAYMNT_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="22" y="238"/>
+      <rectangleSize width="213"/>
+    </shape>
+    <shape modelObjectName="VNDPAYTYP_PAYCOND_JP" modelObjectNameSpace="VND2Y_VENDPAYMNT_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="77"/>
+      <rectangleSize width="284"/>
+    </shape>
+  
     <shape expanded="true" modelObjectName="VND_2Y_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="222" y="341"/>
+      <upperLeftCorner x="602" y="606"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VNDPAYTYP_PAYCOND_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="292" y="606"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="VND_2Y_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="222" y="446"/>
+      <upperLeftCorner x="602" y="711"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="VND_P" modelObjectNameSpace="VND_2Y_J" modelObjectType="JoinNodeInput">
@@ -587,12 +1218,41 @@
     </shape>
   
     <shape expanded="true" modelObjectName="VND_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="606"/>
+      <upperLeftCorner x="755" y="871"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="VEND2Y_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302" y="606"/>
+      <upperLeftCorner x="545" y="871"/>
       <rectangleSize height="30" width="160"/>
-    </shape></shapes>
+    </shape>
+    <shape expanded="true" modelObjectName="PAYCOND_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="871"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VNDCONDTYP_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301" y="871"/>
+      <rectangleSize height="30" width="194"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VNDPAYTYP_PAYCOND_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="292" y="711"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="VNDCONDTYP_P" modelObjectNameSpace="VNDPAYTYP_PAYCOND_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VNDPAYTYP_PAYCOND_J">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="162"/>
+    </shape>
+    <shape modelObjectName="PAYCOND_P" modelObjectNameSpace="VNDPAYTYP_PAYCOND_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VNDPAYTYP_PAYCOND_J">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
+    </shape>
+    <shape modelObjectName="COMP_P" modelObjectNameSpace="VNDPAYTYP_PAYCOND_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VNDPAYTYP_PAYCOND_J">
+      <upperLeftCorner x="320" y="221"/>
+      <rectangleSize width="172.17919921875"/>
+    </shape>
+    <shape expanded="true" modelObjectName="COMP_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-101" y="871"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
 </layout>
 </Calculation:scenario>

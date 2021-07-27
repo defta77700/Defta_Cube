@@ -64,7 +64,9 @@
       </calculatedViewAttribute>
     
       <calculatedViewAttribute id="LIFNR_C" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+    
         <formula>RIGHT(CONCAT('00000000000000000000', &quot;LIFNR&quot;),10)</formula>
+    
       </calculatedViewAttribute>
     </calculatedViewAttributes>
     <input node="VENDOR"/>
