@@ -155,7 +155,6 @@
       <viewAttribute id="PRFRE"/>
       <viewAttribute id="SMTP_ADDR"/>
       <viewAttribute id="ZPRZ1"/>
-      <viewAttribute id="INV_VENDOR_2Y"/>
       <viewAttribute id="INV_VENDOR_2Y_BOOL"/>
       <viewAttribute id="VNDPAY_LIFNR"/>
       <viewAttribute id="VNDPAY_KRAUS"/>
@@ -183,6 +182,7 @@
       <viewAttribute id="COMP_LAND1"/>
       <viewAttribute id="COMP_STCEG"/>
       <viewAttribute id="COMP_SOURCE"/>
+      <viewAttribute id="INV_VENDOR_2Y"/>
     
     
       <viewAttribute id="LIFNR"/>
@@ -244,7 +244,6 @@
       <viewAttribute id="PRFRE"/>
       <viewAttribute id="SMTP_ADDR"/>
       <viewAttribute id="ZPRZ1" aggregationType="sum"/>
-      <viewAttribute id="INV_VENDOR_2Y" aggregationType="sum"/>
       <viewAttribute id="INV_VENDOR_2Y_BOOL"/>
       <viewAttribute id="VNDPAY_LIFNR"/>
       <viewAttribute id="VNDPAY_KRAUS"/>
@@ -272,6 +271,7 @@
       <viewAttribute id="COMP_LAND1"/>
       <viewAttribute id="COMP_STCEG"/>
       <viewAttribute id="COMP_SOURCE"/>
+      <viewAttribute id="INV_VENDOR_2Y" aggregationType="sum"/>
     
     
       <viewAttribute id="LIFNR"/>
@@ -698,7 +698,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="COMP_SOURCE" source="SOURCE"/>
     </input>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="VNDPAYTYP_PAYCOND_J_1" cardinality="CN_1" joinType="leftOuter" multiJoinNode="VNDPAYTYP_PAYCOND_J" multiJoinCentralTable="VNDCONDTYP_P" multiJoinOrder="Outside In">
+  <calculationView xsi:type="Calculation:JoinView" id="VNDPAYTYP_PAYCOND_J_1" cardinality="CN_N" joinType="leftOuter" multiJoinNode="VNDPAYTYP_PAYCOND_J" multiJoinCentralTable="VNDCONDTYP_P" multiJoinOrder="Outside In">
     <viewAttributes>
       <viewAttribute id="LIFNR"/>
       <viewAttribute id="KRAUS"/>
@@ -716,11 +716,11 @@
       <viewAttribute id="FDGRV"/>
       <viewAttribute id="REPRF"/>
       <viewAttribute id="LIFNR_C"/>
-      <viewAttribute id="COMP_BUKRS"/>
-      <viewAttribute id="COMP_BUTXT"/>
-      <viewAttribute id="COMP_LAND1"/>
-      <viewAttribute id="COMP_STCEG"/>
-      <viewAttribute id="COMP_SOURCE"/>
+      <viewAttribute id="PAYMENT_TERMS_DESCRIPTION_EN"/>
+      <viewAttribute id="PAYMENT_TERMS_DESCRIPTION_FR"/>
+      <viewAttribute id="NOTE" aggregationType="sum"/>
+      <viewAttribute id="EVALUATION_EN"/>
+      <viewAttribute id="EVALUATION_FR"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="VNDCONDTYP_P">
@@ -741,19 +741,19 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="REPRF" source="REPRF"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C" source="LIFNR_C"/>
     </input>
-    <input node="COMP_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_BUKRS" source="COMP_BUKRS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_BUTXT" source="COMP_BUTXT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_LAND1" source="COMP_LAND1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_STCEG" source="COMP_STCEG"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_SOURCE" source="COMP_SOURCE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="COMP_BUKRS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="COMP_SOURCE"/>
+    <input node="PAYCOND_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAYMENT_TERMS_DESCRIPTION_EN" source="PAYMENT_TERMS_DESCRIPTION_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAYMENT_TERMS_DESCRIPTION_FR" source="PAYMENT_TERMS_DESCRIPTION_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NOTE" source="NOTE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EVALUATION_EN" source="EVALUATION_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EVALUATION_FR" source="EVALUATION_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="CPMT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
     </input>
-    <joinAttribute name="BUKRS"/>
+    <joinAttribute name="ZTERM"/>
     <joinAttribute name="SOURCE"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="VNDPAYTYP_PAYCOND_J_2" cardinality="CN_N" joinType="leftOuter" multiJoinNode="VNDPAYTYP_PAYCOND_J" multiJoinCentralTable="VNDCONDTYP_P" multiJoinOrder="Outside In">
+  <calculationView xsi:type="Calculation:JoinView" id="VNDPAYTYP_PAYCOND_J_2" cardinality="CN_1" joinType="leftOuter" multiJoinNode="VNDPAYTYP_PAYCOND_J" multiJoinCentralTable="VNDCONDTYP_P" multiJoinOrder="Outside In">
     <viewAttributes>
       <viewAttribute id="LIFNR"/>
       <viewAttribute id="KRAUS"/>
@@ -800,22 +800,22 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="FDGRV" source="FDGRV"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="REPRF" source="REPRF"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C" source="LIFNR_C"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_BUKRS" source="COMP_BUKRS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_BUTXT" source="COMP_BUTXT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_LAND1" source="COMP_LAND1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_STCEG" source="COMP_STCEG"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_SOURCE" source="COMP_SOURCE"/>
-    </input>
-    <input node="PAYCOND_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="PAYMENT_TERMS_DESCRIPTION_EN" source="PAYMENT_TERMS_DESCRIPTION_EN"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PAYMENT_TERMS_DESCRIPTION_FR" source="PAYMENT_TERMS_DESCRIPTION_FR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="NOTE" source="NOTE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="EVALUATION_EN" source="EVALUATION_EN"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="EVALUATION_FR" source="EVALUATION_FR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="CPMT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
     </input>
-    <joinAttribute name="ZTERM"/>
+    <input node="COMP_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_BUKRS" source="COMP_BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_BUTXT" source="COMP_BUTXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_LAND1" source="COMP_LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_STCEG" source="COMP_STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COMP_SOURCE" source="COMP_SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="COMP_BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="COMP_SOURCE"/>
+    </input>
+    <joinAttribute name="BUKRS"/>
     <joinAttribute name="SOURCE"/>
   </calculationView>
 </calculationViews>
@@ -1254,13 +1254,13 @@
       <upperLeftCorner x="20" y="30"/>
       <rectangleSize width="162"/>
     </shape>
-    <shape modelObjectName="PAYCOND_P" modelObjectNameSpace="VNDPAYTYP_PAYCOND_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VNDPAYTYP_PAYCOND_J">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="136"/>
-    </shape>
     <shape modelObjectName="COMP_P" modelObjectNameSpace="VNDPAYTYP_PAYCOND_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VNDPAYTYP_PAYCOND_J">
       <upperLeftCorner x="320" y="221"/>
       <rectangleSize width="172"/>
+    </shape>
+    <shape modelObjectName="PAYCOND_P" modelObjectNameSpace="VNDPAYTYP_PAYCOND_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VNDPAYTYP_PAYCOND_J">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="136"/>
     </shape></shapes>
 </layout>
 </Calculation:scenario>
