@@ -95,7 +95,9 @@
       </calculatedViewAttribute>
     
       <calculatedViewAttribute id="LIFNR_C" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
-        <formula>RIGHT(CONCAT('00000000000000000000', &quot;LIFNR&quot;),10)</formula>
+    
+        <formula>RIGHT(CONCAT('0000000000', &quot;LIFNR&quot;),10)</formula>
+    
       </calculatedViewAttribute>
     </calculatedViewAttributes>
     <input node="VENDORSEVALUATION"/>
@@ -224,6 +226,8 @@
       <viewAttribute id="PRFRE"/>
       <viewAttribute id="SMTP_ADDR"/>
       <viewAttribute id="ZPRZ1"/>
+    
+      <viewAttribute id="LIFNR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="VNDEVAL_DIMVND_JP"/>
@@ -352,62 +356,11 @@
       <viewAttribute id="PRFRE"/>
       <viewAttribute id="SMTP_ADDR"/>
       <viewAttribute id="ZPRZ1"/>
+    
+      <viewAttribute id="LIFNR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="VNDEVAL_DIMVND_J"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="DIMVND_P">
-    <viewAttributes>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="VENDORUNIK"/>
-      <viewAttribute id="KRAUS"/>
-      <viewAttribute id="STCEG"/>
-      <viewAttribute id="STCD1"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="ERDAT"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="ORT01"/>
-      <viewAttribute id="PFACH"/>
-      <viewAttribute id="STRAS"/>
-      <viewAttribute id="PSTLZ"/>
-      <viewAttribute id="REGIO"/>
-      <viewAttribute id="ADRNR"/>
-      <viewAttribute id="TELF1"/>
-      <viewAttribute id="SPERR"/>
-      <viewAttribute id="SPERM_X"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="KTOKK"/>
-      <viewAttribute id="LOEVM_X"/>
-      <viewAttribute id="SPRAS"/>
-      <viewAttribute id="STCD2"/>
-      <viewAttribute id="VBUND"/>
-      <viewAttribute id="INCO1"/>
-      <viewAttribute id="INCO2"/>
-      <viewAttribute id="LFABC"/>
-      <viewAttribute id="LOEVM_Y"/>
-      <viewAttribute id="SPERM_Y"/>
-      <viewAttribute id="VENSL"/>
-      <viewAttribute id="WAERS"/>
-      <viewAttribute id="ZTERM"/>
-      <viewAttribute id="ZFAEL"/>
-      <viewAttribute id="ZMONA"/>
-      <viewAttribute id="ZTAG1"/>
-      <viewAttribute id="TEXT1_FR"/>
-      <viewAttribute id="TEXT1_EN"/>
-      <viewAttribute id="KONZS"/>
-      <viewAttribute id="BRSCH"/>
-      <viewAttribute id="BRTXT_FR"/>
-      <viewAttribute id="BRTXT_EN"/>
-      <viewAttribute id="J_1KFTBUS"/>
-      <viewAttribute id="MCOD1"/>
-      <viewAttribute id="WEBRE"/>
-      <viewAttribute id="PRFRE"/>
-      <viewAttribute id="SMTP_ADDR"/>
-      <viewAttribute id="ZPRZ1"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="DimVendor"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="VNDEVAL_DIMVND_J" cardinality="CN_N" joinType="leftOuter">
     <viewAttributes>
@@ -533,8 +486,7 @@
       <viewAttribute id="PRFRE"/>
       <viewAttribute id="SMTP_ADDR"/>
       <viewAttribute id="ZPRZ1" aggregationType="sum"/>
-    
-      <viewAttribute hidden="true" id="JOIN$LIFNR_C$LIFNR"/>
+      <viewAttribute id="LIFNR_C"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="VNDEVAL_P">
@@ -613,8 +565,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="FINRISKNOTE" source="FINRISKNOTE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="FINNIVNOTE" source="FINNIVNOTE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
-    
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR_C$LIFNR" source="LIFNR_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C" source="LIFNR_C"/>
     </input>
     <input node="DIMVND_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="VND_LIFNR" source="LIFNR"/>
@@ -665,10 +616,63 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR_C$LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C" source="LIFNR"/>
     </input>
     <joinAttribute name="VENDORUNIK"/>
-    <joinAttribute name="JOIN$LIFNR_C$LIFNR"/>
+    <joinAttribute name="LIFNR_C"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="DIMVND_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="DimVendor"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
@@ -1129,6 +1133,11 @@
       <descriptions defaultDescription="SMTP_ADDR"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SMTP_ADDR"/>
     </attribute>
+  
+    <attribute id="LIFNR_C" order="124" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LIFNR_C"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR_C"/>
+    </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
@@ -1173,6 +1182,7 @@
         <attribute attributeName="LIFNR"/>
       </exceptionAggregation>
       <formula>1</formula>
+      
       </measure>
   </calculatedMeasures>
   <restrictedMeasures/>
@@ -1200,29 +1210,26 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="40" y="85"/>
+      <upperLeftCorner x="243" y="112"/>
+    
+      <rectangleSize width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="VNDEVAL_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-173" y="646"/>
+      <upperLeftCorner x="92" y="606"/>
       <rectangleSize height="30" width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="BEFORE_AGG_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="38" y="195"/>
+      <upperLeftCorner x="243" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="VNDEVAL_DIMVND_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-72" y="443"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-  
-    <shape expanded="true" modelObjectName="DIMVND_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="28" y="646"/>
+      <upperLeftCorner x="222" y="341"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="VNDEVAL_DIMVND_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-72" y="519"/>
+      <upperLeftCorner x="222" y="446"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="VNDEVAL_P" modelObjectNameSpace="VNDEVAL_DIMVND_J" modelObjectType="JoinNodeInput">
@@ -1232,6 +1239,11 @@
     <shape modelObjectName="DIMVND_P" modelObjectNameSpace="VNDEVAL_DIMVND_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="412" y="1236"/>
       <rectangleSize width="159"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="DIMVND_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="606"/>
+      <rectangleSize height="30" width="160"/>
     </shape></shapes>
 </layout>
 </Calculation:scenario>

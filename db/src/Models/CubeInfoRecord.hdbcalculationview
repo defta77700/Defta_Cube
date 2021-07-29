@@ -10,14 +10,14 @@
   <DataSource id="PLANT">
     <resourceUri>PLANT</resourceUri>
   </DataSource>
+  <DataSource id="DimVendor">
+    <resourceUri>DimVendor</resourceUri>
+  </DataSource>
   <DataSource id="PURCHINFORECORD">
     <resourceUri>PURCHINFORECORD</resourceUri>
   </DataSource>
   <DataSource id="DimMaterial">
     <resourceUri>DimMaterial</resourceUri>
-  </DataSource>
-  <DataSource id="DimVendor">
-    <resourceUri>DimVendor</resourceUri>
   </DataSource>
 </dataSources>
 <calculationViews>
@@ -98,13 +98,14 @@
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="PIR_MAT_PLANT_DATE_JP">
     <viewAttributes>
+    
+      <viewAttribute id="PIR_LIFNR_C"/>
       <viewAttribute id="PIR_WERKS"/>
       <viewAttribute id="PIR_EKORG"/>
       <viewAttribute id="PIR_MATNR"/>
       <viewAttribute id="NETPR"/>
       <viewAttribute id="WAERS"/>
       <viewAttribute id="PEINH"/>
-      <viewAttribute id="PIR_LIFNR"/>
       <viewAttribute id="PIR_URZLAND"/>
       <viewAttribute id="MATNR"/>
       <viewAttribute id="MATKL"/>
@@ -152,8 +153,6 @@
       <viewAttribute id="CALMONTH"/>
       <viewAttribute id="CALWEEK"/>
     
-      <viewAttribute id="PIR_LIFNR_C"/>
-    
       <viewAttribute id="VENDORUNIK"/>
       <viewAttribute id="KRAUS"/>
       <viewAttribute id="STCEG"/>
@@ -167,20 +166,22 @@
       <viewAttribute id="ADRNR"/>
       <viewAttribute id="VND_COUNTRY"/>
       <viewAttribute id="LFABC"/>
-    </viewAttributes>
+    
+      <viewAttribute id="PIR_LIFNR"/></viewAttributes>
     <calculatedViewAttributes/>
     <input node="PIR_MAT_PLANT_DATE_J"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="PIR_MAT_PLANT_DATE_J" cardinality="CN_N" joinType="leftOuter">
     <viewAttributes>
     
+      <viewAttribute id="PIR_LIFNR_C"/>
+    
       <viewAttribute id="PIR_WERKS"/>
       <viewAttribute id="PIR_EKORG"/>
       <viewAttribute id="PIR_MATNR"/>
       <viewAttribute id="NETPR"/>
       <viewAttribute id="WAERS"/>
       <viewAttribute id="PEINH"/>
-      <viewAttribute id="PIR_LIFNR"/>
       <viewAttribute id="PIR_URZLAND"/>
       <viewAttribute id="MATNR"/>
       <viewAttribute id="MATKL"/>
@@ -228,8 +229,6 @@
       <viewAttribute id="CALMONTH"/>
       <viewAttribute id="CALWEEK"/>
     
-      <viewAttribute id="PIR_LIFNR_C"/>
-    
       <viewAttribute id="VENDORUNIK"/>
       <viewAttribute id="KRAUS"/>
       <viewAttribute id="STCEG"/>
@@ -243,7 +242,8 @@
       <viewAttribute id="ADRNR"/>
       <viewAttribute id="VND_COUNTRY"/>
       <viewAttribute id="LFABC"/>
-    </viewAttributes>
+    
+      <viewAttribute id="PIR_LIFNR"/></viewAttributes>
     <calculatedViewAttributes/>
     <input node="PIR_MAT_PLANT_JP">
       <mapping xsi:type="Calculation:AttributeMapping" target="PIR_ERDAT" source="PIR_ERDAT"/>
@@ -829,6 +829,59 @@
     <calculatedViewAttributes/>
     <input node="PIR_MAT_J"/>
   </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VND_P">
+    <viewAttributes>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="DimVendor"/>
+  </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="PIR_MAT_J" cardinality="CN_N" joinType="leftOuter">
     <viewAttributes>
       <viewAttribute id="PIR_WERKS"/>
@@ -1027,59 +1080,6 @@
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="DimMaterial"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VND_P">
-    <viewAttributes>
-      <viewAttribute id="VENDORUNIK"/>
-      <viewAttribute id="KRAUS"/>
-      <viewAttribute id="STCEG"/>
-      <viewAttribute id="STCD1"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="ORT01"/>
-      <viewAttribute id="PFACH"/>
-      <viewAttribute id="STRAS"/>
-      <viewAttribute id="PSTLZ"/>
-      <viewAttribute id="REGIO"/>
-      <viewAttribute id="ADRNR"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="LFABC"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="ERDAT"/>
-      <viewAttribute id="TELF1"/>
-      <viewAttribute id="SPERR"/>
-      <viewAttribute id="SPERM_X"/>
-      <viewAttribute id="KTOKK"/>
-      <viewAttribute id="LOEVM_X"/>
-      <viewAttribute id="SPRAS"/>
-      <viewAttribute id="STCD2"/>
-      <viewAttribute id="VBUND"/>
-      <viewAttribute id="INCO1"/>
-      <viewAttribute id="INCO2"/>
-      <viewAttribute id="LOEVM_Y"/>
-      <viewAttribute id="SPERM_Y"/>
-      <viewAttribute id="VENSL"/>
-      <viewAttribute id="WAERS"/>
-      <viewAttribute id="ZTERM"/>
-      <viewAttribute id="ZFAEL"/>
-      <viewAttribute id="ZMONA"/>
-      <viewAttribute id="ZTAG1"/>
-      <viewAttribute id="TEXT1_FR"/>
-      <viewAttribute id="TEXT1_EN"/>
-      <viewAttribute id="KONZS"/>
-      <viewAttribute id="BRSCH"/>
-      <viewAttribute id="BRTXT_FR"/>
-      <viewAttribute id="BRTXT_EN"/>
-      <viewAttribute id="J_1KFTBUS"/>
-      <viewAttribute id="MCOD1"/>
-      <viewAttribute id="WEBRE"/>
-      <viewAttribute id="PRFRE"/>
-      <viewAttribute id="SMTP_ADDR"/>
-      <viewAttribute id="ZPRZ1"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="DimVendor"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
@@ -1290,7 +1290,9 @@
   
     <attribute id="VENDORUNIK" order="55" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="VENDORUNIK"/>
+  
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
+  
     </attribute>
     <attribute id="KRAUS" order="56" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Vendor DUNS"/>
@@ -1454,21 +1456,21 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="281.8669615453051" y="112"/>
+      <upperLeftCorner x="281" y="112"/>
     
       <rectangleSize width="160"/>
     </shape>
   
     <shape expanded="true" modelObjectName="BEFORE_AGG_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="281.8669615453051" y="217"/>
+      <upperLeftCorner x="281" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PIR_MAT_PLANT_DATE_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="258.46215119639174" y="341.9999988079071"/>
+      <upperLeftCorner x="258" y="341"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PIR_MAT_PLANT_DATE_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="258.46215119639174" y="446.9999988079071"/>
+      <upperLeftCorner x="258" y="446"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="PIR_MAT_PLANT_JP" modelObjectNameSpace="PIR_MAT_PLANT_DATE_J" modelObjectType="JoinNodeInput">
@@ -1481,15 +1483,15 @@
     </shape>
   
     <shape expanded="true" modelObjectName="PIR_MAT_PLANT_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="344.82880611476793" y="606.9999976158142"/>
+      <upperLeftCorner x="344" y="606"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="DATE_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="134.82880611476793" y="606.9999976158142"/>
+      <upperLeftCorner x="134" y="606"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PIR_MAT_PLANT_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="289.1312878349328" y="731.9999964237213"/>
+      <upperLeftCorner x="289" y="731"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="PIR_MAT_VND_JP" modelObjectNameSpace="PIR_MAT_PLANT_J" modelObjectType="JoinNodeInput">
@@ -1501,15 +1503,15 @@
       <rectangleSize width="133"/>
     </shape>
     <shape expanded="true" modelObjectName="PIR_MAT_VND_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="162.62079476563065" y="891.9999952316284"/>
+      <upperLeftCorner x="162" y="891"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PLANT_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="372.6207947656307" y="891.9999952316284"/>
+      <upperLeftCorner x="372" y="891"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="PIR_MAT_VND_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="162.62079476563065" y="996.9999952316284"/>
+      <upperLeftCorner x="162" y="996"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="PIR_MAT_JP" modelObjectNameSpace="PIR_MAT_VND_J" modelObjectType="JoinNodeInput">
@@ -1521,11 +1523,16 @@
       <rectangleSize width="159"/>
     </shape>
     <shape expanded="true" modelObjectName="PIR_MAT_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302" y="1156.9999940395355"/>
+      <upperLeftCorner x="302" y="1156"/>
       <rectangleSize height="30" width="160"/>
     </shape>
+    <shape expanded="true" modelObjectName="VND_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="1156"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
     <shape expanded="true" modelObjectName="PIR_MAT_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="302" y="1261.9999940395355"/>
+      <upperLeftCorner x="302" y="1261"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape modelObjectName="PIR_P" modelObjectNameSpace="PIR_MAT_J" modelObjectType="JoinNodeInput">
@@ -1539,17 +1546,12 @@
   
   
     <shape expanded="true" modelObjectName="PIR_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="147.7455048799095" y="1421.9999928474426"/>
+      <upperLeftCorner x="147" y="1421"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="MAT_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="357.74550487990956" y="1421.9999928474426"/>
+      <upperLeftCorner x="357" y="1421"/>
       <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape expanded="true" modelObjectName="VND_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="1156.9999940395355"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-  </shapes>
+    </shape></shapes>
 </layout>
 </Calculation:scenario>
