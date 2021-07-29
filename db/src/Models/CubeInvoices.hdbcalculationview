@@ -2537,7 +2537,7 @@
       <unitCurrencyAttribute attributeName="BSTME"/>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="MENGE_SIGN"/>
     </measure>
-    <measure id="PEINH" order="38" aggregationType="sum" measureType="amount" semanticType="amount">
+    <measure id="PEINH" order="38" aggregationType="sum" measureType="amount" semanticType="amount" unconverted="true">
       <descriptions defaultDescription="Price unit"/>
       <unitCurrencyAttribute attributeName="WAERS"/>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="PEINH"/>
@@ -2553,7 +2553,7 @@
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="WRBTR"/>
     </measure>
   
-    <measure id="WRBTR_SIGN" order="42" semanticType="amount" aggregationType="sum" measureType="amount">
+    <measure id="WRBTR_SIGN" order="42" semanticType="amount" aggregationType="sum" measureType="amount" unconverted="true">
       <descriptions defaultDescription="Amount"/>
       <unitCurrencyAttribute attributeName="WAERS"/>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="WRBTR_SIGN"/>

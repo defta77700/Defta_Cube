@@ -102,7 +102,9 @@
       <viewAttribute id="COMP_SOURCE"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="VND2Y_VENDPAYMNT_JP"/>
+    <input node="VND2Y_VENDPAYMNT_JP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="INV_VENDOR_2Y" source="INV_VENDOR_2YC"/>
+    </input>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VND2Y_VENDPAYMNT_JP">
     <viewAttributes>
@@ -176,17 +178,21 @@
       <viewAttribute id="NOTE"/>
       <viewAttribute id="EVALUATION_EN"/>
       <viewAttribute id="EVALUATION_FR"/>
-    
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="NAME1"/>
       <viewAttribute id="COMP_BUKRS"/>
       <viewAttribute id="COMP_BUTXT"/>
       <viewAttribute id="COMP_LAND1"/>
       <viewAttribute id="COMP_STCEG"/>
       <viewAttribute id="COMP_SOURCE"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
+    
+    
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="NAME1"/></viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="INV_VENDOR_2YC" datatype="DECIMAL" length="10" scale="1" expressionLanguage="SQL">
+        <formula>CASE WHEN IFNULL(&quot;INV_VENDOR_2Y&quot;, 0) = 0 THEN 0 ELSE 1 END</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
     <input node="VND2Y_VENDPAYMNT_J"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="VND2Y_VENDPAYMNT_J" cardinality="CN_N" joinType="leftOuter">
@@ -261,16 +267,16 @@
       <viewAttribute id="NOTE" aggregationType="sum"/>
       <viewAttribute id="EVALUATION_EN"/>
       <viewAttribute id="EVALUATION_FR"/>
-    
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="NAME1"/>
       <viewAttribute id="COMP_BUKRS"/>
       <viewAttribute id="COMP_BUTXT"/>
       <viewAttribute id="COMP_LAND1"/>
       <viewAttribute id="COMP_STCEG"/>
       <viewAttribute id="COMP_SOURCE"/>
-    </viewAttributes>
+    
+    
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="NAME1"/></viewAttributes>
     <calculatedViewAttributes/>
     <input node="VND_2Y_JP">
       <mapping xsi:type="Calculation:AttributeMapping" target="VND_LIFNR" source="VND_LIFNR"/>
@@ -1093,7 +1099,9 @@
   
     <attribute id="COMP_BUKRS" hidden="true" order="73" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="COMP_BUKRS"/>
+  
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="COMP_BUKRS"/>
+  
     </attribute>
     <attribute id="COMP_BUTXT" order="74" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Company Name"/>
@@ -1233,6 +1241,11 @@
       <upperLeftCorner x="301" y="871"/>
       <rectangleSize height="30" width="194"/>
     </shape>
+    <shape expanded="true" modelObjectName="COMP_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-101" y="871"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
     <shape expanded="true" modelObjectName="VNDPAYTYP_PAYCOND_J" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="292" y="711"/>
       <rectangleSize height="30" width="160"/>
@@ -1247,12 +1260,7 @@
     </shape>
     <shape modelObjectName="COMP_P" modelObjectNameSpace="VNDPAYTYP_PAYCOND_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VNDPAYTYP_PAYCOND_J">
       <upperLeftCorner x="320" y="221"/>
-      <rectangleSize width="172.17919921875"/>
-    </shape>
-    <shape expanded="true" modelObjectName="COMP_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-101" y="871"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-  </shapes>
+      <rectangleSize width="172"/>
+    </shape></shapes>
 </layout>
 </Calculation:scenario>
