@@ -1136,7 +1136,9 @@
   
     <attribute id="LIFNR_C" order="124" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="LIFNR_C"/>
+  
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR_C"/>
+  
     </attribute>
   </attributes>
   <calculatedAttributes/>

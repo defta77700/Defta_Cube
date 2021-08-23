@@ -167,7 +167,7 @@
     <calculatedViewAttributes/>
     <input node="ZM_TIME_DIMENSION"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="BEFORE_AGG_P" filterExpressionLanguage="SQL">
+  <calculationView xsi:type="Calculation:ProjectionView" id="BEFORE_AGG_P">
     <viewAttributes>
       <viewAttribute id="KNUMH"/>
       <viewAttribute id="SOURCE"/>
@@ -1664,13 +1664,13 @@
       <upperLeftCorner x="250" y="18"/>
       <rectangleSize width="161"/>
     </shape>
-    <shape modelObjectName="PRICECOND_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="150"/>
-    </shape>
     <shape modelObjectName="PLANT_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
       <upperLeftCorner x="619" y="30"/>
       <rectangleSize width="174"/>
+    </shape>
+    <shape modelObjectName="PRICECOND_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="150"/>
     </shape>
     <shape modelObjectName="DIMVND_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
       <upperLeftCorner x="431" y="194"/>
