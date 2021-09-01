@@ -1,0 +1,38 @@
+{
+  "TCURR": {
+    "target": {
+      "object": "TCURR",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "TCURV": {
+    "target": {
+      "object": "TCURV",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "TCURF": {
+    "target": {
+      "object": "TCURF",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "TCURN": {
+    "target": {
+      "object": "TCURN",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "TCURX": {
+    "target": {
+      "object": "TCURX",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "VCURR": {
+    "target": {
+      "object": "VCURR",
+      "schema": "SUPLPANEL"
+    }
+  }
+}

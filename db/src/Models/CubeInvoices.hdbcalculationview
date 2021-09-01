@@ -2558,6 +2558,57 @@
       <unitCurrencyAttribute attributeName="WAERS"/>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="WRBTR_SIGN"/>
     </measure>
+  
+    <measure id="WRBTR_SIGN_1" order="126" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="WRBTR_SIGN_1"/>
+      <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="WRBTR_SIGN"/>
+    </measure>
+    <measure id="WRBTR_SIGN_2" order="127" semanticType="amount" aggregationType="sum" measureType="amount" unconverted="false">
+      <descriptions defaultDescription="WRBTR_SIGN_A"/>
+      <fixedCurrency>EUR</fixedCurrency>
+      <currencyConversion errorHandling="keepUnconverted" generateOutputUnitCurrencyAttribute="true" outputUnitCurrencyAttributeName="WRBTR_SIGN_2_CURRENCY" convert="true" accuracy="COMPATIBILITY" method="ERP" lookup="REGULAR">
+        <client>
+          <value>700</value>
+        </client>
+        <currencyConversionTables rates="TCURR" configuration="TCURV" prefactors="TCURF" notations="TCURN" precisions="TCURX"/>
+        <outputDataType datatype="DECIMAL" length="17" scale="4"/>
+        <sourceCurrency>
+          <attribute attributeName="WAERS"/>
+        </sourceCurrency>
+        <erpDecimalShift>true</erpDecimalShift>
+        <targetCurrency>
+          <value>EUR</value>
+        </targetCurrency>
+        <referenceDate>
+          <attribute attributeName="BUDATE"/>
+        </referenceDate>
+        <exchangeRateType>EURX</exchangeRateType>
+      </currencyConversion>
+      <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="WRBTR_SIGN"/>
+    </measure>
+    <measure id="PEINH_1" order="128" semanticType="amount" aggregationType="sum" measureType="amount" unconverted="false">
+      <descriptions defaultDescription="PEINH_A"/>
+      <fixedCurrency>EUR</fixedCurrency>
+      <currencyConversion errorHandling="keepUnconverted" generateOutputUnitCurrencyAttribute="true" outputUnitCurrencyAttributeName="PEINH_1_CURRENCY" convert="true" accuracy="COMPATIBILITY" method="ERP" lookup="REGULAR">
+        <client>
+          <value>700</value>
+        </client>
+        <currencyConversionTables rates="TCURR" configuration="TCURV" prefactors="TCURF" notations="TCURN" precisions="TCURX"/>
+        <outputDataType datatype="DECIMAL" length="17" scale="4"/>
+        <sourceCurrency>
+          <attribute attributeName="WAERS"/>
+        </sourceCurrency>
+        <erpDecimalShift>true</erpDecimalShift>
+        <targetCurrency>
+          <value>EUR</value>
+        </targetCurrency>
+        <referenceDate>
+          <attribute attributeName="BUDATE"/>
+        </referenceDate>
+        <exchangeRateType>EURX</exchangeRateType>
+      </currencyConversion>
+      <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="PEINH"/>
+    </measure>
   </baseMeasures>
   <calculatedMeasures>
     <measure id="NB_VENDOR" order="125" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
@@ -2568,6 +2619,7 @@
         <attribute attributeName="VENDORUNIKCODE"/>
       </exceptionAggregation>
       <formula>1</formula>
+      
       </measure>
   </calculatedMeasures>
   <restrictedMeasures/>
@@ -2751,4 +2803,4 @@
       <rectangleSize height="30" width="160"/>
     </shape></shapes>
 </layout>
-</Calculation:scenario>  
+</Calculation:scenario>
