@@ -2566,7 +2566,7 @@
     <measure id="WRBTR_SIGN_2" order="127" semanticType="amount" aggregationType="sum" measureType="amount" unconverted="false">
       <descriptions defaultDescription="WRBTR_SIGN_A"/>
       <fixedCurrency>EUR</fixedCurrency>
-      <currencyConversion errorHandling="keepUnconverted" generateOutputUnitCurrencyAttribute="true" outputUnitCurrencyAttributeName="WRBTR_SIGN_2_CURRENCY" convert="true" accuracy="COMPATIBILITY" method="ERP" lookup="REGULAR">
+      <currencyConversion errorHandling="setToNull" generateOutputUnitCurrencyAttribute="true" outputUnitCurrencyAttributeName="WRBTR_SIGN_2_CURRENCY" convert="true" accuracy="HIGHEST" method="ERP" lookup="REGULAR">
         <client>
           <value>700</value>
         </client>
