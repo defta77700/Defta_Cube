@@ -548,7 +548,11 @@
       <viewAttribute id="MENGE_SIGN"/>
       <viewAttribute id="WRBTR_SIGN"/>
     </viewAttributes>
-    <calculatedViewAttributes/>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="MANDT" datatype="NVARCHAR" length="3" expressionLanguage="SQL">
+        <formula>700</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
     <input node="INV_MAT_COMP_DT_VEND_PLA_JP">
       <mapping xsi:type="Calculation:AttributeMapping" target="WERKS_PLANT" source="WERKS_2"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="EKORG_PLANT" source="EKORG_3"/>
@@ -2159,7 +2163,7 @@
       <descriptions defaultDescription="Supplier name"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="NAME1"/>
     </attribute>
-    <attribute id="WAERS" order="30" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WAERS" order="30" displayAttribute="false" attributeHierarchyActive="false" semanticType="currencyCode">
       <descriptions defaultDescription="Curency"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="WAERS"/>
     </attribute>
@@ -2383,7 +2387,7 @@
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="NAME1_VENDOR"/>
     </attribute>
     <attribute id="ERDAT" order="91" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
-      <descriptions defaultDescription="ERDAT"/>
+      <descriptions defaultDescription="Date Creation"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="ERDAT"/>
     </attribute>
     <attribute id="EKORG_2" order="92" displayAttribute="false" attributeHierarchyActive="false">
@@ -2524,6 +2528,13 @@
       <descriptions defaultDescription="SMTP_ADDR"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="SMTP_ADDR"/>
     </attribute>
+  
+    <attribute id="MANDT" order="129" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+  
+      <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MANDT"/>
+  
+    </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
@@ -2568,7 +2579,7 @@
       <fixedCurrency>EUR</fixedCurrency>
       <currencyConversion errorHandling="keepUnconverted" generateOutputUnitCurrencyAttribute="true" outputUnitCurrencyAttributeName="WRBTR_SIGN_2_CURRENCY" convert="true" accuracy="HIGHEST" method="ERP" lookup="REGULAR">
         <client>
-          <value>700</value>
+          <attribute attributeName="MANDT"/>
         </client>
         <currencyConversionTables rates="TCURR" configuration="TCURV" prefactors="TCURF" notations="TCURN" precisions="TCURX"/>
         <outputDataType datatype="DECIMAL" length="17" scale="4"/>
@@ -2580,9 +2591,9 @@
           <value>EUR</value>
         </targetCurrency>
         <referenceDate>
-          <attribute attributeName="BUDAT"/>
+          <attribute attributeName="BUDATE"/>
         </referenceDate>
-        <exchangeRateType>EURX</exchangeRateType>
+        <exchangeRateType>M</exchangeRateType>
       </currencyConversion>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="WRBTR_SIGN"/>
     </measure>
@@ -2619,6 +2630,7 @@
         <attribute attributeName="VENDORUNIKCODE"/>
       </exceptionAggregation>
       <formula>1</formula>
+      
       
       </measure>
   </calculatedMeasures>
