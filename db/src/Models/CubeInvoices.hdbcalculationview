@@ -2525,7 +2525,7 @@
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="PRFRE"/>
     </attribute>
     <attribute id="SMTP_ADDR" order="124" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
-      <descriptions defaultDescription="SMTP_ADDR"/>
+      <descriptions defaultDescription="SMTP_ADDRR"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="SMTP_ADDR"/>
     </attribute>
   
@@ -2571,7 +2571,7 @@
     </measure>
   
     <measure id="WRBTR_SIGN_1" order="126" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="WRBTR_SIGN_1"/>
+      <descriptions defaultDescription="WRBTR_SIGN_1_"/>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="WRBTR_SIGN"/>
     </measure>
     <measure id="WRBTR_SIGN_2" order="127" semanticType="amount" aggregationType="sum" measureType="amount" unconverted="false">
