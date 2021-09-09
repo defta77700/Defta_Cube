@@ -1197,7 +1197,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L1"/>
     </attribute>
     <attribute id="WGBEZ_L1" order="94" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Familly Level 1 Desc"/>
+      <descriptions defaultDescription="Purchasing type"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L1"/>
     </attribute>
     <attribute id="MATKL_L2" order="95" displayAttribute="false" attributeHierarchyActive="false">
@@ -1408,13 +1408,13 @@
       <upperLeftCorner x="550" y="183"/>
       <rectangleSize width="159"/>
     </shape>
-    <shape modelObjectName="CTT_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="300"/>
-    </shape>
     <shape modelObjectName="DIMMAT_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
       <upperLeftCorner x="378" y="413"/>
       <rectangleSize width="144"/>
+    </shape>
+    <shape modelObjectName="CTT_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="300"/>
     </shape>
     <shape modelObjectName="PLANT_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
       <upperLeftCorner x="429" y="-37"/>
