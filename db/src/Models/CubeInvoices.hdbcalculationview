@@ -1388,11 +1388,9 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$LIFNR_C$LIFNR" source="LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
     </input>
     <joinAttribute name="JOIN$LIFNR_C$LIFNR"/>
-    <joinAttribute name="VENDORUNIK"/>
     <joinAttribute name="SOURCE"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="INV_MAT_COMP_DT_JP">

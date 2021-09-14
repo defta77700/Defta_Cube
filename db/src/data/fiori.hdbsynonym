@@ -1,0 +1,38 @@
+{
+  "VENDOR_GOLDEN": {
+    "target": {
+      "object": "VENDOR_GOLDEN",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "VENDORPAYMENTTYPE_GOLDEN": {
+    "target": {
+      "object": "VENDORPAYMENTTYPE_GOLDEN",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "VENDORCONTACT_GOLDEN": {
+    "target": {
+      "object": "VENDORCONTACT_GOLDEN",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "VENDORCONTACT_MODIFICATION": {
+    "target": {
+      "object": "VENDORCONTACT_MODIFICATION",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "VENDORPAYMENTTYPE_MODIFICATION": {
+    "target": {
+      "object": "VENDORPAYMENTTYPE_MODIFICATION",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "VENDOR_MODIFICATION": {
+    "target": {
+      "object": "VENDOR_MODIFICATION",
+      "schema": "SUPLPANEL"
+    }
+  }
+}
