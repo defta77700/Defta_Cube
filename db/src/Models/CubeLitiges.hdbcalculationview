@@ -132,7 +132,6 @@
     <input node="DIMVND_CLAIM_DATE_JP">
       <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="CLAIM_VND_NAME"/>
     </input>
-  
     <filter>&quot;SOURCE_VND_MAT_EG&quot;=1</filter>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="DIMVND_CLAIM_DATE_JP">
@@ -235,13 +234,13 @@
       <viewAttribute id="WGBEZ_L4"/>
       <viewAttribute id="MATKL_L5"/>
       <viewAttribute id="WGBEZ_L5"/>
-    
-    
-    
-      <viewAttribute id="NAME1"/>
       <viewAttribute id="VND_SOURCE"/>
       <viewAttribute id="SOURCE_VND_MAT_EG"/>
-    </viewAttributes>
+    
+    
+    
+    
+      <viewAttribute id="NAME1"/></viewAttributes>
     <calculatedViewAttributes>
       <calculatedViewAttribute id="CLAIM_VND_NAME" datatype="NVARCHAR" length="35" expressionLanguage="SQL">
         <formula>IFNULL(&quot;NAME1&quot;, &quot;CLAIM_NAME1&quot;)</formula>
@@ -350,14 +349,14 @@
       <viewAttribute id="MATKL_L5"/>
       <viewAttribute id="WGBEZ_L5"/>
     
+      <viewAttribute id="VND_SOURCE"/>
+      <viewAttribute id="SOURCE_VND_MAT_EG"/>
+    
+    
     
       <viewAttribute id="NAME1"/>
     
-      <viewAttribute id="VND_SOURCE"/>
-    
-      <viewAttribute id="PART_NBR_C"/>
-      <viewAttribute id="SOURCE_VND_MAT_EG"/>
-    </viewAttributes>
+      <viewAttribute id="PART_NBR_C"/></viewAttributes>
     <calculatedViewAttributes/>
     <input node="DIMVND_CLAIM_JP">
       <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
@@ -1166,35 +1165,35 @@
 <logicalModel id="BEFORE_AGG_P">
   <attributes>
     <attribute id="VND_LIFNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Code"/>
+      <descriptions defaultDescription="Supplier Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_LIFNR"/>
     </attribute>
     <attribute id="VENDORUNIK" order="2" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="VENDORUNIK"/>
+      <descriptions defaultDescription="Supplier key ID"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
     </attribute>
     <attribute id="NAME1" order="3" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Name"/>
+      <descriptions defaultDescription="Supplier Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="NAME1"/>
     </attribute>
     <attribute id="ORT01" order="4" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor City"/>
+      <descriptions defaultDescription="Supplier City"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ORT01"/>
     </attribute>
     <attribute id="PSTLZ" order="5" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Postal Code"/>
+      <descriptions defaultDescription="Supplier Postal Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PSTLZ"/>
     </attribute>
     <attribute id="REGIO" order="6" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Region"/>
+      <descriptions defaultDescription="Supplier Region"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="REGIO"/>
     </attribute>
     <attribute id="LAND1" order="7" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Country"/>
+      <descriptions defaultDescription="Supplier Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAND1"/>
     </attribute>
     <attribute id="LFABC" order="8" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor indicator ABC"/>
+      <descriptions defaultDescription="Supplier category"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LFABC"/>
     </attribute>
     <attribute id="BRSCH" order="9" displayAttribute="false" attributeHierarchyActive="false">
@@ -1210,31 +1209,31 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRTXT_EN"/>
     </attribute>
     <attribute id="ZTERM" order="12" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ZTERM"/>
+      <descriptions defaultDescription="Payment Term"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZTERM"/>
     </attribute>
     <attribute id="TEXT1_FR" order="13" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="TEXT1_FR"/>
+      <descriptions defaultDescription="Payment Term_FR comment"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TEXT1_FR"/>
     </attribute>
     <attribute id="TEXT1_EN" order="14" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="TEXT1_EN"/>
+      <descriptions defaultDescription="Payment Term_EN comment"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TEXT1_EN"/>
     </attribute>
     <attribute id="KONZS" order="15" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="KONZS"/>
+      <descriptions defaultDescription="Supplier group key"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KONZS"/>
     </attribute>
     <attribute id="CLAIM_NBR" order="16" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_NBR"/>
+      <descriptions defaultDescription="Claim ID"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_NBR"/>
     </attribute>
     <attribute id="CLAIM_DT" hidden="true" order="19" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_DT"/>
+      <descriptions defaultDescription="Claim created on"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_DT"/>
     </attribute>
     <attribute id="CLAIM_DATE" order="20" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_DATE"/>
+      <descriptions defaultDescription="Claim created on"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_DATE"/>
     </attribute>
     <attribute id="CALWEEK" order="21" displayAttribute="false" attributeHierarchyActive="false">
@@ -1254,83 +1253,83 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR"/>
     </attribute>
     <attribute id="CLAIM_CREATE" order="25" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_CREATE"/>
+      <descriptions defaultDescription="Claim creator"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_CREATE"/>
     </attribute>
     <attribute id="CLAIM_TYPE" order="26" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_TYPE"/>
+      <descriptions defaultDescription="Claim category"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_TYPE"/>
     </attribute>
     <attribute id="CLAIM_LVL" order="27" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_LVL"/>
+      <descriptions defaultDescription="Claim level"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_LVL"/>
     </attribute>
     <attribute id="CLAIM_ST" order="28" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_ST"/>
+      <descriptions defaultDescription="Claim status"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_ST"/>
     </attribute>
     <attribute id="CLAIM_RCPT" order="29" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_RCPT"/>
+      <descriptions defaultDescription="Claim detection place"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_RCPT"/>
     </attribute>
     <attribute id="CLAIM_COUNTRY" order="30" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_COUNTRY"/>
+      <descriptions defaultDescription="Claim country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_COUNTRY"/>
     </attribute>
     <attribute id="CLAIM_NAME1" order="31" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_NAME1"/>
+      <descriptions defaultDescription="Supplier Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_NAME1"/>
     </attribute>
     <attribute id="CLAIM_FMLY" order="32" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_FMLY"/>
+      <descriptions defaultDescription="Claim Family"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_FMLY"/>
     </attribute>
     <attribute id="PART_NBR" order="33" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PART_NBR"/>
+      <descriptions defaultDescription="Part Number"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PART_NBR"/>
     </attribute>
     <attribute id="PART_NAME" order="34" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PART_NAME"/>
+      <descriptions defaultDescription="Part Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PART_NAME"/>
     </attribute>
     <attribute id="CLAIM_SPART" order="35" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_SPART"/>
+      <descriptions defaultDescription="Claim S part"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_SPART"/>
     </attribute>
     <attribute id="CLAIM_RPART" order="36" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_RPART"/>
+      <descriptions defaultDescription="Claim R part"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_RPART"/>
     </attribute>
     <attribute id="DEFECT_TXT" order="37" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="DEFECT_TXT"/>
+      <descriptions defaultDescription="Claim defect description"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DEFECT_TXT"/>
     </attribute>
     <attribute id="DEFECT_CODE" order="38" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="DEFECT_CODE"/>
+      <descriptions defaultDescription="Claim defect code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DEFECT_CODE"/>
     </attribute>
     <attribute id="CLAIM_UNIT" order="41" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_UNIT"/>
+      <descriptions defaultDescription="Claim Unit"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_UNIT"/>
     </attribute>
     <attribute id="CLAIM_RECIDIV" order="42" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_RECIDIV"/>
+      <descriptions defaultDescription="Claim recidiv"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_RECIDIV"/>
     </attribute>
     <attribute id="CLAIM_SEVERITY" order="43" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_SEVERITY"/>
+      <descriptions defaultDescription="Claim severity"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_SEVERITY"/>
     </attribute>
     <attribute id="CLAIM_CANCEL_DT" order="45" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_CANCEL_DT"/>
+      <descriptions defaultDescription="Claim cancel date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_CANCEL_DT"/>
     </attribute>
     <attribute id="CLAIM14_ST" order="46" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM14_ST"/>
+      <descriptions defaultDescription="Claim 1-4 Status"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_ST"/>
     </attribute>
     <attribute id="CLAIM_CANCEL_REAS" order="47" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_CANCEL_REAS"/>
+      <descriptions defaultDescription="Claim cancel reason"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_CANCEL_REAS"/>
     </attribute>
     <attribute id="CLAIM_TIMEFRAME" order="48" displayAttribute="false" attributeHierarchyActive="false">
@@ -1338,115 +1337,115 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_TIMEFRAME"/>
     </attribute>
     <attribute id="CLAIM14_PLAN_DT" order="49" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM14_PLAN_DT"/>
+      <descriptions defaultDescription="Claim 1-4 Plan"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_PLAN_DT"/>
     </attribute>
     <attribute id="CLAIM14_SEND_DT" order="50" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM14_SEND_DT"/>
+      <descriptions defaultDescription="Claim 1-4 Send"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_SEND_DT"/>
     </attribute>
     <attribute id="CLAIM14_DELIV" hidden="true" order="52" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM14_DELIV"/>
+      <descriptions defaultDescription="Claim 1-4 Delivery"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_DELIV"/>
     </attribute>
     <attribute id="CLAIM14_DONE_DT" order="53" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM14_DONE_DT"/>
+      <descriptions defaultDescription="Claim 1-4 Done"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_DONE_DT"/>
     </attribute>
     <attribute id="CLAIM56_ST" order="54" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM56_ST"/>
+      <descriptions defaultDescription="Claim 5-6 Status"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM56_ST"/>
     </attribute>
     <attribute id="CLAIM56_DELIV" hidden="true" order="56" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM56_DELIV"/>
+      <descriptions defaultDescription="Claim 5-6 Delivery"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM56_DELIV"/>
     </attribute>
     <attribute id="CLAIM56_PLAN_DT" order="57" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM56_PLAN_DT"/>
+      <descriptions defaultDescription="Claim 5-6 Plan"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM56_PLAN_DT"/>
     </attribute>
     <attribute id="CLAIM56_SEND_DT" order="58" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM56_SEND_DT"/>
+      <descriptions defaultDescription="Claim 5-6 Send"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM56_SEND_DT"/>
     </attribute>
     <attribute id="CLAIM56_DONE_DT" order="59" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM56_DONE_DT"/>
+      <descriptions defaultDescription="Claim 5-6 Done"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM56_DONE_DT"/>
     </attribute>
     <attribute id="CLAIM78_ST" order="60" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM78_ST"/>
+      <descriptions defaultDescription="Claim 7-8 Status"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_ST"/>
     </attribute>
     <attribute id="CLAIM78_DELIV" hidden="true" order="62" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM78_DELIV"/>
+      <descriptions defaultDescription="Claim 7-8 Delivery"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_DELIV"/>
     </attribute>
     <attribute id="CLAIM78_PLAN_DT" order="63" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM78_PLAN_DT"/>
+      <descriptions defaultDescription="Claim 7-8 Plan"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_PLAN_DT"/>
     </attribute>
     <attribute id="CLAIM78_SEND_DT" order="64" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM78_SEND_DT"/>
+      <descriptions defaultDescription="Claim 7-8 Send"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_SEND_DT"/>
     </attribute>
     <attribute id="CLAIM78_DONE_DT" order="65" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM78_DONE_DT"/>
+      <descriptions defaultDescription="Claim 7-8 Done"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_DONE_DT"/>
     </attribute>
     <attribute id="CLAIM_WERKS" order="66" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_WERKS"/>
+      <descriptions defaultDescription="DEFTA Plant Number"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_WERKS"/>
     </attribute>
     <attribute id="CLAIM_WERKS_NAME" order="67" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_WERKS_NAME"/>
+      <descriptions defaultDescription="Defta Plant name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_WERKS_NAME"/>
     </attribute>
     <attribute id="CROSS_INCIDENT" order="68" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CROSS_INCIDENT"/>
+      <descriptions defaultDescription="Claim Crossing incident"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CROSS_INCIDENT"/>
     </attribute>
     <attribute id="CLAIM_8DSTATUS" order="69" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_8DSTATUS"/>
+      <descriptions defaultDescription="Claim 8D Status"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_8DSTATUS"/>
     </attribute>
     <attribute id="INVOICE_ST" order="70" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="INVOICE_ST"/>
+      <descriptions defaultDescription="Claim Invoice status"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="INVOICE_ST"/>
     </attribute>
     <attribute id="ORDER_NBR" order="71" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ORDER_NBR"/>
+      <descriptions defaultDescription="Claim Order Number"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ORDER_NBR"/>
     </attribute>
     <attribute id="CLAIM_MNGMT_VAL_DT" order="74" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_MNGMT_VAL_DT"/>
+      <descriptions defaultDescription="Claim Validation by management"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_MNGMT_VAL_DT"/>
     </attribute>
     <attribute id="DEB_ADV_SEND_DT" order="76" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="DEB_ADV_SEND_DT"/>
+      <descriptions defaultDescription="Claim debit advice sending date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DEB_ADV_SEND_DT"/>
     </attribute>
     <attribute id="CLAIM_TX_INCL_DT" order="79" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_TX_INCL_DT"/>
+      <descriptions defaultDescription="Claim Tax incl."/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_TX_INCL_DT"/>
     </attribute>
     <attribute id="CLAIM_ACCOUNT_TRF_DT" order="81" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_ACCOUNT_TRF_DT"/>
+      <descriptions defaultDescription="Claim Date of transmission to accounting"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_ACCOUNT_TRF_DT"/>
     </attribute>
     <attribute id="CLAIM_ACCOUNT_RECORD" order="82" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_ACCOUNT_RECORD"/>
+      <descriptions defaultDescription="Claim accounting record"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_ACCOUNT_RECORD"/>
     </attribute>
     <attribute id="CLAIM_PYMNT_DT" order="83" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_PYMNT_DT"/>
+      <descriptions defaultDescription="Claim Payment Entry Date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_PYMNT_DT"/>
     </attribute>
     <attribute id="CLAIM_ADV_CANCEL_DT" order="84" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_ADV_CANCEL_DT"/>
+      <descriptions defaultDescription="Claim Debit advice cancellation date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_ADV_CANCEL_DT"/>
     </attribute>
     <attribute id="CLAIM_COMMENTS" order="85" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_COMMENTS"/>
+      <descriptions defaultDescription="Claim comment"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_COMMENTS"/>
     </attribute>
   
@@ -1522,7 +1521,9 @@
   
     <attribute id="MATERIAL_SOURCE" order="102" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="MATERIAL_SOURCE"/>
+  
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATERIAL_SOURCE"/>
+  
     </attribute>
     <attribute id="VND_SOURCE" order="103" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="VND_SOURCE"/>
@@ -1536,7 +1537,7 @@
   <calculatedAttributes/>
   <baseMeasures>
     <measure id="DOUBT_QTY" order="39" aggregationType="sum" measureType="quantity" semanticType="quantity">
-      <descriptions defaultDescription="DOUBT_QTY"/>
+      <descriptions defaultDescription="Claim Doubtful Quantity"/>
       <unitCurrencyAttribute attributeName="CLAIM_UNIT"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="DOUBT_QTY"/>
     </measure>
@@ -1546,19 +1547,19 @@
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="NC_QTY"/>
     </measure>
     <measure id="RANKING_POINT" order="44" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="RANKING_POINT"/>
+      <descriptions defaultDescription="Claim ranking point"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="RANKING_POINT"/>
     </measure>
     <measure id="CLAIM14_DELIV_D" order="51" aggregationType="sum" measureType="simple" engineAggregation="none">
-      <descriptions defaultDescription="CLAIM14_DELIV_D"/>
+      <descriptions defaultDescription="Claim 1-4 Delivery SUM"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_DELIV_D"/>
     </measure>
     <measure id="CLAIM56_DELIV_D" order="55" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="CLAIM56_DELIV_D"/>
+      <descriptions defaultDescription="Claim 5-6 Delivery SUM"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM56_DELIV_D"/>
     </measure>
     <measure id="CLAIM78_DELIV_D" order="61" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="CLAIM78_DELIV_D"/>
+      <descriptions defaultDescription="Claim 7-8 Delivery Sum"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_DELIV_D"/>
     </measure>
     <measure id="ESTIM_COST_CLAIM" order="72" aggregationType="sum" measureType="amount" semanticType="amount">
@@ -1594,7 +1595,7 @@
   </baseMeasures>
   <calculatedMeasures>
     <measure id="NBR_LITIGE" order="17" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
-      <descriptions defaultDescription="Nombre de Litige"/>
+      <descriptions defaultDescription="Claim Number"/>
       <exceptionAggregation>
         <attribute attributeName="CLAIM_NBR"/>
       </exceptionAggregation>
@@ -1606,7 +1607,7 @@
       
       </measure>
     <measure id="TYPE_LITIGE" order="18" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
-      <descriptions defaultDescription="Nombre de typologie de Litiges">
+      <descriptions defaultDescription="Claim Number type">
         <comment text="Nombre de Type différent"/>
       </descriptions>
       <exceptionAggregation>
@@ -1756,13 +1757,13 @@
       <upperLeftCorner x="232" y="731"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape modelObjectName="VNDCLAIMS_P" modelObjectNameSpace="DIMVND_CLAIM_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="DIMVND_CLAIM_J">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="126"/>
-    </shape>
     <shape modelObjectName="DIMVND_P" modelObjectNameSpace="DIMVND_CLAIM_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="DIMVND_CLAIM_J">
       <upperLeftCorner x="307" y="1389"/>
       <rectangleSize width="159"/>
+    </shape>
+    <shape modelObjectName="VNDCLAIMS_P" modelObjectNameSpace="DIMVND_CLAIM_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="DIMVND_CLAIM_J">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="126"/>
     </shape>
     <shape modelObjectName="DIMMAT_P" modelObjectNameSpace="DIMVND_CLAIM_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="DIMVND_CLAIM_J">
       <upperLeftCorner x="495" y="1247"/>
