@@ -34,5 +34,11 @@
       "object": "VENDOR_MODIFICATION",
       "schema": "SUPLPANEL"
     }
+  },
+  "V_VENDOR_MODIFICATION_MAX": {
+    "target": {
+      "object": "V_VENDOR_MODIFICATION_MAX",
+      "schema": "SUPLPANEL"
+    }
   }
 }
