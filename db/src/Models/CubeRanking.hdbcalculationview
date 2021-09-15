@@ -734,13 +734,13 @@ END</formula>
       <upperLeftCorner x="557" y="231"/>
       <rectangleSize width="200"/>
     </shape>
-    <shape modelObjectName="V_VENDOR_IDNC_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
-      <upperLeftCorner x="288" y="125"/>
-      <rectangleSize width="196"/>
-    </shape>
     <shape modelObjectName="VEND_THRES_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
       <upperLeftCorner x="-14" y="311"/>
       <rectangleSize width="193"/>
+    </shape>
+    <shape modelObjectName="V_VENDOR_IDNC_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
+      <upperLeftCorner x="288" y="125"/>
+      <rectangleSize width="196"/>
     </shape>
     <shape modelObjectName="V_VENDOR_FIXERANKBASE_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
       <upperLeftCorner x="-72" y="41"/>

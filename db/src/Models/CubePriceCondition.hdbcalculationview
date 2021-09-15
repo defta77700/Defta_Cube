@@ -1129,7 +1129,7 @@
       <descriptions defaultDescription="Vendor Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR"/>
     </attribute>
-    <attribute id="MATNR" order="4" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+    <attribute id="MATNR" order="4" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Material Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATNR"/>
     </attribute>
@@ -1145,7 +1145,7 @@
       <descriptions defaultDescription="DATBI"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DATBI"/>
     </attribute>
-    <attribute id="DATAB" order="8" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+    <attribute id="DATAB" order="8" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="DATAB"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DATAB"/>
     </attribute>
