@@ -277,7 +277,7 @@
       <viewAttribute id="ZPRZ1"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="V_VND_MODIF_MAX_P">
+    <input node="V_VND_MODIF_MAX_P" emptyUnionBehavior="NO_ROW">
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
@@ -325,7 +325,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
     </input>
-    <input node="VENDOR_CREATEP_P">
+    <input node="VENDOR_CREATEP_P" emptyUnionBehavior="NO_ROW">
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
@@ -373,7 +373,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
     </input>
-    <input node="Vendor_Gold_P">
+    <input node="Vendor_Gold_P" emptyUnionBehavior="NO_ROW">
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>

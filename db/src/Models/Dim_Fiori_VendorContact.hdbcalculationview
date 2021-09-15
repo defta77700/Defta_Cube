@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="Dim_Fiori_VendorContact" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="Dim_Fiori_VendorContact.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="V_VENDORCONTACT_MODIFICATION_MAX">
+    <resourceUri>V_VENDORCONTACT_MODIFICATION_MAX</resourceUri>
+  </DataSource>
+  <DataSource id="VENDORCONTACT_MODIFICATION">
+    <resourceUri>VENDORCONTACT_MODIFICATION</resourceUri>
+  </DataSource>
+  <DataSource id="VENDORCONTACT_GOLDEN">
+    <resourceUri>VENDORCONTACT_GOLDEN</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="V_VNDCONTACT_MODIF_MAX_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="NAMEV"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TITEL_AP"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="ABTNR"/>
+      <viewAttribute id="PAFKT"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="VTEXT_FR"/>
+      <viewAttribute id="VTEXT_EN"/>
+      <viewAttribute id="TEXT_FR"/>
+      <viewAttribute id="TEXT_EN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="V_VENDORCONTACT_MODIFICATION_MAX"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VENDORCONTACT_CREATEP_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="NAMEV"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TITEL_AP"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="ABTNR"/>
+      <viewAttribute id="PAFKT"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="VTEXT_FR"/>
+      <viewAttribute id="VTEXT_EN"/>
+      <viewAttribute id="TEXT_FR"/>
+      <viewAttribute id="TEXT_EN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VENDORCONTACT_CREATE_P"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VENDORCONTACT_CREATE_P" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="CHANGEID"/>
+      <viewAttribute id="CHANGEUSER"/>
+      <viewAttribute id="ACTION"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="NAMEV"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TITEL_AP"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="ABTNR"/>
+      <viewAttribute id="PAFKT"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="VTEXT_FR"/>
+      <viewAttribute id="VTEXT_EN"/>
+      <viewAttribute id="TEXT_FR"/>
+      <viewAttribute id="TEXT_EN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VENDORCONTACT_MODIFICATION"/>
+    <filter>&quot;ACTION&quot; = 'C'</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VendorContact_Gold_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="NAMEV"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TITEL_AP"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="ABTNR"/>
+      <viewAttribute id="PAFKT"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="VTEXT_FR"/>
+      <viewAttribute id="VTEXT_EN"/>
+      <viewAttribute id="TEXT_FR"/>
+      <viewAttribute id="TEXT_EN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VENDORCONTACT_GOLDEN"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="NAMEV"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TITEL_AP"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="ABTNR"/>
+      <viewAttribute id="PAFKT"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="VTEXT_FR"/>
+      <viewAttribute id="VTEXT_EN"/>
+      <viewAttribute id="TEXT_FR"/>
+      <viewAttribute id="TEXT_EN"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="V_VNDCONTACT_MODIF_MAX_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAMEV" source="NAMEV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITEL_AP" source="TITEL_AP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTNR" source="ABTNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAFKT" source="PAFKT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTEXT_FR" source="VTEXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTEXT_EN" source="VTEXT_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT_FR" source="TEXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT_EN" source="TEXT_EN"/>
+    </input>
+    <input node="VENDORCONTACT_CREATEP_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAMEV" source="NAMEV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITEL_AP" source="TITEL_AP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTNR" source="ABTNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAFKT" source="PAFKT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTEXT_FR" source="VTEXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTEXT_EN" source="VTEXT_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT_FR" source="TEXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT_EN" source="TEXT_EN"/>
+    </input>
+    <input node="VendorContact_Gold_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAMEV" source="NAMEV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITEL_AP" source="TITEL_AP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ABTNR" source="ABTNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PAFKT" source="PAFKT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTEXT_FR" source="VTEXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTEXT_EN" source="VTEXT_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT_FR" source="TEXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT_EN" source="TEXT_EN"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Union_1">
+  <attributes>
+    <attribute id="LIFNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LIFNR"/>
+      <keyMapping columnObjectName="Union_1" columnName="LIFNR"/>
+    </attribute>
+    <attribute id="KRAUS" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KRAUS"/>
+      <keyMapping columnObjectName="Union_1" columnName="KRAUS"/>
+    </attribute>
+    <attribute id="STCEG" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STCEG"/>
+      <keyMapping columnObjectName="Union_1" columnName="STCEG"/>
+    </attribute>
+    <attribute id="STCD1" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="STCD1"/>
+      <keyMapping columnObjectName="Union_1" columnName="STCD1"/>
+    </attribute>
+    <attribute id="SOURCE" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SOURCE"/>
+      <keyMapping columnObjectName="Union_1" columnName="SOURCE"/>
+    </attribute>
+    <attribute id="NAMEV" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAMEV"/>
+      <keyMapping columnObjectName="Union_1" columnName="NAMEV"/>
+    </attribute>
+    <attribute id="NAME1" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME1"/>
+      <keyMapping columnObjectName="Union_1" columnName="NAME1"/>
+    </attribute>
+    <attribute id="TELF1" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TELF1"/>
+      <keyMapping columnObjectName="Union_1" columnName="TELF1"/>
+    </attribute>
+    <attribute id="TITEL_AP" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TITEL_AP"/>
+      <keyMapping columnObjectName="Union_1" columnName="TITEL_AP"/>
+    </attribute>
+    <attribute id="LOEVM" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LOEVM"/>
+      <keyMapping columnObjectName="Union_1" columnName="LOEVM"/>
+    </attribute>
+    <attribute id="ABTNR" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ABTNR"/>
+      <keyMapping columnObjectName="Union_1" columnName="ABTNR"/>
+    </attribute>
+    <attribute id="PAFKT" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PAFKT"/>
+      <keyMapping columnObjectName="Union_1" columnName="PAFKT"/>
+    </attribute>
+    <attribute id="SMTP_ADDR" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SMTP_ADDR"/>
+      <keyMapping columnObjectName="Union_1" columnName="SMTP_ADDR"/>
+    </attribute>
+    <attribute id="VTEXT_FR" order="14" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VTEXT_FR"/>
+      <keyMapping columnObjectName="Union_1" columnName="VTEXT_FR"/>
+    </attribute>
+    <attribute id="VTEXT_EN" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VTEXT_EN"/>
+      <keyMapping columnObjectName="Union_1" columnName="VTEXT_EN"/>
+    </attribute>
+    <attribute id="TEXT_FR" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TEXT_FR"/>
+      <keyMapping columnObjectName="Union_1" columnName="TEXT_FR"/>
+    </attribute>
+    <attribute id="TEXT_EN" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TEXT_EN"/>
+      <keyMapping columnObjectName="Union_1" columnName="TEXT_EN"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="331.26409649144534" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="V_VNDCONTACT_MODIF_MAX_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="511.9999999999999" y="371.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VENDORCONTACT_CREATEP_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92.00000000000003" y="371.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VENDORCONTACT_CREATE_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92.00000000000003" y="476.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VendorContact_Gold_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="301.99999999999994" y="371.9999988079071"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="331.26409649144534" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
