@@ -360,19 +360,19 @@
 <logicalModel id="BEFORE_AGG_P">
   <attributes>
     <attribute id="YEAR_C" order="1" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR"/>
+      <descriptions defaultDescription="Year"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR_C"/>
     </attribute>
     <attribute id="YEAR_MONTHS_C" order="2" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR MONTHS"/>
+      <descriptions defaultDescription="Year Months"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR_MONTHS_C"/>
     </attribute>
     <attribute id="NAME1" order="3" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Name"/>
+      <descriptions defaultDescription="Supplier Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="NAME1"/>
     </attribute>
     <attribute id="LIFNR_C" order="4" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Code"/>
+      <descriptions defaultDescription="Supplier Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR_C"/>
     </attribute>
     <attribute id="VENDORUNIK" order="5" displayAttribute="false" attributeHierarchyActive="false">
@@ -380,7 +380,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
     </attribute>
     <attribute id="CLAIM_FMLY" order="6" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Familly"/>
+      <descriptions defaultDescription="Claim Familly"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_FMLY"/>
     </attribute>
     <attribute id="WERKS_C" order="7" displayAttribute="false" attributeHierarchyActive="false">
@@ -388,19 +388,19 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WERKS_C"/>
     </attribute>
     <attribute id="ORT01" order="8" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor City"/>
+      <descriptions defaultDescription="Supplier City"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ORT01"/>
     </attribute>
     <attribute id="PSTLZ" order="9" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Postal Code"/>
+      <descriptions defaultDescription="Supplier Postal Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PSTLZ"/>
     </attribute>
     <attribute id="REGIO" order="10" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Region"/>
+      <descriptions defaultDescription="Supplier Region"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="REGIO"/>
     </attribute>
     <attribute id="LAND1" order="11" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Country"/>
+      <descriptions defaultDescription="Supplier Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAND1"/>
     </attribute>
     <attribute id="SOURCE" hidden="true" order="19" displayAttribute="false" attributeHierarchyActive="false">
@@ -427,7 +427,7 @@
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="RANKING_POINT_C"/>
     </measure>
     <measure id="THRESHOLD_POINT_MONTH_C" order="16" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="THRESHOLD_POINT_MONTH "/>
+      <descriptions defaultDescription="Threshold Point"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="THRESHOLD_POINT_MONTH_CC"/>
     </measure>
     <measure id="RANKING_POINT" order="18" aggregationType="sum" measureType="simple" hidden="true">
@@ -437,7 +437,7 @@
   </baseMeasures>
   <calculatedMeasures>
     <measure id="TDS_VIEW" order="17" aggregationType="sum" measureType="simple" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
-      <descriptions defaultDescription="TDS"/>
+      <descriptions defaultDescription="Service Rate"/>
       <formula>ROUND(&quot;SUMTOLXJ_C&quot;/&quot;COUNTTOLXJ_C&quot;,2)</formula>
       
       
@@ -513,6 +513,10 @@
       <upperLeftCorner x="232" y="446"/>
       <rectangleSize height="30" width="160"/>
     </shape>
+    <shape modelObjectName="VENDOR_P" modelObjectNameSpace="VDR_VNDR_PRTDS_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VDR_VNDR_PRTDS_J">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="202"/>
+    </shape>
     <shape modelObjectName="VEND_PRDTS_IDNC_MONTH_JP" modelObjectNameSpace="VDR_VNDR_PRTDS_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VDR_VNDR_PRTDS_J">
       <upperLeftCorner x="267" y="14"/>
       <rectangleSize width="100"/>
@@ -520,10 +524,6 @@
     <shape modelObjectName="VND_THRESHOLD_MONTH_P" modelObjectNameSpace="VDR_VNDR_PRTDS_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VDR_VNDR_PRTDS_J">
       <upperLeftCorner x="674" y="282"/>
       <rectangleSize width="240"/>
-    </shape>
-    <shape modelObjectName="VENDOR_P" modelObjectNameSpace="VDR_VNDR_PRTDS_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VDR_VNDR_PRTDS_J">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="202"/>
     </shape></shapes>
 </layout>
 </Calculation:scenario>
