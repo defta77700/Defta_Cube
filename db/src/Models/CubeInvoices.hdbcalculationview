@@ -2527,7 +2527,7 @@
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="SMTP_ADDR"/>
     </attribute>
   
-    <attribute id="MANDT" order="129" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MANDT" order="130" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="MANDT"/>
   
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MANDT"/>
@@ -2568,11 +2568,11 @@
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="WRBTR_SIGN"/>
     </measure>
   
-    <measure id="WRBTR_SIGN_1" order="126" aggregationType="sum" measureType="simple">
+    <measure id="WRBTR_SIGN_1" order="127" aggregationType="sum" measureType="simple">
       <descriptions defaultDescription="Amount"/>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="WRBTR_SIGN"/>
     </measure>
-    <measure id="WRBTR_SIGN_2" order="127" semanticType="amount" aggregationType="sum" measureType="amount" unconverted="false">
+    <measure id="WRBTR_SIGN_2" order="128" semanticType="amount" aggregationType="sum" measureType="amount" unconverted="false">
       <descriptions defaultDescription="WRBTR_SIGN_A"/>
       <fixedCurrency>EUR</fixedCurrency>
       <currencyConversion errorHandling="keepUnconverted" generateOutputUnitCurrencyAttribute="true" outputUnitCurrencyAttributeName="WRBTR_SIGN_2_CURRENCY" convert="true" accuracy="HIGHEST" method="ERP" lookup="REGULAR">
@@ -2595,7 +2595,7 @@
       </currencyConversion>
       <measureMapping columnObjectName="BEFORE_AGGR_P" columnName="WRBTR_SIGN"/>
     </measure>
-    <measure id="PEINH_1" order="128" semanticType="amount" aggregationType="sum" measureType="amount" unconverted="false">
+    <measure id="PEINH_1" order="129" semanticType="amount" aggregationType="sum" measureType="amount" unconverted="false">
       <descriptions defaultDescription="Price unit"/>
       <fixedCurrency>EUR</fixedCurrency>
       <currencyConversion errorHandling="keepUnconverted" generateOutputUnitCurrencyAttribute="true" outputUnitCurrencyAttributeName="PEINH_1_CURRENCY" convert="true" accuracy="COMPATIBILITY" method="ERP" lookup="REGULAR">
@@ -2630,6 +2630,17 @@
       <formula>1</formula>
       
       
+      
+      </measure>
+  
+    <measure id="NB_FACTURES" order="126" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
+      <descriptions defaultDescription="NB_FACTURES">
+        <comment text="Count BELNR_FI"/>
+      </descriptions>
+      <exceptionAggregation>
+        <attribute attributeName="BELNR_FI"/>
+      </exceptionAggregation>
+      <formula>1</formula>
       </measure>
   </calculatedMeasures>
   <restrictedMeasures/>
