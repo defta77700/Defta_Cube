@@ -1085,7 +1085,7 @@
 <logicalModel id="BEFORE_AGG_P">
   <attributes>
     <attribute id="PIR_WERKS" order="1" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Plant"/>
+      <descriptions defaultDescription="Plant Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_WERKS"/>
     </attribute>
     <attribute id="PIR_EKORG" order="2" displayAttribute="false" attributeHierarchyActive="false">
@@ -1093,7 +1093,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_EKORG"/>
     </attribute>
     <attribute id="PIR_MATNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PIR Material Code"/>
+      <descriptions defaultDescription="Material Origine Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_MATNR"/>
     </attribute>
     <attribute id="WAERS" order="5" displayAttribute="false" attributeHierarchyActive="false">
@@ -1153,15 +1153,15 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SOURCE"/>
     </attribute>
     <attribute id="ERSDA" order="20" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Created On"/>
+      <descriptions defaultDescription="Material Created Date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ERSDA"/>
     </attribute>
     <attribute id="LAEDA" order="21" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Last Change"/>
+      <descriptions defaultDescription="Material Changed Date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAEDA"/>
     </attribute>
     <attribute id="WERKS" order="22" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Plant"/>
+      <descriptions defaultDescription="Plant Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WERKS"/>
     </attribute>
     <attribute id="EKGRP" order="23" displayAttribute="false" attributeHierarchyActive="false">
@@ -1185,7 +1185,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DISPO"/>
     </attribute>
     <attribute id="PROFL" order="28" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Hazardous material code"/>
+      <descriptions defaultDescription="S/R code characteristic"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PROFL"/>
     </attribute>
     <attribute id="NAME1" order="29" displayAttribute="false" attributeHierarchyActive="false">
@@ -1237,7 +1237,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L5"/>
     </attribute>
     <attribute id="WGBEZ_L5" order="41" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Additionnal detail"/>
+      <descriptions defaultDescription="Material Additional detail"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L5"/>
     </attribute>
     <attribute id="PIR_SOURCE" order="42" displayAttribute="false" attributeHierarchyActive="false">
@@ -1257,11 +1257,11 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_ERDAT"/>
     </attribute>
     <attribute id="PIR_INCO1" order="48" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PIR_INCO1"/>
+      <descriptions defaultDescription="PIR_INCO 1"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_INCO1"/>
     </attribute>
     <attribute id="PIR_INCO2" order="49" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PIR_INCO2"/>
+      <descriptions defaultDescription="PIR_INCO 2"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_INCO2"/>
     </attribute>
   
@@ -1272,19 +1272,19 @@
   
     </attribute>
     <attribute id="YEAR" order="51" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR"/>
+      <descriptions defaultDescription="Year"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR"/>
     </attribute>
     <attribute id="CALQUARTER" order="52" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CALQUARTER"/>
+      <descriptions defaultDescription="Quarter"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALQUARTER"/>
     </attribute>
     <attribute id="CALMONTH" order="53" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CALMONTH"/>
+      <descriptions defaultDescription="Month"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALMONTH"/>
     </attribute>
     <attribute id="CALWEEK" order="54" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CALWEEK"/>
+      <descriptions defaultDescription="Week"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALWEEK"/>
     </attribute>
   
@@ -1315,7 +1315,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_CITY"/>
     </attribute>
     <attribute id="PFACH" hidden="true" order="61" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PFACH"/>
+      <descriptions defaultDescription="Supplier PO BOX"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PFACH"/>
     </attribute>
     <attribute id="STRAS" order="62" displayAttribute="false" attributeHierarchyActive="false">
@@ -1323,7 +1323,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STRAS"/>
     </attribute>
     <attribute id="VND_PSTLZ" order="63" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SupplierPostal Code"/>
+      <descriptions defaultDescription="Supplier Postal Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_PSTLZ"/>
     </attribute>
     <attribute id="VND_REGIO" order="64" displayAttribute="false" attributeHierarchyActive="false">
@@ -1331,7 +1331,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_REGIO"/>
     </attribute>
     <attribute id="ADRNR" hidden="true" order="65" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ADRNR"/>
+      <descriptions defaultDescription="Supplier address"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ADRNR"/>
     </attribute>
     <attribute id="VND_COUNTRY" order="66" displayAttribute="false" attributeHierarchyActive="false">
@@ -1357,7 +1357,7 @@
   </baseMeasures>
   <calculatedMeasures>
     <measure id="NB_VENDOR" order="45" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
-      <descriptions defaultDescription="NBr VENDOR"/>
+      <descriptions defaultDescription="Supplier Nb"/>
       <exceptionAggregation>
         <attribute attributeName="PIR_LIFNR"/>
       </exceptionAggregation>
@@ -1365,7 +1365,7 @@
       
       </measure>
     <measure id="NB_MATERIAL" order="46" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
-      <descriptions defaultDescription="NBR MATERIAL"/>
+      <descriptions defaultDescription="Article Nb"/>
       <exceptionAggregation>
         <attribute attributeName="MATNR"/>
       </exceptionAggregation>
