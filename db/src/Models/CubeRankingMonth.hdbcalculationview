@@ -142,7 +142,6 @@
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="DimVendor"/>
-  
     <filter>&quot;LFABC&quot; in ('A','B','C')</filter>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VEND_PRDTS_IDNC_MONTH_JP">
@@ -287,7 +286,7 @@
     <joinAttribute name="CLAIM_WERKS"/>
     <joinAttribute name="CLAIM_FMLY"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="VDR_VNDR_PRTDS_J_2" joinType="leftOuter" multiJoinNode="VDR_VNDR_PRTDS_J" multiJoinCentralTable="VENDOR_P" multiJoinOrder="Outside In">
+  <calculationView xsi:type="Calculation:JoinView" id="VDR_VNDR_PRTDS_J_2" joinType="inner" multiJoinNode="VDR_VNDR_PRTDS_J" multiJoinCentralTable="VENDOR_P" multiJoinOrder="Outside In">
     <viewAttributes>
       <viewAttribute id="YEAR" aggregationType="sum"/>
       <viewAttribute id="YEARMONTH_PRTDS"/>
