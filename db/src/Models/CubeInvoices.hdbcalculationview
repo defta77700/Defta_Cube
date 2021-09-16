@@ -2094,11 +2094,11 @@
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="CPUDT"/>
     </attribute>
     <attribute id="CPUTM" order="13" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="time of entry"/>
+      <descriptions defaultDescription="Time of entry"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="CPUTM"/>
     </attribute>
     <attribute id="XBLNR" order="14" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="reference supplier invoice number"/>
+      <descriptions defaultDescription="Reference supplier invoice number"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="XBLNR"/>
     </attribute>
     <attribute id="ERNAME" order="15" displayAttribute="false" attributeHierarchyActive="false">
@@ -2106,15 +2106,15 @@
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="ERNAME"/>
     </attribute>
     <attribute id="BKTXT" order="16" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="document header "/>
+      <descriptions defaultDescription="Document header "/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="BKTXT"/>
     </attribute>
     <attribute id="DDTEXT" order="17" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="status short descr"/>
+      <descriptions defaultDescription="Status short descr"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="DDTEXT"/>
     </attribute>
     <attribute id="RBSTAT" order="18" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="invoice doc status"/>
+      <descriptions defaultDescription="Invoice doc status"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="RBSTAT"/>
     </attribute>
     <attribute id="ZTERM" order="19" displayAttribute="false" attributeHierarchyActive="false" descriptionColumnName="TEXT1_FR">
@@ -2138,7 +2138,7 @@
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="NETDT"/>
     </attribute>
     <attribute id="LIFNR" order="24" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Supplier"/>
+      <descriptions defaultDescription="Supplier Code"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="LIFNR"/>
     </attribute>
     <attribute id="VENDORUNIKCODE" order="25" displayAttribute="false" attributeHierarchyActive="false">
@@ -2420,7 +2420,7 @@
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="LAND1_2"/>
     </attribute>
     <attribute id="ADRNR" order="99" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
-      <descriptions defaultDescription="ADRNR"/>
+      <descriptions defaultDescription="Supplier address"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="ADRNR"/>
     </attribute>
     <attribute id="TELF1" order="100" displayAttribute="false" attributeHierarchyActive="false">
@@ -2432,11 +2432,11 @@
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="STCD2"/>
     </attribute>
     <attribute id="SPERR" order="102" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
-      <descriptions defaultDescription="SPERR"/>
+      <descriptions defaultDescription="Central posting block"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="SPERR"/>
     </attribute>
     <attribute id="SPERM_X" order="103" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
-      <descriptions defaultDescription="SPERM_X"/>
+      <descriptions defaultDescription="Central purchasing block"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="SPERM_X"/>
     </attribute>
     <attribute id="KTOKK" order="104" displayAttribute="false" attributeHierarchyActive="false">
