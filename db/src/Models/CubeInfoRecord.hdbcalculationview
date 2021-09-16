@@ -1257,11 +1257,11 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_ERDAT"/>
     </attribute>
     <attribute id="PIR_INCO1" order="48" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PIR_INCO1"/>
+      <descriptions defaultDescription="PIR_INCO 1"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_INCO1"/>
     </attribute>
     <attribute id="PIR_INCO2" order="49" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PIR_INCO2"/>
+      <descriptions defaultDescription="PIR_INCO 2"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_INCO2"/>
     </attribute>
   
