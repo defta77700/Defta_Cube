@@ -90,7 +90,7 @@
     </calculatedViewAttributes>
     <input node="VDR_VNDR_PRTDS_J_2"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VENDOR_P">
+  <calculationView xsi:type="Calculation:ProjectionView" id="VENDOR_P" filterExpressionLanguage="SQL">
     <viewAttributes>
       <viewAttribute id="VENDORUNIK"/>
       <viewAttribute id="NAME1"/>
@@ -142,6 +142,7 @@
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="DimVendor"/>
+    <filter>&quot;LFABC&quot; in ('A','B','C')</filter>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VEND_PRDTS_IDNC_MONTH_JP">
     <viewAttributes>
