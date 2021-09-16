@@ -1189,7 +1189,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="REGIO"/>
     </attribute>
     <attribute id="LAND1" order="7" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Supplier Country"/>
+      <descriptions defaultDescription="Plant Country Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAND1"/>
     </attribute>
     <attribute id="LFABC" order="8" displayAttribute="false" attributeHierarchyActive="false">
@@ -1457,17 +1457,17 @@
     </attribute>
   
     <attribute id="MATNR" order="87" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MATNR"/>
+      <descriptions defaultDescription="Material Code"/>
   
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATNR"/>
   
     </attribute>
     <attribute id="MATKL" order="88" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MATKL"/>
+      <descriptions defaultDescription="Material Group Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL"/>
     </attribute>
     <attribute id="MTART" order="89" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MTART"/>
+      <descriptions defaultDescription="Material Type"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MTART"/>
     </attribute>
     <attribute id="MAKTX_F" order="90" displayAttribute="false" attributeHierarchyActive="false">
