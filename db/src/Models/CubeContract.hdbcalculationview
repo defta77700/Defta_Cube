@@ -849,55 +849,55 @@
 <logicalModel id="BEFORE_AGG_P">
   <attributes>
     <attribute id="SITE" order="1" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PLANT"/>
+      <descriptions defaultDescription="Plant"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SITE"/>
     </attribute>
     <attribute id="ANNEE" order="2" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR"/>
+      <descriptions defaultDescription="Year"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ANNEE"/>
     </attribute>
     <attribute id="SEMESTRE" order="3" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SEMESTER"/>
+      <descriptions defaultDescription="Semester"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SEMESTRE"/>
     </attribute>
     <attribute id="CODE_ERP" hidden="true" order="4" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CODE_ERP"/>
+      <descriptions defaultDescription="Code ERP"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CODE_ERP"/>
     </attribute>
     <attribute id="FOURNISSEUR" order="5" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SUPPLIER"/>
+      <descriptions defaultDescription="Supplier"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="FOURNISSEUR"/>
     </attribute>
     <attribute id="CONTRAT" order="6" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CONTRACT"/>
+      <descriptions defaultDescription="Contract"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CONTRAT"/>
     </attribute>
     <attribute id="ARTICLE" hidden="true" order="7" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ARTICLE"/>
+      <descriptions defaultDescription="Article"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ARTICLE"/>
     </attribute>
     <attribute id="DESIGNATION" order="8" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="DESIGNATION"/>
+      <descriptions defaultDescription="Designation"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DESIGNATION"/>
     </attribute>
     <attribute id="EPAISSEUR" order="9" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="THICKNESS CONTRACT"/>
+      <descriptions defaultDescription="Thickness contract"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EPAISSEUR"/>
     </attribute>
     <attribute id="LARGEUR" order="10" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="WIDTH CONTRACT"/>
+      <descriptions defaultDescription="Widht "/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LARGEUR"/>
     </attribute>
     <attribute id="COMMANDE_SITE" order="11" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ORDER PLANT"/>
+      <descriptions defaultDescription="Order plant"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="COMMANDE_SITE"/>
     </attribute>
     <attribute id="PRIX" order="12" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PRICE CONTRACT"/>
+      <descriptions defaultDescription="Price contract"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PRIX"/>
     </attribute>
     <attribute id="REPARTITION_ART" order="13" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ARTICLE DISTRIBUTION "/>
+      <descriptions defaultDescription="Article distribution"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="REPARTITION_ART"/>
     </attribute>
     <attribute id="DEMARRAGE" order="14" displayAttribute="false" attributeHierarchyActive="false">
@@ -905,7 +905,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DEMARRAGE"/>
     </attribute>
     <attribute id="REPARTITION_ART_PAR_FOURNISSEUR" order="19" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ARCTICLE DISTRIBUTION PER SUPPLIER"/>
+      <descriptions defaultDescription="Article distribution per supplier"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="REPARTITION_ART_PAR_FOURNISSEUR"/>
     </attribute>
     <attribute id="LIFNR_C" order="21" displayAttribute="false" attributeHierarchyActive="false">
@@ -937,7 +937,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCD1"/>
     </attribute>
     <attribute id="EKORG" order="28" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Supplier Purchase Org Code"/>
+      <descriptions defaultDescription="Supplier purchase organization code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG"/>
     </attribute>
     <attribute id="SOURCE" hidden="true" order="29" displayAttribute="false" attributeHierarchyActive="false">
@@ -949,7 +949,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ERDAT"/>
     </attribute>
     <attribute id="NAME1" hidden="true" order="31" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Contact Name"/>
+      <descriptions defaultDescription="Supplier Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="NAME1"/>
     </attribute>
     <attribute id="ORT01" order="32" displayAttribute="false" attributeHierarchyActive="false">
@@ -1101,7 +1101,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SMTP_ADDR"/>
     </attribute>
     <attribute id="MATNR" order="70" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material"/>
+      <descriptions defaultDescription="Material Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATNR"/>
     </attribute>
     <attribute id="SOURCE_1" order="71" displayAttribute="false" attributeHierarchyActive="false">
@@ -1275,15 +1275,15 @@
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="ZONE_CALCUL"/>
     </measure>
     <measure id="PRIX_MOYEN_PONDERE" order="16" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="AVERAGE UNIT PRICE"/>
+      <descriptions defaultDescription="Average unit price"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="PRIX_MOYEN_PONDERE"/>
     </measure>
     <measure id="VOLUMES_SUR_LA_PERIODE" order="17" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="PERIOD VOLUME"/>
+      <descriptions defaultDescription="Period volume"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="VOLUMES_SUR_LA_PERIODE"/>
     </measure>
     <measure id="VOLUME_TOTAL" order="18" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="TOTAL VOLUME"/>
+      <descriptions defaultDescription="Total volume"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="VOLUME_TOTAL"/>
     </measure>
     <measure id="RAPPEL_BUDGET" order="20" aggregationType="sum" measureType="simple">
@@ -1291,7 +1291,7 @@
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="RAPPEL_BUDGET"/>
     </measure>
     <measure id="ZPRZ1" order="69" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="Cash discount Percentage Rate"/>
+      <descriptions defaultDescription="Supplier Percentage discount"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="ZPRZ1"/>
     </measure>
   </baseMeasures>
