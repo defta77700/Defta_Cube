@@ -88,5 +88,11 @@
       "object": "V_VENDOR_THRESHOLD_MONTH",
       "schema": "SUPLPANEL"
     }
+  },
+  "V_VENDOR_PRERANKING": {
+    "target": {
+      "object": "V_VENDOR_PRERANKING",
+      "schema": "SUPLPANEL"
+    }
   }
 }
