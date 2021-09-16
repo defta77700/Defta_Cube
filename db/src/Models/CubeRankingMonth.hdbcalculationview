@@ -90,7 +90,7 @@
     </calculatedViewAttributes>
     <input node="VDR_VNDR_PRTDS_J_2"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VENDOR_P">
+  <calculationView xsi:type="Calculation:ProjectionView" id="VENDOR_P" filterExpressionLanguage="SQL">
     <viewAttributes>
       <viewAttribute id="VENDORUNIK"/>
       <viewAttribute id="NAME1"/>
@@ -142,6 +142,8 @@
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="DimVendor"/>
+  
+    <filter>&quot;LFABC&quot; in ('A','B','C')</filter>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VEND_PRDTS_IDNC_MONTH_JP">
     <viewAttributes>
@@ -285,7 +287,7 @@
     <joinAttribute name="CLAIM_WERKS"/>
     <joinAttribute name="CLAIM_FMLY"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="VDR_VNDR_PRTDS_J_2" joinType="inner" multiJoinNode="VDR_VNDR_PRTDS_J" multiJoinCentralTable="VENDOR_P" multiJoinOrder="Outside In">
+  <calculationView xsi:type="Calculation:JoinView" id="VDR_VNDR_PRTDS_J_2" joinType="leftOuter" multiJoinNode="VDR_VNDR_PRTDS_J" multiJoinCentralTable="VENDOR_P" multiJoinOrder="Outside In">
     <viewAttributes>
       <viewAttribute id="YEAR" aggregationType="sum"/>
       <viewAttribute id="YEARMONTH_PRTDS"/>
@@ -513,6 +515,10 @@
       <upperLeftCorner x="232" y="446"/>
       <rectangleSize height="30" width="160"/>
     </shape>
+    <shape modelObjectName="VENDOR_P" modelObjectNameSpace="VDR_VNDR_PRTDS_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VDR_VNDR_PRTDS_J">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="202"/>
+    </shape>
     <shape modelObjectName="VEND_PRDTS_IDNC_MONTH_JP" modelObjectNameSpace="VDR_VNDR_PRTDS_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VDR_VNDR_PRTDS_J">
       <upperLeftCorner x="267" y="14"/>
       <rectangleSize width="100"/>
@@ -520,10 +526,6 @@
     <shape modelObjectName="VND_THRESHOLD_MONTH_P" modelObjectNameSpace="VDR_VNDR_PRTDS_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VDR_VNDR_PRTDS_J">
       <upperLeftCorner x="674" y="282"/>
       <rectangleSize width="240"/>
-    </shape>
-    <shape modelObjectName="VENDOR_P" modelObjectNameSpace="VDR_VNDR_PRTDS_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VDR_VNDR_PRTDS_J">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="202"/>
     </shape></shapes>
 </layout>
 </Calculation:scenario>

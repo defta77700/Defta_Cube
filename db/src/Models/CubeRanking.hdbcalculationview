@@ -94,7 +94,9 @@ END</formula>
       </calculatedViewAttribute>
     
       <calculatedViewAttribute id="SR_WO_NULL" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
+    
         <formula>CASE WHEN &quot;SR&quot; is null THEN 100 ELSE &quot;SR&quot; END</formula>
+    
       </calculatedViewAttribute>
     </calculatedViewAttributes>
     <input node="VEND_ALL_JP"/>
@@ -236,7 +238,6 @@ END</formula>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="DimVendor"/>
-  
     <filter>&quot;LFABC&quot; in ('A', 'B' , 'C')</filter>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="ALL_JP">
@@ -735,21 +736,21 @@ END</formula>
       <upperLeftCorner x="496" y="711"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape modelObjectName="V_VENDOR_PRTDS_UP" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
-      <upperLeftCorner x="107" y="59"/>
-      <rectangleSize width="200.705078125"/>
-    </shape>
     <shape modelObjectName="VEND_THRES_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
       <upperLeftCorner x="452" y="338"/>
-      <rectangleSize width="193.572265625"/>
+      <rectangleSize width="193"/>
     </shape>
     <shape modelObjectName="V_VENDOR_IDNC_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
       <upperLeftCorner x="101" y="347"/>
-      <rectangleSize width="192.34765625"/>
+      <rectangleSize width="192"/>
     </shape>
     <shape modelObjectName="V_VENDOR_FIXERANKBASE_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
       <upperLeftCorner x="-293" y="213"/>
-      <rectangleSize width="246.044921875"/>
+      <rectangleSize width="246"/>
+    </shape>
+    <shape modelObjectName="V_VENDOR_PRTDS_UP" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
+      <upperLeftCorner x="107" y="59"/>
+      <rectangleSize width="200"/>
     </shape></shapes>
 </layout>
 </Calculation:scenario>
