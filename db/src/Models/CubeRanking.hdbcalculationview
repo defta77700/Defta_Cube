@@ -525,35 +525,35 @@ END</formula>
 <logicalModel id="BEFORE_AGG_P">
   <attributes>
     <attribute id="LIFNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Code"/>
+      <descriptions defaultDescription="Supplier Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR"/>
     </attribute>
     <attribute id="NAME1" order="2" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Name"/>
+      <descriptions defaultDescription="Supplier Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="NAME1"/>
     </attribute>
     <attribute id="LFABC" order="3" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Category"/>
+      <descriptions defaultDescription="Supplier Category"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LFABC"/>
     </attribute>
     <attribute id="VENDORUNIK_INDC" order="4" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Unik"/>
+      <descriptions defaultDescription="Supplier Unik"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK_INDC"/>
     </attribute>
     <attribute id="ORT01" order="5" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor City"/>
+      <descriptions defaultDescription="Supplier City"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ORT01"/>
     </attribute>
     <attribute id="PSTLZ" order="6" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Postal Code"/>
+      <descriptions defaultDescription="Supplier Postal Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PSTLZ"/>
     </attribute>
     <attribute id="REGIO" order="7" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Region"/>
+      <descriptions defaultDescription="Supplier Region"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="REGIO"/>
     </attribute>
     <attribute id="LAND1" order="8" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Country"/>
+      <descriptions defaultDescription="Supplier Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAND1"/>
     </attribute>
     <attribute id="CLAIM_LIFNR" hidden="true" order="9" displayAttribute="false" attributeHierarchyActive="false">
@@ -561,15 +561,15 @@ END</formula>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_LIFNR"/>
     </attribute>
     <attribute id="IDNC_YEAR" order="10" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="IDNC_YEAR"/>
+      <descriptions defaultDescription="IdNC per Year"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="IDNC_YEAR"/>
     </attribute>
     <attribute id="CLAIM_FMLY" order="11" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Familly"/>
+      <descriptions defaultDescription="Claim Familly"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_FMLY"/>
     </attribute>
     <attribute id="CLAIM_WERKS" order="12" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Plant"/>
+      <descriptions defaultDescription="Claim Plant"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_WERKS"/>
     </attribute>
     <attribute id="YEAR_THRES" hidden="true" order="14" displayAttribute="false" attributeHierarchyActive="false">
@@ -578,7 +578,7 @@ END</formula>
     </attribute>
   
     <attribute id="EVAL_RANKING" order="26" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="EVAL_RANKING"/>
+      <descriptions defaultDescription="Ranking"/>
   
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EVAL_RANKING"/>
   
@@ -587,19 +587,19 @@ END</formula>
   <calculatedAttributes/>
   <baseMeasures>
     <measure id="RANKING_POINT" order="13" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="RANKING_POINT"/>
+      <descriptions defaultDescription="Ranking Point"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="RANKING_POINT"/>
     </measure>
     <measure id="THRESHOLD_POINT" order="15" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="THRESHOLD_POINT"/>
+      <descriptions defaultDescription="Threshold point"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="THRESHOLD_POINT"/>
     </measure>
     <measure id="TDS" order="16" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="TDS"/>
+      <descriptions defaultDescription="Service Rate"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="TDS"/>
     </measure>
     <measure id="CCDC" order="17" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="CCDC"/>
+      <descriptions defaultDescription="CDC Respect"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CCDC"/>
     </measure>
     <measure id="RP" order="18" aggregationType="sum" measureType="simple">
@@ -607,7 +607,7 @@ END</formula>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="RP"/>
     </measure>
     <measure id="SQ" order="19" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="SQ"/>
+      <descriptions defaultDescription="Quality Syt"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="SQ"/>
     </measure>
     <measure id="PDC" order="20" aggregationType="sum" measureType="simple">
@@ -615,20 +615,20 @@ END</formula>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="PDC"/>
     </measure>
     <measure id="RF" order="21" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="RF"/>
+      <descriptions defaultDescription="Financial Risk"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="RF"/>
     </measure>
     <measure id="IDNC" order="22" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="IDNC"/>
+      <descriptions defaultDescription="IdNC"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="IDNC"/>
     </measure>
   
     <measure id="PR_IDNC" order="23" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="PR_IDNC"/>
+      <descriptions defaultDescription="PR_IdNC"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="PR_IDNC"/>
     </measure>
     <measure id="PR_TDS" order="24" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="PR_TDS"/>
+      <descriptions defaultDescription="PR_Service Rate"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="PR_TDS"/>
     </measure>
     <measure id="SR" order="25" aggregationType="sum" measureType="simple">

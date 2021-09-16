@@ -70,9 +70,11 @@
       </calculatedViewAttribute>
     
       <calculatedViewAttribute id="ERDAT_CC" datatype="NVARCHAR" length="10" expressionLanguage="SQL">
+    
         <formula>CASE WHEN LENGTH(&quot;ERDAT&quot;) = 8 THEN TO_CHAR(TO_DATE(&quot;ERDAT&quot;,'YYYYMMDD') ,'YYYY-MM-DD')
 	 ELSE &quot;ERDAT&quot; 
  END</formula>
+    
       </calculatedViewAttribute>
     </calculatedViewAttributes>
     <input node="VENDOR"/>

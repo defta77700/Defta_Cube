@@ -822,7 +822,7 @@
 <logicalModel id="BEFORE_AGG_P">
   <attributes>
     <attribute id="VND_LIFNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Code"/>
+      <descriptions defaultDescription="Supplier Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_LIFNR"/>
     </attribute>
     <attribute id="VENDORUNIK" order="2" displayAttribute="false" attributeHierarchyActive="false">
@@ -830,7 +830,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
     </attribute>
     <attribute id="KRAUS" order="3" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="DUNS"/>
+      <descriptions defaultDescription="Duns"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KRAUS"/>
     </attribute>
     <attribute id="STCEG" order="4" displayAttribute="false" attributeHierarchyActive="false">
@@ -842,7 +842,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCD1"/>
     </attribute>
     <attribute id="EKORG" order="6" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Purchase Organization"/>
+      <descriptions defaultDescription="Supplier Purchase Organization"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG"/>
     </attribute>
     <attribute id="VND_SOURCE" order="7" displayAttribute="false" attributeHierarchyActive="false">
@@ -850,15 +850,15 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_SOURCE"/>
     </attribute>
     <attribute id="ERDAT" order="8" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ERDAT"/>
+      <descriptions defaultDescription="Created on"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ERDAT"/>
     </attribute>
     <attribute id="VND_NAME1" order="9" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="NAME1"/>
+      <descriptions defaultDescription="Supplier name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_NAME1"/>
     </attribute>
     <attribute id="ORT01" order="10" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor City"/>
+      <descriptions defaultDescription="Supplier City"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ORT01"/>
     </attribute>
     <attribute id="PFACH" order="11" displayAttribute="false" attributeHierarchyActive="false">
@@ -866,35 +866,35 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PFACH"/>
     </attribute>
     <attribute id="STRAS" order="12" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Address2"/>
+      <descriptions defaultDescription="Supplier Address2"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STRAS"/>
     </attribute>
     <attribute id="PSTLZ" order="13" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Postal Code"/>
+      <descriptions defaultDescription="Supplier Postal Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PSTLZ"/>
     </attribute>
     <attribute id="REGIO" order="14" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Region"/>
+      <descriptions defaultDescription="Supplier Region"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="REGIO"/>
     </attribute>
     <attribute id="ADRNR" order="15" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Address"/>
+      <descriptions defaultDescription="Supplier Address"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ADRNR"/>
     </attribute>
     <attribute id="TELF1" order="16" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Telephone"/>
+      <descriptions defaultDescription="Supplier Telephone"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TELF1"/>
     </attribute>
     <attribute id="SPERR" order="17" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SPERR"/>
+      <descriptions defaultDescription="Central posting block"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SPERR"/>
     </attribute>
     <attribute id="SPERM_X" order="18" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SPERM_X"/>
+      <descriptions defaultDescription="Central purchasing block"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SPERM_X"/>
     </attribute>
     <attribute id="LAND1" order="19" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Country"/>
+      <descriptions defaultDescription="Supplier Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAND1"/>
     </attribute>
     <attribute id="KTOKK" order="20" displayAttribute="false" attributeHierarchyActive="false">
@@ -926,7 +926,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="INCO2"/>
     </attribute>
     <attribute id="LFABC" order="27" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ABC indicator"/>
+      <descriptions defaultDescription="Supplier category"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LFABC"/>
     </attribute>
     <attribute id="LOEVM_Y" order="28" displayAttribute="false" attributeHierarchyActive="false">
@@ -938,7 +938,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SPERM_Y"/>
     </attribute>
     <attribute id="VENSL" order="30" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor service level"/>
+      <descriptions defaultDescription="Supplier service level"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENSL"/>
     </attribute>
     <attribute id="WAERS" order="31" displayAttribute="false" attributeHierarchyActive="false">
@@ -946,31 +946,31 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WAERS"/>
     </attribute>
     <attribute id="ZTERM" order="32" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Payment Type"/>
+      <descriptions defaultDescription="Payment Term"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZTERM"/>
     </attribute>
     <attribute id="ZFAEL" order="33" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ZFAEL"/>
+      <descriptions defaultDescription="Supplier Fixed Day"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZFAEL"/>
     </attribute>
     <attribute id="ZMONA" order="34" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ZMONA"/>
+      <descriptions defaultDescription="Supplier Additional Month"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZMONA"/>
     </attribute>
     <attribute id="ZTAG1" order="35" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ZTAG1"/>
+      <descriptions defaultDescription="Supplier for Baseline"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZTAG1"/>
     </attribute>
     <attribute id="TEXT1_FR" order="36" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="TEXT1_FR"/>
+      <descriptions defaultDescription="Payment Term_FR comment"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TEXT1_FR"/>
     </attribute>
     <attribute id="TEXT1_EN" order="37" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="TEXT1_EN"/>
+      <descriptions defaultDescription="Payment Term_EN comment"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TEXT1_EN"/>
     </attribute>
     <attribute id="KONZS" order="38" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="KONZS"/>
+      <descriptions defaultDescription="Supplier group key"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KONZS"/>
     </attribute>
     <attribute id="BRSCH" order="39" displayAttribute="false" attributeHierarchyActive="false">
@@ -986,7 +986,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRTXT_EN"/>
     </attribute>
     <attribute id="J_1KFTBUS" order="42" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="J_1KFTBUS"/>
+      <descriptions defaultDescription="Type of business"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="J_1KFTBUS"/>
     </attribute>
     <attribute id="MCOD1" order="43" displayAttribute="false" attributeHierarchyActive="false">
@@ -1010,7 +1010,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZPRZ1"/>
     </attribute>
     <attribute id="INV_VENDOR_2Y_BOOL" order="49" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Actif O/N"/>
+      <descriptions defaultDescription="Supplier Actif O/N"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="INV_VENDOR_2Y_BOOL"/>
     </attribute>
   
@@ -1123,7 +1123,7 @@
   <calculatedAttributes/>
   <baseMeasures>
     <measure id="INV_VENDOR_2Y" order="48" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="INV_VENDOR_2Y"/>
+      <descriptions defaultDescription="INV_Supplier_2Y"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="INV_VENDOR_2Y"/>
     </measure>
   
@@ -1145,7 +1145,7 @@
   </calculatedMeasures>
   <restrictedMeasures>
     <measure id="Activ_Vendor" order="51" aggregationType="sum" datatype="INTEGER" length="10" scale="0" baseMeasure="INV_VENDOR_2Y">
-      <descriptions defaultDescription="Activ_Vendor"/>
+      <descriptions defaultDescription="Activ_Supplier"/>
       <restriction logicalOperator="AND">
         <filter xsi:type="Privilege:AttributeFilter" attributeName="INV_VENDOR_2Y_BOOL">
           <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="1"/>
@@ -1250,13 +1250,13 @@
       <upperLeftCorner x="292" y="711"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape modelObjectName="VNDCONDTYP_P" modelObjectNameSpace="VNDPAYTYP_PAYCOND_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VNDPAYTYP_PAYCOND_J">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="162"/>
-    </shape>
     <shape modelObjectName="COMP_P" modelObjectNameSpace="VNDPAYTYP_PAYCOND_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VNDPAYTYP_PAYCOND_J">
       <upperLeftCorner x="320" y="221"/>
       <rectangleSize width="172"/>
+    </shape>
+    <shape modelObjectName="VNDCONDTYP_P" modelObjectNameSpace="VNDPAYTYP_PAYCOND_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VNDPAYTYP_PAYCOND_J">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="162"/>
     </shape>
     <shape modelObjectName="PAYCOND_P" modelObjectNameSpace="VNDPAYTYP_PAYCOND_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="VNDPAYTYP_PAYCOND_J">
       <upperLeftCorner x="320" y="30"/>

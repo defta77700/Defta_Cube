@@ -369,7 +369,7 @@
 <logicalModel id="MAT_PLA_J_P">
   <attributes>
     <attribute id="MATNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material"/>
+      <descriptions defaultDescription="Material Code"/>
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="MATNR_C"/>
     </attribute>
     <attribute id="SOURCE" order="2" displayAttribute="false" attributeHierarchyActive="false">
@@ -381,7 +381,7 @@
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="LVORM_MARA"/>
     </attribute>
     <attribute id="MATKL" order="4" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Groupe Code"/>
+      <descriptions defaultDescription="Material Groupe"/>
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="MATKL"/>
     </attribute>
     <attribute id="BRGEW" order="5" displayAttribute="false" attributeHierarchyActive="false">
@@ -429,7 +429,7 @@
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="SPRAS"/>
     </attribute>
     <attribute id="WERKS" order="16" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Plant"/>
+      <descriptions defaultDescription="Plant Code"/>
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="WERKS"/>
     </attribute>
     <attribute id="EKGRP" order="17" displayAttribute="false" attributeHierarchyActive="false">
@@ -461,11 +461,11 @@
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="PROFL"/>
     </attribute>
     <attribute id="NAME1" order="24" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Plant Name"/>
+      <descriptions defaultDescription="Supplier Name"/>
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="NAME1"/>
     </attribute>
     <attribute id="EKORG" order="25" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Purchase Organization"/>
+      <descriptions defaultDescription="Supplier purchase organization code"/>
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="EKORG"/>
     </attribute>
     <attribute id="LAND1" order="26" displayAttribute="false" attributeHierarchyActive="false">
@@ -477,7 +477,7 @@
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="MATKL_L1"/>
     </attribute>
     <attribute id="WGBEZ_L1" order="28" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Familly Level 1 Desc"/>
+      <descriptions defaultDescription="Purchasing type"/>
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="WGBEZ_L1"/>
     </attribute>
     <attribute id="MATKL_L2" order="29" displayAttribute="false" attributeHierarchyActive="false">
@@ -485,7 +485,7 @@
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="MATKL_L2"/>
     </attribute>
     <attribute id="WGBEZ_L2" order="30" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Familly Level 2 Desc"/>
+      <descriptions defaultDescription="Product material"/>
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="WGBEZ_L2"/>
     </attribute>
     <attribute id="MATKL_L3" order="31" displayAttribute="false" attributeHierarchyActive="false">
@@ -493,7 +493,7 @@
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="MATKL_L3"/>
     </attribute>
     <attribute id="WGBEZ_L3" order="32" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Familly Level 3 Desc"/>
+      <descriptions defaultDescription="Product type"/>
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="WGBEZ_L3"/>
     </attribute>
     <attribute id="MATKL_L4" order="33" displayAttribute="false" attributeHierarchyActive="false">
@@ -501,7 +501,7 @@
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="MATKL_L4"/>
     </attribute>
     <attribute id="WGBEZ_L4" order="34" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Familly Level 4 Desc"/>
+      <descriptions defaultDescription="Manufacturing process"/>
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="WGBEZ_L4"/>
     </attribute>
     <attribute id="MATKL_L5" order="35" displayAttribute="false" attributeHierarchyActive="false">
@@ -509,7 +509,7 @@
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="MATKL_L5"/>
     </attribute>
     <attribute id="WGBEZ_L5" order="36" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Familly Level 5 Desc"/>
+      <descriptions defaultDescription="Additional detail"/>
       <keyMapping columnObjectName="MAT_PLA_J_P" columnName="WGBEZ_L5"/>
     </attribute>
   

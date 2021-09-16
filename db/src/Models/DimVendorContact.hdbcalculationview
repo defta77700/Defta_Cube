@@ -297,7 +297,7 @@
 <logicalModel id="VEND_VNDCT_JP">
   <attributes>
     <attribute id="LIFNR" order="1" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Code"/>
+      <descriptions defaultDescription="Supplier Code"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="LIFNR"/>
     </attribute>
     <attribute id="KRAUS" order="2" displayAttribute="false" attributeHierarchyActive="false">
@@ -317,7 +317,7 @@
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="STCD2"/>
     </attribute>
     <attribute id="EKORG" order="6" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Purchasing Organisation"/>
+      <descriptions defaultDescription="Supplier purchase organization code"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="EKORG"/>
     </attribute>
     <attribute id="SOURCE" hidden="true" order="7" displayAttribute="false" attributeHierarchyActive="false">
@@ -325,43 +325,43 @@
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="SOURCE"/>
     </attribute>
     <attribute id="ERDAT" order="8" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Create Date"/>
+      <descriptions defaultDescription="Created on"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="ERDAT"/>
     </attribute>
     <attribute id="NAME1_VENDOR" order="9" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Company Name"/>
+      <descriptions defaultDescription="Supplier Company Name"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="NAME1_VENDOR"/>
     </attribute>
     <attribute id="STRAS" order="10" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Street"/>
+      <descriptions defaultDescription="Supplier Street"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="STRAS"/>
     </attribute>
     <attribute id="PFACH" order="11" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor PO BOX"/>
+      <descriptions defaultDescription="Supplier PO BOX"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="PFACH"/>
     </attribute>
     <attribute id="PSTLZ" order="12" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Postal Code"/>
+      <descriptions defaultDescription="Supplier Postal Code"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="PSTLZ"/>
     </attribute>
     <attribute id="ORT01" order="13" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor City"/>
+      <descriptions defaultDescription="Supplier City"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="ORT01"/>
     </attribute>
     <attribute id="REGIO" order="14" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Region"/>
+      <descriptions defaultDescription="Supplier Region"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="REGIO"/>
     </attribute>
     <attribute id="LAND1" order="15" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Country Code"/>
+      <descriptions defaultDescription="Supplier Country Code"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="LAND1"/>
     </attribute>
     <attribute id="ADRNR" hidden="true" order="16" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ADRNR"/>
+      <descriptions defaultDescription="Supplier address"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="ADRNR"/>
     </attribute>
     <attribute id="TELF1" order="17" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Telephone 1"/>
+      <descriptions defaultDescription="Supplier Telephone"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="TELF1"/>
     </attribute>
     <attribute id="SPERR" order="18" displayAttribute="false" attributeHierarchyActive="false">
@@ -381,7 +381,7 @@
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="LOEVM_X"/>
     </attribute>
     <attribute id="SPRAS" hidden="true" order="22" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SPRAS"/>
+      <descriptions defaultDescription="Language"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="SPRAS"/>
     </attribute>
     <attribute id="VBUND" order="23" displayAttribute="false" attributeHierarchyActive="false">
@@ -397,7 +397,7 @@
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="INCO2"/>
     </attribute>
     <attribute id="LFABC" order="26" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ABC indicator"/>
+      <descriptions defaultDescription="Supplier category"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="LFABC"/>
     </attribute>
     <attribute id="LOEVM_Y" order="27" displayAttribute="false" attributeHierarchyActive="false">
@@ -409,39 +409,39 @@
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="SPERM_Y"/>
     </attribute>
     <attribute id="VENSL" order="29" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor service level"/>
+      <descriptions defaultDescription="Supplier service level"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="VENSL"/>
     </attribute>
     <attribute id="WAERS" order="30" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Order currency"/>
+      <descriptions defaultDescription="Currency"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="WAERS"/>
     </attribute>
     <attribute id="ZTERM" order="31" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Terms of Payment"/>
+      <descriptions defaultDescription="Payment Term"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="ZTERM"/>
     </attribute>
     <attribute id="ZFAEL" order="32" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Terms of Payment detail / fix day"/>
+      <descriptions defaultDescription="Payment Term / fix day"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="ZFAEL"/>
     </attribute>
     <attribute id="ZMONA" order="33" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Terms of Payment term of payment detail / additionnal mounths"/>
+      <descriptions defaultDescription="Payment term / additionnal mounths"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="ZMONA"/>
     </attribute>
     <attribute id="ZTAG1" order="34" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Terms of Payment term of payment detail / additionnal days"/>
+      <descriptions defaultDescription="Payment term / additionnal days"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="ZTAG1"/>
     </attribute>
     <attribute id="ZPRZ1" order="35" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Cash Discount Percentage Rate"/>
+      <descriptions defaultDescription="Payment Term / Days from Baseline"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="ZPRZ1"/>
     </attribute>
     <attribute id="TEXT1_FR" order="36" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Terms of Payment term of payment detail / FR description"/>
+      <descriptions defaultDescription="Payment Term_FR comment"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="TEXT1_FR"/>
     </attribute>
     <attribute id="TEXT1_EN" order="37" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Terms of Payment term of payment detail / EN description"/>
+      <descriptions defaultDescription="Payment Term_EN comment"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="TEXT1_EN"/>
     </attribute>
     <attribute id="KONZS" order="38" displayAttribute="false" attributeHierarchyActive="false">
@@ -465,7 +465,7 @@
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="J_1KFTBUS"/>
     </attribute>
     <attribute id="MCOD1" order="43" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="matchcode search"/>
+      <descriptions defaultDescription="Supplier vendor matchcode"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="MCOD1"/>
     </attribute>
     <attribute id="WEBRE" order="44" displayAttribute="false" attributeHierarchyActive="false">
@@ -477,7 +477,7 @@
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="PRFRE"/>
     </attribute>
     <attribute id="SMTP_ADDR" order="46" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor General Mail"/>
+      <descriptions defaultDescription="Supplier email"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="SMTP_ADDR"/>
     </attribute>
     <attribute id="VENDORUNIK" hidden="true" order="47" displayAttribute="false" attributeHierarchyActive="false">
@@ -485,11 +485,11 @@
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="VENDORUNIK"/>
     </attribute>
     <attribute id="VENDOR_CONTACTNAME" order="48" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Contact Name"/>
+      <descriptions defaultDescription="Supplier Contact Name"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="VENDOR_CONTACTNAME"/>
     </attribute>
     <attribute id="TITEL_AP" order="49" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Contact Titel"/>
+      <descriptions defaultDescription="Vendor telephone"/>
       <keyMapping columnObjectName="VEND_VNDCT_JP" columnName="TITEL_AP"/>
     </attribute>
     <attribute id="TELF1_1" order="50" displayAttribute="false" attributeHierarchyActive="false">
@@ -551,7 +551,7 @@
     </shape>
   
     <shape expanded="true" modelObjectName="VEND_VNDCT_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="142" y="285"/>
+      <upperLeftCorner x="142" y="270"/>
       <rectangleSize height="30" width="160"/>
     </shape>
   </shapes>
