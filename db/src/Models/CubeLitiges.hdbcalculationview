@@ -1471,51 +1471,51 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MTART"/>
     </attribute>
     <attribute id="MAKTX_F" order="90" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MAKTX_F"/>
+      <descriptions defaultDescription="Material description FR"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MAKTX_F"/>
     </attribute>
     <attribute id="MAKTX_E" order="91" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MAKTX_E"/>
+      <descriptions defaultDescription="Material description EN"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MAKTX_E"/>
     </attribute>
     <attribute id="MATKL_L1" order="92" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MATKL_L1"/>
+      <descriptions defaultDescription="Material Familly Level 1 Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L1"/>
     </attribute>
     <attribute id="WGBEZ_L1" order="93" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="WGBEZ_L1"/>
+      <descriptions defaultDescription="Purchasing type"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L1"/>
     </attribute>
     <attribute id="MATKL_L2" order="94" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MATKL_L2"/>
+      <descriptions defaultDescription="Material Familly Level 2 Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L2"/>
     </attribute>
     <attribute id="WGBEZ_L2" order="95" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="WGBEZ_L2"/>
+      <descriptions defaultDescription="Product material"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L2"/>
     </attribute>
     <attribute id="MATKL_L3" order="96" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MATKL_L3"/>
+      <descriptions defaultDescription="Material Familly Level 3 Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L3"/>
     </attribute>
     <attribute id="WGBEZ_L3" order="97" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="WGBEZ_L3"/>
+      <descriptions defaultDescription="Product type"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L3"/>
     </attribute>
     <attribute id="MATKL_L4" order="98" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MATKL_L4"/>
+      <descriptions defaultDescription="Material Familly Level 4 Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L4"/>
     </attribute>
     <attribute id="WGBEZ_L4" order="99" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="WGBEZ_L4"/>
+      <descriptions defaultDescription="Manufacturing process"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L4"/>
     </attribute>
     <attribute id="MATKL_L5" order="100" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MATKL_L5"/>
+      <descriptions defaultDescription="Material Familly Level 5 Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L5"/>
     </attribute>
     <attribute id="WGBEZ_L5" order="101" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="WGBEZ_L5"/>
+      <descriptions defaultDescription="Additional detail"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L5"/>
     </attribute>
   
@@ -1542,7 +1542,7 @@
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="DOUBT_QTY"/>
     </measure>
     <measure id="NC_QTY" order="40" aggregationType="sum" measureType="quantity" semanticType="quantity">
-      <descriptions defaultDescription="NC_QTY"/>
+      <descriptions defaultDescription="Claims Quantity"/>
       <unitCurrencyAttribute attributeName="CLAIM_UNIT"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="NC_QTY"/>
     </measure>
