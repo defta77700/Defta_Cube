@@ -896,11 +896,9 @@ END</formula>
       <mapping xsi:type="Calculation:AttributeMapping" target="IDNC_YEAR_CC_IFNULL" source="IDNC_YEAR_CC_IFNULL"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_THRES_CC_IFNULL" source="YEAR_THRES_CC_IFNULL"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="CLAIM_LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK_IDNC"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_FIXR_CC_IFNULL" source="IDNC_YEAR_CC_IFNULL"/>
     </input>
     <joinAttribute name="LIFNR"/>
-    <joinAttribute name="VENDORUNIK"/>
     <joinAttribute name="YEAR_FIXR_CC_IFNULL"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VND_IDNCTHRES_JP">
