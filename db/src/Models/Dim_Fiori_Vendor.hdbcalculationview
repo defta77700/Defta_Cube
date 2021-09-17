@@ -7,10 +7,13 @@
   <DataSource id="VENDOR_GOLDEN">
     <resourceUri>VENDOR_GOLDEN</resourceUri>
   </DataSource>
-  <DataSource id="V_VENDOR_MODIFICATION_MAX">
-    <resourceUri>V_VENDOR_MODIFICATION_MAX</resourceUri>
-  </DataSource>
   <DataSource id="VENDOR_MODIFICATION">
+    <resourceUri>VENDOR_MODIFICATION</resourceUri>
+  </DataSource>
+  <DataSource id="VENDOR">
+    <resourceUri>VENDOR</resourceUri>
+  </DataSource>
+  <DataSource id="VND_MOD_P$$$$VENDOR_MODIFICATION$$">
     <resourceUri>VENDOR_MODIFICATION</resourceUri>
   </DataSource>
 </dataSources>
@@ -67,58 +70,6 @@
     <calculatedViewAttributes/>
     <input node="VENDOR_GOLDEN"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="V_VND_MODIF_MAX_P">
-    <viewAttributes>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="KRAUS"/>
-      <viewAttribute id="STCEG"/>
-      <viewAttribute id="STCD1"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="ERDAT"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="ORT01"/>
-      <viewAttribute id="PFACH"/>
-      <viewAttribute id="STRAS"/>
-      <viewAttribute id="PSTLZ"/>
-      <viewAttribute id="REGIO"/>
-      <viewAttribute id="ADRNR"/>
-      <viewAttribute id="TELF1"/>
-      <viewAttribute id="SPERR"/>
-      <viewAttribute id="SPERM_X"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="KTOKK"/>
-      <viewAttribute id="LOEVM_X"/>
-      <viewAttribute id="SPRAS"/>
-      <viewAttribute id="STCD2"/>
-      <viewAttribute id="VBUND"/>
-      <viewAttribute id="INCO1"/>
-      <viewAttribute id="INCO2"/>
-      <viewAttribute id="LFABC"/>
-      <viewAttribute id="LOEVM_Y"/>
-      <viewAttribute id="SPERM_Y"/>
-      <viewAttribute id="VENSL"/>
-      <viewAttribute id="WAERS"/>
-      <viewAttribute id="ZTERM"/>
-      <viewAttribute id="ZFAEL"/>
-      <viewAttribute id="ZMONA"/>
-      <viewAttribute id="ZTAG1"/>
-      <viewAttribute id="TEXT1_FR"/>
-      <viewAttribute id="TEXT1_EN"/>
-      <viewAttribute id="KONZS"/>
-      <viewAttribute id="BRSCH"/>
-      <viewAttribute id="BRTXT_FR"/>
-      <viewAttribute id="BRTXT_EN"/>
-      <viewAttribute id="J_1KFTBUS"/>
-      <viewAttribute id="MCOD1"/>
-      <viewAttribute id="WEBRE"/>
-      <viewAttribute id="PRFRE"/>
-      <viewAttribute id="SMTP_ADDR"/>
-      <viewAttribute id="ZPRZ1"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="V_VENDOR_MODIFICATION_MAX"/>
-  </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VENDOR_CREATE_P" filterExpressionLanguage="SQL">
     <viewAttributes>
       <viewAttribute id="CHANGEID"/>
@@ -172,9 +123,7 @@
       <viewAttribute id="ZPRZ1"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="VENDOR_MODIFICATION"/>
-    <filter>&quot;ACTION&quot;= 'C'</filter>
-  </calculationView>
+    <input node="VENDOR_MODIFICATION"/></calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VENDOR_CREATEP_P">
     <viewAttributes>
       <viewAttribute id="LIFNR"/>
@@ -223,6 +172,10 @@
       <viewAttribute id="PRFRE"/>
       <viewAttribute id="SMTP_ADDR"/>
       <viewAttribute id="ZPRZ1"/>
+    
+      <viewAttribute id="CHANGEID"/>
+      <viewAttribute id="CHANGEUSER"/>
+      <viewAttribute id="ACTION"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="VENDOR_CREATE_P"/>
@@ -275,56 +228,12 @@
       <viewAttribute id="PRFRE"/>
       <viewAttribute id="SMTP_ADDR"/>
       <viewAttribute id="ZPRZ1"/>
+    
+      <viewAttribute id="CHANGEID"/>
+      <viewAttribute id="CHANGEUSER"/>
+      <viewAttribute id="ACTION"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="V_VND_MODIF_MAX_P" emptyUnionBehavior="NO_ROW">
-      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_X" source="SPERM_X"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_X" source="LOEVM_X"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VBUND" source="VBUND"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_Y" source="LOEVM_Y"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_Y" source="SPERM_Y"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VENSL" source="VENSL"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZFAEL" source="ZFAEL"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZMONA" source="ZMONA"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZTAG1" source="ZTAG1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_FR" source="BRTXT_FR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_EN" source="BRTXT_EN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTBUS" source="J_1KFTBUS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MCOD1" source="MCOD1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WEBRE" source="WEBRE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
-    </input>
     <input node="VENDOR_CREATEP_P" emptyUnionBehavior="NO_ROW">
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
@@ -372,6 +281,10 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHANGEID" source="CHANGEID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHANGEUSER" source="CHANGEUSER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTION" source="ACTION"/>
     </input>
     <input node="Vendor_Gold_P" emptyUnionBehavior="NO_ROW">
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
@@ -420,7 +333,340 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
+    
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="CHANGEID" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="CHANGEUSER" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ACTION" null="true" value=""/>
     </input>
+  
+    <input node="VND_VNDMODIF_JP" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_X" source="SPERM_X"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_X" source="LOEVM_X"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBUND" source="VBUND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_Y" source="LOEVM_Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_Y" source="SPERM_Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENSL" source="VENSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZFAEL" source="ZFAEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMONA" source="ZMONA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTAG1" source="ZTAG1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_FR" source="BRTXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_EN" source="BRTXT_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTBUS" source="J_1KFTBUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MCOD1" source="MCOD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEBRE" source="WEBRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
+    
+  
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="CHANGEID" null="true" value=""/>
+  
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="CHANGEUSER" null="true" value=""/>
+  
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ACTION" null="true" value=""/>
+  
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VND_VNDMODIF_JP">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+      <viewAttribute id="LIFNR_1"/>
+      <viewAttribute id="SOURCE_1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VND_VNDMODIF_J"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="VND_VNDMODIF_J" cardinality="CN_N" joinType="leftOuter" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+      <viewAttribute id="LIFNR_1"/>
+      <viewAttribute id="SOURCE_1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VND_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_X" source="SPERM_X"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_X" source="LOEVM_X"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBUND" source="VBUND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_Y" source="LOEVM_Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_Y" source="SPERM_Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENSL" source="VENSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZFAEL" source="ZFAEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMONA" source="ZMONA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTAG1" source="ZTAG1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_FR" source="BRTXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_EN" source="BRTXT_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTBUS" source="J_1KFTBUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MCOD1" source="MCOD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEBRE" source="WEBRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
+    </input>
+    <input node="VND_MOD_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_1" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE_1" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+    </input>
+    <filter>&quot;LIFNR_1&quot; is null 
+and &quot;SOURCE_1&quot; is null</filter>
+    <joinAttribute name="LIFNR"/>
+    <joinAttribute name="SOURCE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VND_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VENDOR"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VND_MOD_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="CHANGEID"/>
+      <viewAttribute id="CHANGEUSER"/>
+      <viewAttribute id="ACTION"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VND_MOD_P$$$$VENDOR_MODIFICATION$$"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="Union_1">
@@ -609,6 +855,19 @@
       <descriptions defaultDescription="ZPRZ1"/>
       <keyMapping columnObjectName="Union_1" columnName="ZPRZ1"/>
     </attribute>
+  
+    <attribute id="CHANGEID" order="47" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHANGEID"/>
+      <keyMapping columnObjectName="Union_1" columnName="CHANGEID"/>
+    </attribute>
+    <attribute id="CHANGEUSER" order="48" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHANGEUSER"/>
+      <keyMapping columnObjectName="Union_1" columnName="CHANGEUSER"/>
+    </attribute>
+    <attribute id="ACTION" order="49" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ACTION"/>
+      <keyMapping columnObjectName="Union_1" columnName="ACTION"/>
+    </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures/>
@@ -625,10 +884,6 @@
       <upperLeftCorner x="180" y="320"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape expanded="true" modelObjectName="V_VND_MODIF_MAX_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-211" y="320"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
     <shape expanded="true" modelObjectName="VENDOR_CREATE_P" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="-14" y="388"/>
       <rectangleSize height="30" width="160"/>
@@ -641,6 +896,31 @@
       <upperLeftCorner x="-14" y="187"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-  </shapes>
+    <shape expanded="true" modelObjectName="VND_VNDMODIF_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-416" y="333"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VND_VNDMODIF_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-416" y="433"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="VND_P" modelObjectNameSpace="VND_VNDMODIF_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="104"/>
+    </shape>
+    <shape modelObjectName="VND_MOD_P" modelObjectNameSpace="VND_VNDMODIF_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="138"/>
+    </shape>
+  
+  
+    <shape expanded="true" modelObjectName="VND_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-512" y="573"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VND_MOD_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-315" y="573"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
 </layout>
 </Calculation:scenario>
