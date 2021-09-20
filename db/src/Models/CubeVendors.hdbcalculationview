@@ -869,7 +869,7 @@
       <descriptions defaultDescription="Supplier Address2"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STRAS"/>
     </attribute>
-    <attribute id="PSTLZ" order="13" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+    <attribute id="PSTLZ" order="13" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Supplier Postal Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PSTLZ"/>
     </attribute>
