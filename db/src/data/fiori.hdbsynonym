@@ -52,5 +52,29 @@
       "object": "V_VENDORPAYMNT_MODIFICATION_MAX",
       "schema": "SUPLPANEL"
     }
+  },
+  "FIORI_COMP_CODE_USER": {
+    "target": {
+      "object": "FIORI_COMP_CODE_USER",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "FIORI_PURCH_ORDER": {
+    "target": {
+      "object": "FIORI_PURCH_ORDER",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "FIORI_ACCOUNT_GROUP": {
+    "target": {
+      "object": "FIORI_ACCOUNT_GROUP",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "FIORI_BANK_DATA": {
+    "target": {
+      "object": "FIORI_BANK_DATA",
+      "schema": "SUPLPANEL"
+    }
   }
 }
