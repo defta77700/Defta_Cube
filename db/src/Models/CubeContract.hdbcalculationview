@@ -921,7 +921,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_LIFNR"/>
     </attribute>
     <attribute id="VENDORUNIK" order="24" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
-      <descriptions defaultDescription="Supplier Key ID"/>
+      <descriptions defaultDescription="Supplier Key IDV"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
     </attribute>
     <attribute id="KRAUS" order="25" displayAttribute="false" attributeHierarchyActive="false">
