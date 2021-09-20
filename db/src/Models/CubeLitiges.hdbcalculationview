@@ -1197,15 +1197,15 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LFABC"/>
     </attribute>
     <attribute id="BRSCH" order="9" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="BRSCH"/>
+      <descriptions defaultDescription="Supplier generic family Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRSCH"/>
     </attribute>
     <attribute id="BRTXT_FR" order="10" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="BRTXT_FR"/>
+      <descriptions defaultDescription="Supplier generic family Description FR"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRTXT_FR"/>
     </attribute>
     <attribute id="BRTXT_EN" order="11" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="BRTXT_EN"/>
+      <descriptions defaultDescription="Supplier generic family Description EN"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRTXT_EN"/>
     </attribute>
     <attribute id="ZTERM" order="12" displayAttribute="false" attributeHierarchyActive="false">
@@ -1221,7 +1221,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TEXT1_EN"/>
     </attribute>
     <attribute id="KONZS" order="15" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Supplier group key"/>
+      <descriptions defaultDescription="Supplier group name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KONZS"/>
     </attribute>
     <attribute id="CLAIM_NBR" order="16" displayAttribute="false" attributeHierarchyActive="false">
@@ -1520,16 +1520,16 @@
     </attribute>
   
     <attribute id="MATERIAL_SOURCE" order="102" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MATERIAL_SOURCE"/>
+      <descriptions defaultDescription="ERP Source 1"/>
   
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATERIAL_SOURCE"/>
   
     </attribute>
     <attribute id="VND_SOURCE" order="103" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="VND_SOURCE"/>
+      <descriptions defaultDescription="ERP Source 2"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_SOURCE"/>
     </attribute>
-    <attribute id="SOURCE_VND_MAT_EG" order="104" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SOURCE_VND_MAT_EG" order="104" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="SOURCE_VND_MAT_EG"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SOURCE_VND_MAT_EG"/>
     </attribute>

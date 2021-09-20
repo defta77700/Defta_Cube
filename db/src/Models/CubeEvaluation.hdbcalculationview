@@ -677,16 +677,16 @@
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
   <attributes>
-    <attribute id="SOURCE" order="2" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SOURCE"/>
+    <attribute id="SOURCE" order="2" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="ERP Source"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SOURCE"/>
     </attribute>
     <attribute id="DUNS" order="3" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Duns"/>
+      <descriptions defaultDescription="DUNS"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DUNS"/>
     </attribute>
     <attribute id="VATCODE" order="4" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vat Code"/>
+      <descriptions defaultDescription="VAT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VATCODE"/>
     </attribute>
     <attribute id="SIRET" order="5" displayAttribute="false" attributeHierarchyActive="false">
@@ -953,19 +953,19 @@
       <descriptions defaultDescription="SUPPLIER CODE ERP"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_LIFNR"/>
     </attribute>
-    <attribute id="VND_VENDORUNIK" order="78" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="VENDORUNIK"/>
+    <attribute id="VND_VENDORUNIK" order="78" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="Vendor Unik"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_VENDORUNIK"/>
     </attribute>
-    <attribute id="KRAUS" order="79" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CRED INFO NUMBER"/>
+    <attribute id="KRAUS" order="79" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="KRAUS"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KRAUS"/>
     </attribute>
-    <attribute id="STCEG" order="80" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="STCEG" order="80" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="VAT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCEG"/>
     </attribute>
-    <attribute id="STCD1" order="81" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="STCD1" order="81" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="SIRET"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCD1"/>
     </attribute>
@@ -974,14 +974,14 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG"/>
     </attribute>
     <attribute id="VND_SOURCE" order="83" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SOURCE"/>
+      <descriptions defaultDescription="ERP Source"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_SOURCE"/>
     </attribute>
     <attribute id="ERDAT" order="84" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Created on"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ERDAT"/>
     </attribute>
-    <attribute id="VND_NAME" order="85" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VND_NAME" order="85" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="NAME"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_NAME"/>
     </attribute>
@@ -1022,10 +1022,10 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SPERM_X"/>
     </attribute>
     <attribute id="VND_LAND1" order="95" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="LAND1"/>
+      <descriptions defaultDescription="Supplier Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_LAND1"/>
     </attribute>
-    <attribute id="KTOKK" order="96" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="KTOKK" order="96" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Vendor account group"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KTOKK"/>
     </attribute>
@@ -1057,7 +1057,7 @@
       <descriptions defaultDescription="Supplier category"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LFABC"/>
     </attribute>
-    <attribute id="LOEVM_Y" order="104" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LOEVM_Y" order="104" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="PRUCHASING DELEGATION FLAG"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LOEVM_Y"/>
     </attribute>
@@ -1098,22 +1098,22 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TEXT1_EN"/>
     </attribute>
     <attribute id="KONZS" order="114" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Group key"/>
+      <descriptions defaultDescription="Supplier group name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KONZS"/>
     </attribute>
     <attribute id="BRSCH" order="115" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="BRSCH"/>
+      <descriptions defaultDescription="Supplier generic family Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRSCH"/>
     </attribute>
     <attribute id="BRTXT_FR" order="116" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="BRTXT_FR"/>
+      <descriptions defaultDescription="Supplier generic family Description FR"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRTXT_FR"/>
     </attribute>
     <attribute id="BRTXT_EN" order="117" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="BRTXT_EN"/>
+      <descriptions defaultDescription="Supplier generic family Description EN"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRTXT_EN"/>
     </attribute>
-    <attribute id="J_1KFTBUS" order="118" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="J_1KFTBUS" order="118" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="J_1KFTBUS"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="J_1KFTBUS"/>
     </attribute>
@@ -1121,11 +1121,11 @@
       <descriptions defaultDescription="Supplier vendor matchcode"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MCOD1"/>
     </attribute>
-    <attribute id="WEBRE" order="120" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WEBRE" order="120" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="WEBRE"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WEBRE"/>
     </attribute>
-    <attribute id="PRFRE" order="121" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PRFRE" order="121" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="PRFRE"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PRFRE"/>
     </attribute>

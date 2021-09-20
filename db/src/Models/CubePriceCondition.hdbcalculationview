@@ -1122,11 +1122,11 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KNUMH"/>
     </attribute>
     <attribute id="SOURCE" order="2" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SOURCE"/>
+      <descriptions defaultDescription="ERP source"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SOURCE"/>
     </attribute>
     <attribute id="LIFNR" order="3" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
-      <descriptions defaultDescription="Vendor Code"/>
+      <descriptions defaultDescription="Supplier Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR"/>
     </attribute>
     <attribute id="MATNR" order="4" displayAttribute="false" attributeHierarchyActive="false">
@@ -1134,11 +1134,11 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATNR"/>
     </attribute>
     <attribute id="WERKS" order="5" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Plant"/>
+      <descriptions defaultDescription="Plant Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WERKS"/>
     </attribute>
     <attribute id="EKORG" order="6" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Purchase Org"/>
+      <descriptions defaultDescription="Supplier purchase organization code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG"/>
     </attribute>
     <attribute id="DATBI" hidden="true" order="7" displayAttribute="false" attributeHierarchyActive="false">
@@ -1162,7 +1162,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATNR_C"/>
     </attribute>
     <attribute id="LIFNR_C" order="14" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Code"/>
+      <descriptions defaultDescription="Supplier Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR_C"/>
     </attribute>
     <attribute id="DATBI_D" order="15" displayAttribute="false" attributeHierarchyActive="false">
@@ -1182,19 +1182,19 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DATE_SAP"/>
     </attribute>
     <attribute id="YEAR" order="19" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR"/>
+      <descriptions defaultDescription="Year"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR"/>
     </attribute>
     <attribute id="CALQUARTER" order="20" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR QUARTER"/>
+      <descriptions defaultDescription="Year Quarter"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALQUARTER"/>
     </attribute>
     <attribute id="CALMONTH" order="21" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR MONTH"/>
+      <descriptions defaultDescription="Year Month"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALMONTH"/>
     </attribute>
     <attribute id="CALWEEK" order="22" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR WEEK"/>
+      <descriptions defaultDescription="Year Week"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALWEEK"/>
     </attribute>
     <attribute id="VND_LIFNR" order="23" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
@@ -1206,19 +1206,19 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
     </attribute>
     <attribute id="KRAUS" order="25" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor DUNS"/>
+      <descriptions defaultDescription="DUNS"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KRAUS"/>
     </attribute>
     <attribute id="STCEG" order="26" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor VAT"/>
+      <descriptions defaultDescription="VAT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCEG"/>
     </attribute>
     <attribute id="STCD1" order="27" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor SIRET"/>
+      <descriptions defaultDescription="SIRET"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCD1"/>
     </attribute>
     <attribute id="EKORG_1" order="28" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Purchase Org."/>
+      <descriptions defaultDescription="Plant Purchase Org"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG_1"/>
     </attribute>
     <attribute id="VND_SOURCE" order="29" displayAttribute="false" attributeHierarchyActive="false">
@@ -1226,15 +1226,15 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_SOURCE"/>
     </attribute>
     <attribute id="ERDAT" hidden="true" order="30" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ERDAT"/>
+      <descriptions defaultDescription="Created on"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ERDAT"/>
     </attribute>
     <attribute id="VND_NAME" order="31" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Name"/>
+      <descriptions defaultDescription="Supplier Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_NAME"/>
     </attribute>
     <attribute id="ORT01" order="32" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor City"/>
+      <descriptions defaultDescription="Supplier City"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ORT01"/>
     </attribute>
     <attribute id="PFACH" hidden="true" order="33" displayAttribute="false" attributeHierarchyActive="false">
@@ -1242,23 +1242,23 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PFACH"/>
     </attribute>
     <attribute id="STRAS" order="34" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Address"/>
+      <descriptions defaultDescription="Supplier Address"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STRAS"/>
     </attribute>
     <attribute id="PSTLZ" order="35" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Postal Code"/>
+      <descriptions defaultDescription="Supplier Postal Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PSTLZ"/>
     </attribute>
     <attribute id="REGIO" order="36" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Region"/>
+      <descriptions defaultDescription="Supplier Region"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="REGIO"/>
     </attribute>
-    <attribute id="ADRNR" order="37" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ADRNR" order="37" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Vendor Address2"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ADRNR"/>
     </attribute>
     <attribute id="TELF1" order="38" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Telephone"/>
+      <descriptions defaultDescription="Supplier Telephone"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TELF1"/>
     </attribute>
     <attribute id="SPERR" hidden="true" order="39" displayAttribute="false" attributeHierarchyActive="false">
@@ -1270,7 +1270,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SPERM_X"/>
     </attribute>
     <attribute id="VND_LAND" order="41" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Country"/>
+      <descriptions defaultDescription="Supplier Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_LAND"/>
     </attribute>
     <attribute id="KTOKK" hidden="true" order="42" displayAttribute="false" attributeHierarchyActive="false">
@@ -1294,15 +1294,15 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VBUND"/>
     </attribute>
     <attribute id="INCO1" order="47" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="INCO1"/>
+      <descriptions defaultDescription="Incoterm 1"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="INCO1"/>
     </attribute>
     <attribute id="INCO2" order="48" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="INCO2"/>
+      <descriptions defaultDescription="Incoterm 2"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="INCO2"/>
     </attribute>
     <attribute id="LFABC" order="49" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="LFABC"/>
+      <descriptions defaultDescription="Supplier category"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LFABC"/>
     </attribute>
     <attribute id="LOEVM_Y" hidden="true" order="50" displayAttribute="false" attributeHierarchyActive="false">
@@ -1354,11 +1354,11 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRSCH"/>
     </attribute>
     <attribute id="BRTXT_FR" order="62" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="BRTXT_FR"/>
+      <descriptions defaultDescription="Supplier generic family Description FR"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRTXT_FR"/>
     </attribute>
     <attribute id="BRTXT_EN" order="63" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="BRTXT_EN"/>
+      <descriptions defaultDescription="Supplier generic family Description FR"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRTXT_EN"/>
     </attribute>
     <attribute id="J_1KFTBUS" order="64" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
@@ -1478,43 +1478,43 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MAT_LAND"/>
     </attribute>
     <attribute id="MATKL_L1" order="93" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Group L1"/>
+      <descriptions defaultDescription="Material Familly Level 1 Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L1"/>
     </attribute>
     <attribute id="WGBEZ_L1" order="94" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Group DescrL1"/>
+      <descriptions defaultDescription="Purchasing type"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L1"/>
     </attribute>
     <attribute id="MATKL_L2" order="95" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Group L2"/>
+      <descriptions defaultDescription="Material Familly Level 2 Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L2"/>
     </attribute>
     <attribute id="WGBEZ_L2" order="96" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Group DescrLL2"/>
+      <descriptions defaultDescription="Product material"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L2"/>
     </attribute>
     <attribute id="MATKL_L3" order="97" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Group L3"/>
+      <descriptions defaultDescription="Material Familly Level 3 Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L3"/>
     </attribute>
     <attribute id="WGBEZ_L3" order="98" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Group DescrLL3"/>
+      <descriptions defaultDescription="Product type"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L3"/>
     </attribute>
     <attribute id="MATKL_L4" order="99" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Group L4"/>
+      <descriptions defaultDescription="Material Familly Level 4 Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L4"/>
     </attribute>
     <attribute id="WGBEZ_L4" order="100" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Group DescrLL4"/>
+      <descriptions defaultDescription="Manufacturing process"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L4"/>
     </attribute>
     <attribute id="MATKL_L5" order="101" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Group L5"/>
+      <descriptions defaultDescription="Material Familly Level 5 Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L5"/>
     </attribute>
     <attribute id="WGBEZ_L5" order="102" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Group DescrLL5"/>
+      <descriptions defaultDescription="Additionnal detail"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L5"/>
     </attribute>
   </attributes>
@@ -1531,7 +1531,7 @@
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="KPEIN"/>
     </measure>
     <measure id="ZPRZ1" order="69" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="ZPRZ1"/>
+      <descriptions defaultDescription="Supplier Percentage discount"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="ZPRZ1"/>
     </measure>
   </baseMeasures>

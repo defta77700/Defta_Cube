@@ -494,6 +494,184 @@ END</formula>
     </calculatedViewAttributes>
     <input node="VND_PRTDS_U"/>
   </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="VND_VNDFIRE_IDNC_J" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1" aggregationType="sum"/>
+      <viewAttribute id="YEAR_FIXR"/>
+      <viewAttribute id="VENDORUNIK_FIXR"/>
+      <viewAttribute id="LIFNR_FIXR"/>
+      <viewAttribute id="CCDC" aggregationType="sum"/>
+      <viewAttribute id="RP" aggregationType="sum"/>
+      <viewAttribute id="SQ" aggregationType="sum"/>
+      <viewAttribute id="PDC" aggregationType="sum"/>
+      <viewAttribute id="RF" aggregationType="sum"/>
+      <viewAttribute id="YEAR_FIXR_CC_IFNULL"/>
+      <viewAttribute id="VENDORUNIK_IDNC"/>
+      <viewAttribute id="CLAIM_LIFNR"/>
+      <viewAttribute id="IDNC_YEAR" aggregationType="sum"/>
+      <viewAttribute id="CLAIM_FMLY"/>
+      <viewAttribute id="CLAIM_WERKS"/>
+      <viewAttribute id="RANKING_POINT" aggregationType="sum"/>
+      <viewAttribute id="IDNC_YEAR_CC"/>
+      <viewAttribute id="YEAR_THRES"/>
+      <viewAttribute id="SITECODE"/>
+      <viewAttribute id="THRESHOLD_FMLY"/>
+      <viewAttribute id="THRESHOLD_POINT" aggregationType="sum"/>
+      <viewAttribute id="IDNC_YEAR_CC_IFNULL"/>
+      <viewAttribute id="YEAR_THRES_CC_IFNULL"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VND_VNDFIXE_JP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_X" source="SPERM_X"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_X" source="LOEVM_X"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBUND" source="VBUND"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_Y" source="LOEVM_Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_Y" source="SPERM_Y"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENSL" source="VENSL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZFAEL" source="ZFAEL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZMONA" source="ZMONA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTAG1" source="ZTAG1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_FR" source="BRTXT_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_EN" source="BRTXT_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTBUS" source="J_1KFTBUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MCOD1" source="MCOD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WEBRE" source="WEBRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_FIXR" source="YEAR_FIXR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK_FIXR" source="VENDORUNIK_FIXR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_FIXR" source="LIFNR_FIXR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CCDC" source="CCDC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RP" source="RP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SQ" source="SQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PDC" source="PDC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RF" source="RF"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_FIXR_CC_IFNULL" source="YEAR_FIXR_CC_IFNULL"/>
+    </input>
+    <input node="VND_IDNCTHRES_JP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK_IDNC" source="VENDORUNIK_IDNC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_LIFNR" source="CLAIM_LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNC_YEAR" source="IDNC_YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_FMLY" source="CLAIM_FMLY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_WERKS" source="CLAIM_WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RANKING_POINT" source="RANKING_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNC_YEAR_CC" source="IDNC_YEAR_CC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_THRES" source="YEAR_THRES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SITECODE" source="SITECODE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="THRESHOLD_FMLY" source="THRESHOLD_FMLY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="THRESHOLD_POINT" source="THRESHOLD_POINT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDNC_YEAR_CC_IFNULL" source="IDNC_YEAR_CC_IFNULL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_THRES_CC_IFNULL" source="YEAR_THRES_CC_IFNULL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="CLAIM_LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_FIXR_CC_IFNULL" source="IDNC_YEAR_CC_IFNULL"/>
+    </input>
+    <joinAttribute name="LIFNR"/>
+    <joinAttribute name="YEAR_FIXR_CC_IFNULL"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="VND_PRTDS_U">
+    <viewAttributes>
+      <viewAttribute id="YEAR_PRTDS" aggregationType="sum"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="SUMTOLXJ" aggregationType="sum"/>
+      <viewAttribute id="COUNTTOLXJ" aggregationType="sum"/>
+      <viewAttribute id="PR_TDS" aggregationType="sum"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VND_PRTDS_P" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_PRTDS" source="YEAR_PRTDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUMTOLXJ" source="SUMTOLXJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTTOLXJ" source="COUNTTOLXJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PR_TDS" source="PR_TDS"/>
+    </input>
+    <input node="VND_PRTDS_H_P" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_PRTDS" source="YEAR_PRTDS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUMTOLXJ" source="SUMTOLXJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTTOLXJ" source="COUNTTOLXJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PR_TDS" source="PR_TDS"/>
+    </input>
+  </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="VND_VNDFIXE_J" cardinality="CN_N" joinType="leftOuter">
     <viewAttributes>
       <viewAttribute id="LIFNR"/>
@@ -750,157 +928,6 @@ END</formula>
     </calculatedViewAttributes>
     <input node="VND_VNDFIXE_J"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="VND_VNDFIRE_IDNC_J" cardinality="CN_N" joinType="leftOuter">
-    <viewAttributes>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="VENDORUNIK"/>
-      <viewAttribute id="KRAUS"/>
-      <viewAttribute id="STCEG"/>
-      <viewAttribute id="STCD1"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="ERDAT"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="ORT01"/>
-      <viewAttribute id="PFACH"/>
-      <viewAttribute id="STRAS"/>
-      <viewAttribute id="PSTLZ"/>
-      <viewAttribute id="REGIO"/>
-      <viewAttribute id="ADRNR"/>
-      <viewAttribute id="TELF1"/>
-      <viewAttribute id="SPERR"/>
-      <viewAttribute id="SPERM_X"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="KTOKK"/>
-      <viewAttribute id="LOEVM_X"/>
-      <viewAttribute id="SPRAS"/>
-      <viewAttribute id="STCD2"/>
-      <viewAttribute id="VBUND"/>
-      <viewAttribute id="INCO1"/>
-      <viewAttribute id="INCO2"/>
-      <viewAttribute id="LFABC"/>
-      <viewAttribute id="LOEVM_Y"/>
-      <viewAttribute id="SPERM_Y"/>
-      <viewAttribute id="VENSL"/>
-      <viewAttribute id="WAERS"/>
-      <viewAttribute id="ZTERM"/>
-      <viewAttribute id="ZFAEL"/>
-      <viewAttribute id="ZMONA"/>
-      <viewAttribute id="ZTAG1"/>
-      <viewAttribute id="TEXT1_FR"/>
-      <viewAttribute id="TEXT1_EN"/>
-      <viewAttribute id="KONZS"/>
-      <viewAttribute id="BRSCH"/>
-      <viewAttribute id="BRTXT_FR"/>
-      <viewAttribute id="BRTXT_EN"/>
-      <viewAttribute id="J_1KFTBUS"/>
-      <viewAttribute id="MCOD1"/>
-      <viewAttribute id="WEBRE"/>
-      <viewAttribute id="PRFRE"/>
-      <viewAttribute id="SMTP_ADDR"/>
-      <viewAttribute id="ZPRZ1" aggregationType="sum"/>
-      <viewAttribute id="YEAR_FIXR"/>
-      <viewAttribute id="VENDORUNIK_FIXR"/>
-      <viewAttribute id="LIFNR_FIXR"/>
-      <viewAttribute id="CCDC" aggregationType="sum"/>
-      <viewAttribute id="RP" aggregationType="sum"/>
-      <viewAttribute id="SQ" aggregationType="sum"/>
-      <viewAttribute id="PDC" aggregationType="sum"/>
-      <viewAttribute id="RF" aggregationType="sum"/>
-      <viewAttribute id="YEAR_FIXR_CC_IFNULL"/>
-      <viewAttribute id="VENDORUNIK_IDNC"/>
-      <viewAttribute id="CLAIM_LIFNR"/>
-      <viewAttribute id="IDNC_YEAR" aggregationType="sum"/>
-      <viewAttribute id="CLAIM_FMLY"/>
-      <viewAttribute id="CLAIM_WERKS"/>
-      <viewAttribute id="RANKING_POINT" aggregationType="sum"/>
-      <viewAttribute id="IDNC_YEAR_CC"/>
-      <viewAttribute id="YEAR_THRES"/>
-      <viewAttribute id="SITECODE"/>
-      <viewAttribute id="THRESHOLD_FMLY"/>
-      <viewAttribute id="THRESHOLD_POINT" aggregationType="sum"/>
-      <viewAttribute id="IDNC_YEAR_CC_IFNULL"/>
-      <viewAttribute id="YEAR_THRES_CC_IFNULL"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="VND_VNDFIXE_JP">
-      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_X" source="SPERM_X"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LAND1" source="LAND1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_X" source="LOEVM_X"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SPRAS" source="SPRAS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VBUND" source="VBUND"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_Y" source="LOEVM_Y"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_Y" source="SPERM_Y"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VENSL" source="VENSL"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZFAEL" source="ZFAEL"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZMONA" source="ZMONA"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZTAG1" source="ZTAG1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_FR" source="BRTXT_FR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_EN" source="BRTXT_EN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTBUS" source="J_1KFTBUS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MCOD1" source="MCOD1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WEBRE" source="WEBRE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_FIXR" source="YEAR_FIXR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK_FIXR" source="VENDORUNIK_FIXR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_FIXR" source="LIFNR_FIXR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CCDC" source="CCDC"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="RP" source="RP"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SQ" source="SQ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PDC" source="PDC"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="RF" source="RF"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_FIXR_CC_IFNULL" source="YEAR_FIXR_CC_IFNULL"/>
-    </input>
-    <input node="VND_IDNCTHRES_JP">
-      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK_IDNC" source="VENDORUNIK_IDNC"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_LIFNR" source="CLAIM_LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="IDNC_YEAR" source="IDNC_YEAR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_FMLY" source="CLAIM_FMLY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIM_WERKS" source="CLAIM_WERKS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="RANKING_POINT" source="RANKING_POINT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="IDNC_YEAR_CC" source="IDNC_YEAR_CC"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_THRES" source="YEAR_THRES"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SITECODE" source="SITECODE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="THRESHOLD_FMLY" source="THRESHOLD_FMLY"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="THRESHOLD_POINT" source="THRESHOLD_POINT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="IDNC_YEAR_CC_IFNULL" source="IDNC_YEAR_CC_IFNULL"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_THRES_CC_IFNULL" source="YEAR_THRES_CC_IFNULL"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="CLAIM_LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_FIXR_CC_IFNULL" source="IDNC_YEAR_CC_IFNULL"/>
-    </input>
-    <joinAttribute name="LIFNR"/>
-    <joinAttribute name="YEAR_FIXR_CC_IFNULL"/>
-  </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VND_IDNCTHRES_JP">
     <viewAttributes>
       <viewAttribute id="VENDORUNIK_IDNC"/>
@@ -1013,33 +1040,6 @@ END</formula>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="V_VENDOR_PRTDS_H"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:UnionView" id="VND_PRTDS_U">
-    <viewAttributes>
-      <viewAttribute id="YEAR_PRTDS" aggregationType="sum"/>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="SUMTOLXJ" aggregationType="sum"/>
-      <viewAttribute id="COUNTTOLXJ" aggregationType="sum"/>
-      <viewAttribute id="PR_TDS" aggregationType="sum"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="VND_PRTDS_P" emptyUnionBehavior="NO_ROW">
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_PRTDS" source="YEAR_PRTDS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SUMTOLXJ" source="SUMTOLXJ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTTOLXJ" source="COUNTTOLXJ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PR_TDS" source="PR_TDS"/>
-    </input>
-    <input node="VND_PRTDS_H_P" emptyUnionBehavior="NO_ROW">
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_PRTDS" source="YEAR_PRTDS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SUMTOLXJ" source="SUMTOLXJ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTTOLXJ" source="COUNTTOLXJ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PR_TDS" source="PR_TDS"/>
-    </input>
   </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
@@ -1438,6 +1438,22 @@ END</formula>
       <upperLeftCorner x="787" y="569"/>
       <rectangleSize height="30" width="160"/>
     </shape>
+    <shape expanded="true" modelObjectName="VND_VNDFIRE_IDNC_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-171" y="668"/>
+      <rectangleSize height="30" width="271"/>
+    </shape>
+    <shape modelObjectName="VND_VNDFIXE_JP" modelObjectNameSpace="VND_VNDFIRE_IDNC_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="190"/>
+    </shape>
+    <shape modelObjectName="VND_IDNCTHRES_JP" modelObjectNameSpace="VND_VNDFIRE_IDNC_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="506"/>
+      <rectangleSize width="225"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VND_PRTDS_U" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="787" y="668"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
   
   
     <shape expanded="true" modelObjectName="VND_VNDFIXE_J" modelObjectNameSpace="CalculationView">
@@ -1464,18 +1480,6 @@ END</formula>
     <shape expanded="true" modelObjectName="VND_VNDFIXE_JP" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="-369" y="812"/>
       <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape expanded="true" modelObjectName="VND_VNDFIRE_IDNC_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-171" y="668"/>
-      <rectangleSize height="30" width="271"/>
-    </shape>
-    <shape modelObjectName="VND_VNDFIXE_JP" modelObjectNameSpace="VND_VNDFIRE_IDNC_J" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="190"/>
-    </shape>
-    <shape modelObjectName="VND_IDNCTHRES_JP" modelObjectNameSpace="VND_VNDFIRE_IDNC_J" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="506"/>
-      <rectangleSize width="225"/>
     </shape>
     <shape expanded="true" modelObjectName="VND_IDNCTHRES_JP" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="74" y="812"/>
@@ -1507,10 +1511,6 @@ END</formula>
     </shape>
     <shape expanded="true" modelObjectName="VND_PRTDS_H_P" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="940" y="810"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape expanded="true" modelObjectName="VND_PRTDS_U" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="787" y="668"/>
       <rectangleSize height="30" width="160"/>
     </shape></shapes>
 </layout>

@@ -825,12 +825,12 @@
       <descriptions defaultDescription="Supplier Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_LIFNR"/>
     </attribute>
-    <attribute id="VENDORUNIK" order="2" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VENDORUNIK" order="2" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="VENDORUNIK"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
     </attribute>
     <attribute id="KRAUS" order="3" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Duns"/>
+      <descriptions defaultDescription="DUNS"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KRAUS"/>
     </attribute>
     <attribute id="STCEG" order="4" displayAttribute="false" attributeHierarchyActive="false">
@@ -846,7 +846,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG"/>
     </attribute>
     <attribute id="VND_SOURCE" order="7" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SOURCE"/>
+      <descriptions defaultDescription="ERP source"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_SOURCE"/>
     </attribute>
     <attribute id="ERDAT" order="8" displayAttribute="false" attributeHierarchyActive="false">
@@ -869,7 +869,7 @@
       <descriptions defaultDescription="Supplier Address2"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STRAS"/>
     </attribute>
-    <attribute id="PSTLZ" order="13" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PSTLZ" order="13" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier Postal Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PSTLZ"/>
     </attribute>
@@ -897,7 +897,7 @@
       <descriptions defaultDescription="Supplier Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAND1"/>
     </attribute>
-    <attribute id="KTOKK" order="20" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="KTOKK" order="20" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Account Type"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KTOKK"/>
     </attribute>
@@ -929,11 +929,11 @@
       <descriptions defaultDescription="Supplier category"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LFABC"/>
     </attribute>
-    <attribute id="LOEVM_Y" order="28" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LOEVM_Y" order="28" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="LOEVM_Y"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LOEVM_Y"/>
     </attribute>
-    <attribute id="SPERM_Y" order="29" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SPERM_Y" order="29" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="SPERM_Y"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SPERM_Y"/>
     </attribute>
@@ -974,39 +974,39 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KONZS"/>
     </attribute>
     <attribute id="BRSCH" order="39" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="BRSCH"/>
+      <descriptions defaultDescription="Supplier generic family Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRSCH"/>
     </attribute>
     <attribute id="BRTXT_FR" order="40" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="BRTXT_FR"/>
+      <descriptions defaultDescription="Supplier generic family Description FR"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRTXT_FR"/>
     </attribute>
     <attribute id="BRTXT_EN" order="41" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="BRTXT_EN"/>
+      <descriptions defaultDescription="Supplier generic family Description EN"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRTXT_EN"/>
     </attribute>
-    <attribute id="J_1KFTBUS" order="42" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="J_1KFTBUS" order="42" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Type of business"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="J_1KFTBUS"/>
     </attribute>
-    <attribute id="MCOD1" order="43" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MCOD1" order="43" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="MCOD1"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MCOD1"/>
     </attribute>
-    <attribute id="WEBRE" order="44" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WEBRE" order="44" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="WEBRE"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WEBRE"/>
     </attribute>
-    <attribute id="PRFRE" order="45" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PRFRE" order="45" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="PRFRE"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PRFRE"/>
     </attribute>
     <attribute id="SMTP_ADDR" order="46" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SMTP_ADDR"/>
+      <descriptions defaultDescription="Supplier email"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SMTP_ADDR"/>
     </attribute>
     <attribute id="ZPRZ1" order="47" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Cash Discount"/>
+      <descriptions defaultDescription="Supplier Percentage discount"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZPRZ1"/>
     </attribute>
     <attribute id="INV_VENDOR_2Y_BOOL" order="49" displayAttribute="false" attributeHierarchyActive="false">
