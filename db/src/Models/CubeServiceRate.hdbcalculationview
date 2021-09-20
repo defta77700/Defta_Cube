@@ -1014,11 +1014,11 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BUKRS"/>
     </attribute>
     <attribute id="LIFNR" order="4" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SR Vendor Code"/>
+      <descriptions defaultDescription="Supplier Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR"/>
     </attribute>
     <attribute id="MATNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SR Matrerial"/>
+      <descriptions defaultDescription="Article Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATNR"/>
     </attribute>
     <attribute id="EINDT" order="6" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
@@ -1070,7 +1070,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DSNAM"/>
     </attribute>
     <attribute id="SOURCE" order="27" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SOURCE"/>
+      <descriptions defaultDescription="ERP Source"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SOURCE"/>
     </attribute>
     <attribute id="EINDT_DT" order="28" displayAttribute="false" attributeHierarchyActive="false">
@@ -1094,31 +1094,31 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALWEEK"/>
     </attribute>
     <attribute id="VND_LIFNR" order="33" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="VND Supplier Code"/>
+      <descriptions defaultDescription="Supplier code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_LIFNR"/>
     </attribute>
     <attribute id="VENDORUNIK" order="34" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="VENDORUNIK"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
     </attribute>
-    <attribute id="VND_EKORG" order="35" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VND_EKORG" order="35" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="VND Purchase Organisation"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_EKORG"/>
     </attribute>
     <attribute id="VND_SOURCE" order="36" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="VND_SOURCE"/>
+      <descriptions defaultDescription="ERP Source 2"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_SOURCE"/>
     </attribute>
     <attribute id="VND_NAME" order="37" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="VND Supplier Name"/>
+      <descriptions defaultDescription="Supplier Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_NAME"/>
     </attribute>
     <attribute id="VND_CITY" order="38" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="VND Supplier City"/>
+      <descriptions defaultDescription="Supplier City"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_CITY"/>
     </attribute>
     <attribute id="VND_REGIO" order="39" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="VND Supplier Region"/>
+      <descriptions defaultDescription="Supplier Region"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_REGIO"/>
     </attribute>
     <attribute id="VND_PSTLCODE" order="40" displayAttribute="false" attributeHierarchyActive="false">
