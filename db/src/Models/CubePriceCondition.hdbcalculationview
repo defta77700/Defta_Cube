@@ -1126,7 +1126,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SOURCE"/>
     </attribute>
     <attribute id="LIFNR" order="3" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
-      <descriptions defaultDescription="Vendor Code"/>
+      <descriptions defaultDescription="Supplier Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR"/>
     </attribute>
     <attribute id="MATNR" order="4" displayAttribute="false" attributeHierarchyActive="false">
@@ -1134,11 +1134,11 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATNR"/>
     </attribute>
     <attribute id="WERKS" order="5" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Plant"/>
+      <descriptions defaultDescription="Plant Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WERKS"/>
     </attribute>
     <attribute id="EKORG" order="6" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Purchase Org"/>
+      <descriptions defaultDescription="Supplier purchase organization code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG"/>
     </attribute>
     <attribute id="DATBI" hidden="true" order="7" displayAttribute="false" attributeHierarchyActive="false">
@@ -1162,7 +1162,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATNR_C"/>
     </attribute>
     <attribute id="LIFNR_C" order="14" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Code"/>
+      <descriptions defaultDescription="Supplier Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR_C"/>
     </attribute>
     <attribute id="DATBI_D" order="15" displayAttribute="false" attributeHierarchyActive="false">
@@ -1182,19 +1182,19 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DATE_SAP"/>
     </attribute>
     <attribute id="YEAR" order="19" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR"/>
+      <descriptions defaultDescription="Year"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR"/>
     </attribute>
     <attribute id="CALQUARTER" order="20" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR QUARTER"/>
+      <descriptions defaultDescription="Year Quarter"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALQUARTER"/>
     </attribute>
     <attribute id="CALMONTH" order="21" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR MONTH"/>
+      <descriptions defaultDescription="Year Month"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALMONTH"/>
     </attribute>
     <attribute id="CALWEEK" order="22" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR WEEK"/>
+      <descriptions defaultDescription="Year Week"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALWEEK"/>
     </attribute>
     <attribute id="VND_LIFNR" order="23" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
@@ -1206,19 +1206,19 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
     </attribute>
     <attribute id="KRAUS" order="25" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor DUNS"/>
+      <descriptions defaultDescription="DUNS"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KRAUS"/>
     </attribute>
     <attribute id="STCEG" order="26" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor VAT"/>
+      <descriptions defaultDescription="VAT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCEG"/>
     </attribute>
     <attribute id="STCD1" order="27" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor SIRET"/>
+      <descriptions defaultDescription="SIRET"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCD1"/>
     </attribute>
     <attribute id="EKORG_1" order="28" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Purchase Org."/>
+      <descriptions defaultDescription="Plant Purchase Org"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG_1"/>
     </attribute>
     <attribute id="VND_SOURCE" order="29" displayAttribute="false" attributeHierarchyActive="false">
@@ -1226,11 +1226,11 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_SOURCE"/>
     </attribute>
     <attribute id="ERDAT" hidden="true" order="30" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ERDAT"/>
+      <descriptions defaultDescription="Created on"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ERDAT"/>
     </attribute>
     <attribute id="VND_NAME" order="31" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Name"/>
+      <descriptions defaultDescription="Supplier Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_NAME"/>
     </attribute>
     <attribute id="ORT01" order="32" displayAttribute="false" attributeHierarchyActive="false">
