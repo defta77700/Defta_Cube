@@ -841,7 +841,7 @@
       <descriptions defaultDescription="SIRET"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCD1"/>
     </attribute>
-    <attribute id="EKORG" order="6" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="EKORG" order="6" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier Purchase Organization"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG"/>
     </attribute>
