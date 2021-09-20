@@ -476,7 +476,7 @@ END</formula>
     <joinAttribute name="JOIN$LIFNR_FIXRK$CLAIM_LIFNR"/>
     <joinAttribute name="JOIN$YEAR_FIXRK$INDC_YEAR_C"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="ALL_J_3" cardinality="CN_N" joinType="inner" multiJoinNode="ALL_J" multiJoinCentralTable="V_VENDOR_IDNC_P" multiJoinOrder="Outside In">
+  <calculationView xsi:type="Calculation:JoinView" id="ALL_J_3" cardinality="CN_N" joinType="leftOuter" multiJoinNode="ALL_J" multiJoinCentralTable="V_VENDOR_IDNC_P" multiJoinOrder="Outside In">
     <viewAttributes>
       <viewAttribute id="CLAIM_LIFNR"/>
       <viewAttribute id="IDNC_YEAR" aggregationType="sum"/>
@@ -636,7 +636,7 @@ END</formula>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="SR"/>
     </measure>
   
-    <measure id="CC_1" order="27" aggregationType="sum" measureType="simple">
+    <measure id="CC_2" order="27" aggregationType="sum" measureType="simple" hidden="true">
       <descriptions defaultDescription="CC_1"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="SR_WO_NULL"/>
     </measure>

@@ -4,38 +4,20 @@
 <localVariables/>
 <variableMappings/>
 <dataSources>
-  <DataSource id="V_VENDORPAYMNT_MODIFICATION_MAX">
-    <resourceUri>V_VENDORPAYMNT_MODIFICATION_MAX</resourceUri>
+  <DataSource id="VENDORPAYMENTTYPE_MODIFICATION">
+    <resourceUri>VENDORPAYMENTTYPE_MODIFICATION</resourceUri>
   </DataSource>
   <DataSource id="VENDORPAYMENTTYPE_GOLDEN">
     <resourceUri>VENDORPAYMENTTYPE_GOLDEN</resourceUri>
   </DataSource>
-  <DataSource id="VENDORPAYMENTTYPE_MODIFICATION">
+  <DataSource id="VENDORPAYMENTTYPE">
+    <resourceUri>VENDORPAYMENTTYPE</resourceUri>
+  </DataSource>
+  <DataSource id="VNDPAYMTTYP_MOD_P$$$$VENDORPAYMENTTYPE_MODIFICATION$$">
     <resourceUri>VENDORPAYMENTTYPE_MODIFICATION</resourceUri>
   </DataSource>
 </dataSources>
 <calculationViews>
-  <calculationView xsi:type="Calculation:ProjectionView" id="V_VNDPAYMNT_MODIF_MAX_P">
-    <viewAttributes>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="KRAUS"/>
-      <viewAttribute id="STCEG"/>
-      <viewAttribute id="STCD1"/>
-      <viewAttribute id="BUKRS"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="AKONT"/>
-      <viewAttribute id="LOEVM"/>
-      <viewAttribute id="SPERR"/>
-      <viewAttribute id="ZTERM"/>
-      <viewAttribute id="ZWELS"/>
-      <viewAttribute id="TEXT1_FR"/>
-      <viewAttribute id="TEXT1_EN"/>
-      <viewAttribute id="FDGRV"/>
-      <viewAttribute id="REPRF"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="V_VENDORPAYMNT_MODIFICATION_MAX"/>
-  </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VENDORPAYMNT_CREATEP_P">
     <viewAttributes>
       <viewAttribute id="LIFNR"/>
@@ -53,10 +35,37 @@
       <viewAttribute id="TEXT1_EN"/>
       <viewAttribute id="FDGRV"/>
       <viewAttribute id="REPRF"/>
+    
+      <viewAttribute id="CHANGEID"/>
+      <viewAttribute id="CHANGEUSER"/>
+      <viewAttribute id="ACTION"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="VENDORPAYMNT_CREATE_P"/>
   </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VENDORPAYMNT_CREATE_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="REPRF"/>
+    
+      <viewAttribute id="CHANGEID"/>
+      <viewAttribute id="CHANGEUSER"/>
+      <viewAttribute id="ACTION"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VENDORPAYMENTTYPE_MODIFICATION"/></calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VendorPaymnt_Gold_P">
     <viewAttributes>
       <viewAttribute id="LIFNR"/>
@@ -78,31 +87,6 @@
     <calculatedViewAttributes/>
     <input node="VENDORPAYMENTTYPE_GOLDEN"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VENDORPAYMNT_CREATE_P" filterExpressionLanguage="SQL">
-    <viewAttributes>
-      <viewAttribute id="CHANGEID"/>
-      <viewAttribute id="CHANGEUSER"/>
-      <viewAttribute id="ACTION"/>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="KRAUS"/>
-      <viewAttribute id="STCEG"/>
-      <viewAttribute id="STCD1"/>
-      <viewAttribute id="BUKRS"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="AKONT"/>
-      <viewAttribute id="LOEVM"/>
-      <viewAttribute id="SPERR"/>
-      <viewAttribute id="ZTERM"/>
-      <viewAttribute id="ZWELS"/>
-      <viewAttribute id="TEXT1_FR"/>
-      <viewAttribute id="TEXT1_EN"/>
-      <viewAttribute id="FDGRV"/>
-      <viewAttribute id="REPRF"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="VENDORPAYMENTTYPE_MODIFICATION"/>
-    <filter>&quot;ACTION&quot; = 'C'</filter>
-  </calculationView>
   <calculationView xsi:type="Calculation:UnionView" id="Union_1">
     <viewAttributes>
       <viewAttribute id="LIFNR"/>
@@ -120,9 +104,174 @@
       <viewAttribute id="TEXT1_EN"/>
       <viewAttribute id="FDGRV"/>
       <viewAttribute id="REPRF"/>
+    
+      <viewAttribute id="CHANGEID"/>
+      <viewAttribute id="CHANGEUSER"/>
+      <viewAttribute id="ACTION"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="V_VNDPAYMNT_MODIF_MAX_P">
+    <input node="VENDORPAYMNT_CREATEP_P" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AKONT" source="AKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWELS" source="ZWELS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FDGRV" source="FDGRV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REPRF" source="REPRF"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHANGEID" source="CHANGEID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CHANGEUSER" source="CHANGEUSER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTION" source="ACTION"/>
+    </input>
+    <input node="VendorPaymnt_Gold_P" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AKONT" source="AKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWELS" source="ZWELS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FDGRV" source="FDGRV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REPRF" source="REPRF"/>
+    
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="CHANGEID" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="CHANGEUSER" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ACTION" null="true" value=""/>
+    </input>
+  
+    <input node="VNDPAYMTTYP_WO_MOD_JP" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="AKONT" source="AKONT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ZWELS" source="ZWELS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FDGRV" source="FDGRV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REPRF" source="REPRF"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="CHANGEID" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="CHANGEUSER" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ACTION" null="true" value=""/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VNDPAYMTTYP_WO_MOD_JP">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="REPRF"/>
+      <viewAttribute id="LIFNR_1"/>
+      <viewAttribute id="KRAUS_1"/>
+      <viewAttribute id="STCEG_1"/>
+      <viewAttribute id="STCD1_1"/>
+      <viewAttribute id="BUKRS_1"/>
+      <viewAttribute id="SOURCE_1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VNDPAYMTTYP_WO_MOD_J"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VNDPAYMTTYP_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="REPRF"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VENDORPAYMENTTYPE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VNDPAYMTTYP_MOD_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="REPRF"/>
+      <viewAttribute id="CHANGEID"/>
+      <viewAttribute id="CHANGEUSER"/>
+      <viewAttribute id="ACTION"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VNDPAYMTTYP_MOD_P$$$$VENDORPAYMENTTYPE_MODIFICATION$$"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="VNDPAYMTTYP_WO_MOD_J" cardinality="CN_N" joinType="leftOuter" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="REPRF"/>
+      <viewAttribute id="LIFNR_1"/>
+      <viewAttribute id="KRAUS_1"/>
+      <viewAttribute id="STCEG_1"/>
+      <viewAttribute id="STCD1_1"/>
+      <viewAttribute id="BUKRS_1"/>
+      <viewAttribute id="SOURCE_1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VNDPAYMTTYP_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
@@ -139,40 +288,32 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="FDGRV" source="FDGRV"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="REPRF" source="REPRF"/>
     </input>
-    <input node="VENDORPAYMNT_CREATEP_P">
+    <input node="VNDPAYMTTYP_MOD_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_1" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS_1" source="KRAUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG_1" source="STCEG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1_1" source="STCD1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS_1" source="BUKRS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE_1" source="SOURCE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="AKONT" source="AKONT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZWELS" source="ZWELS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="FDGRV" source="FDGRV"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="REPRF" source="REPRF"/>
     </input>
-    <input node="VendorPaymnt_Gold_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="AKONT" source="AKONT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM" source="LOEVM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZWELS" source="ZWELS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="FDGRV" source="FDGRV"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="REPRF" source="REPRF"/>
-    </input>
+    <filter>&quot;LIFNR_1&quot; IS NULL
+AND &quot;KRAUS_1&quot; IS NULL
+AND &quot;STCEG_1&quot; IS NULL
+AND &quot;STCD1_1&quot; IS NULL
+AND &quot;BUKRS_1&quot; IS NULL
+AND &quot;SOURCE_1&quot; IS NULL</filter>
+    <joinAttribute name="LIFNR"/>
+    <joinAttribute name="KRAUS"/>
+    <joinAttribute name="STCEG"/>
+    <joinAttribute name="STCD1"/>
+    <joinAttribute name="BUKRS"/>
+    <joinAttribute name="SOURCE"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="Union_1">
@@ -237,6 +378,21 @@
       <descriptions defaultDescription="REPRF"/>
       <keyMapping columnObjectName="Union_1" columnName="REPRF"/>
     </attribute>
+  
+    <attribute id="CHANGEID" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHANGEID"/>
+  
+      <keyMapping columnObjectName="Union_1" columnName="CHANGEID"/>
+  
+    </attribute>
+    <attribute id="CHANGEUSER" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CHANGEUSER"/>
+      <keyMapping columnObjectName="Union_1" columnName="CHANGEUSER"/>
+    </attribute>
+    <attribute id="ACTION" order="18" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ACTION"/>
+      <keyMapping columnObjectName="Union_1" columnName="ACTION"/>
+    </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures/>
@@ -248,26 +404,46 @@
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
       <upperLeftCorner x="40" y="85"/>
     </shape>
-  
-    <shape expanded="true" modelObjectName="V_VNDPAYMNT_MODIF_MAX_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-253" y="358"/>
-      <rectangleSize height="30" width="243"/>
-    </shape>
     <shape expanded="true" modelObjectName="VENDORPAYMNT_CREATEP_P" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="50" y="358"/>
       <rectangleSize height="30" width="243"/>
-    </shape>
-    <shape expanded="true" modelObjectName="VendorPaymnt_Gold_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="346" y="358"/>
-      <rectangleSize height="30" width="221"/>
     </shape>
     <shape expanded="true" modelObjectName="VENDORPAYMNT_CREATE_P" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="60" y="471"/>
       <rectangleSize height="30" width="230"/>
     </shape>
+    <shape expanded="true" modelObjectName="VendorPaymnt_Gold_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="346" y="358"/>
+      <rectangleSize height="30" width="221"/>
+    </shape>
     <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="91" y="198"/>
       <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VNDPAYMTTYP_WO_MOD_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-701" y="388"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="VNDPAYMTTYP_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-845" y="642"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VNDPAYMTTYP_MOD_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-563" y="642"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VNDPAYMTTYP_WO_MOD_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-707" y="484"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="VNDPAYMTTYP_P" modelObjectNameSpace="VNDPAYMTTYP_WO_MOD_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="167"/>
+    </shape>
+    <shape modelObjectName="VNDPAYMTTYP_MOD_P" modelObjectNameSpace="VNDPAYMTTYP_WO_MOD_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="202"/>
     </shape>
   </shapes>
 </layout>
