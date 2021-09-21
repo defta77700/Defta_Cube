@@ -1088,11 +1088,11 @@
       <descriptions defaultDescription="Plant Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_WERKS"/>
     </attribute>
-    <attribute id="PIR_EKORG" order="2" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PIR_EKORG" order="2" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Material Purchase Organization"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_EKORG"/>
     </attribute>
-    <attribute id="PIR_MATNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PIR_MATNR" order="3" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Material Origine Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_MATNR"/>
     </attribute>
@@ -1104,7 +1104,7 @@
       <descriptions defaultDescription="Supplier Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_LIFNR"/>
     </attribute>
-    <attribute id="PIR_URZLAND" order="8" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PIR_URZLAND" order="8" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Material Origine Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_URZLAND"/>
     </attribute>
@@ -1112,15 +1112,15 @@
       <descriptions defaultDescription="Material Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATNR"/>
     </attribute>
-    <attribute id="MATKL" order="10" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MATKL" order="10" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Material Group"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL"/>
     </attribute>
-    <attribute id="BRGEW" order="11" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="BRGEW" order="11" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Gross Weight"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRGEW"/>
     </attribute>
-    <attribute id="GEWEI" order="12" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="GEWEI" order="12" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Weight unit"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="GEWEI"/>
     </attribute>
@@ -1136,7 +1136,7 @@
       <descriptions defaultDescription="Material Type Description EN"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MTBEZ_EN"/>
     </attribute>
-    <attribute id="NTGEW" order="16" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="NTGEW" order="16" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Net Weight"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="NTGEW"/>
     </attribute>
@@ -1152,19 +1152,19 @@
       <descriptions defaultDescription="SOURCE"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SOURCE"/>
     </attribute>
-    <attribute id="ERSDA" order="20" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ERSDA" order="20" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Material Created Date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ERSDA"/>
     </attribute>
-    <attribute id="LAEDA" order="21" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LAEDA" order="21" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Material Changed Date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAEDA"/>
     </attribute>
-    <attribute id="WERKS" order="22" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WERKS" order="22" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Plant Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WERKS"/>
     </attribute>
-    <attribute id="EKGRP" order="23" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="EKGRP" order="23" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Purchasing group"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKGRP"/>
     </attribute>
@@ -1172,7 +1172,7 @@
       <descriptions defaultDescription="Comodity code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STAWN"/>
     </attribute>
-    <attribute id="PRCTR" order="25" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PRCTR" order="25" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Profit Center"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PRCTR"/>
     </attribute>
@@ -1188,15 +1188,15 @@
       <descriptions defaultDescription="S/R code characteristic"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PROFL"/>
     </attribute>
-    <attribute id="NAME1" order="29" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="NAME1" order="29" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="NAME1"/>
     </attribute>
-    <attribute id="EKORG" order="30" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="EKORG" order="30" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier Purchase Organization code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG"/>
     </attribute>
-    <attribute id="LAND1" order="31" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LAND1" order="31" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAND1"/>
     </attribute>
@@ -1205,7 +1205,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L1"/>
     </attribute>
     <attribute id="WGBEZ_L1" order="33" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Purchasing type"/>
+      <descriptions defaultDescription="MF1 Purchasing type"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L1"/>
     </attribute>
     <attribute id="MATKL_L2" order="34" displayAttribute="false" attributeHierarchyActive="false">
@@ -1213,7 +1213,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L2"/>
     </attribute>
     <attribute id="WGBEZ_L2" order="35" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Product material"/>
+      <descriptions defaultDescription="MF2 Product material"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L2"/>
     </attribute>
     <attribute id="MATKL_L3" order="36" displayAttribute="false" attributeHierarchyActive="false">
@@ -1221,7 +1221,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L3"/>
     </attribute>
     <attribute id="WGBEZ_L3" order="37" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Product Type"/>
+      <descriptions defaultDescription="MF3 Product type"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L3"/>
     </attribute>
     <attribute id="MATKL_L4" order="38" displayAttribute="false" attributeHierarchyActive="false">
@@ -1229,7 +1229,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L4"/>
     </attribute>
     <attribute id="WGBEZ_L4" order="39" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Manufacturing process"/>
+      <descriptions defaultDescription="MF4 Manufacturing process"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L4"/>
     </attribute>
     <attribute id="MATKL_L5" order="40" displayAttribute="false" attributeHierarchyActive="false">
@@ -1237,7 +1237,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L5"/>
     </attribute>
     <attribute id="WGBEZ_L5" order="41" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Additional detail"/>
+      <descriptions defaultDescription="MF5 Additionnal detail"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L5"/>
     </attribute>
     <attribute id="PIR_SOURCE" order="42" displayAttribute="false" attributeHierarchyActive="false">
@@ -1248,7 +1248,7 @@
       <descriptions defaultDescription="Plant Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PLANT_NAME"/>
     </attribute>
-    <attribute id="EKORG_1" order="44" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="EKORG_1" order="44" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Plant Purchase Org"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG_1"/>
     </attribute>
@@ -1256,7 +1256,7 @@
       <descriptions defaultDescription="PIR_ERDAT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_ERDAT"/>
     </attribute>
-    <attribute id="PIR_INCO1" order="48" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+    <attribute id="PIR_INCO1" order="48" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="PIR_INCO 1"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_INCO1"/>
     </attribute>
