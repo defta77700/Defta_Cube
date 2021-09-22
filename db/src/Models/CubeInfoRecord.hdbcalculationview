@@ -1257,7 +1257,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_ERDAT"/>
     </attribute>
     <attribute id="PIR_INCO1" order="48" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="PIR_INCO 1"/>
+      <descriptions defaultDescription="Incoterm code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PIR_INCO1"/>
     </attribute>
     <attribute id="PIR_INCO2" order="49" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
@@ -1375,14 +1375,14 @@
   </calculatedMeasures>
   <restrictedMeasures/>
   <localDimensions>
-    <localDimension id="MATERIALGRP_HIER_CODE">
+    <localDimension id="Material_Familly_Code_hierarchy">
       <attributeRef xsi:type="DataFoundation:Attribute">MATKL_L1</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">MATKL_L2</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">MATKL_L3</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">MATKL_L4</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">MATKL_L5</attributeRef>
       <hierarchies>
-        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="MATERIALGRP_HIER_CODE" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="Material_Familly_Code_hierarchy" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
           <descriptions defaultDescription="MATERIAL GROUP Code Hierachy"/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>
@@ -1395,14 +1395,14 @@
         </hierarchy>
       </hierarchies>
     </localDimension>
-    <localDimension id="MATERIALGRP_HIER_DESC">
+    <localDimension id="Material_Familly_description_hierarchy">
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L1</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L2</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L3</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L4</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L5</attributeRef>
       <hierarchies>
-        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="MATERIALGRP_HIER_DESC" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="Material_Familly_description_hierarchy" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
           <descriptions defaultDescription="MATERIAL GROUP Description Hierarchy"/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>
@@ -1415,13 +1415,13 @@
         </hierarchy>
       </hierarchies>
     </localDimension>
-    <localDimension id="ERDAT_HIER">
+    <localDimension id="start_date_hierarchy">
       <attributeRef xsi:type="DataFoundation:Attribute">YEAR</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">CALQUARTER</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">CALMONTH</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">CALWEEK</attributeRef>
       <hierarchies>
-        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="ERDAT_HIER" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="start_date_hierarchy" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
           <descriptions defaultDescription="Create PIR Date Hierarchy"/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>
@@ -1433,13 +1433,13 @@
         </hierarchy>
       </hierarchies>
     </localDimension>
-    <localDimension id="VENDOR_GEO">
+    <localDimension id="Supplier_geo_hierarchy">
       <attributeRef xsi:type="DataFoundation:Attribute">VND_COUNTRY</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">VND_REGIO</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">VND_PSTLZ</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">VND_CITY</attributeRef>
       <hierarchies>
-        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="VENDOR_GEO" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="Supplier_geo_hierarchy" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
           <descriptions defaultDescription="Vendor Geography Hierarchy"/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>

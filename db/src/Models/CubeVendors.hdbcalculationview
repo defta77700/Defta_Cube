@@ -1033,7 +1033,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_STCD1"/>
     </attribute>
     <attribute id="VNDPAY_BUKRS" order="56" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Vendor Company Code"/>
+      <descriptions defaultDescription="Company Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VNDPAY_BUKRS"/>
     </attribute>
     <attribute id="VNDPAY_SOURCE" order="57" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
@@ -1155,13 +1155,13 @@
     </measure>
   </restrictedMeasures>
   <localDimensions>
-    <localDimension id="VENDOR_GEO">
+    <localDimension id="Supplier_geo_hierarchy">
       <attributeRef xsi:type="DataFoundation:Attribute">LAND1</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">REGIO</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">PSTLZ</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">ORT01</attributeRef>
       <hierarchies>
-        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="VENDOR_GEO" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="Supplier_geo_hierarchy" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
           <descriptions defaultDescription="VENDOR_GEO"/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>

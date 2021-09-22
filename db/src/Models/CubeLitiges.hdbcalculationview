@@ -1168,7 +1168,7 @@
       <descriptions defaultDescription="Supplier Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_LIFNR"/>
     </attribute>
-    <attribute id="VENDORUNIK" order="2" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VENDORUNIK" order="2" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier key ID"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
     </attribute>
@@ -1189,14 +1189,14 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="REGIO"/>
     </attribute>
     <attribute id="LAND1" order="7" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Plant Country Code"/>
+      <descriptions defaultDescription="Supplier Country Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LAND1"/>
     </attribute>
     <attribute id="LFABC" order="8" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Supplier category"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LFABC"/>
     </attribute>
-    <attribute id="BRSCH" order="9" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="BRSCH" order="9" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier generic family Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRSCH"/>
     </attribute>
@@ -1208,15 +1208,15 @@
       <descriptions defaultDescription="Supplier generic family Description EN"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BRTXT_EN"/>
     </attribute>
-    <attribute id="ZTERM" order="12" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ZTERM" order="12" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Payment Term"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZTERM"/>
     </attribute>
-    <attribute id="TEXT1_FR" order="13" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="TEXT1_FR" order="13" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Payment Term_FR comment"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TEXT1_FR"/>
     </attribute>
-    <attribute id="TEXT1_EN" order="14" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="TEXT1_EN" order="14" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Payment Term_EN comment"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TEXT1_EN"/>
     </attribute>
@@ -1237,19 +1237,19 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_DATE"/>
     </attribute>
     <attribute id="CALWEEK" order="21" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CALWEEK"/>
+      <descriptions defaultDescription="Claim creation week"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALWEEK"/>
     </attribute>
     <attribute id="CALMONTH" order="22" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CALMONTH"/>
+      <descriptions defaultDescription="Claim creation mounth"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALMONTH"/>
     </attribute>
     <attribute id="CALQUARTER" order="23" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CALQUARTER"/>
+      <descriptions defaultDescription="Claim creation quarter"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALQUARTER"/>
     </attribute>
     <attribute id="YEAR" order="24" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR"/>
+      <descriptions defaultDescription="Claim creation year"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR"/>
     </attribute>
     <attribute id="CLAIM_CREATE" order="25" displayAttribute="false" attributeHierarchyActive="false">
@@ -1272,11 +1272,11 @@
       <descriptions defaultDescription="Claim detection place"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_RCPT"/>
     </attribute>
-    <attribute id="CLAIM_COUNTRY" order="30" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_COUNTRY" order="30" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Claim country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_COUNTRY"/>
     </attribute>
-    <attribute id="CLAIM_NAME1" order="31" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_NAME1" order="31" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_NAME1"/>
     </attribute>
@@ -1284,11 +1284,11 @@
       <descriptions defaultDescription="Claim Family"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_FMLY"/>
     </attribute>
-    <attribute id="PART_NBR" order="33" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PART_NBR" order="33" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Part Number"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PART_NBR"/>
     </attribute>
-    <attribute id="PART_NAME" order="34" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PART_NAME" order="34" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Part Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PART_NAME"/>
     </attribute>
@@ -1333,15 +1333,15 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_CANCEL_REAS"/>
     </attribute>
     <attribute id="CLAIM_TIMEFRAME" order="48" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CLAIM_TIMEFRAME"/>
+      <descriptions defaultDescription="8D timeframe type"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_TIMEFRAME"/>
     </attribute>
     <attribute id="CLAIM14_PLAN_DT" order="49" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Claim 1-4 Plan"/>
+      <descriptions defaultDescription="Claim 1-4 Plan date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_PLAN_DT"/>
     </attribute>
     <attribute id="CLAIM14_SEND_DT" order="50" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Claim 1-4 Send"/>
+      <descriptions defaultDescription="Claim 1-4 Send date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_SEND_DT"/>
     </attribute>
     <attribute id="CLAIM14_DELIV" hidden="true" order="52" displayAttribute="false" attributeHierarchyActive="false">
@@ -1349,7 +1349,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_DELIV"/>
     </attribute>
     <attribute id="CLAIM14_DONE_DT" order="53" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Claim 1-4 Done"/>
+      <descriptions defaultDescription="Claim 1-4 Done date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM14_DONE_DT"/>
     </attribute>
     <attribute id="CLAIM56_ST" order="54" displayAttribute="false" attributeHierarchyActive="false">
@@ -1361,15 +1361,15 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM56_DELIV"/>
     </attribute>
     <attribute id="CLAIM56_PLAN_DT" order="57" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Claim 5-6 Plan"/>
+      <descriptions defaultDescription="Claim 5-6 Plan date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM56_PLAN_DT"/>
     </attribute>
     <attribute id="CLAIM56_SEND_DT" order="58" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Claim 5-6 Send"/>
+      <descriptions defaultDescription="Claim 5-6 Send date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM56_SEND_DT"/>
     </attribute>
     <attribute id="CLAIM56_DONE_DT" order="59" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Claim 5-6 Done"/>
+      <descriptions defaultDescription="Claim 5-6 Done date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM56_DONE_DT"/>
     </attribute>
     <attribute id="CLAIM78_ST" order="60" displayAttribute="false" attributeHierarchyActive="false">
@@ -1381,15 +1381,15 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_DELIV"/>
     </attribute>
     <attribute id="CLAIM78_PLAN_DT" order="63" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Claim 7-8 Plan"/>
+      <descriptions defaultDescription="Claim 7-8 Plan date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_PLAN_DT"/>
     </attribute>
     <attribute id="CLAIM78_SEND_DT" order="64" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Claim 7-8 Send"/>
+      <descriptions defaultDescription="Claim 7-8 Send date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_SEND_DT"/>
     </attribute>
     <attribute id="CLAIM78_DONE_DT" order="65" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Claim 7-8 Done"/>
+      <descriptions defaultDescription="Claim 7-8 Done date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_DONE_DT"/>
     </attribute>
     <attribute id="CLAIM_WERKS" order="66" displayAttribute="false" attributeHierarchyActive="false">
@@ -1417,7 +1417,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ORDER_NBR"/>
     </attribute>
     <attribute id="CLAIM_MNGMT_VAL_DT" order="74" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Claim Validation by management"/>
+      <descriptions defaultDescription="Claim Validation by management date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_MNGMT_VAL_DT"/>
     </attribute>
     <attribute id="DEB_ADV_SEND_DT" order="76" displayAttribute="false" attributeHierarchyActive="false">
@@ -1449,7 +1449,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_COMMENTS"/>
     </attribute>
   
-    <attribute id="CLAIM_VND_NAME" order="86" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_VND_NAME" order="86" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="CLAIM_VND_NAME"/>
   
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_VND_NAME"/>
@@ -1462,11 +1462,11 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATNR"/>
   
     </attribute>
-    <attribute id="MATKL" order="88" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MATKL" order="88" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Material Group Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL"/>
     </attribute>
-    <attribute id="MTART" order="89" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MTART" order="89" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Material Type"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MTART"/>
     </attribute>
@@ -1483,7 +1483,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L1"/>
     </attribute>
     <attribute id="WGBEZ_L1" order="93" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Purchasing type"/>
+      <descriptions defaultDescription="MF1 Purchasing type"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L1"/>
     </attribute>
     <attribute id="MATKL_L2" order="94" displayAttribute="false" attributeHierarchyActive="false">
@@ -1491,7 +1491,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L2"/>
     </attribute>
     <attribute id="WGBEZ_L2" order="95" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Product material"/>
+      <descriptions defaultDescription="MF2 Product material"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L2"/>
     </attribute>
     <attribute id="MATKL_L3" order="96" displayAttribute="false" attributeHierarchyActive="false">
@@ -1499,7 +1499,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L3"/>
     </attribute>
     <attribute id="WGBEZ_L3" order="97" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Product type"/>
+      <descriptions defaultDescription="MF3 Product type"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L3"/>
     </attribute>
     <attribute id="MATKL_L4" order="98" displayAttribute="false" attributeHierarchyActive="false">
@@ -1507,7 +1507,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L4"/>
     </attribute>
     <attribute id="WGBEZ_L4" order="99" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Manufacturing process"/>
+      <descriptions defaultDescription="MF4 Manufacturing process"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L4"/>
     </attribute>
     <attribute id="MATKL_L5" order="100" displayAttribute="false" attributeHierarchyActive="false">
@@ -1515,18 +1515,18 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L5"/>
     </attribute>
     <attribute id="WGBEZ_L5" order="101" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Additional detail"/>
+      <descriptions defaultDescription="MF5 Additionnal detail"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L5"/>
     </attribute>
   
-    <attribute id="MATERIAL_SOURCE" order="102" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MATERIAL_SOURCE" order="102" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="ERP Source 1"/>
   
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATERIAL_SOURCE"/>
   
     </attribute>
     <attribute id="VND_SOURCE" order="103" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ERP Source 2"/>
+      <descriptions defaultDescription="ERP Source"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_SOURCE"/>
     </attribute>
     <attribute id="SOURCE_VND_MAT_EG" order="104" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
@@ -1563,39 +1563,39 @@
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM78_DELIV_D"/>
     </measure>
     <measure id="ESTIM_COST_CLAIM" order="72" aggregationType="sum" measureType="amount" semanticType="amount">
-      <descriptions defaultDescription="ESTIM_COST_CLAIM"/>
+      <descriptions defaultDescription="Claim cost estimated"/>
       <fixedCurrency>EUR</fixedCurrency>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="ESTIM_COST_CLAIM"/>
     </measure>
     <measure id="COST_REINVOICE_CLT" order="73" aggregationType="sum" measureType="amount" semanticType="amount">
-      <descriptions defaultDescription="COST_REINVOICE_CLT"/>
+      <descriptions defaultDescription="Cost re-invoiced by customer"/>
       <fixedCurrency>EUR</fixedCurrency>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="COST_REINVOICE_CLT"/>
     </measure>
     <measure id="CLAIM_INIT_AMOUNT" order="75" aggregationType="sum" measureType="amount" semanticType="amount">
-      <descriptions defaultDescription="CLAIM_INIT_AMOUNT"/>
+      <descriptions defaultDescription="Claim initial amount"/>
       <fixedCurrency>EUR</fixedCurrency>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_INIT_AMOUNT"/>
     </measure>
     <measure id="CLAIM_VALID_AMOUNT" order="77" aggregationType="sum" measureType="amount" semanticType="amount">
-      <descriptions defaultDescription="CLAIM_VALID_AMOUNT"/>
+      <descriptions defaultDescription="Claim valid amount"/>
       <fixedCurrency>EUR</fixedCurrency>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_VALID_AMOUNT"/>
     </measure>
     <measure id="CLAIM_VALID_VAT" order="78" aggregationType="sum" measureType="amount" semanticType="amount">
-      <descriptions defaultDescription="CLAIM_VALID_VAT"/>
+      <descriptions defaultDescription="Claim valid VAT"/>
       <fixedCurrency>EUR</fixedCurrency>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_VALID_VAT"/>
     </measure>
     <measure id="CLAIM_CANCEL_AMOUNT" order="80" aggregationType="sum" measureType="amount" semanticType="amount">
-      <descriptions defaultDescription="CLAIM_CANCEL_AMOUNT"/>
+      <descriptions defaultDescription="Claim cancel amount"/>
       <fixedCurrency>EUR</fixedCurrency>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_CANCEL_AMOUNT"/>
     </measure>
   </baseMeasures>
   <calculatedMeasures>
     <measure id="NBR_LITIGE" order="17" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
-      <descriptions defaultDescription="Claim Number"/>
+      <descriptions defaultDescription="SUM Claim Number"/>
       <exceptionAggregation>
         <attribute attributeName="CLAIM_NBR"/>
       </exceptionAggregation>
@@ -1607,7 +1607,7 @@
       
       </measure>
     <measure id="TYPE_LITIGE" order="18" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
-      <descriptions defaultDescription="Claim Number type">
+      <descriptions defaultDescription="SUM Claim per type">
         <comment text="Nombre de Type différent"/>
       </descriptions>
       <exceptionAggregation>
@@ -1623,13 +1623,13 @@
   </calculatedMeasures>
   <restrictedMeasures/>
   <localDimensions>
-    <localDimension id="VENDOR_GEO">
+    <localDimension id="Supplier_geo_hierarchy">
       <attributeRef xsi:type="DataFoundation:Attribute">LAND1</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">REGIO</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">PSTLZ</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">ORT01</attributeRef>
       <hierarchies>
-        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="VENDOR_GEO" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="Supplier_geo_hierarchy" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
           <descriptions defaultDescription="Vendor Geography "/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>
@@ -1641,13 +1641,13 @@
         </hierarchy>
       </hierarchies>
     </localDimension>
-    <localDimension id="CLAIM_DATE_HIER">
+    <localDimension id="creation_date_hierarchy">
       <attributeRef xsi:type="DataFoundation:Attribute">YEAR</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">CALQUARTER</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">CALMONTH</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">CALWEEK</attributeRef>
       <hierarchies>
-        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="CLAIM_DATE_HIER" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="creation_date_hierarchy" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
           <descriptions defaultDescription="Claim Date hierarchy"/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>
@@ -1659,14 +1659,14 @@
         </hierarchy>
       </hierarchies>
     </localDimension>
-    <localDimension id="MATERIALGRP_HIER_CODE">
+    <localDimension id="Material_Familly_Code_hierarchy">
       <attributeRef xsi:type="DataFoundation:Attribute">MATKL_L1</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">MATKL_L2</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">MATKL_L3</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">MATKL_L4</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">MATKL_L5</attributeRef>
       <hierarchies>
-        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="MATERIALGRP_HIER_CODE" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="Material_Familly_Code_hierarchy" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
           <descriptions defaultDescription="Material Group Hierarchy COde"/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>
@@ -1679,14 +1679,14 @@
         </hierarchy>
       </hierarchies>
     </localDimension>
-    <localDimension id="MATERIALGRP_HIER_DESCR">
+    <localDimension id="Material_Familly_description_hierarchy">
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L1</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L2</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L3</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L4</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L5</attributeRef>
       <hierarchies>
-        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="MATERIALGRP_HIER_DESCR" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="Material_Familly_description_hierarchy" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
           <descriptions defaultDescription="Material Group Hierarchy Description"/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>

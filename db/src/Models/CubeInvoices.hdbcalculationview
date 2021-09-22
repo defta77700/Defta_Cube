@@ -2261,11 +2261,11 @@
       <descriptions defaultDescription="Net Weight"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="NTGEW"/>
     </attribute>
-    <attribute id="ERSDA" order="61" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ERSDA" order="61" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Material Created Date"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="ERSDA"/>
     </attribute>
-    <attribute id="LAEDA" order="62" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LAEDA" order="62" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Material Changed Date"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="LAEDA"/>
     </attribute>
@@ -2322,7 +2322,7 @@
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MATKL_L1"/>
     </attribute>
     <attribute id="WGBEZ_L1" order="76" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Purchasing type"/>
+      <descriptions defaultDescription="MF1 Purchasing type"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="WGBEZ_L1"/>
     </attribute>
     <attribute id="MATKL_L2" order="77" displayAttribute="false" attributeHierarchyActive="false">
@@ -2330,7 +2330,7 @@
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MATKL_L2"/>
     </attribute>
     <attribute id="WGBEZ_L2" order="78" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Product material"/>
+      <descriptions defaultDescription="MF2 Product material"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="WGBEZ_L2"/>
     </attribute>
     <attribute id="MATKL_L3" order="79" displayAttribute="false" attributeHierarchyActive="false">
@@ -2338,7 +2338,7 @@
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MATKL_L3"/>
     </attribute>
     <attribute id="WGBEZ_L3" order="80" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Product type"/>
+      <descriptions defaultDescription="MF3 Product type"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="WGBEZ_L3"/>
     </attribute>
     <attribute id="MATKL_L4" order="81" displayAttribute="false" attributeHierarchyActive="false">
@@ -2346,7 +2346,7 @@
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MATKL_L4"/>
     </attribute>
     <attribute id="WGBEZ_L4" order="82" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Manufacturing process"/>
+      <descriptions defaultDescription="MF4 Manufacturing process"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="WGBEZ_L4"/>
     </attribute>
     <attribute id="MATKL_L5" order="83" displayAttribute="false" attributeHierarchyActive="false">
@@ -2354,7 +2354,7 @@
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="MATKL_L5"/>
     </attribute>
     <attribute id="WGBEZ_L5" order="84" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Additionnal detail"/>
+      <descriptions defaultDescription="MF5 Additionnal detail"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="WGBEZ_L5"/>
     </attribute>
   
@@ -2452,7 +2452,7 @@
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="VBUND"/>
     </attribute>
     <attribute id="INCO1" order="107" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Incoterms 1"/>
+      <descriptions defaultDescription="Incoterms code"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="INCO1"/>
     </attribute>
     <attribute id="INCO2" order="108" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
@@ -2645,14 +2645,14 @@
   </calculatedMeasures>
   <restrictedMeasures/>
   <localDimensions>
-    <localDimension id="MATGRPDESC">
+    <localDimension id="Material_Familly_description_hierarchy">
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L1</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L2</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L3</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L4</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">WGBEZ_L5</attributeRef>
       <hierarchies>
-        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="MATGRPDESC" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="Material_Familly_description_hierarchy" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
           <descriptions defaultDescription="Material Familly Descr"/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>
@@ -2665,13 +2665,13 @@
         </hierarchy>
       </hierarchies>
     </localDimension>
-    <localDimension id="DATEHIERA">
+    <localDimension id="Date_hierarchy">
       <attributeRef xsi:type="DataFoundation:Attribute">YEAR</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">CALQUARTER</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">CALMONTH</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">CALWEEK</attributeRef>
       <hierarchies>
-        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="DATEHIERA" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="Date_hierarchy" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
           <descriptions defaultDescription="Invoice Date Hierarchy"/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>
@@ -2683,12 +2683,12 @@
         </hierarchy>
       </hierarchies>
     </localDimension>
-    <localDimension id="VENDOR_GEO">
+    <localDimension id="Supplier_geo_hierarchy">
       <attributeRef xsi:type="DataFoundation:Attribute">LAND1_2</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">REGIO</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">ORT01</attributeRef>
       <hierarchies>
-        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="VENDOR_GEO" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="Supplier_geo_hierarchy" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
           <descriptions defaultDescription="Vendor Address"/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>
