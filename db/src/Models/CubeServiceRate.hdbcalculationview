@@ -1247,7 +1247,21 @@
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="VENSL"/>
     </measure>
   </baseMeasures>
-  <calculatedMeasures/>
+  <calculatedMeasures>
+    <measure id="COUNT_TOLXJ_C" order="59" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
+      <descriptions defaultDescription="COUNT_TOLXJ_C"/>
+      <exceptionAggregation>
+        <attribute attributeName="MATNR"/>
+        <attribute attributeName="EINDT"/>
+        <attribute attributeName="LFBNR"/>
+      </exceptionAggregation>
+      <formula>1</formula>
+    </measure>
+    <measure id="TDSXJ_C" order="60" aggregationType="sum" measureType="simple" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
+      <descriptions defaultDescription="Taux de service cal"/>
+      <formula>&quot;TOLXJ&quot;/&quot;COUNT_TOLXJ_C&quot;</formula>
+    </measure>
+  </calculatedMeasures>
   <restrictedMeasures/>
   <localDimensions>
     <localDimension id="DATE_HIER">

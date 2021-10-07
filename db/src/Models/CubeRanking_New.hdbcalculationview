@@ -127,13 +127,13 @@
       <calculatedViewAttribute id="PR_TDS" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
         <formula>CASE 
      WHEN (&quot;TDS&quot;&gt;=(75/100))
-	 THEN (20 * ((&quot;TDS&quot; - (75/100))/(25/100)))
+	 THEN (30 * ((&quot;TDS&quot; - (75/100))/(25/100)))
 	 ELSE  0
 END</formula>
       </calculatedViewAttribute>
       <calculatedViewAttribute id="SR" datatype="DECIMAL" length="10" scale="1" expressionLanguage="SQL">
         <formula>CASE WHEN (&quot;LFABC&quot; = 'A' or &quot;LFABC&quot; = 'B')
-     THEN (&quot;PR_IDNC&quot;+&quot;TDS&quot;+&quot;SQ&quot;+&quot;RF&quot;)
+     THEN (&quot;PR_IDNC&quot;+&quot;PR_TDS&quot;+&quot;SQ&quot;+&quot;RF&quot;)
      ELSE CASE WHEN (&quot;LFABC&quot; = 'C')
                THEN (&quot;CCDC&quot;+&quot;RP&quot;+&quot;SQ&quot;+&quot;PDC&quot;+&quot;RF&quot;)
                ELSE 0
@@ -141,16 +141,18 @@ END</formula>
 END</formula>
       </calculatedViewAttribute>
       <calculatedViewAttribute id="EVAL_RANKING" datatype="NVARCHAR" length="2" expressionLanguage="SQL">
-        <formula>    CASE WHEN &quot;SR_WO_NULL&quot; &gt;= 80 
-         THEN 'A'
-         ELSE CASE WHEN (&quot;SR_WO_NULL&quot; &gt;= 60 and &quot;SR_WO_NULL&quot; &lt; 80)
-                   THEN 'B'
-                   ELSE CASE WHEN (&quot;SR_WO_NULL&quot; &gt;= 40 and &quot;SR_WO_NULL&quot; &lt; 60)
-                             THEN 'C'
-                             ELSE 'D'
-                        END
-              END
-    END</formula>
+        <formula>CASE WHEN &quot;SR&quot; IS NULL THEN 'NA'
+    ELSE CASE WHEN &quot;SR&quot; &gt;= 80 
+              THEN 'A'
+               ELSE CASE WHEN (&quot;SR&quot; &gt;= 60 and &quot;SR&quot; &lt; 80)
+                         THEN 'B'
+                         ELSE CASE WHEN (&quot;SR&quot; &gt;= 40 and &quot;SR&quot; &lt; 60)
+                                  THEN 'C'
+                                     ELSE 'D'
+                                END
+                   END
+          END
+END</formula>
       </calculatedViewAttribute>
       <calculatedViewAttribute id="SR_WO_NULL" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
         <formula>CASE WHEN &quot;SR&quot; is null THEN 100 ELSE &quot;SR&quot; END</formula>
@@ -1750,7 +1752,7 @@ END</formula>
       <upperLeftCorner x="-171" y="569"/>
       <rectangleSize height="30" width="271"/>
     </shape>
-    <shape expanded="true" modelObjectName="VND_PRTDS_UP" modelObjectNameSpace="CalculationView">
+    <shape expanded="false" modelObjectName="VND_PRTDS_UP" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="787" y="569"/>
       <rectangleSize height="30" width="160"/>
     </shape>
