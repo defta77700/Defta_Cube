@@ -45,7 +45,7 @@
     <calculatedViewAttributes/>
     <input node="VENDORCONTACT_CREATE_P"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VENDORCONTACT_CREATE_P" filterExpressionLanguage="SQL">
+  <calculationView xsi:type="Calculation:ProjectionView" id="VENDORCONTACT_CREATE_P">
     <viewAttributes>
       <viewAttribute id="LIFNR"/>
       <viewAttribute id="KRAUS"/>
@@ -165,7 +165,7 @@
       <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ACTION" null="true" value=""/>
     </input>
   
-    <input node="VNDCONTACT_WO_MOD_JP">
+    <input node="VNDCONTACT_WO_MOD_JP" emptyUnionBehavior="NO_ROW">
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
@@ -188,7 +188,7 @@
       <mapping xsi:type="Calculation:ConstantAttributeMapping" target="ACTION" null="true" value=""/>
     </input>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VNDCONTACT_P">
+  <calculationView xsi:type="Calculation:ProjectionView" id="VNDCONTACT_WO_MOD_JP">
     <viewAttributes>
       <viewAttribute id="LIFNR"/>
       <viewAttribute id="KRAUS"/>
@@ -207,35 +207,15 @@
       <viewAttribute id="VTEXT_EN"/>
       <viewAttribute id="TEXT_FR"/>
       <viewAttribute id="TEXT_EN"/>
+      <viewAttribute id="LIFNR_1"/>
+      <viewAttribute id="KRAUS_1"/>
+      <viewAttribute id="STCEG_1"/>
+      <viewAttribute id="STCD1_1"/>
+      <viewAttribute id="SOURCE_1"/>
+      <viewAttribute id="VTEXT_EN_1"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="VENDORCONTACT"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VNDCONTACT_MOD_P">
-    <viewAttributes>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="KRAUS"/>
-      <viewAttribute id="STCEG"/>
-      <viewAttribute id="STCD1"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="NAMEV"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="TELF1"/>
-      <viewAttribute id="TITEL_AP"/>
-      <viewAttribute id="LOEVM"/>
-      <viewAttribute id="ABTNR"/>
-      <viewAttribute id="PAFKT"/>
-      <viewAttribute id="SMTP_ADDR"/>
-      <viewAttribute id="VTEXT_FR"/>
-      <viewAttribute id="VTEXT_EN"/>
-      <viewAttribute id="TEXT_FR"/>
-      <viewAttribute id="TEXT_EN"/>
-      <viewAttribute id="CHANGEID"/>
-      <viewAttribute id="CHANGEUSER"/>
-      <viewAttribute id="ACTION"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="VNDCONTACT_MOD_P$$$$VENDORCONTACT_MODIFICATION$$"/>
+    <input node="VNDCONTACT_WO_MOD_J"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="VNDCONTACT_WO_MOD_J" cardinality="CN_N" joinType="leftOuter" filterExpressionLanguage="SQL">
     <viewAttributes>
@@ -310,7 +290,7 @@ AND &quot;VTEXT_EN_1&quot; IS NULL</filter>
     <joinAttribute name="STCD1"/>
     <joinAttribute name="VTEXT_EN"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VNDCONTACT_WO_MOD_JP">
+  <calculationView xsi:type="Calculation:ProjectionView" id="VNDCONTACT_P">
     <viewAttributes>
       <viewAttribute id="LIFNR"/>
       <viewAttribute id="KRAUS"/>
@@ -329,15 +309,35 @@ AND &quot;VTEXT_EN_1&quot; IS NULL</filter>
       <viewAttribute id="VTEXT_EN"/>
       <viewAttribute id="TEXT_FR"/>
       <viewAttribute id="TEXT_EN"/>
-      <viewAttribute id="LIFNR_1"/>
-      <viewAttribute id="KRAUS_1"/>
-      <viewAttribute id="STCEG_1"/>
-      <viewAttribute id="STCD1_1"/>
-      <viewAttribute id="SOURCE_1"/>
-      <viewAttribute id="VTEXT_EN_1"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="VNDCONTACT_WO_MOD_J"/>
+    <input node="VENDORCONTACT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VNDCONTACT_MOD_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="VTEXT_EN"/>
+      <viewAttribute id="NAMEV"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="TITEL_AP"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="ABTNR"/>
+      <viewAttribute id="PAFKT"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="VTEXT_FR"/>
+      <viewAttribute id="TEXT_FR"/>
+      <viewAttribute id="TEXT_EN"/>
+      <viewAttribute id="CHANGEID"/>
+      <viewAttribute id="CHANGEUSER"/>
+      <viewAttribute id="ACTION"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VNDCONTACT_MOD_P$$$$VENDORCONTACT_MODIFICATION$$"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="Union_1">
@@ -413,7 +413,9 @@ AND &quot;VTEXT_EN_1&quot; IS NULL</filter>
   
     <attribute id="CHANGEID" order="18" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CHANGEID"/>
+  
       <keyMapping columnObjectName="Union_1" columnName="CHANGEID"/>
+  
     </attribute>
     <attribute id="CHANGEUSER" order="19" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="CHANGEUSER"/>
@@ -452,13 +454,8 @@ AND &quot;VTEXT_EN_1&quot; IS NULL</filter>
       <upperLeftCorner x="331" y="217"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-  
-    <shape expanded="true" modelObjectName="VNDCONTACT_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="651" y="537"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape expanded="true" modelObjectName="VNDCONTACT_MOD_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="907" y="537"/>
+    <shape expanded="true" modelObjectName="VNDCONTACT_WO_MOD_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="768" y="348"/>
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="VNDCONTACT_WO_MOD_J" modelObjectNameSpace="CalculationView">
@@ -467,16 +464,21 @@ AND &quot;VTEXT_EN_1&quot; IS NULL</filter>
     </shape>
     <shape modelObjectName="VNDCONTACT_P" modelObjectNameSpace="VNDCONTACT_WO_MOD_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="161.78125"/>
+      <rectangleSize width="161"/>
     </shape>
     <shape modelObjectName="VNDCONTACT_MOD_P" modelObjectNameSpace="VNDCONTACT_WO_MOD_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="196.451171875"/>
+      <rectangleSize width="196"/>
     </shape>
-    <shape expanded="true" modelObjectName="VNDCONTACT_WO_MOD_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="768" y="348"/>
+  
+  
+    <shape expanded="true" modelObjectName="VNDCONTACT_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="651" y="537"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-  </shapes>
+    <shape expanded="true" modelObjectName="VNDCONTACT_MOD_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="907" y="537"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
 </layout>
 </Calculation:scenario>

@@ -76,5 +76,10 @@
       "object": "FIORI_BANK_DATA",
       "schema": "SUPLPANEL"
     }
+  },
+  "FIORI_VENDOR": {
+    "target": {
+      "object": "Dim_Fiori_Vendor"
+    }
   }
 }

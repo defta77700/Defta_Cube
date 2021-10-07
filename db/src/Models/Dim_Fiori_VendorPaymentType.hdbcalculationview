@@ -201,51 +201,6 @@
     <calculatedViewAttributes/>
     <input node="VNDPAYMTTYP_WO_MOD_J"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VNDPAYMTTYP_P">
-    <viewAttributes>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="KRAUS"/>
-      <viewAttribute id="STCEG"/>
-      <viewAttribute id="STCD1"/>
-      <viewAttribute id="BUKRS"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="AKONT"/>
-      <viewAttribute id="LOEVM"/>
-      <viewAttribute id="SPERR"/>
-      <viewAttribute id="ZTERM"/>
-      <viewAttribute id="ZWELS"/>
-      <viewAttribute id="TEXT1_FR"/>
-      <viewAttribute id="TEXT1_EN"/>
-      <viewAttribute id="FDGRV"/>
-      <viewAttribute id="REPRF"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="VENDORPAYMENTTYPE"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VNDPAYMTTYP_MOD_P">
-    <viewAttributes>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="KRAUS"/>
-      <viewAttribute id="STCEG"/>
-      <viewAttribute id="STCD1"/>
-      <viewAttribute id="BUKRS"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="AKONT"/>
-      <viewAttribute id="LOEVM"/>
-      <viewAttribute id="SPERR"/>
-      <viewAttribute id="ZTERM"/>
-      <viewAttribute id="ZWELS"/>
-      <viewAttribute id="TEXT1_FR"/>
-      <viewAttribute id="TEXT1_EN"/>
-      <viewAttribute id="FDGRV"/>
-      <viewAttribute id="REPRF"/>
-      <viewAttribute id="CHANGEID"/>
-      <viewAttribute id="CHANGEUSER"/>
-      <viewAttribute id="ACTION"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="VNDPAYMTTYP_MOD_P$$$$VENDORPAYMENTTYPE_MODIFICATION$$"/>
-  </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="VNDPAYMTTYP_WO_MOD_J" cardinality="CN_N" joinType="leftOuter" filterExpressionLanguage="SQL">
     <viewAttributes>
       <viewAttribute id="LIFNR"/>
@@ -314,6 +269,51 @@ AND &quot;SOURCE_1&quot; IS NULL</filter>
     <joinAttribute name="STCD1"/>
     <joinAttribute name="BUKRS"/>
     <joinAttribute name="SOURCE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VNDPAYMTTYP_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="REPRF"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VENDORPAYMENTTYPE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VNDPAYMTTYP_MOD_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="BUKRS"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="AKONT"/>
+      <viewAttribute id="LOEVM"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZWELS"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="FDGRV"/>
+      <viewAttribute id="REPRF"/>
+      <viewAttribute id="CHANGEID"/>
+      <viewAttribute id="CHANGEUSER"/>
+      <viewAttribute id="ACTION"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VNDPAYMTTYP_MOD_P$$$$VENDORPAYMENTTYPE_MODIFICATION$$"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="Union_1">
@@ -424,15 +424,6 @@ AND &quot;SOURCE_1&quot; IS NULL</filter>
       <upperLeftCorner x="-701" y="388"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-  
-    <shape expanded="true" modelObjectName="VNDPAYMTTYP_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-845" y="642"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape expanded="true" modelObjectName="VNDPAYMTTYP_MOD_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-563" y="642"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
     <shape expanded="true" modelObjectName="VNDPAYMTTYP_WO_MOD_J" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="-707" y="484"/>
       <rectangleSize height="30" width="160"/>
@@ -445,6 +436,15 @@ AND &quot;SOURCE_1&quot; IS NULL</filter>
       <upperLeftCorner x="320" y="30"/>
       <rectangleSize width="202"/>
     </shape>
-  </shapes>
+  
+  
+    <shape expanded="true" modelObjectName="VNDPAYMTTYP_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-845" y="642"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VNDPAYMTTYP_MOD_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-563" y="642"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
 </layout>
 </Calculation:scenario>
