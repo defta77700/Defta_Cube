@@ -1071,7 +1071,6 @@
     </attribute>
     <attribute id="VENSL" order="26" semanticType="quantity" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Tolerence Day"/>
-      <fixedUnit>DAYS</fixedUnit>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENSL"/>
     </attribute>
     <attribute id="SOURCE" order="27" displayAttribute="false" attributeHierarchyActive="false">
@@ -1170,11 +1169,11 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L1"/>
     </attribute>
     <attribute id="WGBEZ_L1" order="50" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Purchasing type"/>
+      <descriptions defaultDescription="MF1 Purchasing type"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L1"/>
     </attribute>
     <attribute id="MATKL_L2" order="51" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Material Familly Level 2 Code"/>
+      <descriptions defaultDescription="MF2 Product material"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L2"/>
     </attribute>
     <attribute id="WGBEZ_L2" order="52" displayAttribute="false" attributeHierarchyActive="false">
@@ -1186,7 +1185,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L3"/>
     </attribute>
     <attribute id="WGBEZ_L3" order="54" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Product type"/>
+      <descriptions defaultDescription="MF3 Product type"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L3"/>
     </attribute>
     <attribute id="MATKL_L4" order="55" displayAttribute="false" attributeHierarchyActive="false">
@@ -1194,7 +1193,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L4"/>
     </attribute>
     <attribute id="WGBEZ_L4" order="56" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Manufacturing Process"/>
+      <descriptions defaultDescription="MF4 Manufacturing process"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L4"/>
     </attribute>
     <attribute id="MATKL_L5" order="57" displayAttribute="false" attributeHierarchyActive="false">
@@ -1202,7 +1201,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L5"/>
     </attribute>
     <attribute id="WGBEZ_L5" order="58" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Additionnal detail"/>
+      <descriptions defaultDescription="MF5 Additionnal detail"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L5"/>
     </attribute>
   </attributes>
@@ -1258,7 +1257,7 @@
     </measure>
     <measure id="TDSXJ_C" order="60" aggregationType="sum" measureType="simple" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
       <descriptions defaultDescription="Service rate"/>
-      <formula>&quot;TOLXJ&quot;/&quot;COUNT_TOLXJ_C&quot;</formula>
+      <formula>&quot;TOLXJ&quot;/&quot;COUNT_TOLXJ_C&quot;/100</formula>
     </measure>
   </calculatedMeasures>
   <restrictedMeasures/>
