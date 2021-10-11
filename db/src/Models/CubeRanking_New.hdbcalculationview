@@ -1365,19 +1365,19 @@ END</formula>
       <descriptions defaultDescription="VENDORUNIK code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
     </attribute>
-    <attribute id="KRAUS" order="9" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="KRAUS" order="9" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="DUNS"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KRAUS"/>
     </attribute>
-    <attribute id="STCEG" order="10" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="STCEG" order="10" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="VAT code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCEG"/>
     </attribute>
-    <attribute id="STCD1" order="11" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="STCD1" order="11" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="SIRET"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCD1"/>
     </attribute>
-    <attribute id="EKORG" order="12" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="EKORG" order="12" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier purchase organization "/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG"/>
     </attribute>
@@ -1453,7 +1453,7 @@ END</formula>
       <descriptions defaultDescription="Supplier trading partner"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VBUND"/>
     </attribute>
-    <attribute id="INCO1" order="31" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="INCO1" order="31" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Incoterm code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="INCO1"/>
     </attribute>
@@ -1541,43 +1541,43 @@ END</formula>
       <descriptions defaultDescription="Supplier email"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SMTP_ADDR"/>
     </attribute>
-    <attribute id="YEAR_FIXR" order="54" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="YEAR_FIXR" order="54" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Year evaluation"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR_FIXR"/>
     </attribute>
-    <attribute id="VENDORUNIK_FIXR" order="55" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VENDORUNIK_FIXR" order="55" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="VENDORUNIK evaluation"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK_FIXR"/>
     </attribute>
-    <attribute id="LIFNR_FIXR" order="56" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LIFNR_FIXR" order="56" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="supplier code evaluation"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR_FIXR"/>
     </attribute>
     <attribute id="YEAR_FIXR_CC_IFNULL" order="62" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="year evaluation not null"/>
+      <descriptions defaultDescription="year evaluation"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR_FIXR_CC_IFNULL"/>
     </attribute>
-    <attribute id="VENDORUNIK_IDNC" order="63" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VENDORUNIK_IDNC" order="63" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="VENDORUNIK_IDNC"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK_IDNC"/>
     </attribute>
-    <attribute id="CLAIM_LIFNR" order="64" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_LIFNR" order="64" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="supplier code claim"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_LIFNR"/>
     </attribute>
-    <attribute id="CLAIM_FMLY" order="66" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_FMLY" order="66" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Family Claim"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_FMLY"/>
     </attribute>
-    <attribute id="CLAIM_WERKS" order="67" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CLAIM_WERKS" order="67" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="DEFTA Plant Number Claim"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CLAIM_WERKS"/>
     </attribute>
-    <attribute id="IDNC_YEAR_CC" order="69" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="IDNC_YEAR_CC" order="69" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="year claim 2"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="IDNC_YEAR_CC"/>
     </attribute>
-    <attribute id="YEAR_THRES" order="70" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="YEAR_THRES" order="70" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Year threshold"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR_THRES"/>
     </attribute>
@@ -1589,32 +1589,32 @@ END</formula>
       <descriptions defaultDescription="Company Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BUTXT"/>
     </attribute>
-    <attribute id="SITECODE" order="73" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SITECODE" order="73" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Company Code threshold"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SITECODE"/>
     </attribute>
-    <attribute id="THRESHOLD_FMLY" order="74" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="THRESHOLD_FMLY" order="74" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="familly THRESHOLD "/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="THRESHOLD_FMLY"/>
     </attribute>
-    <attribute id="IDNC_YEAR_CC_IFNULL" order="76" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="IDNC_YEAR_CC_IFNULL" order="76" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="year Claim not null"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="IDNC_YEAR_CC_IFNULL"/>
     </attribute>
-    <attribute id="YEAR_THRES_CC_IFNULL" order="77" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="YEAR_THRES_CC_IFNULL" order="77" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Year threshold not null"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR_THRES_CC_IFNULL"/>
     </attribute>
-    <attribute id="LIFNR_PRTDS" order="79" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LIFNR_PRTDS" order="79" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="supplier code service rate"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR_PRTDS"/>
     </attribute>
-    <attribute id="SOURCE_PRTDS" order="80" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SOURCE_PRTDS" order="80" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="ERP source service rate"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SOURCE_PRTDS"/>
     </attribute>
     <attribute id="YEAR_PRTDS_CC" order="84" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
-      <descriptions defaultDescription="YEAR service rate 2"/>
+      <descriptions defaultDescription="YEAR service rate"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR_PRTDS_CC"/>
     </attribute>
   </attributes>
@@ -1637,7 +1637,7 @@ END</formula>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="SR"/>
     </measure>
   
-    <measure id="SR_WO_NULL" order="6" aggregationType="sum" measureType="simple">
+    <measure id="SR_WO_NULL" order="6" aggregationType="sum" measureType="simple" hidden="true">
       <descriptions defaultDescription="Ranking score WO Null"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="SR_WO_NULL"/>
     </measure>
@@ -1646,7 +1646,7 @@ END</formula>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="ZPRZ1"/>
     </measure>
     <measure id="CCDC" order="57" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="CDC Compliance note"/>
+      <descriptions defaultDescription="Specification Compliance note"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CCDC"/>
     </measure>
     <measure id="RP" order="58" aggregationType="sum" measureType="simple">
@@ -1665,7 +1665,7 @@ END</formula>
       <descriptions defaultDescription="Accounting risk note"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="RF"/>
     </measure>
-    <measure id="IDNC_YEAR" order="65" aggregationType="sum" measureType="simple">
+    <measure id="IDNC_YEAR" order="65" aggregationType="sum" measureType="simple" hidden="true">
       <descriptions defaultDescription="year claim"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="IDNC_YEAR"/>
     </measure>
@@ -1677,7 +1677,7 @@ END</formula>
       <descriptions defaultDescription="THRESHOLD POINT"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="THRESHOLD_POINT"/>
     </measure>
-    <measure id="YEAR_PRTDS" order="78" aggregationType="sum" measureType="simple">
+    <measure id="YEAR_PRTDS" order="78" aggregationType="sum" measureType="simple" hidden="true">
       <descriptions defaultDescription="YEAR service rate"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR_PRTDS"/>
     </measure>
