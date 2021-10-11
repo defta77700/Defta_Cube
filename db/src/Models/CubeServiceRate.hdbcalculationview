@@ -1002,14 +1002,14 @@
 <logicalModel id="BEFORE_AGG_P">
   <attributes>
     <attribute id="EBELN" order="1" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Purchase Order Header"/>
+      <descriptions defaultDescription="Purchase Order number"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EBELN"/>
     </attribute>
     <attribute id="EBELP" order="2" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Purchase Order Item"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EBELP"/>
     </attribute>
-    <attribute id="BUKRS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="BUKRS" order="3" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="SR Company Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BUKRS"/>
     </attribute>
@@ -1018,7 +1018,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR"/>
     </attribute>
     <attribute id="MATNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Article Code"/>
+      <descriptions defaultDescription="Material code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATNR"/>
     </attribute>
     <attribute id="EINDT" order="6" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
@@ -1029,7 +1029,7 @@
       <descriptions defaultDescription="Date Received"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BUDAT"/>
     </attribute>
-    <attribute id="LFBNR" order="14" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LFBNR" order="14" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="reference document"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LFBNR"/>
     </attribute>
@@ -1037,23 +1037,23 @@
       <descriptions defaultDescription="material description"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TXZ01"/>
     </attribute>
-    <attribute id="WERKS" order="16" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WERKS" order="16" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="SR Plant"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WERKS"/>
     </attribute>
-    <attribute id="LGORT" order="17" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LGORT" order="17" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Warehouse"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LGORT"/>
     </attribute>
-    <attribute id="NAME1" order="20" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="NAME1" order="20" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="NAME1"/>
     </attribute>
-    <attribute id="WAERS" order="21" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WAERS" order="21" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Currency"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WAERS"/>
     </attribute>
-    <attribute id="EKORG" order="22" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="EKORG" order="22" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier purchase organization code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG"/>
     </attribute>
@@ -1061,13 +1061,18 @@
       <descriptions defaultDescription="Supplier category"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LFABC"/>
     </attribute>
-    <attribute id="DISPO" order="24" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="DISPO" order="24" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="MRP controller"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DISPO"/>
     </attribute>
-    <attribute id="DSNAM" order="25" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="DSNAM" order="25" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="MRP controller name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DSNAM"/>
+    </attribute>
+    <attribute id="VENSL" order="26" semanticType="quantity" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Tolerence Day"/>
+      <fixedUnit>DAYS</fixedUnit>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENSL"/>
     </attribute>
     <attribute id="SOURCE" order="27" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ERP Source"/>
@@ -1078,22 +1083,22 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EINDT_DT"/>
     </attribute>
     <attribute id="YEAR" order="29" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR"/>
+      <descriptions defaultDescription="Due date year"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR"/>
     </attribute>
     <attribute id="CALQUARTER" order="30" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR QUARTER"/>
+      <descriptions defaultDescription="Due date quarter"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALQUARTER"/>
     </attribute>
     <attribute id="CALMONTH" order="31" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR MONTH"/>
+      <descriptions defaultDescription="Due date month"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALMONTH"/>
     </attribute>
     <attribute id="CALWEEK" order="32" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="YEAR WEEK"/>
+      <descriptions defaultDescription="Due date week"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALWEEK"/>
     </attribute>
-    <attribute id="VND_LIFNR" order="33" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VND_LIFNR" order="33" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_LIFNR"/>
     </attribute>
@@ -1105,7 +1110,7 @@
       <descriptions defaultDescription="VND Purchase Organisation"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_EKORG"/>
     </attribute>
-    <attribute id="VND_SOURCE" order="36" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VND_SOURCE" order="36" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="ERP Source 2"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_SOURCE"/>
     </attribute>
@@ -1122,11 +1127,11 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_REGIO"/>
     </attribute>
     <attribute id="VND_PSTLCODE" order="40" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="VND Supplier PostalCode"/>
+      <descriptions defaultDescription="Supplier PostalCode"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_PSTLCODE"/>
     </attribute>
     <attribute id="VND_CNTRY" order="41" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="VND Supplier Country"/>
+      <descriptions defaultDescription="Supplier Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_CNTRY"/>
     </attribute>
   
@@ -1136,27 +1141,27 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="COMPANY_NAME"/>
   
     </attribute>
-    <attribute id="COMPANY_LAND" order="43" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="COMPANY_LAND" order="43" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Company Country"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="COMPANY_LAND"/>
     </attribute>
-    <attribute id="PLANT_NAME" order="44" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PLANT_NAME" order="44" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Plant Name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PLANT_NAME"/>
     </attribute>
-    <attribute id="PLANT_EKORG" order="45" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PLANT_EKORG" order="45" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Plant Purchase Organization"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PLANT_EKORG"/>
     </attribute>
-    <attribute id="MATKL" order="46" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MATKL" order="46" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Material group"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL"/>
     </attribute>
-    <attribute id="MAKTX_F" order="47" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MAKTX_F" order="47" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Material description FR"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MAKTX_F"/>
     </attribute>
-    <attribute id="MAKTX_E" order="48" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MAKTX_E" order="48" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Material description EN"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MAKTX_E"/>
     </attribute>
@@ -1208,7 +1213,7 @@
       <fixedUnit>UNIT</fixedUnit>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="MENGR"/>
     </measure>
-    <measure id="MENGC" order="8" semanticType="quantity" aggregationType="sum" measureType="quantity">
+    <measure id="MENGC" order="8" semanticType="quantity" aggregationType="sum" measureType="quantity" hidden="true">
       <descriptions defaultDescription="Scheduled qty Cumulated"/>
       <fixedUnit>UNIT</fixedUnit>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="MENGC"/>
@@ -1218,38 +1223,32 @@
       <fixedUnit>UNIT</fixedUnit>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="MENGE"/>
     </measure>
-    <measure id="MENGF" order="11" semanticType="quantity" aggregationType="sum" measureType="quantity">
+    <measure id="MENGF" order="11" semanticType="quantity" aggregationType="sum" measureType="quantity" hidden="true">
       <descriptions defaultDescription="Received qty Cumulated"/>
       <fixedUnit>UNIT</fixedUnit>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="MENGF"/>
     </measure>
-    <measure id="TOL0J" order="12" aggregationType="sum" measureType="simple">
+    <measure id="TOL0J" order="12" aggregationType="sum" measureType="simple" hidden="true">
       <descriptions defaultDescription="Service level 0 tolerence"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="TOL0J"/>
     </measure>
     <measure id="TOLXJ" order="13" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="Service level X days of tolerence"/>
+      <descriptions defaultDescription="Sum service rate"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="TOLXJ"/>
     </measure>
-    <measure id="NETPR" order="18" semanticType="amount" aggregationType="sum" measureType="amount">
+    <measure id="NETPR" order="18" semanticType="amount" aggregationType="sum" measureType="amount" hidden="true">
       <descriptions defaultDescription="Net Price"/>
       <unitCurrencyAttribute attributeName="WAERS"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="NETPR"/>
     </measure>
-    <measure id="PEINH" order="19" semanticType="amount" aggregationType="sum" measureType="amount">
+    <measure id="PEINH" order="19" semanticType="amount" aggregationType="sum" measureType="amount" hidden="true">
       <descriptions defaultDescription="Price Unit"/>
       <unitCurrencyAttribute attributeName="WAERS"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="PEINH"/>
-    </measure>
-    <measure id="VENSL" order="26" semanticType="quantity" aggregationType="sum" measureType="quantity">
-      <descriptions defaultDescription="Tolerence Day"/>
-      <fixedUnit>DAYS</fixedUnit>
-      <measureMapping columnObjectName="BEFORE_AGG_P" columnName="VENSL"/>
-    </measure>
-  </baseMeasures>
+    </measure></baseMeasures>
   <calculatedMeasures>
     <measure id="COUNT_TOLXJ_C" order="59" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
-      <descriptions defaultDescription="COUNT_TOLXJ_C"/>
+      <descriptions defaultDescription="Qty of receptions"/>
       <exceptionAggregation>
         <attribute attributeName="MATNR"/>
         <attribute attributeName="EINDT"/>
@@ -1258,7 +1257,7 @@
       <formula>1</formula>
     </measure>
     <measure id="TDSXJ_C" order="60" aggregationType="sum" measureType="simple" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
-      <descriptions defaultDescription="Taux de service cal"/>
+      <descriptions defaultDescription="Service rate"/>
       <formula>&quot;TOLXJ&quot;/&quot;COUNT_TOLXJ_C&quot;</formula>
     </measure>
   </calculatedMeasures>
