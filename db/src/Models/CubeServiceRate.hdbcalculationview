@@ -1173,11 +1173,11 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L1"/>
     </attribute>
     <attribute id="MATKL_L2" order="51" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="MF2 Product material"/>
+      <descriptions defaultDescription="Material Familly Level 2 Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATKL_L2"/>
     </attribute>
     <attribute id="WGBEZ_L2" order="52" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Product material"/>
+      <descriptions defaultDescription="MF2 Product material"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L2"/>
     </attribute>
     <attribute id="MATKL_L3" order="53" displayAttribute="false" attributeHierarchyActive="false">
