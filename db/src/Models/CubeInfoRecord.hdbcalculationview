@@ -1289,7 +1289,7 @@
     </attribute>
   
     <attribute id="VENDORUNIK" order="55" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Supplier Key ID"/>
+      <descriptions defaultDescription="VENDORUNIK"/>
   
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
   

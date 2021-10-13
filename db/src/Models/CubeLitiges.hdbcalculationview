@@ -1168,8 +1168,8 @@
       <descriptions defaultDescription="Supplier Code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_LIFNR"/>
     </attribute>
-    <attribute id="VENDORUNIK" order="2" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
-      <descriptions defaultDescription="Supplier key ID"/>
+    <attribute id="VENDORUNIK" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VENDORUNIK"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
     </attribute>
     <attribute id="NAME1" order="3" displayAttribute="false" attributeHierarchyActive="false">

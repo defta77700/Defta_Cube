@@ -680,11 +680,11 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG"/>
     </attribute>
     <attribute id="DATBI" order="8" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
-      <descriptions defaultDescription="Start Date"/>
+      <descriptions defaultDescription="End date of price"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DATBI"/>
     </attribute>
     <attribute id="DATAB" order="9" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="End date of price"/>
+      <descriptions defaultDescription="Start Date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DATAB"/>
     </attribute>
     <attribute id="KONWA" order="11" displayAttribute="false" attributeHierarchyActive="false">
@@ -704,11 +704,11 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MATNR_C"/>
     </attribute>
     <attribute id="DATBI_D" order="16" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Start date of price"/>
+      <descriptions defaultDescription="End date of price"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DATBI_D"/>
     </attribute>
-    <attribute id="VENDORUNIK" order="17" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
-      <descriptions defaultDescription="VENDOR UNIK"/>
+    <attribute id="VENDORUNIK" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VENDORUNIK"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
     </attribute>
     <attribute id="VND_NAME" order="18" displayAttribute="false" attributeHierarchyActive="false">

@@ -2141,8 +2141,8 @@
       <descriptions defaultDescription="Supplier Code"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="LIFNR"/>
     </attribute>
-    <attribute id="VENDORUNIKCODE" order="25" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
-      <descriptions defaultDescription="VENDORUNIKCODE"/>
+    <attribute id="VENDORUNIKCODE" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VENDORUNIK"/>
       <keyMapping columnObjectName="BEFORE_AGGR_P" columnName="VENDORUNIK"/>
     </attribute>
     <attribute id="KRAUS" order="26" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
