@@ -574,8 +574,10 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="INV_VENDOR_2Y" source="INV_VENDOR_2Y"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="VND2YP_LIFNR" source="LIFNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="VNDP_LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
     </input>
     <joinAttribute name="VNDP_LIFNR"/>
+    <joinAttribute name="SOURCE"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VND_P">
     <viewAttributes>

@@ -64,7 +64,13 @@
       <viewAttribute id="WGBEZ_L5"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="MATERIALGRPDESCR"/>
+    <input node="MATERIALGRPDESCR">
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L1" source="WGBEZ60_L1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L2" source="WGBEZ60_L2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L3" source="WGBEZ60_L3"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L4" source="WGBEZ60_L4"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L5" source="WGBEZ60_L5"/>
+    </input>
     <filter>&quot;SPRAS&quot;='F'</filter>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="MAT_MATGRP_J" cardinality="CN_1" joinType="leftOuter" optimizeJoinColumns="false">
