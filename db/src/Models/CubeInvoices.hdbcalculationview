@@ -119,9 +119,11 @@
  </formula>
       </calculatedViewAttribute>
       <calculatedViewAttribute id="WRBTR_SIGN" datatype="DECIMAL" length="17" expressionLanguage="SQL" scale="4">
-        <formula>CASE WHEN &quot;SHKZG&quot; in ('H','C') THEN &quot;WRBTR&quot;*-1
-	 ELSE &quot;WRBTR&quot;
- END</formula>
+        <formula>CASE WHEN &quot;BELNR_FI&quot; = '0' OR &quot;BELNR_FI&quot; IS NULL THEN
+    CASE WHEN &quot;SHKZG&quot; in ('H','C') THEN &quot;WRBTR&quot;*-1
+	     ELSE &quot;WRBTR&quot;
+     END
+END</formula>
       </calculatedViewAttribute>
     
       <calculatedViewAttribute id="MATNR_C" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
