@@ -4,6 +4,9 @@
 <localVariables/>
 <variableMappings/>
 <dataSources>
+  <DataSource id="PLANT">
+    <resourceUri>PLANT</resourceUri>
+  </DataSource>
   <DataSource id="QUOTA">
     <resourceUri>QUOTA</resourceUri>
   </DataSource>
@@ -12,9 +15,6 @@
   </DataSource>
   <DataSource id="DimVendor">
     <resourceUri>DimVendor</resourceUri>
-  </DataSource>
-  <DataSource id="PLANT">
-    <resourceUri>PLANT</resourceUri>
   </DataSource>
 </dataSources>
 <calculationViews>
@@ -212,224 +212,6 @@
     <calculatedViewAttributes/>
     <input node="VNADMATQUOTA_PLANT_J"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="QUOTA_P">
-    <viewAttributes>
-      <viewAttribute id="WERKS"/>
-      <viewAttribute id="MATNR"/>
-      <viewAttribute id="VDATU"/>
-      <viewAttribute id="BDATU"/>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="QUOTE"/>
-      <viewAttribute id="QUMNG"/>
-    </viewAttributes>
-    <calculatedViewAttributes>
-      <calculatedViewAttribute id="MATNR_C" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
-        <formula>RIGHT(CONCAT('00000000000000000000',&quot;MATNR&quot; ),20)</formula>
-      </calculatedViewAttribute>
-    </calculatedViewAttributes>
-    <input node="QUOTA"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="DIMMAT_P">
-    <viewAttributes>
-      <viewAttribute id="MATNR"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="MATKL"/>
-      <viewAttribute id="BRGEW"/>
-      <viewAttribute id="GEWEI"/>
-      <viewAttribute id="MTART"/>
-      <viewAttribute id="MTBEZ_FR"/>
-      <viewAttribute id="MTBEZ_EN"/>
-      <viewAttribute id="NTGEW"/>
-      <viewAttribute id="ERSDA"/>
-      <viewAttribute id="LAEDA"/>
-      <viewAttribute id="MAKTX_F"/>
-      <viewAttribute id="MAKTX_E"/>
-      <viewAttribute id="WERKS"/>
-      <viewAttribute id="EKGRP"/>
-      <viewAttribute id="STAWN"/>
-      <viewAttribute id="PRCTR"/>
-      <viewAttribute id="MEINS"/>
-      <viewAttribute id="DISPO"/>
-      <viewAttribute id="PROFL"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="MATKL_L1"/>
-      <viewAttribute id="WGBEZ_L1"/>
-      <viewAttribute id="MATKL_L2"/>
-      <viewAttribute id="WGBEZ_L2"/>
-      <viewAttribute id="MATKL_L3"/>
-      <viewAttribute id="WGBEZ_L3"/>
-      <viewAttribute id="MATKL_L4"/>
-      <viewAttribute id="WGBEZ_L4"/>
-      <viewAttribute id="MATKL_L5"/>
-      <viewAttribute id="WGBEZ_L5"/>
-      <viewAttribute id="MATNR_C"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="DimMaterial"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="DIMVEN_P">
-    <viewAttributes>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="VENDORUNIK"/>
-      <viewAttribute id="KRAUS"/>
-      <viewAttribute id="STCEG"/>
-      <viewAttribute id="STCD1"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="ERDAT"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="ORT01"/>
-      <viewAttribute id="PFACH"/>
-      <viewAttribute id="STRAS"/>
-      <viewAttribute id="PSTLZ"/>
-      <viewAttribute id="REGIO"/>
-      <viewAttribute id="ADRNR"/>
-      <viewAttribute id="TELF1"/>
-      <viewAttribute id="SPERR"/>
-      <viewAttribute id="SPERM_X"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="KTOKK"/>
-      <viewAttribute id="LOEVM_X"/>
-      <viewAttribute id="SPRAS"/>
-      <viewAttribute id="STCD2"/>
-      <viewAttribute id="VBUND"/>
-      <viewAttribute id="INCO1"/>
-      <viewAttribute id="INCO2"/>
-      <viewAttribute id="LFABC"/>
-      <viewAttribute id="LOEVM_Y"/>
-      <viewAttribute id="SPERM_Y"/>
-      <viewAttribute id="VENSL"/>
-      <viewAttribute id="WAERS"/>
-      <viewAttribute id="ZTERM"/>
-      <viewAttribute id="ZFAEL"/>
-      <viewAttribute id="ZMONA"/>
-      <viewAttribute id="ZTAG1"/>
-      <viewAttribute id="TEXT1_FR"/>
-      <viewAttribute id="TEXT1_EN"/>
-      <viewAttribute id="KONZS"/>
-      <viewAttribute id="BRSCH"/>
-      <viewAttribute id="BRTXT_FR"/>
-      <viewAttribute id="BRTXT_EN"/>
-      <viewAttribute id="J_1KFTBUS"/>
-      <viewAttribute id="MCOD1"/>
-      <viewAttribute id="WEBRE"/>
-      <viewAttribute id="PRFRE"/>
-      <viewAttribute id="SMTP_ADDR"/>
-      <viewAttribute id="ZPRZ1"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="DimVendor"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="VNDMATQUOTA_JP">
-    <viewAttributes>
-      <viewAttribute id="WERKS"/>
-      <viewAttribute id="MATNR"/>
-      <viewAttribute id="VDATU"/>
-      <viewAttribute id="BDATU"/>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="QUOTE"/>
-      <viewAttribute id="QUMNG"/>
-      <viewAttribute id="MATNR_C"/>
-      <viewAttribute id="LIFNR_1"/>
-      <viewAttribute id="VENDORUNIK"/>
-      <viewAttribute id="KRAUS"/>
-      <viewAttribute id="STCEG"/>
-      <viewAttribute id="STCD1"/>
-      <viewAttribute id="SOURCE_1"/>
-      <viewAttribute id="ERDAT"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="ORT01"/>
-      <viewAttribute id="PFACH"/>
-      <viewAttribute id="STRAS"/>
-      <viewAttribute id="PSTLZ"/>
-      <viewAttribute id="REGIO"/>
-      <viewAttribute id="ADRNR"/>
-      <viewAttribute id="TELF1"/>
-      <viewAttribute id="SPERR"/>
-      <viewAttribute id="SPERM_X"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="KTOKK"/>
-      <viewAttribute id="LOEVM_X"/>
-      <viewAttribute id="SPRAS"/>
-      <viewAttribute id="STCD2"/>
-      <viewAttribute id="VBUND"/>
-      <viewAttribute id="INCO1"/>
-      <viewAttribute id="INCO2"/>
-      <viewAttribute id="LFABC"/>
-      <viewAttribute id="LOEVM_Y"/>
-      <viewAttribute id="SPERM_Y"/>
-      <viewAttribute id="VENSL"/>
-      <viewAttribute id="WAERS"/>
-      <viewAttribute id="ZTERM"/>
-      <viewAttribute id="ZFAEL"/>
-      <viewAttribute id="ZMONA"/>
-      <viewAttribute id="ZTAG1"/>
-      <viewAttribute id="TEXT1_FR"/>
-      <viewAttribute id="TEXT1_EN"/>
-      <viewAttribute id="KONZS"/>
-      <viewAttribute id="BRSCH"/>
-      <viewAttribute id="BRTXT_FR"/>
-      <viewAttribute id="BRTXT_EN"/>
-      <viewAttribute id="J_1KFTBUS"/>
-      <viewAttribute id="MCOD1"/>
-      <viewAttribute id="WEBRE"/>
-      <viewAttribute id="PRFRE"/>
-      <viewAttribute id="SMTP_ADDR"/>
-      <viewAttribute id="ZPRZ1"/>
-      <viewAttribute id="MATNR_MAT"/>
-      <viewAttribute id="SOURCE_MAT"/>
-      <viewAttribute id="MATKL"/>
-      <viewAttribute id="BRGEW"/>
-      <viewAttribute id="GEWEI"/>
-      <viewAttribute id="MTART"/>
-      <viewAttribute id="MTBEZ_FR"/>
-      <viewAttribute id="MTBEZ_EN"/>
-      <viewAttribute id="NTGEW"/>
-      <viewAttribute id="ERSDA"/>
-      <viewAttribute id="LAEDA"/>
-      <viewAttribute id="MAKTX_F"/>
-      <viewAttribute id="MAKTX_E"/>
-      <viewAttribute id="WERKS_1"/>
-      <viewAttribute id="EKGRP"/>
-      <viewAttribute id="STAWN"/>
-      <viewAttribute id="PRCTR"/>
-      <viewAttribute id="MEINS"/>
-      <viewAttribute id="DISPO"/>
-      <viewAttribute id="PROFL"/>
-      <viewAttribute id="NAME1_1"/>
-      <viewAttribute id="EKORG_1"/>
-      <viewAttribute id="LAND1_1"/>
-      <viewAttribute id="MATKL_L1"/>
-      <viewAttribute id="WGBEZ_L1"/>
-      <viewAttribute id="MATKL_L2"/>
-      <viewAttribute id="WGBEZ_L2"/>
-      <viewAttribute id="MATKL_L3"/>
-      <viewAttribute id="WGBEZ_L3"/>
-      <viewAttribute id="MATKL_L4"/>
-      <viewAttribute id="WGBEZ_L4"/>
-      <viewAttribute id="MATKL_L5"/>
-      <viewAttribute id="WGBEZ_L5"/>
-      <viewAttribute id="MATNR_C_1"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="VNDMATQUOTA_J_2"/>
-  </calculationView>
-  <calculationView xsi:type="Calculation:ProjectionView" id="PLANT_P">
-    <viewAttributes>
-      <viewAttribute id="WERKS"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="VKORG"/>
-      <viewAttribute id="LAND1"/>
-      <viewAttribute id="SPRAS"/>
-      <viewAttribute id="SOURCE"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="PLANT"/>
-  </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="VNADMATQUOTA_PLANT_J" cardinality="CN_1" joinType="leftOuter">
     <viewAttributes>
       <viewAttribute id="WERKS"/>
@@ -624,6 +406,224 @@
     </input>
     <joinAttribute name="WERKS"/>
     <joinAttribute name="SOURCE"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="VNDMATQUOTA_JP">
+    <viewAttributes>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="VDATU"/>
+      <viewAttribute id="BDATU"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="QUOTE"/>
+      <viewAttribute id="QUMNG"/>
+      <viewAttribute id="MATNR_C"/>
+      <viewAttribute id="LIFNR_1"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="SOURCE_1"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+      <viewAttribute id="MATNR_MAT"/>
+      <viewAttribute id="SOURCE_MAT"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="WERKS_1"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="NAME1_1"/>
+      <viewAttribute id="EKORG_1"/>
+      <viewAttribute id="LAND1_1"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="MATNR_C_1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="VNDMATQUOTA_J_2"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="PLANT_P">
+    <viewAttributes>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="SOURCE"/>
+    
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="SPRAS"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="PLANT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="QUOTA_P">
+    <viewAttributes>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="VDATU"/>
+      <viewAttribute id="BDATU"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="QUOTE"/>
+      <viewAttribute id="QUMNG"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="MATNR_C" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>RIGHT(CONCAT('00000000000000000000',&quot;MATNR&quot; ),20)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="QUOTA"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="DIMMAT_P">
+    <viewAttributes>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="MATKL"/>
+      <viewAttribute id="BRGEW"/>
+      <viewAttribute id="GEWEI"/>
+      <viewAttribute id="MTART"/>
+      <viewAttribute id="MTBEZ_FR"/>
+      <viewAttribute id="MTBEZ_EN"/>
+      <viewAttribute id="NTGEW"/>
+      <viewAttribute id="ERSDA"/>
+      <viewAttribute id="LAEDA"/>
+      <viewAttribute id="MAKTX_F"/>
+      <viewAttribute id="MAKTX_E"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="STAWN"/>
+      <viewAttribute id="PRCTR"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="DISPO"/>
+      <viewAttribute id="PROFL"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="MATKL_L1"/>
+      <viewAttribute id="WGBEZ_L1"/>
+      <viewAttribute id="MATKL_L2"/>
+      <viewAttribute id="WGBEZ_L2"/>
+      <viewAttribute id="MATKL_L3"/>
+      <viewAttribute id="WGBEZ_L3"/>
+      <viewAttribute id="MATKL_L4"/>
+      <viewAttribute id="WGBEZ_L4"/>
+      <viewAttribute id="MATKL_L5"/>
+      <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="MATNR_C"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="DimMaterial"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="DIMVEN_P">
+    <viewAttributes>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="VENDORUNIK"/>
+      <viewAttribute id="KRAUS"/>
+      <viewAttribute id="STCEG"/>
+      <viewAttribute id="STCD1"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="ERDAT"/>
+      <viewAttribute id="NAME1"/>
+      <viewAttribute id="ORT01"/>
+      <viewAttribute id="PFACH"/>
+      <viewAttribute id="STRAS"/>
+      <viewAttribute id="PSTLZ"/>
+      <viewAttribute id="REGIO"/>
+      <viewAttribute id="ADRNR"/>
+      <viewAttribute id="TELF1"/>
+      <viewAttribute id="SPERR"/>
+      <viewAttribute id="SPERM_X"/>
+      <viewAttribute id="LAND1"/>
+      <viewAttribute id="KTOKK"/>
+      <viewAttribute id="LOEVM_X"/>
+      <viewAttribute id="SPRAS"/>
+      <viewAttribute id="STCD2"/>
+      <viewAttribute id="VBUND"/>
+      <viewAttribute id="INCO1"/>
+      <viewAttribute id="INCO2"/>
+      <viewAttribute id="LFABC"/>
+      <viewAttribute id="LOEVM_Y"/>
+      <viewAttribute id="SPERM_Y"/>
+      <viewAttribute id="VENSL"/>
+      <viewAttribute id="WAERS"/>
+      <viewAttribute id="ZTERM"/>
+      <viewAttribute id="ZFAEL"/>
+      <viewAttribute id="ZMONA"/>
+      <viewAttribute id="ZTAG1"/>
+      <viewAttribute id="TEXT1_FR"/>
+      <viewAttribute id="TEXT1_EN"/>
+      <viewAttribute id="KONZS"/>
+      <viewAttribute id="BRSCH"/>
+      <viewAttribute id="BRTXT_FR"/>
+      <viewAttribute id="BRTXT_EN"/>
+      <viewAttribute id="J_1KFTBUS"/>
+      <viewAttribute id="MCOD1"/>
+      <viewAttribute id="WEBRE"/>
+      <viewAttribute id="PRFRE"/>
+      <viewAttribute id="SMTP_ADDR"/>
+      <viewAttribute id="ZPRZ1"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="DimVendor"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="VNDMATQUOTA_J_1" cardinality="CN_1" joinType="leftOuter" multiJoinNode="VNDMATQUOTA_J" multiJoinCentralTable="QUOTA_P" multiJoinOrder="Outside In">
     <viewAttributes>
@@ -1306,6 +1306,26 @@
       <upperLeftCorner x="425" y="341"/>
       <rectangleSize height="30" width="160"/>
     </shape>
+    <shape expanded="true" modelObjectName="VNADMATQUOTA_PLANT_J" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="425" y="446"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="VNDMATQUOTA_JP" modelObjectNameSpace="VNADMATQUOTA_PLANT_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="178"/>
+    </shape>
+    <shape modelObjectName="PLANT_P" modelObjectNameSpace="VNADMATQUOTA_PLANT_J" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="133"/>
+    </shape>
+    <shape expanded="true" modelObjectName="VNDMATQUOTA_JP" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="292" y="586"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="PLANT_P" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="502" y="586"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
   
     <shape expanded="true" modelObjectName="QUOTA_P" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="92" y="866"/>
@@ -1318,26 +1338,6 @@
     <shape expanded="true" modelObjectName="DIMVEN_P" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="511" y="866"/>
       <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape expanded="true" modelObjectName="VNDMATQUOTA_JP" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="292" y="586"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape expanded="true" modelObjectName="PLANT_P" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="502" y="586"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape expanded="true" modelObjectName="VNADMATQUOTA_PLANT_J" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="425" y="446"/>
-      <rectangleSize height="30" width="160"/>
-    </shape>
-    <shape modelObjectName="VNDMATQUOTA_JP" modelObjectNameSpace="VNADMATQUOTA_PLANT_J" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="20" y="30"/>
-      <rectangleSize width="178"/>
-    </shape>
-    <shape modelObjectName="PLANT_P" modelObjectNameSpace="VNADMATQUOTA_PLANT_J" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="133"/>
     </shape>
     <shape expanded="true" modelObjectName="VNDMATQUOTA_J" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="301" y="711"/>

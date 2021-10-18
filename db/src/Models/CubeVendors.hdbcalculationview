@@ -637,11 +637,11 @@
       <viewAttribute id="INV_VENDOR_2Y"/>
     
       <viewAttribute id="LIFNR"/>
+      <viewAttribute id="SOURCE"/>
       <viewAttribute id="VENDORUNIK"/>
       <viewAttribute id="KRAUS"/>
       <viewAttribute id="STCEG"/>
-      <viewAttribute id="STCD1"/>
-      <viewAttribute id="SOURCE"/></viewAttributes>
+      <viewAttribute id="STCD1"/></viewAttributes>
     <calculatedViewAttributes/>
     <input node="V_VENDOR_INVOICE_2Y"/>
   </calculationView>
