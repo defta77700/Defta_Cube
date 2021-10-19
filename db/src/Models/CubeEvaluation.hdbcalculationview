@@ -681,20 +681,20 @@
       <descriptions defaultDescription="ERP Source"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SOURCE"/>
     </attribute>
-    <attribute id="DUNS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="DUNS" order="3" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="DUNS"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DUNS"/>
     </attribute>
-    <attribute id="VATCODE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VATCODE" order="4" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="VAT"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VATCODE"/>
     </attribute>
-    <attribute id="SIRET" order="5" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SIRET" order="5" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="SIRET"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SIRET"/>
     </attribute>
     <attribute id="YEAR" order="6" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Year"/>
+      <descriptions defaultDescription="Year of evaluation"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR"/>
     </attribute>
     <attribute id="VENDOR_NAME" order="7" displayAttribute="false" attributeHierarchyActive="false">
@@ -702,19 +702,19 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDOR_NAME"/>
     </attribute>
     <attribute id="CAT_VENDOR" order="8" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Supplier telephone"/>
+      <descriptions defaultDescription="Supplier category"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CAT_VENDOR"/>
     </attribute>
-    <attribute id="LIFNR" order="9" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LIFNR" order="9" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LIFNR"/>
     </attribute>
     <attribute id="VENDOR_DEV" order="10" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Dev Supplier"/>
+      <descriptions defaultDescription="Developer supplier"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDOR_DEV"/>
     </attribute>
     <attribute id="ISO9001" order="11" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ISO9001"/>
+      <descriptions defaultDescription="ISO9001 Y/N"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ISO9001"/>
     </attribute>
     <attribute id="ISO9001_ST" order="12" displayAttribute="false" attributeHierarchyActive="false">
@@ -730,7 +730,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ISO9001_DOC"/>
     </attribute>
     <attribute id="IATF16949" order="15" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="IATF16949"/>
+      <descriptions defaultDescription="IATF16949 Y/N"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="IATF16949"/>
     </attribute>
     <attribute id="IATF16949_ST" order="16" displayAttribute="false" attributeHierarchyActive="false">
@@ -746,7 +746,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="IATF16949_DOC"/>
     </attribute>
     <attribute id="ISO14001" order="19" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ISO14001"/>
+      <descriptions defaultDescription="ISO14001 Y/N"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ISO14001"/>
     </attribute>
     <attribute id="ISO14001_ST" order="20" displayAttribute="false" attributeHierarchyActive="false">
@@ -762,7 +762,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ISO14001_DOC"/>
     </attribute>
     <attribute id="SAS18001" order="23" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="SAS18001"/>
+      <descriptions defaultDescription="SAS18001 Y/N"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SAS18001"/>
     </attribute>
     <attribute id="SAS18001_ST" order="24" displayAttribute="false" attributeHierarchyActive="false">
@@ -778,7 +778,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SAS18001_DOC"/>
     </attribute>
     <attribute id="AQAP2110" order="27" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="AQAP2110"/>
+      <descriptions defaultDescription="AQAP2110 Y/N"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="AQAP2110"/>
     </attribute>
     <attribute id="AQAP2110_ST" order="28" displayAttribute="false" attributeHierarchyActive="false">
@@ -794,7 +794,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="AQAP2110_DOC"/>
     </attribute>
     <attribute id="EN9100" order="31" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="EN9100"/>
+      <descriptions defaultDescription="EN9100 Y/N"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EN9100"/>
     </attribute>
     <attribute id="EN9100_ST" order="32" displayAttribute="false" attributeHierarchyActive="false">
@@ -810,7 +810,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EN9100_DOC"/>
     </attribute>
     <attribute id="ISO45001" order="35" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ISO45001"/>
+      <descriptions defaultDescription="ISO45001 Y/N"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ISO45001"/>
     </attribute>
     <attribute id="ISO45001_ST" order="36" displayAttribute="false" attributeHierarchyActive="false">
@@ -826,7 +826,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ISO45001_DOC"/>
     </attribute>
     <attribute id="ISO50001" order="39" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="ISO50001"/>
+      <descriptions defaultDescription="ISO50001 Y/N"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ISO50001"/>
     </attribute>
     <attribute id="ISO50001_ST" order="40" displayAttribute="false" attributeHierarchyActive="false">
@@ -842,7 +842,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ISO50001_DOC"/>
     </attribute>
     <attribute id="AUDITIER" order="43" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Third Party Audit"/>
+      <descriptions defaultDescription="Third Party Audit Y/N"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="AUDITIER"/>
     </attribute>
     <attribute id="AUDITIER_ST" order="44" displayAttribute="false" attributeHierarchyActive="false">
@@ -858,7 +858,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="AUDITIER_DOC"/>
     </attribute>
     <attribute id="DEFTAUDIT" order="47" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="DEFTA Audit"/>
+      <descriptions defaultDescription="DEFTA Audit Y/N"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DEFTAUDIT"/>
     </attribute>
     <attribute id="DEFTAUDIT_ST" order="48" displayAttribute="false" attributeHierarchyActive="false">
@@ -878,15 +878,15 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="QUALCERTGLOBCOMMENT"/>
     </attribute>
     <attribute id="CONTCTINSCIV" order="52" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Contractual Liability Insurance"/>
+      <descriptions defaultDescription="Liability insurance contract Y/N"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CONTCTINSCIV"/>
     </attribute>
     <attribute id="CONTCTINSCIV_DT" order="53" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Contractual Liability Insurance_Expiration date"/>
+      <descriptions defaultDescription="Liability insurance contract _Expiration date"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CONTCTINSCIV_DT"/>
     </attribute>
     <attribute id="CONTCTINSCIV_DOC" order="54" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Contractual Liability Insurance_Doc link"/>
+      <descriptions defaultDescription="Liability insurance contract _Doc link"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CONTCTINSCIV_DOC"/>
     </attribute>
     <attribute id="POGENCONDSIGN" order="55" displayAttribute="false" attributeHierarchyActive="false">
@@ -902,7 +902,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="RSEADHESION"/>
     </attribute>
     <attribute id="RSESUPP" order="58" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="RSE Supplier action plan"/>
+      <descriptions defaultDescription="Supplier RSE policy"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="RSESUPP"/>
     </attribute>
     <attribute id="FINEVOL" order="59" displayAttribute="false" attributeHierarchyActive="false">
@@ -918,7 +918,7 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="USERATESUPP"/>
     </attribute>
     <attribute id="MKTSUPPEVAL" order="63" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Market Supplier evaliation"/>
+      <descriptions defaultDescription="Market  valuation"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MKTSUPPEVAL"/>
     </attribute>
     <attribute id="GEOEVAL" order="64" displayAttribute="false" attributeHierarchyActive="false">
@@ -926,30 +926,30 @@
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="GEOEVAL"/>
     </attribute>
     <attribute id="CDCCONF" order="65" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="CDC Compliance"/>
+      <descriptions defaultDescription="Specification Compliance"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CDCCONF"/>
     </attribute>
     <attribute id="PLANRESPCT" order="67" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Respect of schedule"/>
+      <descriptions defaultDescription="Planning Compliance"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PLANRESPCT"/>
     </attribute>
     <attribute id="RFQPRICE" order="69" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Last RFQ price"/>
+      <descriptions defaultDescription="Last quotation price"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="RFQPRICE"/>
     </attribute>
     <attribute id="SUPPSTATUSUAP" order="71" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Supplier under action plan"/>
+      <descriptions defaultDescription="Status of supplier under action plan"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SUPPSTATUSUAP"/>
     </attribute>
     <attribute id="STATUSCOMMENT" order="72" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Supplier under action plan status"/>
+      <descriptions defaultDescription="Status comment"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STATUSCOMMENT"/>
     </attribute>
     <attribute id="VENDORUNIK" order="76" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="VENDORUNIK"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDORUNIK"/>
     </attribute>
-    <attribute id="VND_LIFNR" order="77" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VND_LIFNR" order="77" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="SUPPLIER CODE ERP"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_LIFNR"/>
     </attribute>
@@ -969,7 +969,7 @@
       <descriptions defaultDescription="SIRET"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCD1"/>
     </attribute>
-    <attribute id="EKORG" order="82" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="EKORG" order="82" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier purchase organization code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="EKORG"/>
     </attribute>
@@ -977,7 +977,7 @@
       <descriptions defaultDescription="ERP Source"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_SOURCE"/>
     </attribute>
-    <attribute id="ERDAT" order="84" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ERDAT" order="84" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Created on"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ERDAT"/>
     </attribute>
@@ -989,7 +989,7 @@
       <descriptions defaultDescription="Supplier City"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_CITY"/>
     </attribute>
-    <attribute id="PFACH" order="87" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="PFACH" order="87" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier PO BOX"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PFACH"/>
     </attribute>
@@ -1005,19 +1005,19 @@
       <descriptions defaultDescription="Supplier Region"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VND_REGIO"/>
     </attribute>
-    <attribute id="ADRNR" order="91" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Supplier address"/>
+    <attribute id="ADRNR" order="91" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="Supplier address code in ERP"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ADRNR"/>
     </attribute>
-    <attribute id="TELF1" order="92" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="TELF1" order="92" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier telephone"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TELF1"/>
     </attribute>
-    <attribute id="SPERR" order="93" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SPERR" order="93" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Central posting block"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SPERR"/>
     </attribute>
-    <attribute id="SPERM_X" order="94" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SPERM_X" order="94" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Central purchasing block"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SPERM_X"/>
     </attribute>
@@ -1029,28 +1029,28 @@
       <descriptions defaultDescription="Vendor account group"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="KTOKK"/>
     </attribute>
-    <attribute id="LOEVM_X" order="97" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="LOEVM_X" order="97" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Central deletion flag"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LOEVM_X"/>
     </attribute>
-    <attribute id="SPRAS" order="98" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SPRAS" order="98" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Language"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SPRAS"/>
     </attribute>
-    <attribute id="STCD2" order="99" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="STCD2" order="99" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="SIREN"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="STCD2"/>
     </attribute>
-    <attribute id="VBUND" order="100" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VBUND" order="100" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Trading partener"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VBUND"/>
     </attribute>
     <attribute id="INCO1" order="101" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Incoterm 1"/>
+      <descriptions defaultDescription="Incoterm code"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="INCO1"/>
     </attribute>
-    <attribute id="INCO2" order="102" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="Incoterm 2"/>
+    <attribute id="INCO2" order="102" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="Incoterm city"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="INCO2"/>
     </attribute>
     <attribute id="LFABC" order="103" displayAttribute="false" attributeHierarchyActive="false">
@@ -1061,39 +1061,39 @@
       <descriptions defaultDescription="PRUCHASING DELEGATION FLAG"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="LOEVM_Y"/>
     </attribute>
-    <attribute id="SPERM_Y" order="105" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SPERM_Y" order="105" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Purch. block for purchasing organization"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SPERM_Y"/>
     </attribute>
-    <attribute id="VENSL" order="106" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VENSL" order="106" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier service level"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENSL"/>
     </attribute>
-    <attribute id="WAERS" order="107" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="WAERS" order="107" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Currency"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WAERS"/>
     </attribute>
-    <attribute id="ZTERM" order="108" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ZTERM" order="108" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Payment Term"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZTERM"/>
     </attribute>
-    <attribute id="ZFAEL" order="109" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ZFAEL" order="109" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Payment Term / fix day"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZFAEL"/>
     </attribute>
-    <attribute id="ZMONA" order="110" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ZMONA" order="110" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Payment Term_Additional months"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZMONA"/>
     </attribute>
-    <attribute id="ZTAG1" order="111" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ZTAG1" order="111" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Payment Term_Days from Baseline"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="ZTAG1"/>
     </attribute>
-    <attribute id="TEXT1_FR" order="112" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="TEXT1_FR" order="112" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Payment Term_FR comment"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TEXT1_FR"/>
     </attribute>
-    <attribute id="TEXT1_EN" order="113" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="TEXT1_EN" order="113" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Payment Term_EN comment"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="TEXT1_EN"/>
     </attribute>
@@ -1117,7 +1117,7 @@
       <descriptions defaultDescription="J_1KFTBUS"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="J_1KFTBUS"/>
     </attribute>
-    <attribute id="MCOD1" order="119" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MCOD1" order="119" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier vendor matchcode"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="MCOD1"/>
     </attribute>
@@ -1129,7 +1129,7 @@
       <descriptions defaultDescription="PRFRE"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="PRFRE"/>
     </attribute>
-    <attribute id="SMTP_ADDR" order="122" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="SMTP_ADDR" order="122" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier email"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="SMTP_ADDR"/>
     </attribute>
@@ -1144,42 +1144,42 @@
   <calculatedAttributes/>
   <baseMeasures>
     <measure id="EVAL_TURNOVER" order="61" semanticType="amount" aggregationType="sum" measureType="amount">
-      <descriptions defaultDescription="Supplier TO"/>
+      <descriptions defaultDescription="Supplier TO on year"/>
       <fixedCurrency>EUR</fixedCurrency>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="EVAL_TURNOVER"/>
     </measure>
     <measure id="CDCCONFNOTE" order="66" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="CDC Compliance Notation"/>
+      <descriptions defaultDescription="Specification Compliance note"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="CDCCONFNOTE"/>
     </measure>
     <measure id="PLANRESPCTNOTE" order="68" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="Respect of schedule Notation"/>
+      <descriptions defaultDescription="Planning Compliance note"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="PLANRESPCTNOTE"/>
     </measure>
     <measure id="RFQPRICENOTE" order="70" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="Last RFQ Price Notation"/>
+      <descriptions defaultDescription="Last quotation price note"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="RFQPRICENOTE"/>
     </measure>
     <measure id="QUALSYSTNOTE" order="73" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="Quality Notation"/>
+      <descriptions defaultDescription="Quality system note"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="QUALSYSTNOTE"/>
     </measure>
     <measure id="FINRISKNOTE" order="74" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="Financial Risk Notation"/>
+      <descriptions defaultDescription="Accounting risk note"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="FINRISKNOTE"/>
     </measure>
     <measure id="FINNIVNOTE" order="75" aggregationType="sum" measureType="simple">
-      <descriptions defaultDescription="Risk Notation"/>
+      <descriptions defaultDescription="Risk level note"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="FINNIVNOTE"/>
     </measure>
-    <measure id="ZPRZ1" order="123" aggregationType="sum" measureType="simple">
+    <measure id="ZPRZ1" order="123" aggregationType="sum" measureType="simple" hidden="true">
       <descriptions defaultDescription="Supplier Percentage discount"/>
       <measureMapping columnObjectName="BEFORE_AGG_P" columnName="ZPRZ1"/>
     </measure>
   </baseMeasures>
   <calculatedMeasures>
     <measure id="NB_EVAL_VENDOR" order="1" aggregationType="sum" measureType="simple" calculatedMeasureType="counter" aggregatable="true" datatype="BIGINT" length="">
-      <descriptions defaultDescription="Nbr of Eval Vendor Code"/>
+      <descriptions defaultDescription="Qty of supplier"/>
       <exceptionAggregation>
         <attribute attributeName="LIFNR"/>
       </exceptionAggregation>
