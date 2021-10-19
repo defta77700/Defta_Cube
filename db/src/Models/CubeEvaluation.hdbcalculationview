@@ -701,7 +701,7 @@
       <descriptions defaultDescription="Supplier name"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="VENDOR_NAME"/>
     </attribute>
-    <attribute id="CAT_VENDOR" order="8" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="CAT_VENDOR" order="8" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="Supplier category"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CAT_VENDOR"/>
     </attribute>
