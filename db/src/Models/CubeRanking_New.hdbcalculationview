@@ -112,6 +112,8 @@
     
       <viewAttribute id="BUKRS"/>
       <viewAttribute id="BUTXT"/>
+    
+      <viewAttribute id="BUKRS_PRDS"/>
     </viewAttributes>
     <calculatedViewAttributes>
       <calculatedViewAttribute id="PR_IDNC" datatype="DECIMAL" length="10" scale="2" expressionLanguage="SQL">
@@ -243,6 +245,8 @@ END    </formula>
       <viewAttribute id="YEAR_PRTDS_CC"/>
       <viewAttribute id="BUKRS"/>
       <viewAttribute id="BUTXT"/>
+    
+      <viewAttribute id="BUKRS_PRDS"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="VNDRANK_VNDPTCPNY_J_2"/>
@@ -325,6 +329,8 @@ END    </formula>
       <viewAttribute id="COUNTTOLXJ"/>
       <viewAttribute id="TDS"/>
       <viewAttribute id="YEAR_PRTDS_CC"/>
+    
+      <viewAttribute id="BUKRS_PRDS"/>
     </viewAttributes>
     <calculatedViewAttributes>
       <calculatedViewAttribute id="IDNC" datatype="DECIMAL" length="15" scale="2" expressionLanguage="SQL">
@@ -414,6 +420,8 @@ END    </formula>
       <viewAttribute id="COUNTTOLXJ" aggregationType="sum"/>
       <viewAttribute id="TDS" aggregationType="sum"/>
       <viewAttribute id="YEAR_PRTDS_CC"/>
+    
+      <viewAttribute id="BUKRS_PRDS"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="VND_VNDFIRE_IDNC_JP">
@@ -495,6 +503,7 @@ END    </formula>
       <mapping xsi:type="Calculation:AttributeMapping" target="COUNTTOLXJ" source="COUNTTOLXJ"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="TDS" source="PR_TDS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_PRTDS_CC" source="YEAR_PRTDS_CC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS_PRDS" source="BUKRS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_FIXR_CC_IFNULL" source="YEAR_PRTDS_CC"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
@@ -586,6 +595,8 @@ END    </formula>
       <viewAttribute id="SUMTOLXJ"/>
       <viewAttribute id="COUNTTOLXJ"/>
       <viewAttribute id="PR_TDS"/>
+    
+      <viewAttribute id="BUKRS"/>
     </viewAttributes>
     <calculatedViewAttributes>
       <calculatedViewAttribute id="YEAR_PRTDS_CC" datatype="NVARCHAR" length="4" expressionLanguage="SQL">
@@ -753,6 +764,8 @@ END    </formula>
       <viewAttribute id="SUMTOLXJ" aggregationType="sum"/>
       <viewAttribute id="COUNTTOLXJ" aggregationType="sum"/>
       <viewAttribute id="PR_TDS" aggregationType="sum"/>
+    
+      <viewAttribute id="BUKRS"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="VND_PRTDS_P" emptyUnionBehavior="NO_ROW">
@@ -762,6 +775,8 @@ END    </formula>
       <mapping xsi:type="Calculation:AttributeMapping" target="SUMTOLXJ" source="SUMTOLXJ"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="COUNTTOLXJ" source="COUNTTOLXJ"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PR_TDS" source="PR_TDS"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
     </input>
     <input node="VND_PRTDS_H_P" emptyUnionBehavior="NO_ROW">
       <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_PRTDS" source="YEAR_PRTDS"/>
@@ -770,6 +785,8 @@ END    </formula>
       <mapping xsi:type="Calculation:AttributeMapping" target="SUMTOLXJ" source="SUMTOLXJ"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="COUNTTOLXJ" source="COUNTTOLXJ"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PR_TDS" source="PR_TDS"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
     </input>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VND_VNDFIXE_JP">
@@ -871,6 +888,8 @@ END    </formula>
       <viewAttribute id="SUMTOLXJ"/>
       <viewAttribute id="COUNTTOLXJ"/>
       <viewAttribute id="PR_TDS"/>
+    
+      <viewAttribute id="BUKRS"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="V_VENDOR_PRTDS"/>
@@ -883,6 +902,8 @@ END    </formula>
       <viewAttribute id="SUMTOLXJ"/>
       <viewAttribute id="COUNTTOLXJ"/>
       <viewAttribute id="PR_TDS"/>
+    
+      <viewAttribute id="BUKRS"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="V_VENDOR_PRTDS_H"/>
@@ -1261,6 +1282,7 @@ END    </formula>
       <viewAttribute id="YEAR_PRTDS_CC"/>
       <viewAttribute id="BUKRS"/>
       <viewAttribute id="BUTXT"/>
+      <viewAttribute id="BUKRS_PRDS"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="VND_RANK_JP">
@@ -1341,6 +1363,7 @@ END    </formula>
       <mapping xsi:type="Calculation:AttributeMapping" target="COUNTTOLXJ" source="COUNTTOLXJ"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="TDS" source="TDS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_PRTDS_CC" source="YEAR_PRTDS_CC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS_PRDS" source="BUKRS_PRDS"/>
     </input>
     <input node="VNDRANK_VNDPTCPNY_J_1">
       <mapping xsi:type="Calculation:AttributeMapping" target="BUKRS" source="BUKRS"/>
@@ -1620,6 +1643,11 @@ END    </formula>
     <attribute id="YEAR_PRTDS_CC" order="84" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
       <descriptions defaultDescription="YEAR service rate"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="YEAR_PRTDS_CC"/>
+    </attribute>
+  
+    <attribute id="BUKRS_PRDS" order="85" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUKRS_PRDS"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="BUKRS_PRDS"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
