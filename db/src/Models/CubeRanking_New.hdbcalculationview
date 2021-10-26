@@ -497,9 +497,11 @@ END    </formula>
       <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_PRTDS_CC" source="YEAR_PRTDS_CC"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="YEAR_FIXR_CC_IFNULL" source="YEAR_PRTDS_CC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
     </input>
     <joinAttribute name="LIFNR"/>
     <joinAttribute name="YEAR_FIXR_CC_IFNULL"/>
+    <joinAttribute name="SOURCE"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="VND_VNDFIRE_IDNC_JP">
     <viewAttributes>
@@ -1157,7 +1159,7 @@ END    </formula>
     <calculatedViewAttributes/>
     <input node="COMPANY"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="VNDRANK_VNDPTCPNY_J_1" cardinality="CN_N" joinType="inner" multiJoinNode="VNDRANK_VNDPTCPNY_J" multiJoinCentralTable="VND_RANK_JP" multiJoinOrder="Outside In">
+  <calculationView xsi:type="Calculation:JoinView" id="VNDRANK_VNDPTCPNY_J_1" cardinality="CN_N" joinType="leftOuter" multiJoinNode="VNDRANK_VNDPTCPNY_J" multiJoinCentralTable="VND_RANK_JP" multiJoinOrder="Outside In">
     <viewAttributes>
       <viewAttribute id="BUKRS"/>
       <viewAttribute id="BUTXT"/>
@@ -1178,7 +1180,7 @@ END    </formula>
     <joinAttribute name="BUKRS"/>
     <joinAttribute name="SOURCE"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="VNDRANK_VNDPTCPNY_J_2" cardinality="CN_N" joinType="inner" multiJoinNode="VNDRANK_VNDPTCPNY_J" multiJoinCentralTable="VND_RANK_JP" multiJoinOrder="Outside In">
+  <calculationView xsi:type="Calculation:JoinView" id="VNDRANK_VNDPTCPNY_J_2" cardinality="CN_N" joinType="leftOuter" multiJoinNode="VNDRANK_VNDPTCPNY_J" multiJoinCentralTable="VND_RANK_JP" multiJoinOrder="Outside In">
     <viewAttributes>
       <viewAttribute id="IDNC" aggregationType="sum"/>
       <viewAttribute id="LIFNR"/>
