@@ -1025,7 +1025,10 @@
       <viewAttribute id="REGIO"/></viewAttributes>
     <calculatedViewAttributes>
       <calculatedViewAttribute id="ERDAT_DT" datatype="DATE" expressionLanguage="SQL">
-        <formula>TO_DATE(&quot;ERDAT&quot;,'YYYY-MM-DD')</formula>
+        <formula>CASE WHEN LENGTH (&quot;ERDAT&quot;) = 8 then TO_DATE(&quot;ERDAT&quot;,'YYYYMMDD')
+    ELSE TO_DATE(&quot;ERDAT&quot;,'YYYY-MM-DD')
+END
+</formula>
       </calculatedViewAttribute>
     
       <calculatedViewAttribute id="MATNR_C" datatype="NVARCHAR" length="20" expressionLanguage="SQL">

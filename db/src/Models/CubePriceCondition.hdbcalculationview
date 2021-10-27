@@ -152,6 +152,13 @@
 	 ELSE TO_DATE(&quot;DATBI&quot;,'YYYY-MM-DD') 
  END</formula>
       </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="DATAB_D" datatype="DATE" expressionLanguage="SQL">
+        <formula>CASE 
+     WHEN LENGTH(&quot;DATAB&quot;) = 8 then TO_DATE(&quot;DATAB&quot;,'YYYYMMDD') 
+	 ELSE TO_DATE(&quot;DATAB&quot;,'YYYY-MM-DD') 
+ END</formula>
+      </calculatedViewAttribute>
     </calculatedViewAttributes>
     <input node="PRICECONDITION"/>
   </calculationView>
@@ -272,6 +279,8 @@
       <viewAttribute id="WGBEZ_L4"/>
       <viewAttribute id="MATKL_L5"/>
       <viewAttribute id="WGBEZ_L5"/>
+    
+      <viewAttribute id="DATAB_D"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="ALL_JP"/>
@@ -381,6 +390,8 @@
       <viewAttribute id="WGBEZ_L4"/>
       <viewAttribute id="MATKL_L5"/>
       <viewAttribute id="WGBEZ_L5"/>
+    
+      <viewAttribute id="DATAB_D"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="ALL_J_4"/>
@@ -406,7 +417,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_SOURCE" source="SOURCE"/>
     </input>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="ALL_J_1" cardinality="CN_1" joinType="leftOuter" multiJoinNode="ALL_J" multiJoinCentralTable="PRICECOND_P" multiJoinOrder="Outside In">
+  <calculationView xsi:type="Calculation:JoinView" id="ALL_J_1" cardinality="CN_N" joinType="inner" multiJoinNode="ALL_J" multiJoinCentralTable="PRICECOND_P" multiJoinOrder="Outside In">
     <viewAttributes>
       <viewAttribute id="KNUMH"/>
       <viewAttribute id="SOURCE"/>
@@ -423,6 +434,67 @@
       <viewAttribute id="MATNR_C"/>
       <viewAttribute id="LIFNR_C"/>
       <viewAttribute id="DATBI_D"/>
+      <viewAttribute id="DATE_SQL"/>
+      <viewAttribute id="DATE_SAP"/>
+      <viewAttribute id="YEAR"/>
+      <viewAttribute id="CALQUARTER"/>
+      <viewAttribute id="CALMONTH"/>
+      <viewAttribute id="CALWEEK"/>
+      <viewAttribute id="DATAB_D"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="DATE_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATE_SQL" source="DATE_SQL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATE_SAP" source="DATE_SAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALQUARTER" source="CALQUARTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALMONTH" source="CALMONTH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
+    </input>
+    <input node="PRICECOND_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="KNUMH" source="KNUMH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KBETR" source="KBETR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KONWA" source="KONWA"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KPEIN" source="KPEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="KMEIN" source="KMEIN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C" source="LIFNR_C"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI_D" source="DATBI_D"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB_D" source="DATAB_D"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATE_SQL" source="DATAB_D"/>
+    </input>
+    <joinAttribute name="DATE_SQL"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="ALL_J_2" cardinality="CN_1" joinType="leftOuter" multiJoinNode="ALL_J" multiJoinCentralTable="PRICECOND_P" multiJoinOrder="Outside In">
+    <viewAttributes>
+      <viewAttribute id="KNUMH"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="LIFNR"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="WERKS"/>
+      <viewAttribute id="EKORG"/>
+      <viewAttribute id="DATBI"/>
+      <viewAttribute id="DATAB"/>
+      <viewAttribute id="KBETR" aggregationType="sum"/>
+      <viewAttribute id="KONWA"/>
+      <viewAttribute id="KPEIN" aggregationType="sum"/>
+      <viewAttribute id="KMEIN"/>
+      <viewAttribute id="MATNR_C"/>
+      <viewAttribute id="LIFNR_C"/>
+      <viewAttribute id="DATBI_D"/>
+      <viewAttribute id="DATE_SQL"/>
+      <viewAttribute id="DATE_SAP"/>
+      <viewAttribute id="YEAR"/>
+      <viewAttribute id="CALQUARTER"/>
+      <viewAttribute id="CALMONTH"/>
+      <viewAttribute id="CALWEEK"/>
       <viewAttribute id="VND_LIFNR"/>
       <viewAttribute id="VENDORUNIK"/>
       <viewAttribute id="KRAUS"/>
@@ -470,9 +542,10 @@
       <viewAttribute id="PRFRE"/>
       <viewAttribute id="SMTP_ADDR"/>
       <viewAttribute id="ZPRZ1" aggregationType="sum"/>
+      <viewAttribute id="DATAB_D"/>
     </viewAttributes>
     <calculatedViewAttributes/>
-    <input node="PRICECOND_P">
+    <input node="ALL_J_1">
       <mapping xsi:type="Calculation:AttributeMapping" target="KNUMH" source="KNUMH"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
@@ -488,6 +561,13 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C" source="LIFNR_C"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="DATBI_D" source="DATBI_D"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATE_SQL" source="DATE_SQL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATE_SAP" source="DATE_SAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALQUARTER" source="CALQUARTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALMONTH" source="CALMONTH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB_D" source="DATAB_D"/>
     </input>
     <input node="DIMVND_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="VND_LIFNR" source="VND_LIFNR"/>
@@ -543,157 +623,6 @@
     <joinAttribute name="LIFNR_C"/>
     <joinAttribute name="SOURCE"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="ALL_J_2" cardinality="CN_1" joinType="leftOuter" multiJoinNode="ALL_J" multiJoinCentralTable="PRICECOND_P" multiJoinOrder="Outside In">
-    <viewAttributes>
-      <viewAttribute id="KNUMH"/>
-      <viewAttribute id="SOURCE"/>
-      <viewAttribute id="LIFNR"/>
-      <viewAttribute id="MATNR"/>
-      <viewAttribute id="WERKS"/>
-      <viewAttribute id="EKORG"/>
-      <viewAttribute id="DATBI"/>
-      <viewAttribute id="DATAB"/>
-      <viewAttribute id="KBETR" aggregationType="sum"/>
-      <viewAttribute id="KONWA"/>
-      <viewAttribute id="KPEIN" aggregationType="sum"/>
-      <viewAttribute id="KMEIN"/>
-      <viewAttribute id="MATNR_C"/>
-      <viewAttribute id="LIFNR_C"/>
-      <viewAttribute id="DATBI_D"/>
-      <viewAttribute id="VND_LIFNR"/>
-      <viewAttribute id="VENDORUNIK"/>
-      <viewAttribute id="KRAUS"/>
-      <viewAttribute id="STCEG"/>
-      <viewAttribute id="STCD1"/>
-      <viewAttribute id="EKORG_1"/>
-      <viewAttribute id="VND_SOURCE"/>
-      <viewAttribute id="ERDAT"/>
-      <viewAttribute id="VND_NAME"/>
-      <viewAttribute id="ORT01"/>
-      <viewAttribute id="PFACH"/>
-      <viewAttribute id="STRAS"/>
-      <viewAttribute id="PSTLZ"/>
-      <viewAttribute id="REGIO"/>
-      <viewAttribute id="ADRNR"/>
-      <viewAttribute id="TELF1"/>
-      <viewAttribute id="SPERR"/>
-      <viewAttribute id="SPERM_X"/>
-      <viewAttribute id="VND_LAND"/>
-      <viewAttribute id="KTOKK"/>
-      <viewAttribute id="LOEVM_X"/>
-      <viewAttribute id="VND_SPRAS"/>
-      <viewAttribute id="STCD2"/>
-      <viewAttribute id="VBUND"/>
-      <viewAttribute id="INCO1"/>
-      <viewAttribute id="INCO2"/>
-      <viewAttribute id="LFABC"/>
-      <viewAttribute id="LOEVM_Y"/>
-      <viewAttribute id="SPERM_Y"/>
-      <viewAttribute id="VENSL"/>
-      <viewAttribute id="WAERS"/>
-      <viewAttribute id="ZTERM"/>
-      <viewAttribute id="ZFAEL"/>
-      <viewAttribute id="ZMONA"/>
-      <viewAttribute id="ZTAG1"/>
-      <viewAttribute id="TEXT1_FR"/>
-      <viewAttribute id="TEXT1_EN"/>
-      <viewAttribute id="KONZS"/>
-      <viewAttribute id="BRSCH"/>
-      <viewAttribute id="BRTXT_FR"/>
-      <viewAttribute id="BRTXT_EN"/>
-      <viewAttribute id="J_1KFTBUS"/>
-      <viewAttribute id="MCOD1"/>
-      <viewAttribute id="WEBRE"/>
-      <viewAttribute id="PRFRE"/>
-      <viewAttribute id="SMTP_ADDR"/>
-      <viewAttribute id="ZPRZ1" aggregationType="sum"/>
-      <viewAttribute id="PLANT_WERKS"/>
-      <viewAttribute id="PLANT_NAME1"/>
-      <viewAttribute id="PLANT_EKORG"/>
-      <viewAttribute id="PLANT_VKORG"/>
-      <viewAttribute id="PLANT_LAND1"/>
-      <viewAttribute id="PLANT_SPRAS"/>
-      <viewAttribute id="PLANT_SOURCE"/>
-    </viewAttributes>
-    <calculatedViewAttributes/>
-    <input node="ALL_J_1">
-      <mapping xsi:type="Calculation:AttributeMapping" target="KNUMH" source="KNUMH"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR" source="LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="WERKS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG" source="EKORG"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI" source="DATBI"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB" source="DATAB"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="KBETR" source="KBETR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="KONWA" source="KONWA"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="KPEIN" source="KPEIN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="KMEIN" source="KMEIN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C" source="LIFNR_C"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI_D" source="DATBI_D"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VND_LIFNR" source="VND_LIFNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="STCEG" source="STCEG"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="STCD1" source="STCD1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG_1" source="EKORG_1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VND_SOURCE" source="VND_SOURCE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT" source="ERDAT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VND_NAME" source="VND_NAME"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ORT01" source="ORT01"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PFACH" source="PFACH"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="STRAS" source="STRAS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PSTLZ" source="PSTLZ"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="REGIO" source="REGIO"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TELF1" source="TELF1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SPERR" source="SPERR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_X" source="SPERM_X"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VND_LAND" source="VND_LAND"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="KTOKK" source="KTOKK"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_X" source="LOEVM_X"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VND_SPRAS" source="VND_SPRAS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="STCD2" source="STCD2"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VBUND" source="VBUND"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="INCO1" source="INCO1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="INCO2" source="INCO2"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="LOEVM_Y" source="LOEVM_Y"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SPERM_Y" source="SPERM_Y"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VENSL" source="VENSL"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WAERS" source="WAERS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZTERM" source="ZTERM"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZFAEL" source="ZFAEL"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZMONA" source="ZMONA"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZTAG1" source="ZTAG1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_FR" source="TEXT1_FR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="TEXT1_EN" source="TEXT1_EN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="KONZS" source="KONZS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRSCH" source="BRSCH"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_FR" source="BRTXT_FR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRTXT_EN" source="BRTXT_EN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="J_1KFTBUS" source="J_1KFTBUS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MCOD1" source="MCOD1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WEBRE" source="WEBRE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
-    </input>
-    <input node="PLANT_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_WERKS" source="PLANT_WERKS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_NAME1" source="PLANT_NAME1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_EKORG" source="PLANT_EKORG"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_VKORG" source="PLANT_VKORG"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_LAND1" source="PLANT_LAND1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_SPRAS" source="PLANT_SPRAS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_SOURCE" source="PLANT_SOURCE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="PLANT_WERKS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="PLANT_SOURCE"/>
-    </input>
-    <joinAttribute name="WERKS"/>
-    <joinAttribute name="SOURCE"/>
-  </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="ALL_J_3" cardinality="CN_1" joinType="leftOuter" multiJoinNode="ALL_J" multiJoinCentralTable="PRICECOND_P" multiJoinOrder="Outside In">
     <viewAttributes>
       <viewAttribute id="KNUMH"/>
@@ -711,7 +640,12 @@
       <viewAttribute id="MATNR_C"/>
       <viewAttribute id="LIFNR_C"/>
       <viewAttribute id="DATBI_D"/>
-      <viewAttribute id="EKGRP"/>
+      <viewAttribute id="DATE_SQL"/>
+      <viewAttribute id="DATE_SAP"/>
+      <viewAttribute id="YEAR"/>
+      <viewAttribute id="CALQUARTER"/>
+      <viewAttribute id="CALMONTH"/>
+      <viewAttribute id="CALWEEK"/>
       <viewAttribute id="VND_LIFNR"/>
       <viewAttribute id="VENDORUNIK"/>
       <viewAttribute id="KRAUS"/>
@@ -766,32 +700,7 @@
       <viewAttribute id="PLANT_LAND1"/>
       <viewAttribute id="PLANT_SPRAS"/>
       <viewAttribute id="PLANT_SOURCE"/>
-      <viewAttribute id="MAT_SOURCE"/>
-      <viewAttribute id="MATKL"/>
-      <viewAttribute id="BRGEW"/>
-      <viewAttribute id="MTART"/>
-      <viewAttribute id="MTBEZ_FR"/>
-      <viewAttribute id="MTBEZ_EN"/>
-      <viewAttribute id="NTGEW"/>
-      <viewAttribute id="MAKTX_F"/>
-      <viewAttribute id="MAKTX_E"/>
-      <viewAttribute id="PRCTR"/>
-      <viewAttribute id="MEINS"/>
-      <viewAttribute id="DISPO"/>
-      <viewAttribute id="PROFL"/>
-      <viewAttribute id="NAME1"/>
-      <viewAttribute id="EKORG_2"/>
-      <viewAttribute id="MAT_LAND"/>
-      <viewAttribute id="MATKL_L1"/>
-      <viewAttribute id="WGBEZ_L1"/>
-      <viewAttribute id="MATKL_L2"/>
-      <viewAttribute id="WGBEZ_L2"/>
-      <viewAttribute id="MATKL_L3"/>
-      <viewAttribute id="WGBEZ_L3"/>
-      <viewAttribute id="MATKL_L4"/>
-      <viewAttribute id="WGBEZ_L4"/>
-      <viewAttribute id="MATKL_L5"/>
-      <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="DATAB_D"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="ALL_J_2">
@@ -810,6 +719,12 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C" source="LIFNR_C"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="DATBI_D" source="DATBI_D"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATE_SQL" source="DATE_SQL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATE_SAP" source="DATE_SAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALQUARTER" source="CALQUARTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALMONTH" source="CALMONTH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="VND_LIFNR" source="VND_LIFNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
@@ -857,6 +772,9 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="PRFRE" source="PRFRE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="SMTP_ADDR" source="SMTP_ADDR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="ZPRZ1" source="ZPRZ1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB_D" source="DATAB_D"/>
+    </input>
+    <input node="PLANT_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_WERKS" source="PLANT_WERKS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_NAME1" source="PLANT_NAME1"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_EKORG" source="PLANT_EKORG"/>
@@ -864,39 +782,10 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_LAND1" source="PLANT_LAND1"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_SPRAS" source="PLANT_SPRAS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_SOURCE" source="PLANT_SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WERKS" source="PLANT_WERKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="PLANT_SOURCE"/>
     </input>
-    <input node="DIMMAT_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MAT_SOURCE" source="MAT_SOURCE"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MTART" source="MTART"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_FR" source="MTBEZ_FR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MTBEZ_EN" source="MTBEZ_EN"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="NTGEW" source="NTGEW"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_F" source="MAKTX_F"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MAKTX_E" source="MAKTX_E"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PRCTR" source="PRCTR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="PROFL" source="PROFL"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG_2" source="EKORG"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MAT_LAND" source="MAT_LAND"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L1" source="MATKL_L1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L1" source="WGBEZ_L1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L2" source="MATKL_L2"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L2" source="WGBEZ_L2"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L3" source="MATKL_L3"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L3" source="WGBEZ_L3"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L4" source="MATKL_L4"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L4" source="WGBEZ_L4"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L5" source="MATKL_L5"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L5" source="WGBEZ_L5"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MAT_MATNR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="MAT_SOURCE"/>
-    </input>
-    <joinAttribute name="MATNR_C"/>
+    <joinAttribute name="WERKS"/>
     <joinAttribute name="SOURCE"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="ALL_J_4" cardinality="CN_1" joinType="leftOuter" multiJoinNode="ALL_J" multiJoinCentralTable="PRICECOND_P" multiJoinOrder="Outside In">
@@ -1003,6 +892,7 @@
       <viewAttribute id="WGBEZ_L4"/>
       <viewAttribute id="MATKL_L5"/>
       <viewAttribute id="WGBEZ_L5"/>
+      <viewAttribute id="DATAB_D"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="ALL_J_3">
@@ -1021,7 +911,12 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C" source="LIFNR_C"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="DATBI_D" source="DATBI_D"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATE_SQL" source="DATE_SQL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATE_SAP" source="DATE_SAP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALQUARTER" source="CALQUARTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALMONTH" source="CALMONTH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="VND_LIFNR" source="VND_LIFNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="KRAUS" source="KRAUS"/>
@@ -1076,6 +971,10 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_LAND1" source="PLANT_LAND1"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_SPRAS" source="PLANT_SPRAS"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_SOURCE" source="PLANT_SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB_D" source="DATAB_D"/>
+    </input>
+    <input node="DIMMAT_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKGRP" source="EKGRP"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MAT_SOURCE" source="MAT_SOURCE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MATKL" source="MATKL"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="BRGEW" source="BRGEW"/>
@@ -1090,7 +989,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="DISPO" source="DISPO"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PROFL" source="PROFL"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="NAME1" source="NAME1"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG_2" source="EKORG_2"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EKORG_2" source="EKORG"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MAT_LAND" source="MAT_LAND"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L1" source="MATKL_L1"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L1" source="WGBEZ_L1"/>
@@ -1102,17 +1001,11 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L4" source="WGBEZ_L4"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MATKL_L5" source="MATKL_L5"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="WGBEZ_L5" source="WGBEZ_L5"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MAT_MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="MAT_SOURCE"/>
     </input>
-    <input node="DATE_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="DATE_SQL" source="DATE_SQL"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DATE_SAP" source="DATE_SAP"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CALQUARTER" source="CALQUARTER"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CALMONTH" source="CALMONTH"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI_D" source="DATE_SQL"/>
-    </input>
-    <joinAttribute name="DATBI_D"/>
+    <joinAttribute name="MATNR_C"/>
+    <joinAttribute name="SOURCE"/>
   </calculationView>
 </calculationViews>
 <logicalModel id="BEFORE_AGG_P">
@@ -1517,6 +1410,11 @@
       <descriptions defaultDescription="MF5 Additionnal detail"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="WGBEZ_L5"/>
     </attribute>
+  
+    <attribute id="DATAB_D" hidden="true" order="103" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Start date calculated"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DATAB_D"/>
+    </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
@@ -1578,13 +1476,13 @@
         </hierarchy>
       </hierarchies>
     </localDimension>
-    <localDimension id="DATBI_HIER">
+    <localDimension id="DATAB_HIER">
       <attributeRef xsi:type="DataFoundation:Attribute">YEAR</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">CALQUARTER</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">CALMONTH</attributeRef>
       <attributeRef xsi:type="DataFoundation:Attribute">CALWEEK</attributeRef>
       <hierarchies>
-        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="DATBI_HIER" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+        <hierarchy xsi:type="Dimension:LeveledHierarchy" id="DATAB_HIER" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
           <descriptions defaultDescription="start date hierarchy"/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>

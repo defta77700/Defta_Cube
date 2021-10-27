@@ -78,6 +78,8 @@
       <viewAttribute id="CALQUARTER"/>
       <viewAttribute id="CALMONTH"/>
       <viewAttribute id="CALWEEK"/>
+    
+      <viewAttribute id="DATAB_D"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="ALL_JP"/>
@@ -139,6 +141,8 @@
       <viewAttribute id="CALQUARTER"/>
       <viewAttribute id="CALMONTH"/>
       <viewAttribute id="CALWEEK"/>
+    
+      <viewAttribute id="DATAB_D"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="ALL_J_4"/>
@@ -168,6 +172,13 @@
       </calculatedViewAttribute>
       <calculatedViewAttribute id="DATBI_D" datatype="DATE" expressionLanguage="SQL">
         <formula>TO_DATE(&quot;DATBI&quot;,'YYYY-MM-DD')</formula>
+      </calculatedViewAttribute>
+    
+      <calculatedViewAttribute id="DATAB_D" datatype="DATE" expressionLanguage="SQL">
+        <formula>CASE 
+     WHEN LENGTH(&quot;DATAB&quot;) = 8 then TO_DATE(&quot;DATAB&quot;,'YYYYMMDD') 
+	 ELSE TO_DATE(&quot;DATAB&quot;,'YYYY-MM-DD') 
+ END</formula>
       </calculatedViewAttribute>
     </calculatedViewAttributes>
     <input node="PRICESCHEDULED"/>
@@ -323,6 +334,7 @@
       <viewAttribute id="CALQUARTER"/>
       <viewAttribute id="CALMONTH"/>
       <viewAttribute id="CALWEEK"/>
+      <viewAttribute id="DATAB_D"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="PRICESCH_P">
@@ -342,6 +354,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="LIFNR_C" source="LIFNR_C"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="DATBI_D" source="DATBI_D"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB_D" source="DATAB_D"/>
     </input>
     <input node="DATE_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="DATE_SQL" source="DATE_SQL"/>
@@ -349,9 +362,9 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="CALQUARTER" source="CALQUARTER"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CALMONTH" source="CALMONTH"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DATBI_D" source="DATE_SQL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB_D" source="DATE_SQL"/>
     </input>
-    <joinAttribute name="DATBI_D"/>
+    <joinAttribute name="DATAB_D"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="ALL_J_2" cardinality="CN_1" joinType="leftOuter" multiJoinNode="ALL_J" multiJoinCentralTable="PRICESCH_P" multiJoinOrder="Outside In">
     <viewAttributes>
@@ -383,6 +396,7 @@
       <viewAttribute id="CALQUARTER"/>
       <viewAttribute id="CALMONTH"/>
       <viewAttribute id="CALWEEK"/>
+      <viewAttribute id="DATAB_D"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="ALL_J_1">
@@ -407,6 +421,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="CALQUARTER" source="CALQUARTER"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CALMONTH" source="CALMONTH"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB_D" source="DATAB_D"/>
     </input>
     <input node="PLANT_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="PLANT_WERKS" source="PLANT_WERKS"/>
@@ -467,6 +482,7 @@
       <viewAttribute id="CALMONTH"/>
       <viewAttribute id="CALWEEK"/>
       <viewAttribute id="MAT_SOURCE"/>
+      <viewAttribute id="DATAB_D"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="ALL_J_2">
@@ -498,6 +514,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="CALQUARTER" source="CALQUARTER"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CALMONTH" source="CALMONTH"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB_D" source="DATAB_D"/>
     </input>
     <input node="DIMMAT_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="MAT_MATNR" source="MATNR"/>
@@ -581,6 +598,7 @@
       <viewAttribute id="VENDORUNIK_1"/>
       <viewAttribute id="VND_SOURCE"/>
       <viewAttribute id="MAT_SOURCE"/>
+      <viewAttribute id="DATAB_D"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="ALL_J_3">
@@ -629,6 +647,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="CALMONTH" source="CALMONTH"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MAT_SOURCE" source="MAT_SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB_D" source="DATAB_D"/>
     </input>
     <input node="DIMVND_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
@@ -863,6 +882,11 @@
       <descriptions defaultDescription="Start date week"/>
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="CALWEEK"/>
     </attribute>
+  
+    <attribute id="DATAB_D" hidden="true" order="56" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Start date calculated"/>
+      <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DATAB_D"/>
+    </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
@@ -943,7 +967,7 @@
       <attributeRef xsi:type="DataFoundation:Attribute">CALWEEK</attributeRef>
       <hierarchies>
         <hierarchy xsi:type="Dimension:LeveledHierarchy" id="DATBI_HIER" aggregateAllNodes="false" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="NAME_PATH_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
-          <descriptions defaultDescription="Date End Price Scheduled Hierarchy"/>
+          <descriptions defaultDescription="start date hierarchy"/>
           <unassignedMemberProperties mode="FALSE"/>
           <levels>
             <level levelAttribute="YEAR" levelType="MDLEVEL_TYPE_TIME_YEARS" order="1" orderAttribute="YEAR" sortDirection="ASC"/>
