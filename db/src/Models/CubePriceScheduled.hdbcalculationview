@@ -175,10 +175,12 @@
       </calculatedViewAttribute>
     
       <calculatedViewAttribute id="DATAB_D" datatype="DATE" expressionLanguage="SQL">
+    
         <formula>CASE 
      WHEN LENGTH(&quot;DATAB&quot;) = 8 then TO_DATE(&quot;DATAB&quot;,'YYYYMMDD') 
 	 ELSE TO_DATE(&quot;DATAB&quot;,'YYYY-MM-DD') 
  END</formula>
+    
       </calculatedViewAttribute>
     </calculatedViewAttributes>
     <input node="PRICESCHEDULED"/>
@@ -311,7 +313,7 @@
     <calculatedViewAttributes/>
     <input node="ZM_TIME_DIMENSION"/>
   </calculationView>
-  <calculationView xsi:type="Calculation:JoinView" id="ALL_J_1" cardinality="CN_N" joinType="leftOuter" multiJoinNode="ALL_J" multiJoinCentralTable="PRICESCH_P" multiJoinOrder="Outside In">
+  <calculationView xsi:type="Calculation:JoinView" id="ALL_J_1" cardinality="CN_N" joinType="inner" multiJoinNode="ALL_J" multiJoinCentralTable="PRICESCH_P" multiJoinOrder="Outside In">
     <viewAttributes>
       <viewAttribute id="SOURCE"/>
       <viewAttribute id="EVRTN"/>
@@ -337,6 +339,13 @@
       <viewAttribute id="DATAB_D"/>
     </viewAttributes>
     <calculatedViewAttributes/>
+    <input node="DATE_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATE_SQL" source="DATE_SQL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALQUARTER" source="CALQUARTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALMONTH" source="CALMONTH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
+    </input>
     <input node="PRICESCH_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="EVRTN" source="EVRTN"/>
@@ -355,16 +364,9 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="MATNR_C" source="MATNR_C"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="DATBI_D" source="DATBI_D"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="DATAB_D" source="DATAB_D"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATE_SQL" source="DATAB_D"/>
     </input>
-    <input node="DATE_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="DATE_SQL" source="DATE_SQL"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CALQUARTER" source="CALQUARTER"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CALMONTH" source="CALMONTH"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="DATAB_D" source="DATE_SQL"/>
-    </input>
-    <joinAttribute name="DATAB_D"/>
+    <joinAttribute name="DATE_SQL"/>
   </calculationView>
   <calculationView xsi:type="Calculation:JoinView" id="ALL_J_2" cardinality="CN_1" joinType="leftOuter" multiJoinNode="ALL_J" multiJoinCentralTable="PRICESCH_P" multiJoinOrder="Outside In">
     <viewAttributes>
@@ -481,8 +483,8 @@
       <viewAttribute id="CALQUARTER"/>
       <viewAttribute id="CALMONTH"/>
       <viewAttribute id="CALWEEK"/>
-      <viewAttribute id="MAT_SOURCE"/>
       <viewAttribute id="DATAB_D"/>
+      <viewAttribute id="MAT_SOURCE"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="ALL_J_2">
@@ -595,10 +597,10 @@
       <viewAttribute id="CALQUARTER"/>
       <viewAttribute id="CALMONTH"/>
       <viewAttribute id="CALWEEK"/>
+      <viewAttribute id="DATAB_D"/>
       <viewAttribute id="VENDORUNIK_1"/>
       <viewAttribute id="VND_SOURCE"/>
       <viewAttribute id="MAT_SOURCE"/>
-      <viewAttribute id="DATAB_D"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <input node="ALL_J_3">
@@ -646,8 +648,8 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="CALQUARTER" source="CALQUARTER"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CALMONTH" source="CALMONTH"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="MAT_SOURCE" source="MAT_SOURCE"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="DATAB_D" source="DATAB_D"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MAT_SOURCE" source="MAT_SOURCE"/>
     </input>
     <input node="DIMVND_P">
       <mapping xsi:type="Calculation:AttributeMapping" target="VENDORUNIK" source="VENDORUNIK"/>
@@ -885,7 +887,9 @@
   
     <attribute id="DATAB_D" hidden="true" order="56" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Start date calculated"/>
+  
       <keyMapping columnObjectName="BEFORE_AGG_P" columnName="DATAB_D"/>
+  
     </attribute>
   </attributes>
   <calculatedAttributes/>
@@ -1021,13 +1025,13 @@
       <upperLeftCorner x="669" y="463"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape modelObjectName="DIMVND_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
-      <upperLeftCorner x="231" y="30"/>
-      <rectangleSize width="159"/>
-    </shape>
     <shape modelObjectName="DIMMAT_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
       <upperLeftCorner x="528" y="28"/>
       <rectangleSize width="144"/>
+    </shape>
+    <shape modelObjectName="DIMVND_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
+      <upperLeftCorner x="231" y="30"/>
+      <rectangleSize width="159"/>
     </shape>
     <shape modelObjectName="PLANT_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
       <upperLeftCorner x="-267" y="200"/>
@@ -1038,8 +1042,8 @@
       <rectangleSize width="140"/>
     </shape>
     <shape modelObjectName="DATE_P" modelObjectNameSpace="ALL_J" modelObjectType="JoinNodeInput" multiJoinViewNodeName="ALL_J">
-      <upperLeftCorner x="-241" y="22"/>
-      <rectangleSize width="110"/>
+      <upperLeftCorner x="-245.3125" y="123"/>
+      <rectangleSize width="160.98046875"/>
     </shape></shapes>
 </layout>
 </Calculation:scenario>

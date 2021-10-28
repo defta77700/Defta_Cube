@@ -243,8 +243,17 @@
       <viewAttribute id="VND_COUNTRY"/>
       <viewAttribute id="LFABC"/>
     
-      <viewAttribute id="PIR_LIFNR"/></viewAttributes>
+      <viewAttribute id="PIR_LIFNR"/>
+      <viewAttribute hidden="true" id="JOIN$DATE_SQL$ERDAT_DT"/>
+    </viewAttributes>
     <calculatedViewAttributes/>
+    <input node="DATE_P">
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALQUARTER" source="CALQUARTER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALMONTH" source="CALMONTH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DATE_SQL$ERDAT_DT" source="DATE_SQL"/>
+    </input>
     <input node="PIR_MAT_PLANT_JP">
       <mapping xsi:type="Calculation:AttributeMapping" target="PIR_ERDAT" source="PIR_ERDAT"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="PIR_INCO1" source="PIR_INCO1"/>
@@ -311,15 +320,10 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="ADRNR" source="ADRNR"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="VND_COUNTRY" source="VND_COUNTRY"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="LFABC" source="LFABC"/>
+    
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$DATE_SQL$ERDAT_DT" source="ERDAT_DT"/>
     </input>
-    <input node="DATE_P">
-      <mapping xsi:type="Calculation:AttributeMapping" target="YEAR" source="YEAR"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CALQUARTER" source="CALQUARTER"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CALMONTH" source="CALMONTH"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="CALWEEK" source="CALWEEK"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="ERDAT_DT" source="DATE_SQL"/>
-    </input>
-    <joinAttribute name="ERDAT_DT"/>
+    <joinAttribute name="JOIN$DATE_SQL$ERDAT_DT"/>
   </calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="PIR_MAT_PLANT_JP">
     <viewAttributes>
@@ -1476,11 +1480,11 @@ END
       <upperLeftCorner x="258" y="446"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape modelObjectName="PIR_MAT_PLANT_JP" modelObjectNameSpace="PIR_MAT_PLANT_DATE_J" modelObjectType="JoinNodeInput">
+    <shape modelObjectName="DATE_P" modelObjectNameSpace="PIR_MAT_PLANT_DATE_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="20" y="30"/>
       <rectangleSize width="183"/>
     </shape>
-    <shape modelObjectName="DATE_P" modelObjectNameSpace="PIR_MAT_PLANT_DATE_J" modelObjectType="JoinNodeInput">
+    <shape modelObjectName="PIR_MAT_PLANT_JP" modelObjectNameSpace="PIR_MAT_PLANT_DATE_J" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="353" y="666"/>
       <rectangleSize width="191"/>
     </shape>
