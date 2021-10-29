@@ -77,9 +77,136 @@
       "schema": "SUPLPANEL"
     }
   },
-  "FIORI_VENDOR": {
+  "FIORI_V_PAYMENTCONDITIONS": {
     "target": {
-      "object": "Dim_Fiori_Vendor"
+      "object": "FIORI_V_PAYMENTCONDITIONS",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "FIORI_CONTACT_GRP": {
+    "target": {
+      "object": "FIORI_CONTACT_GRP",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "T005": {
+    "target": {
+      "object": "T005",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "T005S": {
+    "target": {
+      "object": "T005S",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "T005T": {
+    "target": {
+      "object": "T005T",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "T016": {
+    "target": {
+      "object": "T016",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "T035": {
+    "target": {
+      "object": "T035",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "T042E": {
+    "target": {
+      "object": "T042E",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "T042Z": {
+    "target": {
+      "object": "T042Z",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "T052": {
+    "target": {
+      "object": "T052",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "TINCT": {
+    "target": {
+      "object": "TINCT",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "TPFK": {
+    "target": {
+      "object": "TPFK",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "TSAB": {
+    "target": {
+      "object": "TSAB",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "VENDORBANK": {
+    "target": {
+      "object": "VENDORBANK",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "VENDORBANK_MODIFICATION": {
+    "target": {
+      "object": "VENDORBANK_MODIFICATION",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "T042ALL": {
+    "target": {
+      "object": "T042ALL",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "FIORI_V_VENDORBANK": {
+    "target": {
+      "object": "FIORI_V_VENDORBANK",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "FIORI_V_VENDOR": {
+    "target": {
+      "object": "FIORI_V_VENDOR",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "FIORI_V_COMP_CODE_USER": {
+    "target": {
+      "object": "FIORI_V_COMP_CODE_USER",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "FIORI_V_VENDORPAYMENTTYPE": {
+    "target": {
+      "object": "FIORI_V_VENDORPAYMENTTYPE",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "FIORI_V_VENDORCONTACT": {
+    "target": {
+      "object": "FIORI_V_VENDORCONTACT",
+      "schema": "SUPLPANEL"
+    }
+  },
+  "TCURC": {
+    "target": {
+      "object": "TCURC",
+      "schema": "SUPLPANEL"
     }
   }
 }
