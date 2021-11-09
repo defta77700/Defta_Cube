@@ -52,5 +52,11 @@
       "object": "SHIPPINGORDER",
       "schema": "SUPLPANEL"
     }
+  },
+  "WFAMAIL": {
+    "target": {
+      "object": "WFAMAIL",
+      "schema": "SUPLPANEL"
+    }
   }
 }
