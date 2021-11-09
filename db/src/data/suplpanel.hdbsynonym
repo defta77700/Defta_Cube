@@ -58,5 +58,11 @@
       "object": "WFAMAIL",
       "schema": "SUPLPANEL"
     }
+  },
+  "WFMUSER": {
+    "target": {
+      "object": "WFMUSER",
+      "schema": "SUPLPANEL"
+    }
   }
 }
